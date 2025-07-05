@@ -1,0 +1,127 @@
+{
+  "title": "Restaurant Menu",
+  "sections": [
+    {
+      "title": "MEAT DINNERS",
+      "subtitle": "All dinners Comes with penne or spaghetti with tomato sauce and one piece of garlic bread",
+      "type": "menu-items",
+      "items": [
+        {
+          "name": "CHICKEN PARMIGIANA",
+          "description": "2pcs breaded chicken tomato sauce with melted cheese",
+          "price": "25.99"
+        },
+        {
+          "name": "VEAL PARMIGIANA",
+          "description": "3pcs veal tomato sauce with melted cheese",
+          "price": "24.99"
+        },
+        {
+          "name": "GRILLED CHICKEN BREAST",
+          "description": "2pcs grilled chicken breast with tomato sauce on side",
+          "price": "24.99"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "type": "extras",
+      "columns": [
+        {
+          "title": "Choice of pasta",
+          "items": [
+            { "name": "Ravioli", "price": "2.99" },
+            { "name": "Tortellini", "price": "2.99" },
+            { "name": "Gnocchi", "price": "2.99" }
+          ]
+        },
+        {
+          "title": "Extra for dinner",
+          "items": [
+            { "name": "Rosé", "price": "2.99" },
+            { "name": "Meat sauce", "price": "3.49" },
+            { "name": "Alfredo sauce", "price": "3.49" }
+          ]
+        },
+        {
+          "title": "",
+          "items": [
+            { "name": "Arrabiata", "price": "1.49" },
+            { "name": "Aglio e Olio", "price": "1.49" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DRINKS",
+      "type": "drinks",
+      "items": [
+        {
+          "name": "CANNED DRINKS",
+          "price": "1.99",
+          "description": "Coke, Diet Coke, Sprite, Ginger Ale"
+        },
+        {
+          "name": "BOTTLE NAYA WATER",
+          "price": "1.99"
+        },
+        {
+          "name": "ICED TEA",
+          "price": "2.25"
+        },
+        {
+          "name": "BRIO",
+          "price": "2.99"
+        },
+        {
+          "name": "ORANGINA",
+          "price": "2.99"
+        },
+        {
+          "name": "BOTTLE PERRIER",
+          "price": "2.99"
+        },
+        {
+          "name": "SAN PELLEGRINO",
+          "price": "2.99",
+          "description": "Aranciata, Rossa, Limonata"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "type": "combos",
+      "combos": [
+        {
+          "name": "COMBO #1",
+          "price": "10.99",
+          "description": "Chicken nuggets (5pcs) & Fries"
+        },
+        {
+          "name": "COMBO #2",
+          "price": "12.99",
+          "description": "Chicken tenders (4pcs) & Fries"
+        },
+        {
+          "name": "COMBO #3",
+          "price": "15.00",
+          "description": "Veal sandwich, can of pop, & spicy olives"
+        },
+        {
+          "name": "COMBO #4",
+          "price": "15.00",
+          "description": "Penne rose, 1 pc of garlic bread, & can of pop"
+        }
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=180&fit=crop",
+        "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=180&fit=crop"
+      ]
+    }
+  ],
+  "contact": {
+    "phone": "Call for orders - 416-781-8383",
+    "address": "3450 Bathurst Street, Toronto, ON M6A 2C4"
+  },
+  "disclaimer": "*All prices are subject to change*"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "BEAT THE HEAT WITH",
+  "subtitle": "Serve cider<br>with grilled<br>and spicy<br>dishes for an<br>effortless<br>summertime<br>combo.",
+  "intro": {
+    "headline": "Craft cider is BBQ's BFF.",
+    "description": "The acidity and sweetness of cider cools off and balances the heat from Mexican food, barbecue sauce, grilled meats and fish — you name it, there's a perfect cider pairing for it.",
+    "summary": "This summer, toss some cans of cider on ice and surprise your guests with one or more of these tasty, tried-and-true cider and food pairings."
+  },
+  "drinkOn": {
+    "title": "Look for the Drink ON Apples logo.",
+    "description": "It guarantees the cider you're choosing is crafted by Ontario cider makers using 100% Ontario grown apples."
+  },
+  "pairings": [
+    {
+      "food": "Mexican food — think burritos, enchiladas, or nachos piled with jalapeños.",
+      "description": "This crisp cider takes the edge off.",
+      "icon": "🌮",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=180&fit=crop",
+      "cider": {
+        "name": "POMMES ORIGINAL",
+        "details": "Made from the fresh-pressed juice of five apple varieties, its semi-sweet flavour profile dances between bright acidity and natural fruit sweetness."
+      }
+    },
+    {
+      "food": "Grilled fish tacos topped with mango salsa or tempura-battered prawns.",
+      "description": "A tart and bubbly hopped cider provides a welcome contrast.",
+      "icon": "🐟",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=180&fit=crop",
+      "cider": {
+        "name": "COFFIN RIDGE DRY HOPPED CIDER",
+        "details": "It's a great beer alternative with a balance of Ontario apples and aromatic hops, making it a crisp and refreshing partner for al fresco meals."
+      }
+    }
+  ],
+  "products": [
+    {
+      "name": "Semi Sweet Cider",
+      "image": "https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=200&h=300&fit=crop"
+    },
+    {
+      "name": "Forbidden Dry Cider",
+      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=200&h=300&fit=crop"
+    }
+  ]
+}
