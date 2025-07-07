@@ -1,0 +1,1046 @@
+[
+  {
+    "id": 10,
+    "name": "Open Box - ASUS Vibe CX55 Flip 15.6\" Touchscreen Chromebook - Mineral Grey - Intel Ci3-1115G4 - 128GB eMMC - 8GB RAM - Chrome OS",
+    "label": "Chromebook",
+    "price": 649.99,
+    "stock": 10,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17168/17168084.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 2,
+    "discount": 0,
+    "created_at": "2025-01-26T13:05:25.259058",
+    "updated_at": "2025-01-26T13:05:25.259058",
+    "category_id": 1,
+    "description": [
+      "The ASUS Vibe CX55 Flip Chromebook delivers powerful performance in a stylish and versatile design. Featuring a 15.6\" touchscreen, Intel Core i3 processor, 128GB eMMC storage, and 8GB RAM, this Chromebook is perfect for multitasking and entertainment. It comes in an Open Box condition with a sleek mineral grey finish."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/open-box-asus-vibe-cx55-flip-15-6-touchscreen-chromebook-mineral-grey-intel-ci31115g4-128gb-emmc-8gb-ram-chrome-os/17168084",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Denon AVR-X1700H 7.2-Channel 4K Ultra HD Network AV Receiver - Exclusive Retail Partner",
+    "label": "AV Receiver",
+    "price": 999.99,
+    "stock": 20,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/181/18164/18164708.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/181/18164/18164708_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/181/18164/18164708_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/181/18164/18164708_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 9.4,
+    "discount": 0,
+    "created_at": "2025-01-26T13:06:31.295825",
+    "updated_at": "2025-01-26T13:06:31.295825",
+    "category_id": 2,
+    "description": [
+      "Experience exceptional audio quality with the Denon AVR-X1700H 7.2-Channel 4K Ultra HD Network AV Receiver. It features advanced 4K Ultra HD video, Dolby Atmos, DTS:X, and HEOS built-in technology for seamless music streaming and multi-room functionality. Exclusive to Best Buy, this receiver delivers immersive home entertainment."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/denon-avr-x1700h-7-2-channel-4k-ultra-hd-network-av-receiver-exclusive-retail-partner/18164708",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 12,
+    "name": "SereneLife Compact Portable Power Generator - Rechargeable Battery - 60,000mAh (SLSPGN30)",
+    "label": "Portable Generator",
+    "price": 229.99,
+    "stock": 20,
+    "width": 6,
+    "height": 8,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/154/15452/15452988.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/154/15452/15452988_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/154/15452/15452988_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/154/15452/15452988_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 2,
+    "discount": 0,
+    "created_at": "2025-01-26T13:13:37.210223",
+    "updated_at": "2025-01-26T13:13:37.210223",
+    "category_id": 5,
+    "description": [
+      "Stay powered up wherever you go with the SereneLife Compact Portable Power Generator. Featuring a 60,000mAh rechargeable battery, it provides reliable power for outdoor activities, emergency backup, or on-the-go charging. Its lightweight, portable design makes it easy to carry and use anytime."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/serenelife-compact-portable-power-generator-rechargeable-battery-60-000mah-slspgn30/15452988?source=homepage&adSlot=7&slotPos=",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Aventon Level.2 500W Electric City Bike with Up to 96km Battery Range - Large - Clay",
+    "label": "Electric Bike",
+    "price": 2399.99,
+    "stock": 10,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/167/16712/16712242.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/167/16712/16712242_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/167/16712/16712242_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/167/16712/16712242_4.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/167/16712/16712242_5.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 25,
+    "discount": 0,
+    "created_at": "2025-01-26T13:00:31.012671",
+    "updated_at": "2025-01-26T13:00:31.012671",
+    "category_id": 3,
+    "description": [
+      "The Aventon Level.2 is a powerful 500W electric city bike with a sleek design and impressive features. With a battery range of up to 96km, it is perfect for city commuting or long rides. This model is available in a clay finish and a large size, offering style and comfort."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/aventon-level-2-500w-electric-city-bike-with-up-to-96km-battery-range-large-clay/16712242?source=collection&adSlot=2&slotPos=2",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 8,
+    "name": "MotionGrey Standing Desk - Height Adjustable Electric Motor Sit-to-Stand Desk - White Frame - 43\"x24\" White Tabletop",
+    "label": "Standing Desk",
+    "price": 399.99,
+    "stock": 20,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16568/16568023.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/165/16568/16568023_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/165/16568/16568023_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/165/16568/16568023_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 30,
+    "discount": 0,
+    "created_at": "2025-01-26T13:01:52.383283",
+    "updated_at": "2025-01-26T13:01:52.383283",
+    "category_id": 2,
+    "description": [
+      "Upgrade your home or office workspace with the MotionGrey standing desk. Featuring an adjustable height with an electric motor, this desk allows you to switch between sitting and standing effortlessly. Its 43\"x24\" white tabletop and white frame provide a sleek and modern design, perfect for any decor."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/motiongrey-standing-desk-height-adjustable-electric-motor-sit-to-stand-desk-computer-for-home-and-office-white-frame-43x24-white-tabletop-included-only-on-best-buy/16568023",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Open Box - ASUS Vibe CX55 Flip 15.6\" Touchscreen Chromebook - Mineral Grey - Intel Ci3-1115G4 - 128GB eMMC - 8GB RAM - Chrome OS",
+    "label": "Chromebook",
+    "price": 649.99,
+    "stock": 10,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17168/17168084.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/171/17168/17168084_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 2,
+    "discount": 0,
+    "created_at": "2025-01-26T13:03:58.576388",
+    "updated_at": "2025-01-26T13:03:58.576388",
+    "category_id": 1,
+    "description": [
+      "The ASUS Vibe CX55 Flip Chromebook delivers powerful performance in a stylish and versatile design. Featuring a 15.6\" touchscreen, Intel Core i3 processor, 128GB eMMC storage, and 8GB RAM, this Chromebook is perfect for multitasking and entertainment. It comes in an Open Box condition with a sleek mineral grey finish."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/open-box-asus-vibe-cx55-flip-15-6-touchscreen-chromebook-mineral-grey-intel-ci31115g4-128gb-emmc-8gb-ram-chrome-os/17168084",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 13,
+    "name": "XGIMI MoGo 3 Pro Home Projector + PowerBase Stand Bundle - 4K Support, Smart Mini Projector, Bluetooth Speaker, Licensed Netflix",
+    "label": "Home Projector",
+    "price": 849.99,
+    "stock": 15,
+    "width": 5,
+    "height": 7,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/185/18585/18585304.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 1.9,
+    "discount": 0,
+    "created_at": "2025-01-26T13:18:57.253537",
+    "updated_at": "2025-01-26T13:18:57.253537",
+    "category_id": 6,
+    "description": [
+      "The XGIMI MoGo 3 Pro Home Projector with PowerBase Stand Bundle delivers an exceptional home theater experience. Featuring 4K support, built-in Bluetooth speakers, and smart functionality with licensed Netflix, it is perfect for movies, streaming, and gaming. Portable for outdoor use with an elegant design."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/xgimi-mogo-3-pro-home-projector-powerbase-stand-bundle-home-theatre-setup-portable-for-outdoor-movies-4k-support-smart-mini-projector-bluetooth-speaker-licensed-netflix/18585304",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 14,
+    "name": "XGIMI MoGo 3 Pro Home Projector + PowerBase Stand Bundle - 4K Support, Smart Mini Projector, Bluetooth Speaker, Licensed Netflix",
+    "label": "Home Projector",
+    "price": 849.99,
+    "stock": 15,
+    "width": 5,
+    "height": 7,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/185/18585/18585304.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/185/18585/18585304_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 1.9,
+    "discount": 0,
+    "created_at": "2025-01-26T13:21:51.848691",
+    "updated_at": "2025-01-26T13:21:51.848691",
+    "category_id": 6,
+    "description": [
+      "The XGIMI MoGo 3 Pro Home Projector with PowerBase Stand Bundle delivers an exceptional home theater experience. Featuring 4K support, built-in Bluetooth speakers, and smart functionality with licensed Netflix, it is perfect for movies, streaming, and gaming. Portable for outdoor use with an elegant design."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/xgimi-mogo-3-pro-home-projector-powerbase-stand-bundle-home-theatre-setup-portable-for-outdoor-movies-4k-support-smart-mini-projector-bluetooth-speaker-licensed-netflix/18585304",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Insignia 0.9 Cu. Ft. Compact Countertop Microwave (NS-MW9SS5-C) - Stainless Steel - Only at Best Buy",
+    "label": "Microwave",
+    "price": 89.99,
+    "stock": 25,
+    "width": 18,
+    "height": 15,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/175/17543/17543706.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/175/17543/17543706_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/175/17543/17543706_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/175/17543/17543706_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 12,
+    "discount": 0,
+    "created_at": "2025-01-26T13:25:20.519041",
+    "updated_at": "2025-01-26T13:25:20.519041",
+    "category_id": 10,
+    "description": [
+      "Add functionality and convenience to your kitchen with the Insignia 0.9 Cu. Ft. Compact Countertop Microwave. This stainless steel appliance features six auto-cook options and a sleek design to complement your modern kitchen setup. Its compact size is perfect for small spaces like dorms or apartments. Only available at Best Buy."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/insignia-0-9-cu-ft-compact-countertop-microwave-ns-mw9ss5-c-stainless-steel-only-at-best-buy/17543706",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 16,
+    "name": "KitchenAid Deluxe Tilt-Head Stand Mixer - 4.5Qt - 300-Watt - Empire Red - Only at Best Buy",
+    "label": "Stand Mixer",
+    "price": 349.99,
+    "stock": 30,
+    "width": 16,
+    "height": 12,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17909/17909740.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17909/17909740_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17909/17909740_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17909/17909740_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 14,
+    "discount": 0,
+    "created_at": "2025-01-26T13:27:20.578356",
+    "updated_at": "2025-01-26T13:27:20.578356",
+    "category_id": 15,
+    "description": [
+      "Elevate your kitchen experience with the KitchenAid Deluxe Tilt-Head Stand Mixer. With a 4.5Qt stainless steel bowl and a powerful 300-watt motor, it offers versatile mixing for dough, batter, and more. Its Empire Red finish adds a vibrant touch to your countertop. Only available at Best Buy."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/kitchenaid-deluxe-tilt-head-stand-mixer-4-5qt-300-watt-empire-red-only-at-best-buy/17909740",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Bella Pro Smartcrisp Digital Air Fryer - 7.6L (8Qt) - Stainless Steel - Only at Best Buy",
+    "label": "Air Fryer",
+    "price": 149.99,
+    "stock": 50,
+    "width": 14,
+    "height": 12,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17930/17930052.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17930/17930052_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17930/17930052_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/179/17930/17930052_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 10,
+    "discount": 0,
+    "created_at": "2025-01-26T13:29:57.671872",
+    "updated_at": "2025-01-26T13:29:57.671872",
+    "category_id": 16,
+    "description": [
+      "The Bella Pro Smartcrisp Digital Air Fryer offers a large 7.6L (8Qt) capacity, ideal for families or gatherings. Featuring advanced Smartcrisp technology, it delivers evenly cooked, crispy results every time. Its sleek stainless steel design complements modern kitchens, and it is available exclusively at Best Buy."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/bella-pro-smartcrisp-digital-air-fyer-7-6l-8qt-stainless-steel-only-at-best-buy/17930052",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 18,
+    "name": "iRobot Roomba Vac 2 Essential Robot Vacuum with Auto-Empty Dock",
+    "label": "Robot Vacuum",
+    "price": 549.99,
+    "stock": 30,
+    "width": 12,
+    "height": 12,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/182/18246/18246163.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/182/18246/18246163_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/182/18246/18246163_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/182/18246/18246163_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 4,
+    "discount": 0,
+    "created_at": "2025-01-26T13:31:16.038017",
+    "updated_at": "2025-01-26T13:31:16.038017",
+    "category_id": 8,
+    "description": [
+      "The iRobot Roomba Vac 2 Essential is an advanced robotic vacuum cleaner with an Auto-Empty Dock. Designed to make your cleaning routine effortless, it features powerful suction and intelligent navigation for thorough cleaning. Suitable for both carpets and hard floors, this robot vacuum is an essential home cleaning companion."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/irobot-roomba-vac-2-essential-robot-vacuum-with-autoempty-dock-q052020/18246163",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Sony 75\" 4K UHD HDR LED Smart Google TV (XR75X90L)",
+    "label": "Smart TV",
+    "price": 2499.99,
+    "stock": 15,
+    "width": 3.5,
+    "height": 65,
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/170/17080/17080864.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/170/17080/17080864_2.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/170/17080/17080864_3.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/170/17080/17080864_4.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 34,
+    "discount": 0,
+    "created_at": "2025-01-26T13:32:38.606066",
+    "updated_at": "2025-01-26T13:32:38.606066",
+    "category_id": 2,
+    "description": [
+      "Experience immersive entertainment with the Sony 75\" 4K UHD HDR LED Smart Google TV (XR75X90L). Powered by the Cognitive Processor XR™, this TV delivers exceptional clarity, contrast, and color. Enjoy seamless streaming with Google TV, Dolby Vision, and vibrant HDR support, making it perfect for movies, sports, and gaming."
+    ],
+    "product_url": "https://www.bestbuy.ca/en-ca/product/sony-75-4k-uhd-hdr-led-smart-google-tv-xr75x90l/17080864",
+    "affiliate_provider": {
+      "id": 4,
+      "name": "BestBuy"
+    }
+  },
+  {
+    "id": 5,
+    "name": "QFTIME 14\" Queen Metal Bed Frame with Steel Slats, Heavy Duty Mattress Foundation",
+    "label": "Home Furniture",
+    "price": 149.99,
+    "stock": 50,
+    "width": 60,
+    "height": 14,
+    "images": [
+      "https://i5.walmartimages.com/asr/3197cefb-f018-44fc-80f5-b15bb8fe53f9.99c3d4a5ca169b3644c139087c08ca27.jpeg",
+      "https://i5.walmartimages.com/asr/5b68367d-df64-4d08-af85-7154fe090fb6.0134ecd1db7f7a8cc37cb570ede79021.jpeg",
+      "https://i5.walmartimages.com/asr/37164f8f-f070-4a5b-95ea-2aaf7935ba6a.4972dca9f0bcc558da2b984442aa06f7.jpeg",
+      "https://i5.walmartimages.com/asr/87a210b3-e529-4bf5-ad2d-13625f34aafc.6c0b6c9a993fa20603f442b85dd368ce.jpeg",
+      "https://i5.walmartimages.com/asr/e0af987e-ea7e-49c3-a7dc-7bf26514f27f.0f1de93a059d962df30fe646ba8e6a09.jpeg",
+      "https://i5.walmartimages.com/asr/04a876d5-7b71-4aed-90d8-462088bce0fd.67c6976b77dc1daa3d913084c244a623.jpeg",
+      "https://i5.walmartimages.com/asr/f158b7cb-6957-4e63-8574-14fe11d48467.9dc2ea676674480830ac6ba238a6a338.jpeg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 20,
+    "discount": 0,
+    "created_at": "2025-01-26T10:40:45.140323",
+    "updated_at": "2025-01-26T10:40:45.140323",
+    "category_id": 4,
+    "description": [
+      "QFTIME 14\" Queen Metal Bed Frame with Steel Slats offers a sturdy, heavy-duty mattress foundation. Featuring a sleek design and durable steel construction, it provides optimal support and eliminates the need for a box spring. Ideal for any bedroom setup."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/QFTIME-14-Queen-Metal-Bed-Frame-with-Steel-Slats-Heavy-Duty-Mattress-Foundation/4L20E9REQEJQ",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 6,
+    "name": "IMGadgets Z-Shaped Gaming Desk with Dynamic LED lighting & Durable Mouse Pad | 47\"x24\" Carbon Fiber Surface | 80 kg Load Capacity | Cup Holder | Headphone Hook | Ultimate Gaming Experience",
+    "label": "Gaming Desk",
+    "price": 189.99,
+    "stock": 25,
+    "width": 24,
+    "height": 47,
+    "images": [
+      "https://i5.walmartimages.com/asr/9b684754-5249-4326-a841-c41c830d4a6b.8b06d211df0adea08fd0df94ba2b88cd.jpeg",
+      "https://i5.walmartimages.com/asr/42a21a84-36fd-444e-ba35-5513757a7003.95240f5f160af2b30eb47f9a205cdee2.jpeg",
+      "https://i5.walmartimages.com/asr/bb57c8c9-9140-454d-b885-36adb251163c.992fc43cba13364e54a0194911be9d56.jpeg",
+      "https://i5.walmartimages.com/asr/fa2a93c1-b45d-4f18-809d-ed846d4ac8db.f5f683dc4dfe7925efe294208229fc7d.jpeg",
+      "https://i5.walmartimages.com/asr/e9dd2e7d-2abc-4349-8d7d-97b80204a4f6.0272350e7f545dc65976ed92055282ec.jpeg",
+      "https://i5.walmartimages.com/asr/c205d833-9b85-458d-99cb-1567a758b1b6.67342121400f580478c5434d532af85f.jpeg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 18,
+    "discount": 10,
+    "created_at": "2025-01-26T12:49:30.858616",
+    "updated_at": "2025-01-26T12:49:30.858616",
+    "category_id": 2,
+    "description": [
+      "The IMGadgets Z-Shaped Gaming Desk is designed for ultimate gaming experiences with dynamic LED lighting, a durable mouse pad, and a 47\"x24\" carbon fiber surface. It supports up to 80 kg, with a cup holder, headphone hook, and modern features for enhanced gaming or working setups."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/IMGadgets-Z-Shaped-Gaming-Desk-Dynamic-LED-lighting-Durable-Mouse-Pad-47-x24-Carbon-Fiber-Surface-80-kg-Load-Capacity-Cup-Holder-Headphone-Hook-Ultim/2CLISZ0VNYUN",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Monitor Arm Desk Mount - Adjustable Gas Spring Monitor Stand",
+    "label": "Monitor Arm",
+    "price": 19.86,
+    "stock": 50,
+    "width": 10,
+    "height": 15,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1772ab68489e4c6482e639975171e19bP.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8510c265e5d24539b5b39882d0df3170J.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sba5bfefc148747b28fcc821ae6ababb16.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S270f68e822e34dc3bed2d1f5e620c7d3E.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sbc11bccc393b4918982440fcea8b6399x.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1b7c66c2cbcf4ff78fd10ef06c8cb898V.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1e227bf1dc3647a69deb7fac6ea0e985N.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9894424c5f0b4c32961cfe8adddf40c4k.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 3.2,
+    "discount": 8.54,
+    "created_at": "2025-01-26T13:57:47.392069",
+    "updated_at": "2025-01-26T13:57:47.392069",
+    "category_id": 4,
+    "description": [
+      "Adjustable gas spring monitor arm desk mount, compatible with most monitors. Offers ergonomic positioning and a clean desk setup. Supports screens up to 27 inches."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005006993413705.html?spm=a2g0o.tm1000019862.d0.1.5bb03c328JrmSd&pvid=918c8895-1f2c-4091-ac1d-9e8fccbe4f69&pdp_ext_f=%7B%22ship_from%22:%22CN%22,%22sku_id%22:%2212000038981377986%22%7D&scm=1007.25281.414973.0&scm-url=1007.25281.414973.0&scm_id=1007.25281.414973.0&pdp_npi=4%40dis%21CAD%21C%24%2019.86%21C%24%208.54%21%21%2198.36%2142.29%21%402103277f17379176636594469ee11c%2112000038981377986%21gdf%21CA%214565395343%21X&aecmd=true",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 24,
+    "name": "Wireless Bluetooth Speaker with Colorful LED Lights",
+    "label": "Bluetooth Speaker",
+    "price": 22.99,
+    "stock": 100,
+    "width": 10,
+    "height": 10,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1b8e6760697040aeb43e1e5bd66b4c3bI.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6d3726f5735548a49fd2a2c6164613b48.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S299b0e6c43c44e8a84bb9e4b3fb95491o.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3e59f34a84dd472e81f770ba240294d6P.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0c135f0e4cac49f3991b779e94d0bc57A.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S660237e7deb74b4a8b48eb8d6e605c86q.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S7d2610a3f1944be5b4003fc389f4901cC.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2a43a7eadaac4e5ab705c699c6340eb6z.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S19976b1575e849c29e049e1fc0c8c6ff3.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 1.5,
+    "discount": 47.9,
+    "created_at": "2025-01-26T14:06:35.254236",
+    "updated_at": "2025-01-26T14:06:35.254236",
+    "category_id": 4,
+    "description": [
+      "Portable wireless Bluetooth speaker with colorful LED lighting, offering high-quality sound and compact design. Ideal for parties, home, or travel."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005008357076606.html?spm=a2g0o.productlist.main.1.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-0&pdp_npi=4%40dis%21CAD%2147.90%2122.99%21%21%21237.25%21113.87%21%402103205217379181593755864ef82b%2112000044708318365%21sea%21CA%214565395343%21X&curPageLogUid=jzD7TIUizV4X&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 25,
+    "name": "304 Stainless Steel Kitchen Faucet with Digital Display and Soap Dispenser",
+    "label": "Kitchen Faucet",
+    "price": 195.38,
+    "stock": 50,
+    "width": 20,
+    "height": 50,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S77824510b2f84dc6923f278fe3ee1cbcA.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4d6d2d839af44fe0a27506df275b7dd0g.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3b3977e2e9cb4a12ac8116fe26ddeb78S.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S303ce8c1004f403895d36df7c34baafcQ.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9dd54cf3f0b44021b30f696613a547bcw.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa4da8d91dc2e4c52a61024ac6c29ec6bv.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sff208aa3ca2b4c87893bcb845cd2c321K.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S66a16451215a42caa611f2bfafc370103.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S864ec9f7f1bd47e491d616363c0d6aecd.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S74a822ee9699459b8e1219057657fee2M.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9b6893dd6d4749d9842a830b59f8bcdbY.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5a057f076b9841f4a5aa7ce3abddf8ffX.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8359775c0c6e40e5abcea210c07144acE.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 5,
+    "discount": 383.1,
+    "created_at": "2025-01-26T14:10:05.239654",
+    "updated_at": "2025-01-26T14:10:05.239654",
+    "category_id": 5,
+    "description": [
+      "Modern 304 stainless steel kitchen faucet with a digital display and integrated soap dispenser. Offers a sleek and ergonomic design perfect for contemporary kitchens."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005006409314300.html?spm=a2g0o.productlist.main.3.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-1&pdp_npi=4%40dis%21CAD%21383.10%21195.38%21%21%21260.47%21132.84%21%402103205217379181593755864ef82b%2112000037983266746%21sea%21CA%214565395343%21X&curPageLogUid=EKNGPalVOqUL&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 26,
+    "name": "304 Stainless Steel Kitchen Faucet with Digital Display and Soap Dispenser",
+    "label": "Kitchen Faucet",
+    "price": 180.38,
+    "stock": 50,
+    "width": 20,
+    "height": 50,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S77824510b2f84dc6923f278fe3ee1cbcA.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4d6d2d839af44fe0a27506df275b7dd0g.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3b3977e2e9cb4a12ac8116fe26ddeb78S.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S303ce8c1004f403895d36df7c34baafcQ.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9dd54cf3f0b44021b30f696613a547bcw.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa4da8d91dc2e4c52a61024ac6c29ec6bv.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sff208aa3ca2b4c87893bcb845cd2c321K.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S66a16451215a42caa611f2bfafc370103.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S864ec9f7f1bd47e491d616363c0d6aecd.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S74a822ee9699459b8e1219057657fee2M.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9b6893dd6d4749d9842a830b59f8bcdbY.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5a057f076b9841f4a5aa7ce3abddf8ffX.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8359775c0c6e40e5abcea210c07144acE.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 5,
+    "discount": 340.34,
+    "created_at": "2025-01-26T14:12:52.539676",
+    "updated_at": "2025-01-26T14:12:52.539676",
+    "category_id": 5,
+    "description": [
+      "Premium 304 stainless steel kitchen faucet with a digital display and soap dispenser. Features modern design, durability, and ergonomic functionality for contemporary kitchens."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005007102932602.html?spm=a2g0o.productlist.main.9.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-4&pdp_npi=4%40dis%21CAD%21340.34%21180.38%21%21%21231.40%21122.64%21%402103205217379181593755864ef82b%2112000040073563831%21sea%21CA%214565395343%21X&curPageLogUid=i5Cia6ivgpSZ&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Luxury Automatic Sensor Faucet with Temperature Control",
+    "label": "Sensor Faucet",
+    "price": 224.68,
+    "stock": 50,
+    "width": 20,
+    "height": 50,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5fe24cd476734a42815ed15c4a828366f.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0b6c101d552d44c3adc0ce0e304a1becT.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4ca2eba3c7124b8faeb2059ea1282fadF.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0c052766606f45828dd37b2fb1153011I.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S42d3a2595f354448a0fb195c347ad14fL.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1ba5cd02d2944cc7929dcf7cfc44511eZ.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb4fb0251cad04677acaa1a92f464ee1el.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se3a5bb9a76b44493a6c19a893749d32f6.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2fecdc65184d4ca4acd16532713c0442D.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S405e9fbae74045359434a2c42f19513aP.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 4,
+    "discount": 394.18,
+    "created_at": "2025-01-26T14:15:08.079133",
+    "updated_at": "2025-01-26T14:15:08.079133",
+    "category_id": 5,
+    "description": [
+      "Luxury automatic sensor faucet with temperature control. Made of high-quality materials for a modern and elegant design, perfect for enhancing any bathroom or kitchen."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005007576433999.html?spm=a2g0o.productlist.main.25.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-12&pdp_npi=4%40dis%21CAD%21394.18%21224.68%21%21%21268.00%21152.76%21%402103205217379181593755864ef82b%2112000043294187786%21sea%21CA%214565395343%21X&curPageLogUid=aiDO1nAaZVLS&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Modern Waterproof LED Mirror Light",
+    "label": "LED Mirror Light",
+    "price": 22.58,
+    "stock": 100,
+    "width": 10,
+    "height": 50,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S71e2782a35fc4ccd9b46189cb3df2a17g.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S43024109d9094728a1d085d5626a5287R.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sfa0a6df58d0b4527b4190575d56e53dac.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sc46d8342bdf04368af73030c05a5b940p.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb5d2f8413d864ce09ac8b0decf9ba006p.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb810c450fa454825bac66c862c0940c1o.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb491c8a7c245446ea1634c65906cbbe7q.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S12bff5dc703d4321a4d69d4d4b6bd0eau.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 3.5,
+    "discount": 47.04,
+    "created_at": "2025-01-26T14:21:51.365195",
+    "updated_at": "2025-01-26T14:21:51.365195",
+    "category_id": 6,
+    "description": [
+      "Elegant modern waterproof LED mirror light, perfect for bathrooms, makeup areas, and dressing rooms. Designed with energy-saving LED technology and a sleek finish."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005008357098573.html?spm=a2g0o.productlist.main.33.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-16&pdp_npi=4%40dis%21CAD%2147.04%2122.58%21%21%21232.99%21111.84%21%402103205217379181593755864ef82b%2112000044708261702%21sea%21CA%214565395343%21X&curPageLogUid=UBdJOBBu95Ff&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Golden Smart Temperature Control Kitchen Sink Set With Digital Display",
+    "label": "Smart Kitchen Sink",
+    "price": 331.38,
+    "stock": 50,
+    "width": 5,
+    "height": 80,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2fe71d82c78d43d1990eb395cdba06cbQ.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sfd76e0a67047419ea94c55940b127cbfC.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S7b658718b4e943cdb6a3638a9f60b0494.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5261224eab8b4537a0f717b39988239al.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8436f2c727ab4f65b130b062c6bc96d7n.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3839d5083f93451cbd41fd0d4e2b6509Z.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3531f3580aed4755b708f2d3f6910fa36.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S864ec9f7f1bd47e491d616363c0d6aecd.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8359775c0c6e40e5abcea210c07144acE.jpg_220x220q75.jpg_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 12,
+    "discount": 662.76,
+    "created_at": "2025-01-26T14:32:51.503898",
+    "updated_at": "2025-01-26T14:32:51.503898",
+    "category_id": 7,
+    "description": [
+      "Golden smart kitchen sink set featuring temperature control, a digital display, soap dispenser, and waterfall purifier for a modern, convenient kitchen experience."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005006888198644.html?spm=a2g0o.productlist.main.43.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-21&pdp_npi=4%40dis%21CAD%21662.76%21331.38%21%21%21450.61%21225.30%21%402103205217379181593755864ef82b%2112000038628957462%21sea%21CA%214565395343%21X&curPageLogUid=ReV7e4DJjgNc&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Golden Smart Digital Display Kitchen Set with Temperature Control and Purifier",
+    "label": "Luxury Kitchen Set",
+    "price": 418.38,
+    "stock": 50,
+    "width": 50,
+    "height": 100,
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4dbb324d5041439ea6c75f5edad56bd47.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sbf8828b7dd4248b5b1a71b8238998d87k.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa605d95e0c8747dc99d1a4999b06861cg.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S17eec9ba94fa452b85f21d2395eac620F.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se86632c132794d9aa24b4b8be5b7f85dX.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb3b28e4ce3f745d19da12243e4425be9b.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1cb8b37c4eff4040a1813a5b35410246u.png_220x220.png_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa0b4b64b4ec04c03ad80f87c66b4e680P.png_220x220.png_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9d603fdd8d414b30b3fe1fad96f25649H.png_220x220.png_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S447ba8d5b9a541a78bd881ef282458635.png_220x220.png_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S323f0ffcc8fc45e09491bbdc7199e912b.png_220x220.png_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf55bce6a420b463fb7d1dc7fe64f4cb4v.png_220x220.png_.avif"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 15,
+    "discount": 996.14,
+    "created_at": "2025-01-26T14:36:49.956849",
+    "updated_at": "2025-01-26T14:36:49.956849",
+    "category_id": 7,
+    "description": [
+      "Golden smart kitchen set featuring temperature control, digital display, water purifier, and modern aesthetics."
+    ],
+    "product_url": "https://www.aliexpress.com/item/1005008308222545.html?spm=a2g0o.productlist.main.65.6aa627086Hijty&algo_pvid=c74fa142-a9ad-42be-b7b7-f8b2c6232205&algo_exp_id=c74fa142-a9ad-42be-b7b7-f8b2c6232205-32&pdp_npi=4%40dis%21CAD%21996.14%21418.38%21%21%214933.83%212072.21%21%402103205217379181593755864ef82b%2112000044565907737%21sea%21CA%214565395343%21X&curPageLogUid=J72LMD6eqKYG&utparam-url=scene%3Asearch%7Cquery_from%3A",
+    "affiliate_provider": {
+      "id": 3,
+      "name": "GServeTech"
+    }
+  },
+  {
+    "id": 1,
+    "name": "Google Pixel Watch (GPS + LTE) 41mm Aluminum Case with Active Band - Open Box",
+    "label": "Smartwatch",
+    "price": 389.99,
+    "stock": 50,
+    "width": 4,
+    "height": 4,
+    "images": [
+      "https://i5.walmartimages.com/asr/9fb933e4-bc7e-4b0b-b948-63e3358d8acc.2055d65c7a2089b9caa2238d80e1594f.jpeg",
+      "https://i5.walmartimages.com/asr/f3efdde4-1211-4279-98f4-735bbcbb618d.d07c1828800da994db93b8f683235405.jpeg",
+      "https://i5.walmartimages.com/asr/7fccc2f9-81fd-45c7-af35-2fb6d7b01460.70eafe2d1801e346f7b6542aa5ad788f.jpeg",
+      "https://i5.walmartimages.com/asr/3c288e6c-0f15-43e9-a222-13ad2efa14aa.3cebd80127e82f22e765107b0adc15d3.jpeg",
+      "https://i5.walmartimages.com/asr/e7aa2f0a-0cf6-442f-8b31-c49e8bc29c9a.0bad0709a4f175e27d42f9c2955f7171.jpeg",
+      "https://i5.walmartimages.com/asr/af67cecb-d4d9-4c42-b328-fc05d2849452.a48ecd26a28c61ac1a6656aaec12d600.jpeg",
+      "https://i5.walmartimages.com/asr/f434b95d-8616-43b6-832d-ff900e1d2e47.d985e480bcd6a2a2289ebee992284237.jpeg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 0.3,
+    "discount": 10,
+    "created_at": "2025-01-26T10:18:17.213675",
+    "updated_at": "2025-01-26T10:18:17.213675",
+    "category_id": 1,
+    "description": [
+      "Open-box condition of the Google Pixel Watch offering GPS + LTE functionality with a 41mm aluminum case and an active band."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/Google-Pixel-Watch-GPS-LTE-41mm-Aluminum-Case-with-Active-Band-Open-Box/5K3OMWYJK884",
+    "affiliate_provider": {
+      "id": 2,
+      "name": "Walmart"
+    }
+  },
+  {
+    "id": 2,
+    "name": "XGIMI Halo+ True 1080p Portable Projector, 900 ANSI Lumen, Harman Kardon Speakers, WiFi Bluetooth, Auto Focus, Auto Keystone Correction, Android TV 10.0 - Open Box",
+    "label": "Projector",
+    "price": 849.99,
+    "stock": 100,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://i5.walmartimages.com/asr/9d45a96f-27f5-462c-aefc-b64c8941d006.12be27117180397751311f4863956631.jpeg",
+      "https://i5.walmartimages.com/asr/fe29d19d-f186-4c81-852d-abdb5adff8db.a0a562b7c514d4b44cb508476e891f3f.jpeg",
+      "https://i5.walmartimages.com/asr/66b0e1a1-fb34-40c5-b1ec-9f0329f68b4b.be91c8141113e56165a4010e17543f04.jpeg",
+      "https://i5.walmartimages.com/asr/21fdf1c1-29ec-456f-8767-eed89d60f746.dabe5a52a152ee91e24362d0bdc7a922.jpeg",
+      "https://i5.walmartimages.com/asr/27e8431f-b945-42dc-bd62-4e69182ddee8.c678df94082f387a99415a40bcd98999.jpeg",
+      "https://i5.walmartimages.com/asr/151d4fff-b34f-4deb-9abc-c4830f59efb2.696a782801a30bd754a63662bea4d650.jpeg",
+      "https://i5.walmartimages.com/asr/142b45a0-49ad-4c53-b45f-5b82cfc3fe80.e333bfcd6c0c6264c42a51df4cdc7494.jpeg",
+      "https://i5.walmartimages.com/asr/4d9243cb-8358-4884-8a1a-f03224e709bf.89e80a1c3e77bdfd627d1cf9ac85721b.jpeg",
+      "https://i5.walmartimages.com/asr/7a39016c-2e51-4448-8ef7-767cd55cd8d8.2d30a6bba35f7ca1ec83ab22e6d59506.jpeg",
+      "https://i5.walmartimages.com/asr/e1e3537d-bafa-4a28-997a-803b57744574.2dacc05b557b654be0f203b4f0be07be.jpeg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": null,
+    "discount": 0,
+    "created_at": "2025-01-26T10:24:42.820997",
+    "updated_at": "2025-01-26T10:24:42.820997",
+    "category_id": 2,
+    "description": [
+      "With Halo+, you get brilliant 1080p FHD and LED-powered hyper-focused 900 ANSI Lumens1 in a compact build. Whether it's family game night or movies in the backyard, Halo+ will make all your projects remarkably brighter."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/XGIMI-Halo-True-1080p-Portable-Projector-900-ANSI-Lumen-Harman-Kardon-Speakers-WiFi-Bluetooth-Auto-Focus-Keystone-Correction-Android-TV-10-0-Open-Box/5PQQ4RN458IP",
+    "affiliate_provider": {
+      "id": 2,
+      "name": "Walmart"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mainstays 4L Deep Fryer, Stainless Steel Lid, Electric, New MS-202398CN, Black Matte",
+    "label": "Kitchen Appliance",
+    "price": 49.99,
+    "stock": 200,
+    "width": null,
+    "height": null,
+    "images": [
+      "https://i5.walmartimages.ca/images/Enlarge/968/852/6000207968852.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/640/6000207968640.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/641/6000207968641.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/642/6000207968642.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/853/6000207968853.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/643/6000207968643.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/968/644/6000207968644.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/198/169/6000208198169.jpg",
+      "https://i5.walmartimages.ca/images/Enlarge/446/747/6000208446747.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": null,
+    "discount": 0,
+    "created_at": "2025-01-26T10:28:59.913237",
+    "updated_at": "2025-01-26T10:28:59.913237",
+    "category_id": 3,
+    "description": [
+      "The Mainstays 4L Deep Fryer features a stainless steel lid, electric functionality, and a sleek black matte design. Ideal for frying foods efficiently and safely."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/Mainstays-4L-Deep-Fryer-Stainless-Steel-Lid-Electric-New-MS-202398CN-Black-Matte/6000207968852",
+    "affiliate_provider": {
+      "id": 2,
+      "name": "Walmart"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Pooboo Exercise Bikes - 16 Levels Of Magnetic Resistance - Stationary Bike Workout Bike",
+    "label": "Fitness Equipment",
+    "price": 299.99,
+    "stock": 100,
+    "width": 60,
+    "height": 120,
+    "images": [
+      "https://i5.walmartimages.com/asr/47adad4a-bfd9-43a2-864f-4537953f4396.e55209e2ed2b7570f616803ae5439ffd.jpeg",
+      "https://i5.walmartimages.com/asr/6ec0f0e6-e582-4539-9400-ee3b46fb6fb3.5a034e21c7bffecf334ef7f8b8cb9c2f.jpeg",
+      "https://i5.walmartimages.com/asr/caba7a58-5401-4b96-be3a-cbf8e408c70f.6d896ad2161f53a94717e78be40b0ec7.jpeg",
+      "https://i5.walmartimages.com/asr/7a83509c-b728-4b9f-addd-58efd643be5d.61a8ee0954397ac09a9df35146d91c75.jpeg",
+      "https://i5.walmartimages.com/asr/505f5a2e-7bd9-489b-86b4-5914b76bd830.d5f11b3ab96fcc1652623f5201a79b9b.jpeg",
+      "https://i5.walmartimages.com/asr/03cf6fe4-ebb4-4288-9983-cd16b0f81d60.8eb6b6dfb87a544d5a37bc263dbcd540.jpeg",
+      "https://i5.walmartimages.com/asr/9b5be719-bd54-4183-9688-a4cb9ef8e06a.f17428a3412be84ebdc9eae8e9754675.jpeg",
+      "https://i5.walmartimages.com/asr/1ae7c6b1-04c7-4348-a248-ceb7f6a602a5.1e4bf47f21c32b7f87771e7a61922429.jpeg",
+      "https://i5.walmartimages.com/asr/f923b5ef-6eaa-4140-8aac-72be0b6af351.ad2979870bd64074665e15c83df4b1d3.jpeg",
+      "https://i5.walmartimages.com/asr/d8b7d815-f8ff-4e06-b01a-9d6b74abbe56.04224cea5eac9c0ec7f88148ae010770.jpeg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 30,
+    "discount": 0,
+    "created_at": "2025-01-26T10:37:16.539444",
+    "updated_at": "2025-01-26T10:37:16.539444",
+    "category_id": 3,
+    "description": [
+      "The Pooboo Exercise Bike offers 16 levels of magnetic resistance, providing a customizable and quiet workout experience. It features a heavy-duty steel frame for stability, an upgraded flywheel for a smooth ride, and adjustable seat and handlebars for user comfort. The belt drive system ensures a stable and personalized exercise session, perfect for home use."
+    ],
+    "product_url": "https://www.walmart.ca/en/ip/Pooboo-Exercise-Bikes-16-Levels-Of-Magnetic-Resistance-Stationary-Bike-Workout-Bike/1GBM1JZT95DA",
+    "affiliate_provider": {
+      "id": 2,
+      "name": "Walmart"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Introducing Kindle Scribe – The first Kindle for reading and writing",
+    "label": "E-Reader",
+    "price": 429.99,
+    "stock": 20,
+    "width": 6,
+    "height": 7.7,
+    "images": [
+      "https://m.media-amazon.com/images/I/815Ozz1xCTL._AC_SY450_.jpg",
+      "https://m.media-amazon.com/images/I/41s7wWlioRL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41obHERsScL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41JL51-OaJL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41gfluDLumL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41cxasL7BNL._AC_US40_.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 0.43,
+    "discount": 0,
+    "created_at": "2025-01-26T13:41:56.86707",
+    "updated_at": "2025-01-26T13:41:56.86707",
+    "category_id": 3,
+    "description": [
+      "Kindle Scribe combines the best of reading and writing in one sleek device. Featuring a 10.2” 300 ppi Paperwhite display and adjustable warm light, it’s perfect for reading and creating handwritten notes with the included Premium Pen. Enjoy seamless integration with Kindle books and your personal documents."
+    ],
+    "product_url": "https://www.amazon.ca/Introducing-Kindle-Scribe-the-first-Kindle-for-reading-and-writing/dp/B09BSQ8PRD/ref=b2b_gw_d_puwl_d_sccl_4/146-2574852-7990314?pd_rd_w=x9ud7&content-id=amzn1.sym.8f2059e8-6cc7-49ed-b5b2-592cc98b4a83&pf_rd_p=8f2059e8-6cc7-49ed-b5b2-592cc98b4a83&pf_rd_r=V9BYA7TBJ53ZTH5ZYW8Y&pd_rd_wg=hFUjc&pd_rd_r=68b442bb-2755-48ab-850d-317b76dd579f&pd_rd_i=B09BSQ8PRD&psc=1",
+    "affiliate_provider": {
+      "id": 1,
+      "name": "Amazon"
+    }
+  },
+  {
+    "id": 21,
+    "name": "KVIDIO Bluetooth Headphones Over Ear - Wireless with Microphone",
+    "label": "Headphones",
+    "price": 39.99,
+    "stock": 50,
+    "width": 6.5,
+    "height": 8,
+    "images": [
+      "https://m.media-amazon.com/images/I/71Hx8b6HGbL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/81rfwYisDqL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/41aXNBJ4b8L._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/51MG7+gu6jL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/51-YR+XefEL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/51Z6Tsnr2AL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/5183EEKjT5L._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41Dm2r2urQL._AC_US40_.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 0.25,
+    "discount": 0,
+    "created_at": "2025-01-26T13:43:54.665581",
+    "updated_at": "2025-01-26T13:43:54.665581",
+    "category_id": 2,
+    "description": [
+      "KVIDIO Bluetooth headphones offer 65 hours of playtime, a foldable lightweight design, and deep bass HiFi stereo sound. They are equipped with a microphone, making them suitable for travel, work, laptops, and cell phones."
+    ],
+    "product_url": "https://www.amazon.ca/Bluetooth-Headphones-KVIDIO-Microphone-Lightweight/dp/B09BF64J55/ref=b2b_gw_d_cue_lf_d_sccl_4/146-2574852-7990314?pd_rd_w=Agy8U&content-id=amzn1.sym.7481ab04-1e69-4506-91f4-bb8709dcb0b4&pf_rd_p=7481ab04-1e69-4506-91f4-bb8709dcb0b4&pf_rd_r=V9BYA7TBJ53ZTH5ZYW8Y&pd_rd_wg=hFUjc&pd_rd_r=68b442bb-2755-48ab-850d-317b76dd579f&pd_rd_i=B09BF64J55&th=1",
+    "affiliate_provider": {
+      "id": 1,
+      "name": "Amazon"
+    }
+  },
+  {
+    "id": 22,
+    "name": "North Bayou Monitor Arm Desk Mount - Gas Spring Monitor Arm",
+    "label": "Monitor Arm",
+    "price": 49.99,
+    "stock": 30,
+    "width": 7,
+    "height": 10.5,
+    "images": [
+      "https://m.media-amazon.com/images/I/31d5NFCmhgL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/31k7HnpUOlL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/51bl1F8zVBL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41k+gdQc2dL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/51IA21wD8qL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/31Y4G6QB9VL._AC_US40_.jpg"
+    ],
+    "status": {
+      "id": 1,
+      "name": "Pending"
+    },
+    "weight": 2.3,
+    "discount": 0,
+    "created_at": "2025-01-26T13:46:30.218168",
+    "updated_at": "2025-01-26T13:46:30.218168",
+    "category_id": 4,
+    "description": [
+      "The North Bayou monitor arm features a gas spring mechanism for smooth, adjustable motion, supporting monitors from 4.4 to 14.3 lbs. It is ideal for desks, offering ergonomic positioning for better productivity."
+    ],
+    "product_url": "https://www.amazon.ca/North-Bayou-Monitor-Motion-14-3lbs/dp/B01AI2YGK4/ref=b2b_gw_d_bs_2_d_sccl_26/146-2574852-7990314?pd_rd_w=hmnRP&content-id=amzn1.sym.0943b841-2ab6-47de-9b6d-142b87a30416&pf_rd_p=0943b841-2ab6-47de-9b6d-142b87a30416&pf_rd_r=V9BYA7TBJ53ZTH5ZYW8Y&pd_rd_wg=hFUjc&pd_rd_r=68b442bb-2755-48ab-850d-317b76dd579f&pd_rd_i=B01AI2YGK4&psc=1",
+    "affiliate_provider": {
+      "id": 1,
+      "name": "Amazon"
+    }
+  }
+]
