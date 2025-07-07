@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Minimalist Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .product-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 80vh;
+        }
+
+        /* Image Section */
+        .image-section {
+            position: relative;
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        .main-image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .main-image {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+
+        .thumbnail-strip {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 10px 0;
+            height: 100px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .thumbnail-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Modern Dot Scroll Indicator */
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 10px 0;
+        }
+
+        .scroll-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .scroll-dot.active {
+            background: #6366f1;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+        }
+
+        .scroll-dot:hover {
+            background: #9ca3af;
+            transform: scale(1.1);
+        }
+
+        .scroll-dot.active::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            border: 2px solid #6366f1;
+            opacity: 0.3;
+            animation: ripple 1.5s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            background: white;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #6366f1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Product Info Section */
+        .info-section {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .price-section {
+            margin-bottom: 30px;
+        }
+
+        .current-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: #059669;
+            margin-right: 15px;
+        }
+
+        .original-price {
+            font-size: 20px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .save-amount {
+            background: #fef3c7;
+            color: #d97706;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stock-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            border-left: 4px solid #22c55e;
+        }
+
+        .stock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .description-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .specs-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .specs-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .spec-value {
+            color: #6b7280;
+        }
+
+        .action-section {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #6366f1;
+            color: white;
+        }
+
+        .provider-section {
+            text-align: center;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .loading, .error {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 18px;
+        }
+
+        .loading {
+            color: #6b7280;
+        }
+
+        .error {
+            color: #ef4444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .image-section,
+            .info-section {
+                padding: 20px;
+            }
+
+            .product-name {
+                font-size: 24px;
+            }
+
+            .current-price {
+                font-size: 28px;
+            }
+
+            .action-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading" class="loading">
+            ✨ Loading amazing product details...
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            😔 Oops! Product not found or failed to load.
+        </div>
+
+        <div id="product-container" class="product-wrapper" style="display: none;">
+            <div class="product-layout">
+                <div class="image-section">
+                    <div class="main-image-container">
+                        <img id="main-image" class="main-image" src="/placeholder.svg" alt="Product">
+                    </div>
+                    <div id="thumbnail-container" class="thumbnail-strip"></div>
+                    <div id="scroll-indicator" class="scroll-indicator"></div>
+                </div>
+
+                <div class="info-section">
+                    <div>
+                        <div id="product-badge" class="product-badge"></div>
+                        <h1 id="product-name" class="product-name"></h1>
+                        
+                        <div class="price-section">
+                            <span id="current-price" class="current-price"></span>
+                            <span id="original-price" class="original-price" style="display: none;"></span>
+                            <span id="save-amount" class="save-amount" style="display: none;"></span>
+                        </div>
+
+                        <div id="stock-info" class="stock-info">
+                            <div class="stock-dot"></div>
+                            <span id="stock-text"></span>
+                        </div>
+
+                        <div id="description" class="description-text"></div>
+
+                        <div class="specs-container">
+                            <h3 class="specs-title">Product Specifications</h3>
+                            <div id="specs-list"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="action-section">
+                            <button class="btn btn-primary" onclick="addToCart()">
+                                🛒 Add to Cart
+                            </button>
+                            <a id="view-original" class="btn btn-secondary" href="#" target="_blank">
+                                🔗 View Store
+                            </a>
+                        </div>
+
+                        <div class="provider-section">
+                            <div style="font-weight: 600; margin-bottom: 5px;">Available at</div>
+                            <div id="provider-name" style="color: #6366f1; font-weight: 700;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getProductId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || '1';
+        }
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('en-CA', {
+                style: 'currency',
+                currency: 'CAD'
+            }).format(price);
+        }
+
+        function setStockStatus(stock) {
+            const stockInfo = document.getElementById('stock-info');
+            const stockText = document.getElementById('stock-text');
+            
+            if (stock > 20) {
+                stockInfo.style.background = '#f0fdf4';
+                stockInfo.style.borderLeftColor = '#22c55e';
+                stockText.textContent = `✅ In Stock (${stock} available)`;
+            } else if (stock > 0) {
+                stockInfo.style.background = '#fffbeb';
+                stockInfo.style.borderLeftColor = '#f59e0b';
+                stockText.textContent = `⚠️ Low Stock (${stock} remaining)`;
+            } else {
+                stockInfo.style.background = '#fef2f2';
+                stockInfo.style.borderLeftColor = '#ef4444';
+                stockText.textContent = '❌ Out of Stock';
+            }
+        }
+
+        function setupImageGallery(images) {
+            const mainImage = document.getElementById('main-image');
+            const thumbnailContainer = document.getElementById('thumbnail-container');
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            
+            if (images && images.length > 0) {
+                mainImage.src = images[0];
+                
+                images.forEach((image, index) => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = image;
+                    thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+                    thumbnail.alt = `Product view ${index + 1}`;
+                    
+                    // Create corresponding dot
+                    const dot = document.createElement('div');
+                    dot.className = `scroll-dot ${index === 0 ? 'active' : ''}`;
+                    dot.addEventListener('click', () => {
+                        thumbnail.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                        mainImage.src = image;
+                        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                        document.querySelectorAll('.scroll-dot').forEach(d => d.classList.remove('active'));
+                        thumbnail.classList.add('active');
+                        dot.classList.add('active');
+                    });
+                    
+                    thumbnail.addEventListener('click', () => {
+                        mainImage.src = image;
+                        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                        document.querySelectorAll('.scroll-dot').forEach(d => d.classList.remove('active'));
+                        thumbnail.classList.add('active');
+                        dot.classList.add('active');
+                    });
+                    
+                    thumbnailContainer.appendChild(thumbnail);
+                    scrollIndicator.appendChild(dot);
+                });
+                
+                // Update dots on scroll
+                thumbnailContainer.addEventListener('scroll', updateScrollDots);
+            }
+        }
+
+        function updateScrollDots() {
+            const container = document.getElementById('thumbnail-container');
+            const dots = document.querySelectorAll('.scroll-dot');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            if (!container || !dots.length) return;
+            
+            const containerRect = container.getBoundingClientRect();
+            const containerCenter = containerRect.left + containerRect.width / 2;
+            
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+            
+            thumbnails.forEach((thumbnail, index) => {
+                const thumbRect = thumbnail.getBoundingClientRect();
+                const thumbCenter = thumbRect.left + thumbRect.width / 2;
+                const distance = Math.abs(containerCenter - thumbCenter);
+                
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === closestIndex);
+            });
+        }
+
+        function createSpecifications(product) {
+            const specsList = document.getElementById('specs-list');
+            const specs = [
+                { label: 'Product ID', value: `#${product.id}` },
+                { label: 'Weight', value: product.weight ? `${product.weight} kg` : 'Not specified' },
+                { label: 'Dimensions', value: product.width && product.height ? `${product.width}" × ${product.height}"` : 'Not specified' },
+                { label: 'Status', value: product.status.name },
+                { label: 'Category', value: `Category ${product.category_id}` },
+                { label: 'Added', value: new Date(product.created_at).toLocaleDateString() }
+            ];
+
+            specs.forEach(spec => {
+                const specItem = document.createElement('div');
+                specItem.className = 'spec-item';
+                specItem.innerHTML = `
+                    <span class="spec-label">${spec.label}</span>
+                    <span class="spec-value">${spec.value}</span>
+                `;
+                specsList.appendChild(specItem);
+            });
+        }
+
+        async function loadProduct() {
+            try {
+                const productId = getProductId();
+                const response = await fetch('../data/products-data.json');
+                
+                if (!response.ok) throw new Error('Failed to fetch');
+                
+                const products = await response.json();
+                const product = products.find(p => p.id.toString() === productId);
+                
+                if (!product) throw new Error('Product not found');
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('product-container').style.display = 'block';
+
+                document.getElementById('product-badge').textContent = product.label;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('description').textContent = product.description.join(' ');
+                document.getElementById('provider-name').textContent = product.affiliate_provider.name;
+                document.getElementById('view-original').href = product.product_url;
+
+                const currentPrice = product.price - product.discount;
+                document.getElementById('current-price').textContent = formatPrice(currentPrice);
+                
+                if (product.discount > 0) {
+                    document.getElementById('original-price').textContent = formatPrice(product.price);
+                    document.getElementById('original-price').style.display = 'inline';
+                    document.getElementById('save-amount').textContent = `Save ${formatPrice(product.discount)}`;
+                    document.getElementById('save-amount').style.display = 'inline-block';
+                }
+
+                setStockStatus(product.stock);
+                setupImageGallery(product.images);
+                createSpecifications(product);
+
+                document.title = `${product.name} - Minimalist Store`;
+
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        function addToCart() {
+            const productId = getProductId();
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id: productId, quantity: 1 });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('✅ Product added to cart successfully!');
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    </script>
+</body>
+</html>
