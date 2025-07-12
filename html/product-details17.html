@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith X1 Smartphone - Official Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Flex:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Theming */
+        :root {
+            --primary-bg: #f8f8f8;
+            --secondary-bg: #ffffff;
+            --text-color: #1a1a1a;
+            --light-text-color: #666;
+            --border-color: #e0e0e0;
+            --accent-color: #007bff; /* A standard blue often used by tech brands */
+            --button-text-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --tab-inactive-bg: #f0f0f0;
+            --comparison-header-bg: #f0f0f0;
+            --comparison-alt-row-bg: #f9f9f9;
+        }
+
+        body.dark-theme {
+            --primary-bg: #121212;
+            --secondary-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --light-text-color: #a0a0a0;
+            --border-color: #333333;
+            --accent-color: #2196F3; /* A brighter blue for dark theme */
+            --button-text-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --tab-inactive-bg: #282828;
+            --comparison-header-bg: #2a2a2a;
+            --comparison-alt-row-bg: #222222;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--primary-bg);
+            line-height: 1.6;
+            min-height: 100vh; /* Ensure body takes full height for sticky elements */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Flex', sans-serif;
+            font-variation-settings: 'wght' 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+
+        /* Theme Toggle (positioned in Hero now) */
+        .theme-toggle {
+            position: absolute; /* Position within hero section */
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100; /* Ensure it's above other elements */
+        }
+        .theme-toggle:hover {
+            background-color: var(--tab-inactive-bg);
+        }
+        /* Adjust for dark theme on toggle */
+        body.dark-theme .theme-toggle {
+            border-color: #555;
+            color: #eee;
+        }
+
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background-color: var(--secondary-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative; /* For positioning theme toggle */
+        }
+
+        .hero-image {
+            max-width: 600px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .hero-product-name {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            color: var(--light-text-color);
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .hero-price {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-family: 'Roboto Flex', sans-serif;
+            font-variation-settings: 'wght' 800;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--light-text-color);
+            font-size: 0.6em; /* Relative to hero-price */
+            margin-left: 10px;
+        }
+
+        .buy-button-hero {
+            background-color: var(--accent-color);
+            color: var(--button-text-color);
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .buy-button-hero:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+        .buy-button-hero:disabled {
+            background-color: var(--light-text-color);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.8;
+        }
+
+        /* Product Details Section - Tabs */
+        .product-details-section {
+            background-color: var(--primary-bg);
+            padding: 80px 0;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+            gap: 10px; /* Space between wrapped tabs */
+        }
+
+        .tab-button {
+            background-color: var(--tab-inactive-bg);
+            color: var(--light-text-color);
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 8px 8px 0 0;
+            margin: 0 5px; /* Adjust margin for wrapped tabs */
+        }
+
+        .tab-button:hover {
+            background-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        .tab-button.active {
+            background-color: var(--secondary-bg);
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            font-weight: 600;
+            box-shadow: 0 -2px 10px var(--shadow-color);
+            z-index: 1; /* Bring active tab slightly forward */
+            position: relative;
+        }
+
+        .tab-content {
+            background-color: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 0 0 8px 8px; /* Round bottom corners */
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        /* Overview Tab */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .overview-item h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .overview-item p {
+            color: var(--text-color);
+            font-size: 1.05rem;
+        }
+
+        /* Specifications Tab */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table th {
+            background-color: var(--comparison-header-bg);
+            font-weight: 600;
+            color: var(--text-color);
+            width: 30%; /* Give more space to feature name */
+        }
+
+        .specs-table td {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+        }
+
+        .specs-table tr:nth-child(even) td {
+            background-color: var(--comparison-alt-row-bg);
+        }
+
+        /* Gallery Tab */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background-color: var(--primary-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .comparison-section h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        .comparison-section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--light-text-color);
+        }
+
+        .comparison-image {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto; /* Allow horizontal scrolling on small screens */
+        }
+
+        .comparison-table {
+            width: 100%;
+            min-width: 600px; /* Ensure it doesn't get too narrow */
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-table thead th {
+            background-color: var(--accent-color);
+            color: var(--button-text-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table thead th:first-child {
+            background-color: var(--comparison-header-bg); /* Feature column header */
+            color: var(--text-color);
+        }
+
+        .comparison-table tbody th {
+            background-color: var(--comparison-header-bg);
+            font-weight: 500;
+            text-align: left;
+            color: var(--text-color);
+        }
+
+        .comparison-table tbody td {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+        }
+
+        .comparison-table tbody tr:nth-child(even) td,
+        .comparison-table tbody tr:nth-child(even) th {
+            background-color: var(--comparison-alt-row-bg);
+        }
+
+        /* Sticky Buy Bar */
+        .sticky-buy-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-bg); /* Using secondary-bg as a default for a clean look */
+            box-shadow: 0 -2px 10px var(--shadow-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(100%); /* Start off-screen */
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+        }
+
+        .sticky-buy-bar.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-buy-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sticky-buy-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .sticky-buy-price {
+            font-family: 'Roboto Flex', sans-serif;
+            font-variation-settings: 'wght' 700;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .buy-button-sticky {
+            background-color: var(--accent-color);
+            color: var(--button-text-color);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+        .buy-button-sticky:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+        .buy-button-sticky:disabled {
+            background-color: var(--light-text-color);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                position: static; /* Make it flow with content */
+                margin-top: 20px;
+            }
+            .hero-section {
+                padding-top: 40px; /* Adjust if theme toggle is not absolutely positioned */
+            }
+            .tab-button {
+                flex-grow: 1; /* Make tabs fill available width */
+                margin: 5px 0;
+                border-radius: 8px; /* Round all corners for stacked tabs */
+            }
+            .tab-button.active {
+                border-bottom: none;
+                border-left: 3px solid var(--accent-color); /* Highlight with left border */
+            }
+            .tab-content {
+                padding: 20px;
+            }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-table th, .comparison-table td {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+            .sticky-buy-info {
+                align-items: center;
+            }
+            .sticky-buy-name {
+                font-size: 1rem;
+            }
+            .sticky-buy-price {
+                font-size: 1.2rem;
+            }
+            .buy-button-sticky {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero-section" id="heroSection">
+            <div class="container">
+                <button class="theme-toggle" id="themeToggle">
+                    <span id="themeIcon">☀️</span> <span id="themeText">Light Mode</span>
+                </button>
+                <img src="assets/images/797a31db166eb98a5cc98eae9b7f86a7.jpg" alt="Zenith X1 Smartphone" class="hero-image" id="heroImage">
+                <h1 class="hero-product-name" id="productName">Loading...</h1>
+                <p class="hero-tagline" id="productTagline"></p>
+                <div class="hero-price" id="productPrice">
+                    <span id="currentPrice">$999.99</span>
+                    <span class="original-price" id="originalPrice">$1199.99</span>
+                </div>
+                <a href="#stickyBuyBar" class="buy-button-hero" id="heroBuyButton">Buy Now</a>
+            </div>
+        </section>
+
+        <section class="product-details-section">
+            <div class="container">
+                <div class="tab-navigation">
+                    <button class="tab-button active" data-tab="overview">Overview</button>
+                    <button class="tab-button" data-tab="specs">Specifications</button>
+                    <button class="tab-button" data-tab="gallery">Gallery</button>
+                </div>
+
+                <div id="tabContent">
+                    <div id="overview" class="tab-content">
+                        <div class="overview-grid" id="overviewGrid">
+                            </div>
+                    </div>
+                    <div id="specs" class="tab-content" style="display: none;">
+                        <h3 style="margin-bottom: 20px;">Detailed Specifications</h3>
+                        <div class="specs-table-wrapper">
+                            <table class="specs-table">
+                                <tbody id="specsTableBody">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="gallery" class="tab-content" style="display: none;">
+                        <h3 style="margin-bottom: 20px;">Product Gallery</h3>
+                        <div class="gallery-grid" id="galleryGrid">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section" id="comparisonSection">
+            <div class="container">
+                <h2 id="comparisonTitle">Compare Zenith X1</h2>
+                <p id="comparisonSubtitle">See how the Zenith X1 stacks up against its competitors.</p>
+                <img src="assets/images/zenith_x1_comparison.jpg" alt="Product Comparison Visual" class="comparison-image" id="comparisonImage">
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead id="comparisonTableHeader">
+                            </thead>
+                        <tbody id="comparisonTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="sticky-buy-bar" id="stickyBuyBar">
+        <div class="sticky-buy-info">
+            <span class="sticky-buy-name" id="stickyProductName">Zenith X1 Smartphone</span>
+            <span class="sticky-buy-price" id="stickyProductPrice">$999.99</span>
+        </div>
+        <a href="#" class="buy-button-sticky" id="stickyBuyButton">Buy Now</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || '1'; // Default to product ID 1
+
+            // Theme Toggle Logic
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            let isDarkTheme = localStorage.getItem('theme') === 'dark';
+
+            function applyTheme(isDark) {
+                if (isDark) {
+                    document.body.classList.add('dark-theme');
+                    themeIcon.textContent = '🌙';
+                    themeText.textContent = 'Dark Mode';
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    themeIcon.textContent = '☀️';
+                    themeText.textContent = 'Light Mode';
+                }
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+
+            applyTheme(isDarkTheme);
+
+            themeToggle.addEventListener('click', () => {
+                isDarkTheme = !isDarkTheme;
+                applyTheme(isDarkTheme);
+            });
+
+            // Fetch Product Data
+            fetch('data/products-data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        console.error(`HTTP error! Status: ${response.status} for data/products-data.json`);
+                        throw new Error(`Failed to load products-data.json: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(products => {
+                    const product = products.find(p => p.id == productId);
+                    if (product) {
+                        renderProductData(product);
+                        initTabs(); // Initialize tabs after data is rendered
+                        initStickyBuyBar();
+                    } else {
+                        displayError("Product Not Found", "The requested product could not be found. Please check the product ID.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing product data:', error);
+                    displayError("Error Loading Product", "Could not load product details. Please check the 'data/products-data.json' file path and content.");
+                });
+
+            // REVISED displayError function for cleaner error messages
+            function displayError(title, message) {
+                // Update Hero section with error
+                document.getElementById('productName').textContent = title;
+                document.getElementById('productTagline').textContent = message;
+                document.getElementById('productPrice').style.display = 'none';
+                document.getElementById('heroBuyButton').style.display = 'none';
+                document.getElementById('heroImage').src = 'https://via.placeholder.com/1200x800/FF0000/FFFFFF?text=Error'; // Error placeholder image
+
+                // Hide tab navigation and display error directly in product details section
+                const productDetailsSection = document.querySelector('.product-details-section .container');
+                if (productDetailsSection) {
+                    const tabNav = productDetailsSection.querySelector('.tab-navigation');
+                    if (tabNav) tabNav.style.display = 'none'; // Hide tab buttons
+
+                    const tabContentDiv = productDetailsSection.querySelector('#tabContent');
+                    if (tabContentDiv) {
+                        tabContentDiv.innerHTML = `<div class="tab-content" style="display: block; text-align: center; padding: 50px; background-color: var(--secondary-bg); border-radius: 8px;">
+                                                    <h3>${title}</h3>
+                                                    <p>${message}</p>
+                                                   </div>`;
+                    }
+                }
+
+                // Hide comparison and sticky buy bar
+                const comparisonSection = document.getElementById('comparisonSection');
+                if (comparisonSection) comparisonSection.style.display = 'none';
+                const stickyBuyBar = document.getElementById('stickyBuyBar');
+                if (stickyBuyBar) stickyBuyBar.style.display = 'none';
+                const themeToggle = document.getElementById('themeToggle'); // Hide theme toggle on error too
+                if (themeToggle) themeToggle.style.display = 'none';
+            }
+
+
+            function renderProductData(product) {
+                // Hero Section
+                document.getElementById('heroImage').src = product.images[0];
+                document.getElementById('productName').textContent = product.name;
+                document.getElementById('productTagline').textContent = product.tagline;
+                document.getElementById('currentPrice').textContent = `$${product.price.toFixed(2)}`;
+                if (product.original_price && product.original_price > product.price) {
+                    document.getElementById('originalPrice').textContent = `$${product.original_price.toFixed(2)}`;
+                    document.getElementById('originalPrice').style.display = 'inline';
+                } else {
+                    document.getElementById('originalPrice').style.display = 'none';
+                }
+                document.getElementById('heroBuyButton').href = product.product_url;
+
+                if (product.stock === 0) {
+                    document.getElementById('heroBuyButton').textContent = 'Out of Stock';
+                    document.getElementById('heroBuyButton').disabled = true;
+                }
+
+                // Sticky Buy Bar
+                document.getElementById('stickyProductName').textContent = product.name;
+                document.getElementById('stickyProductPrice').textContent = `$${product.price.toFixed(2)}`;
+                document.getElementById('stickyBuyButton').href = product.product_url;
+                if (product.stock === 0) {
+                    document.getElementById('stickyBuyButton').textContent = 'Out of Stock';
+                    document.getElementById('stickyBuyButton').disabled = true;
+                }
+
+                // Overview Tab
+                const overviewGrid = document.getElementById('overviewGrid');
+                overviewGrid.innerHTML = ''; // Clear existing content
+                if (product.overview_details && product.overview_details.length > 0) {
+                    product.overview_details.forEach(item => {
+                        const div = document.createElement('div');
+                        div.classList.add('overview-item');
+                        div.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+                        overviewGrid.appendChild(div);
+                    });
+                } else {
+                    overviewGrid.innerHTML = '<p style="text-align: center; color: var(--light-text-color);">No overview details available.</p>';
+                }
+
+
+                // Specifications Tab
+                const specsTableBody = document.getElementById('specsTableBody');
+                specsTableBody.innerHTML = ''; // Clear existing content
+                if (product.specifications && Object.keys(product.specifications).length > 0) {
+                    for (const key in product.specifications) {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `<th>${key}</th><td>${product.specifications[key]}</td>`;
+                        specsTableBody.appendChild(tr);
+                    }
+                } else {
+                    specsTableBody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: var(--light-text-color);">No detailed specifications available.</td></tr>';
+                }
+
+                // Gallery Tab
+                const galleryGrid = document.getElementById('galleryGrid');
+                galleryGrid.innerHTML = '';
+                if (product.images && product.images.length > 0) {
+                    product.images.forEach(imgSrc => {
+                        const div = document.createElement('div');
+                        div.classList.add('gallery-item');
+                        div.innerHTML = `<img src="${imgSrc}" alt="Product image">`;
+                        galleryGrid.appendChild(div);
+                    });
+                } else {
+                    galleryGrid.innerHTML = '<p style="text-align: center; color: var(--light-text-color);">No gallery images available.</p>';
+                }
+
+                // Comparison Section
+                const comparisonTitle = document.getElementById('comparisonTitle');
+                const comparisonSubtitle = document.getElementById('comparisonSubtitle');
+                const comparisonImage = document.getElementById('comparisonImage');
+                const comparisonTableHeader = document.getElementById('comparisonTableHeader');
+                const comparisonTableBody = document.getElementById('comparisonTableBody');
+
+                if (product.comparison_data && product.comparison_data.length > 0) {
+                    // Assuming the first item in comparison_data defines the columns
+                    const headers = Object.keys(product.comparison_data[0]);
+                    const headerRow = document.createElement('tr');
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        // Format header text from snake_case to Title Case
+                        th.textContent = header.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+                        headerRow.appendChild(th);
+                    });
+                    comparisonTableHeader.innerHTML = ''; // Clear existing
+                    comparisonTableHeader.appendChild(headerRow);
+
+                    comparisonTableBody.innerHTML = ''; // Clear existing
+                    product.comparison_data.forEach(rowData => {
+                        const tr = document.createElement('tr');
+                        for (const key in rowData) {
+                            if (key === 'feature') {
+                                const th = document.createElement('th'); // Feature name as a table header
+                                th.textContent = rowData[key];
+                                tr.appendChild(th);
+                            } else {
+                                const td = document.createElement('td');
+                                td.textContent = rowData[key];
+                                tr.appendChild(td);
+                            }
+                        }
+                        comparisonTableBody.appendChild(tr);
+                    });
+                    // Set comparison section image, if provided in JSON, otherwise hide it or use a default
+                    if (product.comparison_image) {
+                        comparisonImage.src = product.comparison_image;
+                        comparisonImage.style.display = 'block';
+                    } else {
+                        comparisonImage.style.display = 'none'; // Hide if no image specified
+                    }
+
+                    // You might want to customize titles/subtitles for comparison
+                    comparisonTitle.textContent = `Compare ${product.name}`;
+                    comparisonSubtitle.textContent = `See how the ${product.name} stacks up against its rivals.`;
+
+
+                } else {
+                    document.getElementById('comparisonSection').style.display = 'none'; // Hide section if no data
+                }
+            }
+
+            // Tab Navigation Logic
+            function initTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Deactivate all tabs and hide all content
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.style.display = 'none');
+
+                        // Activate clicked tab and show its content
+                        button.classList.add('active');
+                        document.getElementById(button.dataset.tab).style.display = 'block';
+                    });
+                });
+
+                // Crucial: Ensure the initial active tab (Overview) is displayed on load
+                // This ensures content is visible even if no click occurs immediately
+                const initialActiveTabButton = document.querySelector('.tab-button.active');
+                if (initialActiveTabButton) {
+                    const initialTabContentId = initialActiveTabButton.dataset.tab;
+                    document.getElementById(initialTabContentId).style.display = 'block';
+                }
+            }
+
+            // Sticky Buy Bar Logic
+            function initStickyBuyBar() {
+                const heroSection = document.getElementById('heroSection');
+                const stickyBuyBar = document.getElementById('stickyBuyBar');
+
+                const observer = new IntersectionObserver(([entry]) => {
+                    // If the hero section is NOT intersecting (meaning we've scrolled past it)
+                    // and its top is off-screen (we've scrolled down)
+                    if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                        stickyBuyBar.classList.add('visible');
+                    } else {
+                        stickyBuyBar.classList.remove('visible');
+                    }
+                }, {
+                    root: null, // viewport
+                    threshold: 0 // Trigger as soon as 0% of the target is visible
+                });
+
+                observer.observe(heroSection);
+            }
+        });
+    </script>
+</body>
+</html>

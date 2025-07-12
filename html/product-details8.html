@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - Grid Luxury</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #f7f7f7;
+      color: #111827;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .left-pane {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f9fafb;
+    }
+
+    .left-pane img {
+      width: 100%;
+      max-width: 450px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .thumbnails img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .thumbnails img.active {
+      border-color: #111827;
+    }
+
+    .right-pane {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #111827;
+      color: white;
+      padding: 6px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .price-line {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .price-line .current {
+      font-weight: 700;
+      color: #10b981;
+    }
+
+    .price-line .original {
+      text-decoration: line-through;
+      color: #9ca3af;
+      margin-left: 12px;
+    }
+
+    .price-line .discount {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 14px;
+      margin-left: 10px;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .stock {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .desc {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .specs {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 20px;
+    }
+
+    .specs-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      flex: 1;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn.primary {
+      background: #111827;
+      color: white;
+    }
+
+    .btn.primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #111827;
+      border: 2px solid #111827;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading" style="text-align: center; font-size: 18px;">Loading product details...</div>
+  <div id="error" style="display: none; text-align: center; color: red;">Failed to load product.</div>
+
+  <div class="container" id="product-card" style="display: none;">
+    <div class="left-pane">
+      <img id="main-image" src="/placeholder.svg" alt="Product image" />
+      <div class="thumbnails" id="thumbnail-container"></div>
+    </div>
+
+    <div class="right-pane">
+      <div>
+        <div id="badge" class="badge"></div>
+        <h1 id="product-name"></h1>
+        <div class="price-line">
+          <span id="current-price" class="current"></span>
+          <span id="original-price" class="original"></span>
+          <span id="save-amount" class="discount"></span>
+        </div>
+        <div id="stock-text" class="stock"></div>
+        <p id="description" class="desc"></p>
+        <div class="specs" id="specs-list"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" onclick="addToCart()">Add to Cart</button>
+        <a id="view-original" href="#" target="_blank" class="btn secondary">View Store</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function getProductId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id") || "1";
+    }
+
+    function formatPrice(p) {
+      return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(p);
+    }
+
+    function setStock(stock) {
+      const stockText = document.getElementById("stock-text");
+      if (stock > 20) stockText.textContent = `✅ In Stock (${stock})`;
+      else if (stock > 0) stockText.textContent = `⚠️ Low Stock (${stock})`;
+      else stockText.textContent = `❌ Out of Stock`;
+    }
+
+    function renderSpecs(product) {
+      const list = document.getElementById("specs-list");
+      const specs = [
+        { label: "Product ID", value: `#${product.id}` },
+        { label: "Weight", value: product.weight ? `${product.weight} kg` : "N/A" },
+        { label: "Dimensions", value: product.width ? `${product.width}\" × ${product.height}\"` : "N/A" },
+        { label: "Status", value: product.status.name },
+        { label: "Category", value: `Category ${product.category_id}` },
+        { label: "Added", value: new Date(product.created_at).toLocaleDateString() }
+      ];
+      specs.forEach(spec => {
+        const row = document.createElement("div");
+        row.className = "specs-item";
+        row.innerHTML = `<span>${spec.label}</span><span>${spec.value}</span>`;
+        list.appendChild(row);
+      });
+    }
+
+    function setupThumbnails(images) {
+      const mainImage = document.getElementById("main-image");
+      const thumbs = document.getElementById("thumbnail-container");
+      thumbs.innerHTML = "";
+      images.forEach((img, i) => {
+        const t = document.createElement("img");
+        t.src = img;
+        if (i === 0) t.classList.add("active");
+        t.onclick = () => {
+          mainImage.src = img;
+          document.querySelectorAll(".thumbnails img").forEach(e => e.classList.remove("active"));
+          t.classList.add("active");
+        };
+        thumbs.appendChild(t);
+      });
+    }
+
+    async function loadProduct() {
+      try {
+        const id = getProductId();
+        const res = await fetch("../data/products-data.json");
+        const data = await res.json();
+        const product = data.find(p => p.id.toString() === id);
+        if (!product) throw new Error("Not found");
+
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("product-card").style.display = "grid";
+
+        document.getElementById("badge").textContent = product.label;
+        document.getElementById("product-name").textContent = product.name;
+        document.getElementById("main-image").src = product.images[0];
+        document.getElementById("description").textContent = product.description.join(" ");
+        setupThumbnails(product.images);
+
+        const current = product.price - product.discount;
+        document.getElementById("current-price").textContent = formatPrice(current);
+
+        if (product.discount > 0) {
+          document.getElementById("original-price").textContent = formatPrice(product.price);
+          document.getElementById("save-amount").textContent = `Save ${formatPrice(product.discount)}`;
+        }
+
+        setStock(product.stock);
+        renderSpecs(product);
+        document.getElementById("view-original").href = product.product_url;
+      } catch (err) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("error").style.display = "block";
+      }
+    }
+
+    function addToCart() {
+      const id = getProductId();
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const item = cart.find(i => i.id === id);
+      if (item) item.quantity += 1;
+      else cart.push({ id, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("✅ Added to cart!");
+    }
+
+    document.addEventListener("DOMContentLoaded", loadProduct);
+  </script>
+</body>
+</html>
