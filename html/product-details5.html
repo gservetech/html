@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Premium Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .magazine-header {
+            background: #fff;
+            padding: 30px 0;
+            border-bottom: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .magazine-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .magazine-subtitle {
+            font-size: 28px;
+            font-weight: 300;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .magazine-date {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .product-showcase {
+            background: #fff;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 90vh;
+        }
+
+        /* Magazine Cover Style Gallery */
+        .gallery-section {
+            background: #f5f5f5;
+            padding: 60px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #eee;
+        }
+
+        .main-image-wrapper {
+            position: relative;
+            margin-bottom: 40px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .main-product-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .main-product-img:hover {
+            transform: scale(1.02);
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .thumbnail-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .thumb-img {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .thumb-img:hover,
+        .thumb-img.active {
+            border-color: #222;
+            transform: translateY(-5px);
+        }
+
+        /* Magazine Article Style Info Section */
+        .info-section {
+            padding: 60px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-category {
+            display: inline-block;
+            color: #777;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            color: #222;
+            font-family: 'Georgia', serif;
+        }
+
+        .price-display {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .current-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin-right: 15px;
+            font-family: 'Georgia', serif;
+        }
+
+        .old-price {
+            font-size: 20px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 15px;
+        }
+
+        .savings-badge {
+            background: #f1f1f1;
+            color: #777;
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .stock-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .stock-pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00cc66;
+        }
+
+        .description-area {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            font-family: 'Georgia', serif;
+        }
+
+        .tech-specs {
+            margin-bottom: 40px;
+        }
+
+        .specs-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 500;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .spec-value {
+            color: #222;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .purchase-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .action-button {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-add-cart {
+            background: #222;
+            color: white;
+        }
+
+        .btn-add-cart:hover {
+            background: #444;
+        }
+
+        .btn-view-store {
+            background: transparent;
+            color: #222;
+            border: 1px solid #ddd;
+        }
+
+        .btn-view-store:hover {
+            background: #f9f9f9;
+            border-color: #ccc;
+        }
+
+        .retailer-info {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 3px;
+        }
+
+        .retailer-label {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .retailer-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .loading, .error {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .loading {
+            color: #777;
+        }
+
+        .error {
+            color: #cc0000;
+        }
+
+        /* Magazine Footer */
+        .magazine-footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-link {
+            color: #777;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #222;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-section {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding: 40px;
+            }
+
+            .info-section {
+                padding: 40px;
+            }
+
+            .product-name {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section,
+            .info-section {
+                padding: 30px 20px;
+            }
+
+            .product-name {
+                font-size: 28px;
+            }
+
+            .current-price {
+                font-size: 28px;
+            }
+
+            .main-image-wrapper {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="magazine-header">
+            <div class="magazine-title">Premium Product Review</div>
+            <div class="magazine-subtitle">The Future of Technology</div>
+            <div class="magazine-date">July 2023 Edition</div>
+        </header>
+        
+        <div id="loading" class="loading">
+            Loading premium product experience...
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            Unable to load product. Please try again.
+        </div>
+
+        <div id="product-container" class="product-showcase" style="display: none;">
+            <div class="product-layout">
+                <div class="gallery-section">
+                    <div class="main-image-wrapper">
+                        <img id="main-image" class="main-product-img" src="/placeholder.svg" alt="Premium Product">
+                    </div>
+                    <div id="thumbnail-container" class="thumbnail-gallery"></div>
+                </div>
+
+                <div class="info-section">
+                    <div>
+                        <div id="product-category" class="product-category"></div>
+                        <h1 id="product-name" class="product-name"></h1>
+                        
+                        <div class="price-display">
+                            <span id="current-price" class="current-price"></span>
+                            <span id="old-price" class="old-price" style="display: none;"></span>
+                            <span id="savings-badge" class="savings-badge" style="display: none;"></span>
+                        </div>
+
+                        <div id="stock-display" class="stock-display">
+                            <div id="stock-pulse" class="stock-pulse"></div>
+                            <span id="stock-text"></span>
+                        </div>
+
+                        <div id="description" class="description-area"></div>
+
+                        <div class="tech-specs">
+                            <div class="specs-title">Technical Specifications</div>
+                            <div id="specs-list"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="purchase-actions">
+                            <button class="action-button btn-add-cart" onclick="addToCart()">
+                                Add to Cart
+                            </button>
+                            <a id="store-link" class="action-button btn-view-store" href="#" target="_blank">
+                                View in Store
+                            </a>
+                        </div>
+
+                        <div class="retailer-info">
+                            <div class="retailer-label">Available at</div>
+                            <div id="retailer-name" class="retailer-name"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="magazine-footer">
+            <div class="footer-text">© 2023 Premium Product Magazine. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">About</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function getProductId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || '1';
+        }
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('en-CA', {
+                style: 'currency',
+                currency: 'CAD'
+            }).format(price);
+        }
+
+        function setStockDisplay(stock) {
+            const stockDisplay = document.getElementById('stock-display');
+            const stockPulse = document.getElementById('stock-pulse');
+            const stockText = document.getElementById('stock-text');
+            
+            if (stock > 20) {
+                stockPulse.style.background = '#00cc66';
+                stockText.textContent = `In Stock (${stock} units available)`;
+                stockText.style.color = '#00cc66';
+            } else if (stock > 0) {
+                stockPulse.style.background = '#ff9900';
+                stockText.textContent = `Low Stock (Only ${stock} remaining)`;
+                stockText.style.color = '#ff9900';
+            } else {
+                stockPulse.style.background = '#cc0000';
+                stockText.textContent = 'Currently Out of Stock';
+                stockText.style.color = '#cc0000';
+            }
+        }
+
+        function setupImageGallery(images) {
+            const mainImage = document.getElementById('main-image');
+            const thumbnailContainer = document.getElementById('thumbnail-container');
+            
+            if (images && images.length > 0) {
+                mainImage.src = images[0];
+                
+                images.forEach((image, index) => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = image;
+                    thumbnail.className = `thumb-img ${index === 0 ? 'active' : ''}`;
+                    thumbnail.alt = `Product view ${index + 1}`;
+                    
+                    thumbnail.addEventListener('click', () => {
+                        mainImage.style.opacity = '0.7';
+                        mainImage.style.transform = 'scale(0.98)';
+                        
+                        setTimeout(() => {
+                            mainImage.src = image;
+                            mainImage.style.opacity = '1';
+                            mainImage.style.transform = 'scale(1)';
+                        }, 200);
+                        
+                        document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+                        thumbnail.classList.add('active');
+                    });
+                    
+                    thumbnailContainer.appendChild(thumbnail);
+                });
+            }
+        }
+
+        function createSpecifications(product) {
+            const specsList = document.getElementById('specs-list');
+            const specs = [
+                { label: 'Product ID', value: `#${product.id}` },
+                { label: 'Weight', value: product.weight ? `${product.weight} kg` : 'Not specified' },
+                { label: 'Dimensions', value: product.width && product.height ? `${product.width}" × ${product.height}"` : 'Not specified' },
+                { label: 'Status', value: product.status.name },
+                { label: 'Category', value: `Category ${product.category_id}` },
+                { label: 'Release Date', value: new Date(product.created_at).toLocaleDateString() }
+            ];
+
+            specs.forEach(spec => {
+                const specItem = document.createElement('div');
+                specItem.className = 'spec-item';
+                specItem.innerHTML = `
+                    <span class="spec-label">${spec.label}</span>
+                    <span class="spec-value">${spec.value}</span>
+                `;
+                specsList.appendChild(specItem);
+            });
+        }
+
+        async function loadProduct() {
+            try {
+                const productId = getProductId();
+                const response = await fetch('../data/products-data.json');
+                
+                if (!response.ok) throw new Error('Failed to fetch');
+                
+                const products = await response.json();
+                const product = products.find(p => p.id.toString() === productId);
+                
+                if (!product) throw new Error('Product not found');
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('product-container').style.display = 'block';
+
+                document.getElementById('product-category').textContent = product.label;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('description').textContent = product.description.join(' ');
+                document.getElementById('retailer-name').textContent = product.affiliate_provider.name;
+                document.getElementById('store-link').href = product.product_url;
+
+                const currentPrice = product.price - product.discount;
+                document.getElementById('current-price').textContent = formatPrice(currentPrice);
+                
+                if (product.discount > 0) {
+                    document.getElementById('old-price').textContent = formatPrice(product.price);
+                    document.getElementById('old-price').style.display = 'inline';
+                    document.getElementById('savings-badge').textContent = `Save ${formatPrice(product.discount)}`;
+                    document.getElementById('savings-badge').style.display = 'inline-block';
+                }
+
+                setStockDisplay(product.stock);
+                setupImageGallery(product.images);
+                createSpecifications(product);
+
+                document.title = `${product.name} - Premium Store`;
+
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        function addToCart() {
+            const productId = getProductId();
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id: productId, quantity: 1 });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to your cart!');
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    </script>
+</body>
+</html>
