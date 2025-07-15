@@ -3,743 +3,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Vibrant Store</title>
+    <title id="page-title">Product Details - Magazine Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        /* CSS from your Magazine page */
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: 'Inter', sans-serif; /* Adjusted to Inter as per first page */
+            background-color: #f5f5f5;
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-
-        .container {
+        .magazine-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-
-        .product-card {
             background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            padding-bottom: 2.5rem; /* Add some padding at the bottom */
         }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
-        }
-
-        .product-grid {
+        .magazine-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            /* min-height: 100vh; Removed as specs are separate */
         }
-
-        /* Left Side - Images */
-        .image-showcase {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        .left-section {
+            background: #e8f5e8;
             padding: 40px;
             position: relative;
-            overflow: hidden;
+            display: flex; /* Added for centering image vertically */
+            flex-direction: column; /* Added for centering image vertically */
+            align-items: center; /* Added for centering image vertically */
+            justify-content: center; /* Added for centering image vertically */
         }
-
-        .image-showcase::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .main-product-image {
+        .main-image {
             width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
-            transition: transform 0.4s ease;
         }
-
-        .main-product-image:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .image-thumbnails {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 10px 0;
-            height: 110px;
-            position: relative;
-            z-index: 2;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .image-thumbnails::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Vibrant Dot Navigation */
-        .dot-navigation {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
-            padding: 15px 0;
-            position: relative;
-            z-index: 3;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-dot.active {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            transform: scale(1.3);
-            box-shadow: 
-                0 0 20px rgba(255, 107, 107, 0.6),
-                0 0 40px rgba(78, 205, 196, 0.4);
-        }
-
-        .nav-dot:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-        }
-
-        .nav-dot.active::before {
-            content: '';
+        /* Adjusted badge positioning for product details */
+        .product-badge-top {
             position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-            background-clip: border-box;
-            animation: rotate-ring 3s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate-ring {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .nav-dot.active::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 6px;
-            height: 6px;
+            top: 40px;
+            right: 40px;
             background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .product-badge-bottom {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: #2ecc71; /* Green for in-stock */
+            color: white;
+            padding: 15px;
             border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse-center 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-center {
-            0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.8); }
-        }
-
-        .thumbnail-img {
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
             width: 80px;
             height: 80px;
-            min-width: 80px;
-            object-fit: contain;
-            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .product-badge-bottom.out-of-stock {
+            background: #e74c3c; /* Red for out-of-stock */
+        }
+
+        /* Thumbnail Layout - Modified for wrapping with max 5 per line */
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping */
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            max-width: 450px; /* Constrain width to encourage wrapping */
+        }
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
             cursor: pointer;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 10px;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
+            border: 2px solid #ccc;
+            transition: all 0.2s ease;
+        }
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #00796B; /* Accent color from first page */
+            box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.2);
         }
 
-        .thumbnail-img:hover,
-        .thumbnail-img.active {
-            border-color: #fff;
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Right Side - Product Info */
-        .product-details {
+        .right-section {
             padding: 40px;
             background: white;
-            position: relative;
         }
-
-        .category-tag {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
+        .product-header {
+            text-align: left;
+            margin-bottom: 40px;
         }
-
-        .category-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .category-tag:hover::before {
-            left: 100%;
-        }
-
         .product-title {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.3;
-        }
-
-        .pricing-section {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea10, #764ba210);
-            border-radius: 20px;
-            border-left: 5px solid #667eea;
-        }
-
-        .price-current {
-            font-size: 32px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
             font-weight: 900;
-            color: #27ae60;
-            margin-right: 15px;
+            color: #333;
+            margin: 0;
+            letter-spacing: -2px;
         }
-
-        .price-original {
-            font-size: 18px;
-            color: #95a5a6;
-            text-decoration: line-through;
-            margin-right: 10px;
-        }
-
-        .discount-tag {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 700;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .availability-status {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            padding: 15px 20px;
-            border-radius: 15px;
-            font-weight: 600;
-        }
-
-        .status-icon {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            animation: blink 2s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
-
-        .product-description {
+        .product-subtitle { /* Used for product label */
             font-size: 16px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            border-left: 4px solid #4ecdc4;
+            color: #666;
+            margin: 5px 0 0 0;
+            font-weight: bold;
         }
 
-        .specifications-box {
-            background: linear-gradient(135deg, #f093fb10, #f5576c10);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 30px;
-            border: 1px solid #f093fb30;
+        /* Product pricing from first page */
+        .product-price-info {
+            display: flex;
+            align-items: baseline;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
         }
-
-        .specs-header {
-            font-size: 20px;
+        .current-price {
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #2c3e50; /* Primary text color */
         }
-
-        .specs-header::before {
-            content: '⚙️';
-            font-size: 24px;
+        .original-price {
+            font-size: 1.3rem;
+            text-decoration: line-through;
+            color: #888; /* Gray color */
+            font-weight: 400;
         }
-
-        .spec-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #ecf0f1;
-        }
-
-        .spec-row:last-child {
-            border-bottom: none;
-        }
-
-        .spec-key {
+        .discount-badge {
+            background-color: #e74c3c; /* Error color for discount */
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #34495e;
         }
 
-        .spec-val {
-            color: #7f8c8d;
-            font-weight: 500;
+        .content-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            text-align: left;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
         }
 
+        /* Action buttons */
         .action-buttons {
             display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
         }
-
-        .action-btn {
-            flex: 1;
-            padding: 18px 25px;
+        .btn {
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 15px;
-            font-size: 16px;
-            font-weight: 700;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             cursor: pointer;
             transition: all 0.3s ease;
+            flex-grow: 1;
+            max-width: 200px;
+        }
+        .btn-primary {
+            background-color: #00796B;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 121, 107, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #005f55;
+            box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #00796B;
+            border: 2px solid #00796B;
+        }
+        .btn-secondary:hover {
+            background-color: #00796B;
+            color: white;
+        }
+
+        .affiliate-link {
+            font-size: 0.95rem;
+            text-align: left;
+            margin-top: 1rem;
+            color: #555c68;
+        }
+        .affiliate-link a {
+            color: #2c3e50;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-cart {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-cart::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-cart:hover::before {
-            left: 100%;
-        }
-
-        .btn-cart:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-external {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-external:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .store-info {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            border-radius: 15px;
-            color: white;
-        }
-
-        .store-label {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-
-        .store-name {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .loading, .error {
-            text-align: center;
-            padding: 100px 20px;
-            font-size: 20px;
             font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .affiliate-link a:hover {
+            color: #00796B;
+            text-decoration: underline;
         }
 
-        .loading {
-            color: white;
+        /* Specifications section design - NEW distinct block */
+        .product-specs-section {
+            background-color: white; /* Match main content background */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Light shadow from first page */
+            padding: 2.5rem; /* Padding from first page */
+            margin: 2.5rem auto 0 auto; /* Margin to separate it below main grid */
+            max-width: 1200px; /* Align with magazine container width */
+        }
+        .product-specs-section .section-title {
+            margin-bottom: 1.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #e0e0e0; /* Border from first page */
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for more space */
+            gap: 2rem;
+        }
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #e0e0e0; /* Subtle separator */
+        }
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        .spec-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+        .spec-value {
+            color: #555c68;
+            font-size: 0.95rem;
         }
 
-        .error {
-            color: #e74c3c;
-            background: white;
-            border-radius: 20px;
-            margin: 20px;
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .magazine-layout { grid-template-columns: 1fr; }
+            .left-section { padding: 20px; justify-content: flex-start; }
+            .right-section { padding: 20px; }
+            .product-title { font-size: 36px; letter-spacing: -1px;}
+            .product-badge-top, .product-badge-bottom {
+                top: 20px;
+                right: 20px;
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+            .product-badge-bottom {
+                bottom: 20px;
+                width: 70px;
+                height: 70px;
+                font-size: 10px;
+            }
+            .product-header { margin-bottom: 20px; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .btn { max-width: 100%; }
+            .section-title { font-size: 1.5rem; }
+            .product-specs-section { padding: 1.5rem; margin-top: 1.5rem;}
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .image-showcase,
-            .product-details {
-                padding: 20px;
-            }
-
-            .product-title {
-                font-size: 22px;
-            }
-
-            .price-current {
-                font-size: 26px;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
+        @media (max-width: 576px) {
+            .product-title { font-size: 28px; }
+            .current-price { font-size: 1.8rem; }
+            .original-price { font-size: 1rem; }
+            .specs-grid { grid-template-columns: 1fr; }
+            .thumbnail-container { flex-wrap: wrap; } /* Already set, just reinforcing */
+            .thumbnail { width: 50px; height: 50px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="loading" class="loading">
-            🚀 Loading awesome product details...
-        </div>
-        
-        <div id="error" class="error" style="display: none;">
-            💥 Oops! Something went wrong loading the product.
+    <div class="magazine-container">
+        <div id="product-magazine-main-content">
+            <p style="text-align: center; padding: 40px;">Loading product details...</p>
         </div>
 
-        <div id="product-container" class="product-card" style="display: none;">
-            <div class="product-grid">
-                <div class="image-showcase">
-                    <img id="main-image" class="main-product-image" src="/placeholder.svg" alt="Product">
-                    <div id="thumbnail-container" class="image-thumbnails"></div>
-                    <div id="dot-navigation" class="dot-navigation"></div>
-                </div>
-
-                <div class="product-details">
-                    <div id="category-tag" class="category-tag"></div>
-                    <h1 id="product-title" class="product-title"></h1>
-                    
-                    <div class="pricing-section">
-                        <span id="current-price" class="price-current"></span>
-                        <span id="original-price" class="price-original" style="display: none;"></span>
-                        <span id="discount-tag" class="discount-tag" style="display: none;"></span>
-                    </div>
-
-                    <div id="availability" class="availability-status">
-                        <div id="status-icon" class="status-icon"></div>
-                        <span id="status-text"></span>
-                    </div>
-
-                    <div id="description" class="product-description"></div>
-
-                    <div class="specifications-box">
-                        <div class="specs-header">Product Specifications</div>
-                        <div id="specs-container"></div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <button class="action-btn btn-cart" onclick="addToCart()">
-                            🛒 Add to Cart
-                        </button>
-                        <a id="external-link" class="action-btn btn-external" href="#" target="_blank">
-                            🌐 Visit Store
-                        </a>
-                    </div>
-
-                    <div class="store-info">
-                        <div class="store-label">Available at</div>
-                        <div id="store-name" class="store-name"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="product-magazine-specs-section"></div>
     </div>
 
     <script>
-        function getProductId() {
+        document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('id') || '1';
-        }
+            const productId = urlParams.get('id');
 
-        function formatPrice(price) {
-            return new Intl.NumberFormat('en-CA', {
-                style: 'currency',
-                currency: 'CAD'
-            }).format(price);
-        }
+            fetch('data/products-data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(products => {
+                    const product = products.find(p => p.id == productId);
 
-        function setAvailabilityStatus(stock) {
-            const availability = document.getElementById('availability');
-            const statusIcon = document.getElementById('status-icon');
-            const statusText = document.getElementById('status-text');
-            
-            if (stock > 20) {
-                availability.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
-                availability.style.color = 'white';
-                statusIcon.style.background = '#fff';
-                statusText.textContent = `🎉 In Stock (${stock} available)`;
-            } else if (stock > 0) {
-                availability.style.background = 'linear-gradient(135deg, #f39c12, #e67e22)';
-                availability.style.color = 'white';
-                statusIcon.style.background = '#fff';
-                statusText.textContent = `⚡ Hurry! Only ${stock} left`;
-            } else {
-                availability.style.background = 'linear-gradient(135deg, #e74c3c, #c0392b)';
-                availability.style.color = 'white';
-                statusIcon.style.background = '#fff';
-                statusText.textContent = '😞 Out of Stock';
-            }
-        }
-
-        function setupImageGallery(images) {
-            const mainImage = document.getElementById('main-image');
-            const thumbnailContainer = document.getElementById('thumbnail-container');
-            const dotNavigation = document.getElementById('dot-navigation');
-            
-            if (images && images.length > 0) {
-                mainImage.src = images[0];
-                
-                images.forEach((image, index) => {
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = image;
-                    thumbnail.className = `thumbnail-img ${index === 0 ? 'active' : ''}`;
-                    thumbnail.alt = `Product angle ${index + 1}`;
-                    
-                    // Create vibrant dot
-                    const dot = document.createElement('div');
-                    dot.className = `nav-dot ${index === 0 ? 'active' : ''}`;
-                    dot.addEventListener('click', () => {
-                        thumbnail.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-                        mainImage.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            mainImage.src = image;
-                            mainImage.style.transform = 'scale(1)';
-                        }, 150);
-                        document.querySelectorAll('.thumbnail-img').forEach(t => t.classList.remove('active'));
-                        document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
-                        thumbnail.classList.add('active');
-                        dot.classList.add('active');
-                    });
-                    
-                    thumbnail.addEventListener('click', () => {
-                        mainImage.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            mainImage.src = image;
-                            mainImage.style.transform = 'scale(1)';
-                        }, 150);
-                        document.querySelectorAll('.thumbnail-img').forEach(t => t.classList.remove('active'));
-                        document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
-                        thumbnail.classList.add('active');
-                        dot.classList.add('active');
-                    });
-                    
-                    thumbnailContainer.appendChild(thumbnail);
-                    dotNavigation.appendChild(dot);
+                    if (product) {
+                        displayProductDetails(product);
+                    } else {
+                        document.getElementById('product-magazine-main-content').innerHTML = `
+                            <div style="padding: 40px; text-align: center;">
+                                <h2>Product not found</h2>
+                                <p>The requested product could not be found. Please check the ID.</p>
+                            </div>
+                        `;
+                        document.getElementById('product-magazine-specs-section').innerHTML = ''; // Clear specs section if product not found
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching product data:', error);
+                    document.getElementById('product-magazine-main-content').innerHTML = `
+                        <div style="padding: 40px; text-align: center;">
+                            <h2>Error loading product</h2>
+                            <p>There was an error loading the product details. Please try again later.</p>
+                        </div>
+                    `;
+                    document.getElementById('product-magazine-specs-section').innerHTML = ''; // Clear specs section on error
                 });
-                
-                // Auto-update dots on scroll
-                thumbnailContainer.addEventListener('scroll', () => updateDotNavigation(images.length));
-            }
+        });
+
+        function displayProductDetails(product) {
+            const mainContentContainer = document.getElementById('product-magazine-main-content');
+            const specsSectionContainer = document.getElementById('product-magazine-specs-section');
+            document.getElementById('page-title').textContent = product.name;
+
+            const formattedPrice = product.price.toFixed(2);
+            const originalPriceHTML = product.discount > 0 ?
+                `<span class="original-price">$${(product.price / (1 - product.discount / 100)).toFixed(2)}</span>` : '';
+            const discountBadgeHTML = product.discount > 0 ?
+                `<span class="discount-badge">${product.discount}% OFF</span>` : '';
+
+            const stockInfoHTML = product.stock > 0 ?
+                `<div class="product-badge-bottom"><div>IN STOCK</div><div>(${product.stock})</div></div>` :
+                `<div class="product-badge-bottom out-of-stock"><div>OUT OF</div><div>STOCK</div></div>`;
+
+            const thumbnails = product.images.map((img, index) => `
+                <img src="${img}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)">
+            `).join('');
+
+            // Main Product Content (left & right sections)
+            mainContentContainer.innerHTML = `
+                <div class="magazine-layout">
+                    <div class="left-section">
+                        <img src="${product.images[0]}" alt="${product.name}" class="main-image" id="main-image">
+                        <div class="product-badge-top">${product.label}</div>
+                        ${stockInfoHTML}
+                        <div class="thumbnail-container">
+                            ${thumbnails}
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <div class="product-header">
+                            <h1 class="product-title">${product.name}</h1>
+                            <p class="product-subtitle">Discover premium quality</p>
+                        </div>
+
+                        <div class="content-section">
+                            <div class="product-price-info">
+                                <span class="current-price">$${formattedPrice}</span>
+                                ${originalPriceHTML}
+                                ${discountBadgeHTML}
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2 class="section-title">Product Description</h2>
+                            <div class="product-description" style="font-size: 14px; color: #666; line-height: 1.5;">
+                                ${product.description.join('<p>')}
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">Buy Now</button>
+                            <button class="btn btn-secondary">Add to Cart</button>
+                        </div>
+                        <div class="affiliate-link">
+                            <a href="${product.product_url}" target="_blank">View on ${product.affiliate_provider.name}</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Specifications section (rendered separately below the main grid)
+            const specsHTML = `
+                <div class="spec-item">
+                    <div class="spec-label">Brand</div>
+                    <div class="spec-value">${product.name.split(' - ')[0]}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Model</div>
+                    <div class="spec-value">${product.name.split(' - ')[1] || product.name}</div>
+                </div>
+                ${product.weight ? `
+                <div class="spec-item">
+                    <div class="spec-label">Weight</div>
+                    <div class="spec-value">${product.weight} kg</div>
+                </div>` : ''}
+                ${product.width && product.height ? `
+                <div class="spec-item">
+                    <div class="spec-label">Dimensions</div>
+                    <div class="spec-value">${product.width}" x ${product.height}"</div>
+                </div>` : ''}
+                <div class="spec-item">
+                    <div class="spec-label">Status</div>
+                    <div class="spec-value">${product.status.name}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Affiliate</div>
+                    <div class="spec-value">${product.affiliate_provider.name}</div>
+                </div>
+            `;
+
+            specsSectionContainer.innerHTML = `
+                <div class="product-specs-section">
+                    <h2 class="section-title">Specifications</h2>
+                    <div class="specs-grid">
+                        ${specsHTML}
+                    </div>
+                </div>
+            `;
         }
 
-        function updateDotNavigation(totalImages) {
-            const container = document.getElementById('thumbnail-container');
-            const dots = document.querySelectorAll('.nav-dot');
-            const thumbnails = document.querySelectorAll('.thumbnail-img');
-            
-            if (!container || !dots.length) return;
-            
-            const containerRect = container.getBoundingClientRect();
-            const containerCenter = containerRect.left + containerRect.width / 2;
-            
-            let activeIndex = 0;
-            let minDistance = Infinity;
-            
-            thumbnails.forEach((thumbnail, index) => {
-                const thumbRect = thumbnail.getBoundingClientRect();
-                const thumbCenter = thumbRect.left + thumbRect.width / 2;
-                const distance = Math.abs(containerCenter - thumbCenter);
-                
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    activeIndex = index;
-                }
+        function changeMainImage(src, clickedThumbnail) {
+            const mainImage = document.getElementById('main-image');
+            mainImage.src = src;
+
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
             });
-            
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeIndex);
-            });
+            clickedThumbnail.classList.add('active');
         }
-
-        function createSpecifications(product) {
-            const specsContainer = document.getElementById('specs-container');
-            const specs = [
-                { key: 'Product ID', val: `#${product.id}` },
-                { key: 'Weight', val: product.weight ? `${product.weight} kg` : 'Not specified' },
-                { key: 'Dimensions', val: product.width && product.height ? `${product.width}" × ${product.height}"` : 'Not specified' },
-                { key: 'Status', val: product.status.name },
-                { key: 'Category', val: `Category ${product.category_id}` },
-                { key: 'Date Added', val: new Date(product.created_at).toLocaleDateString() }
-            ];
-
-            specs.forEach(spec => {
-                const specRow = document.createElement('div');
-                specRow.className = 'spec-row';
-                specRow.innerHTML = `
-                    <span class="spec-key">${spec.key}</span>
-                    <span class="spec-val">${spec.val}</span>
-                `;
-                specsContainer.appendChild(specRow);
-            });
-        }
-
-        async function loadProduct() {
-            try {
-                const productId = getProductId();
-                const response = await fetch('../data/products-data.json');
-                
-                if (!response.ok) throw new Error('Failed to fetch');
-                
-                const products = await response.json();
-                const product = products.find(p => p.id.toString() === productId);
-                
-                if (!product) throw new Error('Product not found');
-
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('product-container').style.display = 'block';
-
-                document.getElementById('category-tag').textContent = product.label;
-                document.getElementById('product-title').textContent = product.name;
-                document.getElementById('description').textContent = product.description.join(' ');
-                document.getElementById('store-name').textContent = product.affiliate_provider.name;
-                document.getElementById('external-link').href = product.product_url;
-
-                const currentPrice = product.price - product.discount;
-                document.getElementById('current-price').textContent = formatPrice(currentPrice);
-                
-                if (product.discount > 0) {
-                    document.getElementById('original-price').textContent = formatPrice(product.price);
-                    document.getElementById('original-price').style.display = 'inline';
-                    document.getElementById('discount-tag').textContent = `💰 Save ${formatPrice(product.discount)}`;
-                    document.getElementById('discount-tag').style.display = 'inline-block';
-                }
-
-                setAvailabilityStatus(product.stock);
-                setupImageGallery(product.images);
-                createSpecifications(product);
-
-                document.title = `${product.name} - Vibrant Store`;
-
-            } catch (error) {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('error').style.display = 'block';
-            }
-        }
-
-        function addToCart() {
-            const productId = getProductId();
-            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ id: productId, quantity: 1 });
-            }
-            
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert('🎉 Awesome! Product added to your cart!');
-        }
-
-        document.addEventListener('DOMContentLoaded', loadProduct);
     </script>
 </body>
 </html>

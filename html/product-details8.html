@@ -1,311 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details - Grid Luxury</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background: #f7f7f7;
-      color: #111827;
-      padding: 40px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    .left-pane {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f9fafb;
-    }
-
-    .left-pane img {
-      width: 100%;
-      max-width: 450px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-
-    .thumbnails {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .thumbnails img {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-
-    .thumbnails img.active {
-      border-color: #111827;
-    }
-
-    .right-pane {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #111827;
-      color: white;
-      padding: 6px 14px;
-      font-size: 12px;
-      text-transform: uppercase;
-      border-radius: 30px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .price-line {
-      font-size: 26px;
-      margin-bottom: 20px;
-    }
-
-    .price-line .current {
-      font-weight: 700;
-      color: #10b981;
-    }
-
-    .price-line .original {
-      text-decoration: line-through;
-      color: #9ca3af;
-      margin-left: 12px;
-    }
-
-    .price-line .discount {
-      background: #fef3c7;
-      color: #92400e;
-      font-size: 14px;
-      margin-left: 10px;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-
-    .stock {
-      font-size: 16px;
-      margin-bottom: 24px;
-    }
-
-    .desc {
-      font-size: 16px;
-      color: #374151;
-      margin-bottom: 32px;
-      line-height: 1.6;
-    }
-
-    .specs {
-      border-top: 1px solid #e5e7eb;
-      padding-top: 20px;
-    }
-
-    .specs-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      font-size: 15px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .btn {
-      padding: 14px 20px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      flex: 1;
-      border: none;
-      transition: 0.3s ease;
-    }
-
-    .btn.primary {
-      background: #111827;
-      color: white;
-    }
-
-    .btn.primary:hover {
-      opacity: 0.9;
-    }
-
-    .btn.secondary {
-      background: white;
-      color: #111827;
-      border: 2px solid #111827;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="loading" style="text-align: center; font-size: 18px;">Loading product details...</div>
-  <div id="error" style="display: none; text-align: center; color: red;">Failed to load product.</div>
-
-  <div class="container" id="product-card" style="display: none;">
-    <div class="left-pane">
-      <img id="main-image" src="/placeholder.svg" alt="Product image" />
-      <div class="thumbnails" id="thumbnail-container"></div>
-    </div>
-
-    <div class="right-pane">
-      <div>
-        <div id="badge" class="badge"></div>
-        <h1 id="product-name"></h1>
-        <div class="price-line">
-          <span id="current-price" class="current"></span>
-          <span id="original-price" class="original"></span>
-          <span id="save-amount" class="discount"></span>
-        </div>
-        <div id="stock-text" class="stock"></div>
-        <p id="description" class="desc"></p>
-        <div class="specs" id="specs-list"></div>
-      </div>
-
-      <div class="actions">
-        <button class="btn primary" onclick="addToCart()">Add to Cart</button>
-        <a id="view-original" href="#" target="_blank" class="btn secondary">View Store</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function getProductId() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id") || "1";
-    }
-
-    function formatPrice(p) {
-      return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(p);
-    }
-
-    function setStock(stock) {
-      const stockText = document.getElementById("stock-text");
-      if (stock > 20) stockText.textContent = `✅ In Stock (${stock})`;
-      else if (stock > 0) stockText.textContent = `⚠️ Low Stock (${stock})`;
-      else stockText.textContent = `❌ Out of Stock`;
-    }
-
-    function renderSpecs(product) {
-      const list = document.getElementById("specs-list");
-      const specs = [
-        { label: "Product ID", value: `#${product.id}` },
-        { label: "Weight", value: product.weight ? `${product.weight} kg` : "N/A" },
-        { label: "Dimensions", value: product.width ? `${product.width}\" × ${product.height}\"` : "N/A" },
-        { label: "Status", value: product.status.name },
-        { label: "Category", value: `Category ${product.category_id}` },
-        { label: "Added", value: new Date(product.created_at).toLocaleDateString() }
-      ];
-      specs.forEach(spec => {
-        const row = document.createElement("div");
-        row.className = "specs-item";
-        row.innerHTML = `<span>${spec.label}</span><span>${spec.value}</span>`;
-        list.appendChild(row);
-      });
-    }
-
-    function setupThumbnails(images) {
-      const mainImage = document.getElementById("main-image");
-      const thumbs = document.getElementById("thumbnail-container");
-      thumbs.innerHTML = "";
-      images.forEach((img, i) => {
-        const t = document.createElement("img");
-        t.src = img;
-        if (i === 0) t.classList.add("active");
-        t.onclick = () => {
-          mainImage.src = img;
-          document.querySelectorAll(".thumbnails img").forEach(e => e.classList.remove("active"));
-          t.classList.add("active");
-        };
-        thumbs.appendChild(t);
-      });
-    }
-
-    async function loadProduct() {
-      try {
-        const id = getProductId();
-        const res = await fetch("../data/products-data.json");
-        const data = await res.json();
-        const product = data.find(p => p.id.toString() === id);
-        if (!product) throw new Error("Not found");
-
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("product-card").style.display = "grid";
-
-        document.getElementById("badge").textContent = product.label;
-        document.getElementById("product-name").textContent = product.name;
-        document.getElementById("main-image").src = product.images[0];
-        document.getElementById("description").textContent = product.description.join(" ");
-        setupThumbnails(product.images);
-
-        const current = product.price - product.discount;
-        document.getElementById("current-price").textContent = formatPrice(current);
-
-        if (product.discount > 0) {
-          document.getElementById("original-price").textContent = formatPrice(product.price);
-          document.getElementById("save-amount").textContent = `Save ${formatPrice(product.discount)}`;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Professional Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        setStock(product.stock);
-        renderSpecs(product);
-        document.getElementById("view-original").href = product.product_url;
-      } catch (err) {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("error").style.display = "block";
-      }
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-    function addToCart() {
-      const id = getProductId();
-      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      const item = cart.find(i => i.id === id);
-      if (item) item.quantity += 1;
-      else cart.push({ id, quantity: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert("✅ Added to cart!");
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    document.addEventListener("DOMContentLoaded", loadProduct);
-  </script>
+        .product-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden; /* Prevent overflow from affecting layout */
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 10px 0;
+            max-width: 100%;
+            height: 100px; /* Fixed height */
+            scrollbar-width: thin;
+            scrollbar-color: #007bff #f1f1f1;
+        }
+
+        /* Custom scrollbar for webkit browsers */
+        .thumbnail-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .thumbnail-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .thumbnail-container::-webkit-scrollbar-thumb {
+            background: #007bff;
+            border-radius: 3px;
+        }
+
+        .thumbnail-container::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            min-width: 80px; /* Prevent shrinking */
+            min-height: 80px; /* Prevent shrinking */
+            object-fit: contain;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+            flex-shrink: 0; /* Prevent thumbnails from shrinking */
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        /* Product Info */
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .product-label {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .price-container {
+            margin-bottom: 25px;
+        }
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #28a745;
+            margin-right: 15px;
+        }
+
+        .original-price {
+            font-size: 20px;
+            color: #6c757d;
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: #dc3545;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .stock-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .stock-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .in-stock {
+            background: #28a745;
+        }
+
+        .low-stock {
+            background: #ffc107;
+        }
+
+        .out-of-stock {
+            background: #dc3545;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .specifications {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .spec-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .spec-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .spec-value {
+            color: #6c757d;
+            text-align: right;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .provider-info {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .provider-name {
+            font-weight: 700;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .error {
+            text-align: center;
+            padding: 100px 20px;
+            color: #dc3545;
+            font-size: 18px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .thumbnail-container {
+                height: 90px; /* Slightly smaller on mobile */
+                justify-content: flex-start; /* Align to start instead of center */
+            }
+
+            .thumbnail {
+                width: 70px;
+                height: 70px;
+                min-width: 70px;
+                min-height: 70px;
+            }
+
+            .product-title {
+                font-size: 24px;
+            }
+
+            .current-price {
+                font-size: 28px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .product-grid {
+                padding: 15px;
+            }
+
+            .main-image {
+                height: 250px;
+            }
+
+            .thumbnail-container {
+                height: 80px;
+            }
+
+            .thumbnail {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                min-height: 60px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .current-price {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading" class="loading">
+            Loading product details...
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            Product not found or failed to load.
+        </div>
+
+        <div id="product-container" class="product-container" style="display: none;">
+            <div class="product-grid">
+                <div class="image-gallery">
+                    <img id="main-image" class="main-image" src="/placeholder.svg" alt="Product Image">
+                    <div id="thumbnail-container" class="thumbnail-container">
+                        </div>
+                </div>
+
+                <div class="product-info">
+                    <div id="product-label" class="product-label"></div>
+                    <h1 id="product-title" class="product-title"></h1>
+                    
+                    <div class="price-container">
+                        <span id="current-price" class="current-price"></span>
+                        <span id="original-price" class="original-price" style="display: none;"></span>
+                        <span id="discount-badge" class="discount-badge" style="display: none;"></span>
+                    </div>
+
+                    <div id="stock-status" class="stock-status">
+                        <div id="stock-indicator" class="stock-indicator"></div>
+                        <span id="stock-text"></span>
+                    </div>
+
+                    <div id="description" class="description"></div>
+
+                    <div class="specifications">
+                        <h3 class="spec-title">Specifications</h3>
+                        <div id="spec-grid" class="spec-grid">
+                            </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="addToCart()">
+                            🛒 Add to Cart
+                        </button>
+                        <a id="view-original" class="btn btn-secondary" href="#" target="_blank">
+                            🔗 View Original
+                        </a>
+                    </div>
+
+                    <div class="provider-info">
+                        <div class="provider-name">Available at</div>
+                        <div id="provider-name"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get product ID from URL parameters
+        function getProductId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || '1'; // Default to product ID 1
+        }
+
+        // Format price with currency
+        function formatPrice(price) {
+            return new Intl.NumberFormat('en-CA', {
+                style: 'currency',
+                currency: 'CAD'
+            }).format(price);
+        }
+
+        // Calculate discounted price
+        function calculateDiscountedPrice(originalPrice, discount) {
+            return originalPrice - discount;
+        }
+
+        // Set stock status
+        function setStockStatus(stock) {
+            const indicator = document.getElementById('stock-indicator');
+            const text = document.getElementById('stock-text');
+            
+            if (stock > 20) {
+                indicator.className = 'stock-indicator in-stock';
+                text.textContent = `In Stock (${stock} available)`;
+            } else if (stock > 0) {
+                indicator.className = 'stock-indicator low-stock';
+                text.textContent = `Low Stock (${stock} remaining)`;
+            } else {
+                indicator.className = 'stock-indicator out-of-stock';
+                text.textContent = 'Out of Stock';
+            }
+        }
+
+        // Setup image gallery
+        function setupImageGallery(images) {
+            const mainImage = document.getElementById('main-image');
+            const thumbnailContainer = document.getElementById('thumbnail-container');
+            
+            if (images && images.length > 0) {
+                mainImage.src = images[0];
+                
+                // Clear existing thumbnails
+                thumbnailContainer.innerHTML = ''; 
+
+                images.forEach((image, index) => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = image;
+                    thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+                    thumbnail.alt = `Product image ${index + 1}`;
+                    
+                    thumbnail.addEventListener('click', () => {
+                        mainImage.src = image;
+                        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                        thumbnail.classList.add('active');
+                    });
+                    
+                    thumbnailContainer.appendChild(thumbnail);
+                });
+            }
+        }
+
+        // Create specifications
+        function createSpecifications(product) {
+            const specGrid = document.getElementById('spec-grid');
+            specGrid.innerHTML = ''; // Clear existing specifications
+
+            const specs = [
+                { label: 'Brand', value: product.name.split(' - ')[0] },
+                { label: 'Model', value: product.name.split(' - ')[1] || product.name },
+            ];
+
+            if (product.weight) {
+                specs.push({ label: 'Weight', value: `${product.weight} kg` });
+            }
+            if (product.width && product.height) {
+                specs.push({ label: 'Dimensions', value: `${product.width}" x ${product.height}"` });
+            }
+
+            specs.push(
+                { label: 'Status', value: product.status ? product.status.name : 'N/A' },
+                { label: 'Availability', value: product.stock > 0 ? 'In Stock' : 'Out of Stock' }
+            );
+
+            if (product.affiliate_provider) {
+                specs.push({ label: 'Sold By', value: product.affiliate_provider.name });
+            }
+
+            specs.forEach(spec => {
+                const specRow = document.createElement('div');
+                specRow.classList.add('spec-row');
+                specRow.innerHTML = `
+                    <span class="spec-label">${spec.label}</span>
+                    <span class="spec-value">${spec.value}</span>
+                `;
+                specGrid.appendChild(specRow);
+            });
+        }
+
+        // Function to simulate adding to cart
+        function addToCart() {
+            alert('Product added to cart!');
+        }
+
+        // Load product data
+        async function loadProduct() {
+            const productId = getProductId();
+            const loadingElement = document.getElementById('loading');
+            const errorElement = document.getElementById('error');
+            const productContainer = document.getElementById('product-container');
+
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            productContainer.style.display = 'none';
+
+            try {
+                const response = await fetch('data/products-data.json'); // Assuming this path is correct
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const products = await response.json();
+                const product = products.find(p => p.id == productId); // Use == for loose comparison if ID from URL is string
+
+                if (product) {
+                    document.getElementById('product-label').textContent = product.label;
+                    document.getElementById('product-title').textContent = product.name;
+                    document.getElementById('current-price').textContent = formatPrice(product.price);
+                    
+                    if (product.original_price && product.original_price > product.price) {
+                        document.getElementById('original-price').textContent = formatPrice(product.original_price);
+                        document.getElementById('original-price').style.display = 'inline';
+                        const discountPercentage = ((product.original_price - product.price) / product.original_price) * 100;
+                        document.getElementById('discount-badge').textContent = `${discountPercentage.toFixed(0)}% OFF`;
+                        document.getElementById('discount-badge').style.display = 'inline-block';
+                    } else {
+                        document.getElementById('original-price').style.display = 'none';
+                        document.getElementById('discount-badge').style.display = 'none';
+                    }
+
+                    setStockStatus(product.stock);
+                    document.getElementById('description').innerHTML = Array.isArray(product.description) ? product.description.join('<br><br>') : product.description;
+                    
+                    createSpecifications(product); // Populate specifications
+                    setupImageGallery(product.images);
+
+                    document.getElementById('provider-name').textContent = product.affiliate_provider ? product.affiliate_provider.name : 'N/A';
+                    document.getElementById('view-original').href = product.product_url;
+
+                    loadingElement.style.display = 'none';
+                    productContainer.style.display = 'block';
+                } else {
+                    loadingElement.style.display = 'none';
+                    errorElement.style.display = 'block';
+                    errorElement.textContent = 'Product not found.';
+                }
+            } catch (e) {
+                console.error('Error loading product data:', e);
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+                errorElement.textContent = 'Failed to load product data. Please try again later.';
+            }
+        }
+
+        // Load product details when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    </script>
 </body>
 </html>

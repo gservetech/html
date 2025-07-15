@@ -1,329 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details - Glass Style</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Product Detail</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #2a2a2a;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .menu-container {
+            background-color: white;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .corner-tl, .corner-tr, .corner-bl, .corner-br {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #2a2a2a;
+        }
+        .corner-tl { top: 0; left: 0; border-bottom-right-radius: 30px; }
+        .corner-tr { top: 0; right: 0; border-bottom-left-radius: 30px; }
+        .corner-bl { bottom: 0; left: 0; border-top-right-radius: 30px; }
+        .corner-br { bottom: 0; right: 0; border-top-left-radius: 30px; }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #e0eaff, #ffffff);
-      backdrop-filter: blur(4px);
-      color: #1f2937;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      max-width: 1200px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-    }
-
-    .product-image {
-      background: #f8fafc;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .product-image img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 16px;
-      object-fit: contain;
-    }
-
-    .thumbnails {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      overflow-x: auto;
-    }
-
-    .thumbnails img {
-      width: 70px;
-      height: 70px;
-      border-radius: 12px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-
-    .thumbnails img.active {
-      border-color: #6366f1;
-    }
-
-    .product-info {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .badge {
-      background: rgba(99, 102, 241, 0.2);
-      color: #4f46e5;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    .price {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .current {
-      color: #10b981;
-      font-weight: 700;
-      font-size: 28px;
-    }
-
-    .original {
-      text-decoration: line-through;
-      color: #6b7280;
-    }
-
-    .discount {
-      background: #fef3c7;
-      color: #b45309;
-      padding: 4px 10px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
-    .stock {
-      margin: 16px 0;
-      font-weight: 500;
-    }
-
-    .desc {
-      color: #374151;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .specs {
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-    }
-
-    .actions {
-      display: flex;
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .btn {
-      flex: 1;
-      padding: 14px;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
-      font-size: 16px;
-    }
-
-    .btn.primary {
-      background: linear-gradient(to right, #6366f1, #8b5cf6);
-      color: white;
-    }
-
-    .btn.secondary {
-      background: white;
-      color: #6366f1;
-      border: 2px solid #6366f1;
-    }
-
-    .btn.secondary:hover {
-      background: #6366f1;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .glass-card {
-        grid-template-columns: 1fr;
-      }
-
-      .product-image,
-      .product-info {
-        padding: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="loading" style="font-size: 18px; color: #6b7280;">Loading...</div>
-  <div id="error" style="display: none; font-size: 18px; color: red;">Failed to load product.</div>
-  <div class="glass-card" id="product-card" style="display:none">
-    <div class="product-image">
-      <img id="main-image" src="/placeholder.svg" alt="Product image" />
-      <div id="thumbnail-container" class="thumbnails"></div>
-    </div>
-    <div class="product-info">
-      <div>
-        <div id="badge" class="badge"></div>
-        <h1 id="product-name"></h1>
-        <div class="price">
-          <span id="current-price" class="current"></span>
-          <span id="original-price" class="original"></span>
-          <span id="save-amount" class="discount"></span>
-        </div>
-        <div id="stock-text" class="stock"></div>
-        <p id="description" class="desc"></p>
-        <div class="specs" id="specs-list"></div>
-      </div>
-      <div>
-        <div class="actions">
-          <button class="btn primary" onclick="addToCart()">Add to Cart</button>
-          <a id="view-original" href="#" class="btn secondary" target="_blank">View Store</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    function getProductId() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id") || "1";
-    }
-
-    function formatPrice(p) {
-      return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(p);
-    }
-
-    function setStockStatus(stock) {
-      const el = document.getElementById("stock-text");
-      el.textContent = stock > 20
-        ? `✅ In Stock (${stock})`
-        : stock > 0
-        ? `⚠️ Low Stock (${stock})`
-        : `❌ Out of Stock`;
-    }
-
-    function createSpecs(product) {
-      const el = document.getElementById("specs-list");
-      const specs = [
-        { label: "Product ID", value: `#${product.id}` },
-        { label: "Weight", value: product.weight ? `${product.weight} kg` : "N/A" },
-        { label: "Dimensions", value: product.width ? `${product.width}\" × ${product.height}\"` : "N/A" },
-        { label: "Status", value: product.status.name },
-        { label: "Category", value: `Category ${product.category_id}` },
-        { label: "Added", value: new Date(product.created_at).toLocaleDateString() },
-      ];
-      specs.forEach((s) => {
-        const row = document.createElement("div");
-        row.className = "spec-row";
-        row.innerHTML = `<span>${s.label}</span><span>${s.value}</span>`;
-        el.appendChild(row);
-      });
-    }
-
-    function setupThumbnails(images) {
-      const container = document.getElementById("thumbnail-container");
-      const main = document.getElementById("main-image");
-      container.innerHTML = "";
-      images.forEach((img, i) => {
-        const thumb = document.createElement("img");
-        thumb.src = img;
-        if (i === 0) thumb.classList.add("active");
-        thumb.onclick = () => {
-          main.src = img;
-          document.querySelectorAll(".thumbnails img").forEach(t => t.classList.remove("active"));
-          thumb.classList.add("active");
-        };
-        container.appendChild(thumb);
-      });
-    }
-
-    async function loadProduct() {
-      try {
-        const id = getProductId();
-        const res = await fetch("../data/products-data.json");
-        const products = await res.json();
-        const product = products.find(p => p.id.toString() === id);
-        if (!product) throw new Error("Not found");
-
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("product-card").style.display = "grid";
-
-        document.getElementById("main-image").src = product.images[0];
-        setupThumbnails(product.images);
-
-        document.getElementById("badge").textContent = product.label;
-        document.getElementById("product-name").textContent = product.name;
-        document.getElementById("description").textContent = product.description.join(" ");
-
-        const current = product.price - product.discount;
-        document.getElementById("current-price").textContent = formatPrice(current);
-
-        if (product.discount > 0) {
-          document.getElementById("original-price").textContent = formatPrice(product.price);
-          document.getElementById("save-amount").textContent = `Save ${formatPrice(product.discount)}`;
+        /* Product Detail Styles */
+        .product-detail-header {
+            color: #e74c3c;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .product-detail-label {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            text-align: center;
         }
 
-        setStockStatus(product.stock);
-        createSpecs(product);
+        .product-main-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-        document.getElementById("view-original").href = product.product_url;
-        document.title = product.name + " - Glass Store";
+        .product-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .product-thumbnails img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .product-thumbnails img:hover, .product-thumbnails img.active {
+            border-color: #e74c3c;
+        }
 
-      } catch (err) {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("error").style.display = "block";
-      }
-    }
+        .product-price {
+            font-weight: bold;
+            color: #333;
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    function addToCart() {
-      const id = getProductId();
-      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      const item = cart.find(p => p.id === id);
-      if (item) item.quantity += 1;
-      else cart.push({ id, quantity: 1 });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert("✅ Added to cart!");
-    }
+        /* Description and Specifications Sections */
+        .product-section-title {
+            color: #e74c3c;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0 15px 0;
+            text-transform: uppercase;
+            text-align: left;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .product-description-text {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
 
-    document.addEventListener("DOMContentLoaded", loadProduct);
-  </script>
+        /* Specifications Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .spec-item {
+            padding: 12px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+        .spec-label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .spec-value {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Affiliate Section */
+        .affiliate-section {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .affiliate-section h4 {
+            color: #2ecc71;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .affiliate-text {
+            color: #bdc3c7;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .affiliate-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .affiliate-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .menu-container { padding: 25px; }
+            .product-detail-header { font-size: 28px; }
+            .product-detail-label { font-size: 16px; }
+            .product-price { font-size: 32px; }
+            .product-section-title { font-size: 20px; }
+            .product-main-image { max-height: 300px; }
+            .product-thumbnails img { width: 60px; height: 60px; }
+            .affiliate-button { width: 100%; box-sizing: border-box; }
+            .specs-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+        <div id="product-detail-content">
+            <div class="product-detail-header">Loading Product...</div>
+            <p style="text-align:center; color:#666;">Please wait while we fetch the details.</p>
+        </div>
+    </div>
+
+    <script>
+        async function loadProductDetailMenuStyled() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+
+            const productDetailContentDiv = document.getElementById('product-detail-content');
+
+            if (isNaN(productId)) {
+                productDetailContentDiv.innerHTML = `
+                    <div class="product-detail-header">Product Not Found</div>
+                    <p class="product-detail-label">Invalid product ID provided in the URL.</p>
+                    <div class="affiliate-section" style="margin-top: 50px;">
+                        <h4>Oops!</h4>
+                        <p class="affiliate-text">It looks like the product ID is missing or incorrect.</p>
+                        <a href="products.html" class="affiliate-button">Back to Products</a>
+                    </div>
+                `;
+                document.title = "Product Not Found";
+                return;
+            }
+
+            try {
+                const response = await fetch('data/products-data.json'); 
+                const products = await response.json();
+                const product = products.find(p => p.id === productId);
+
+                if (product) {
+                    document.getElementById('page-title').textContent = product.name;
+                    document.title = product.name;
+                    productDetailContentDiv.innerHTML = generateProductHTMLMenuStyled(product);
+                    setupImageGallery();
+                } else {
+                    productDetailContentDiv.innerHTML = `
+                        <div class="product-detail-header">Product Not Found</div>
+                        <p class="product-detail-label">No product found with ID: ${productId}.</p>
+                        <div class="affiliate-section" style="margin-top: 50px;">
+                            <h4>Item Unavailable</h4>
+                            <p class="affiliate-text">The product you're looking for might have been removed.</p>
+                            <a href="products.html" class="affiliate-button">Back to Products</a>
+                        </div>
+                    `;
+                    document.title = "Product Not Found";
+                }
+            } catch (error) {
+                console.error('Error loading product data:', error);
+                productDetailContentDiv.innerHTML = `
+                    <div class="product-detail-header">Error Loading Product</div>
+                    <p class="product-detail-label">Could not fetch product details.</p>
+                    <div class="affiliate-section" style="margin-top: 50px;">
+                        <h4>Connection Issue</h4>
+                        <p class="affiliate-text">There was a problem loading the product data.</p>
+                        <a href="products.html" class="affiliate-button">Back to Products</a>
+                    </div>
+                `;
+                document.title = "Loading Error";
+            }
+        }
+
+        function generateProductHTMLMenuStyled(product) {
+            // Create specifications HTML based on product data
+            const specsHTML = `
+                <div class="spec-item">
+                    <div class="spec-label">Brand</div>
+                    <div class="spec-value">${product.name.split(' - ')[0]}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Model</div>
+                    <div class="spec-value">${product.name.split(' - ')[1] || product.name}</div>
+                </div>
+                ${product.weight ? `
+                <div class="spec-item">
+                    <div class="spec-label">Weight</div>
+                    <div class="spec-value">${product.weight} kg</div>
+                </div>` : ''}
+                ${product.width && product.height ? `
+                <div class="spec-item">
+                    <div class="spec-label">Dimensions</div>
+                    <div class="spec-value">${product.width}" x ${product.height}"</div>
+                </div>` : ''}
+                <div class="spec-item">
+                    <div class="spec-label">Status</div>
+                    <div class="spec-value">${product.status.name}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Availability</div>
+                    <div class="spec-value">${product.stock > 0 ? 'In Stock' : 'Out of Stock'}</div>
+                </div>
+            `;
+
+            return `
+                <div class="product-detail-header">${product.name}</div>
+                <div class="product-detail-label">${product.label}</div>
+
+                <img src="${product.images[0]}" alt="${product.name}" class="product-main-image" id="mainProductImage">
+                
+                ${product.images.length > 1 ? `
+                    <div class="product-thumbnails">
+                        ${product.images.map((imgSrc, index) => `
+                            <img src="${imgSrc}" alt="${product.name} thumbnail ${index + 1}" data-index="${index}" ${index === 0 ? 'class="active"' : ''}>
+                        `).join('')}
+                    </div>
+                ` : ''}
+
+                <div class="product-price">$${product.price.toFixed(2)}</div>
+
+                <div class="product-section-title">About This Product</div>
+                <p class="product-description-text">
+                    ${Array.isArray(product.description) ? product.description.join('<br><br>') : product.description}
+                </p>
+
+                <div class="product-section-title">Specifications</div>
+                <div class="specs-grid">
+                    ${specsHTML}
+                </div>
+
+                <div class="affiliate-section">
+                    <h4>Where to Buy</h4>
+                    <p class="affiliate-text">
+                        Available at <strong>${product.affiliate_provider.name}</strong>
+                    </p>
+                    <a href="${product.product_url}" target="_blank" class="affiliate-button">
+                        View on ${product.affiliate_provider.name}
+                    </a>
+                </div>
+            `;
+        }
+
+        function setupImageGallery() {
+            const mainImage = document.getElementById('mainProductImage');
+            const thumbnailsContainer = document.querySelector('.product-thumbnails');
+            
+            if (!mainImage || !thumbnailsContainer) return;
+
+            const thumbnails = thumbnailsContainer.querySelectorAll('img');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    mainImage.src = this.src;
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProductDetailMenuStyled);
+    </script>
 </body>
 </html>
