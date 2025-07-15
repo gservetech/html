@@ -50,7 +50,8 @@
         /* Left Side - Images */
         .image-showcase {
             background: #eef1f6;
-            padding: 40px;
+            padding: 40px; /* Kept large for overall padding */
+            padding-bottom: 20px; /* Reduced specific padding for below thumbnails */
             position: relative;
             overflow: hidden;
         }
@@ -79,7 +80,7 @@
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(8px);
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Adjusted margin */
             position: relative;
             z-index: 2;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -93,10 +94,12 @@
 
         .image-thumbnails {
             display: flex;
+            flex-wrap: wrap; /* Allow thumbnails to wrap */
+            justify-content: center; /* Center thumbnails */
             gap: 15px;
-            overflow-x: auto;
+            overflow-x: auto; /* Keep auto if you want scrollbar when too many, but flex-wrap minimizes this */
             padding: 10px 0;
-            height: 110px;
+            height: auto; /* Allow height to adjust */
             position: relative;
             z-index: 2;
             scrollbar-width: none;
@@ -205,6 +208,9 @@
             padding: 40px;
             background: white;
             position: relative;
+            display: flex; /* Added flexbox */
+            flex-direction: column; /* Stack children vertically */
+            gap: 25px; /* Consistent spacing between major sections */
         }
 
         .category-tag {
@@ -217,7 +223,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(92, 107, 192, 0.3);
@@ -241,7 +247,7 @@
         .product-title {
             font-size: 28px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             background: linear-gradient(45deg, #3f51b5, #673ab7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -250,7 +256,7 @@
         }
 
         .pricing-section {
-            margin-bottom: 25px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             padding: 20px;
             background: #e8eaf6;
             border-radius: 20px;
@@ -290,7 +296,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             padding: 15px 20px;
             border-radius: 15px;
             font-weight: 600;
@@ -312,21 +318,23 @@
             font-size: 16px;
             line-height: 1.8;
             color: #555;
-            margin-bottom: 30px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             padding: 20px;
             background: #fdfefe;
             border-radius: 15px;
             border-left: 4px solid #4db6ac;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            flex-grow: 1; /* Allow description to grow and take space */
         }
 
         .specifications-box {
             background: #e8eaf6;
             border-radius: 20px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
             border: 1px solid #c5cae9;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-grow: 1; /* Allow specifications to grow and take space */
         }
 
         .specs-header {
@@ -347,9 +355,10 @@
         .spec-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
+            align-items: flex-start; /* Align items to the start of their cross-axis */
+            padding: 15px 0; /* More padding for better spacing */
             border-bottom: 1px solid #e0e0e0;
+            flex-wrap: wrap; /* Allow content to wrap if too long */
         }
 
         .spec-row:last-child {
@@ -359,17 +368,28 @@
         .spec-key {
             font-weight: 600;
             color: #455a64;
+            flex-basis: 45%; /* Give key slightly more space */
         }
 
         .spec-val {
             color: #7f8c8d;
             font-weight: 500;
+            text-align: right;
+            flex-basis: 50%; /* Give value slightly less space */
+            word-break: break-word; /* Break long words */
         }
+
+        .spec-row.flex-wrapped .spec-key,
+        .spec-row.flex-wrapped .spec-val {
+            flex-basis: 100%; /* If wrapped, take full width */
+            text-align: left; /* Align wrapped text to left */
+        }
+
 
         .action-buttons {
             display: flex;
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 0; /* Removed margin-bottom here due to gap on parent */
         }
 
         .action-btn {
@@ -479,7 +499,7 @@
 
             .image-showcase,
             .product-details {
-                padding: 20px;
+                padding: 25px; /* Adjusted padding */
             }
 
             .product-title {
@@ -629,7 +649,7 @@
             // Set product description
             const descriptionElement = document.getElementById('description');
             if (Array.isArray(product.description)) {
-                descriptionElement.innerHTML = product.description.join('<p>');
+                descriptionElement.innerHTML = product.description.map(p => `<p>${p}</p>`).join('');
             } else {
                 descriptionElement.textContent = product.description;
             }
@@ -688,29 +708,36 @@
         }
 
         function createSpecifications(product) {
-            const specsContainer = document.getElementById('specs-container');
-            specsContainer.innerHTML = '';
+    const specsContainer = document.getElementById('specs-container');
+    specsContainer.innerHTML = '';
 
-            // Create specification rows based on product data
-            const specs = [
-                { key: 'Brand', val: product.name.split(' - ')[0] },
-                { key: 'Model', val: product.name.split(' - ')[1] || product.name },
-                product.weight ? { key: 'Weight', val: `${product.weight} kg` } : null,
-                (product.width && product.height) ? { key: 'Dimensions', val: `${product.width}" x ${product.height}"` } : null,
-                { key: 'Status', val: product.status.name },
-                { key: 'Affiliate', val: product.affiliate_provider.name }
-            ].filter(spec => spec !== null);
+    // Create specification rows based on product data
+    const specs = [
+        { key: 'Brand', val: product.name.split(' - ')[0] },
+        { key: 'Model', val: product.name.split(' - ')[1] || product.name },
+        product.weight ? { key: 'Weight', val: `${product.weight} kg` } : null,
+        (product.width && product.height) ? { key: 'Dimensions', val: `${product.width}" x ${product.height}"` } : null,
+        { key: 'Status', val: product.status.name },
+        { key: 'Affiliate', val: product.affiliate_provider.name }
+    ].filter(spec => spec !== null); // Filter out any null entries
 
-            specs.forEach(spec => {
-                const specRow = document.createElement('div');
-                specRow.className = 'spec-row';
-                specRow.innerHTML = `
-                    <span class="spec-key">${spec.key}</span>
-                    <span class="spec-val">${spec.val}</span>
-                `;
-                specsContainer.appendChild(specRow);
-            });
+    specs.forEach(spec => {
+        const specRow = document.createElement('div');
+        specRow.className = 'spec-row';
+
+        // Check if the content might wrap and add a class if so
+        // (You can adjust the threshold '40' as needed for your content)
+        if (spec.key.length + spec.val.length > 40) { 
+            specRow.classList.add('flex-wrapped');
         }
+
+        specRow.innerHTML = `
+            <span class="spec-key">${spec.key}</span>
+            <span class="spec-val">${spec.val}</span>
+        `;
+        specsContainer.appendChild(specRow);
+    });
+}
 
         function addToCart() {
             const productId = new URLSearchParams(window.location.search).get('id');
