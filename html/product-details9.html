@@ -3,527 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details | Modern Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title id="page-title">Product Detail</title>
     <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4895ef;
-            --dark: #1b263b;
-            --light: #f8f9fa;
-            --gray: #adb5bd;
-            --success: #4cc9f0;
-            --warning: #f72585;
-            --glass: rgba(255, 255, 255, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.3);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            color: var(--dark);
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .loading {
+            font-family: Arial, sans-serif;
+            background: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 300px;
-            font-size: 1.2rem;
-            color: var(--gray);
+            min-height: 100vh;
         }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 1rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .error-message {
-            text-align: center;
-            padding: 2rem;
-            background: var(--glass);
-            border-radius: 20px;
-            color: var(--warning);
-        }
-
-        .product-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .product-header {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 2rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .product-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-label {
-            display: inline-block;
-            background: var(--accent);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-content {
+        .contents-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 2rem;
+            min-height: 90vh;
+            max-width: 1350px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .image-section {
+            position: relative;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .image-gallery-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            width: 100%;
+            max-width: 680px;
+            margin-bottom: 20px;
+        }
+
+        .product-thumbnails-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 550px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 5px;
+        }
+        .product-thumbnails-vertical img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .product-thumbnails-vertical img:hover, .product-thumbnails-vertical img.active {
+            border-color: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        .main-product-image {
+            flex-grow: 1;
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .product-main-title {
+            position: static;
+            font-size: 48px;
+            font-weight: 900;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            margin-top: 15px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .product-label-credit {
+            position: static;
+            font-size: 13px;
+            color: #666;
+            transform: none;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .details-section {
+            padding: 50px 40px;
+            background: #f8f8f8;
+            overflow-y: auto;
+            position: relative;
+        }
+        .product-details-title {
+            font-size: 30px;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #333;
+        }
+        .product-detail-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .detail-heading {
+            font-size: 50px;
+            font-weight: 900;
+            color: #333;
+            line-height: 0.8;
+            margin-bottom: 8px;
+        }
+        .detail-category {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .detail-text {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            max-width: 400px;
+        }
+        .detail-sub-text {
+            color: #999;
+            font-size: 13px;
+        }
+        .detail-sub-text strong {
+            color: #333;
+        }
+
+        /* Specifications Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .spec-item {
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+        .spec-label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .spec-value {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .product-price-badge {
+            position: static;
+            background: #2ecc71;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            margin: 25px auto;
+        }
+        .product-price-badge .label-text {
+            font-size: 9px;
+            margin-bottom: 4px;
+        }
+        .product-price-badge .price-amount {
+            font-size: 26px;
+            margin: 4px 0;
+            line-height: 1;
+        }
+        .product-price-badge .currency-text {
+            font-size: 9px;
+            margin-top: 4px;
+        }
+
+        .affiliate-link-area {
+            position: static;
+            background: #e74c3c;
+            color: white;
+            padding: 18px 22px;
+            font-weight: 900;
+            font-size: 17px;
+            line-height: 1.2;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .affiliate-link-area:hover {
+            background: #c0392b;
         }
 
         @media (max-width: 768px) {
-            .product-content {
+            .contents-container {
                 grid-template-columns: 1fr;
+                min-height: auto;
             }
+            .image-section {
+                height: auto;
+                padding-bottom: 20px;
+            }
+            .image-gallery-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                max-width: 90%;
+            }
+            .product-thumbnails-vertical {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-height: none;
+                overflow-y: visible;
+                overflow-x: hidden;
+                padding-right: 0;
+            }
+            .product-thumbnails-vertical img {
+                width: 50px;
+                height: 50px;
+            }
+            .main-product-image {
+                max-width: 90%;
+                max-height: 300px;
+            }
+            .product-main-title { font-size: 38px; margin-top: 10px;}
+            .product-label-credit { font-size: 11px; }
+            .details-section { padding: 25px 20px; }
+            .product-details-title { font-size: 26px; margin-bottom: 20px;}
+            .detail-heading { font-size: 40px; }
+            .detail-category { font-size: 14px;}
+            .detail-text { font-size: 14px;}
+            .specs-grid { grid-template-columns: 1fr; }
+            .product-price-badge { width: 80px; height: 80px; padding: 8px; }
+            .product-price-badge .price-amount { font-size: 20px; }
+            .affiliate-link-area { font-size: 14px; padding: 10px 15px; }
         }
-
-        .product-gallery {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .thumbnail-container {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-        }
-
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
-        }
-
-        .thumbnail.active {
-            border-color: var(--primary);
-        }
-
-        .product-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .price-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .current-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .original-price {
-            font-size: 1.2rem;
-            text-decoration: line-through;
-            color: var(--gray);
-        }
-
-        .discount-badge {
-            background: var(--warning);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .stock-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .in-stock {
-            color: var(--success);
-            font-weight: 600;
-        }
-
-        .low-stock {
-            color: orange;
-            font-weight: 600;
-        }
-
-        .out-of-stock {
-            color: var(--warning);
-            font-weight: 600;
-        }
-
-        .product-description {
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .specs-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .spec-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .spec-value {
-            font-weight: 600;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            flex: 1;
-        }
-
-        .btn-primary:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(67, 97, 238, 0.1);
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            background: var(--glass);
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .provider-info {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .provider-logo {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .back-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .back-link:hover {
-            color: var(--secondary);
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fade {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="product-container">
-            <div class="loading">
-                <div class="spinner"></div>
-                <span>Loading product details...</span>
-            </div>
-        </div>
-    </div>
+    <div id="product-detail-page"></div>
 
     <script>
-        // Get product ID from URL
-        function getProductId() {
+        async function loadProductDetailContentsStyle() {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('id');
+            const productId = parseInt(urlParams.get('id'));
+
+            const productDetailPage = document.getElementById('product-detail-page');
+
+            if (isNaN(productId)) {
+                productDetailPage.innerHTML = `
+                    <div class="contents-container">
+                        <div class="image-section" style="justify-content: center;">
+                            <div class="product-main-title" style="color: #e74c3c;">Error!</div>
+                            <div class="product-label-credit">Product ID Missing</div>
+                        </div>
+                        <div class="details-section" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                            <div class="product-details-title">No Product Selected</div>
+                            <p class="detail-text">Please ensure you select a product from the list to view its details.</p>
+                            <a href="products.html" class="affiliate-link-area" style="width: fit-content; margin-top: 30px;">
+                                Go to Products List
+                            </a>
+                        </div>
+                    </div>
+                `;
+                document.title = "Error";
+                return;
+            }
+
+            try {
+                const response = await fetch('data/products-data.json'); 
+                const products = await response.json();
+                const product = products.find(p => p.id === productId);
+
+                if (product) {
+                    document.getElementById('page-title').textContent = product.name;
+                    document.title = product.name;
+                    productDetailPage.innerHTML = generateProductHTMLContentsStyle(product);
+                    setupImageGalleryContentsStyle();
+                } else {
+                    productDetailPage.innerHTML = `
+                        <div class="contents-container">
+                            <div class="image-section" style="justify-content: center;">
+                                <div class="product-main-title" style="color: #e74c3c;">Not Found!</div>
+                                <div class="product-label-credit">Product ID: ${productId}</div>
+                            </div>
+                            <div class="details-section" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                                <div class="product-details-title">Product Not Found</div>
+                                <p class="detail-text">The product you are looking for does not exist or is no longer available.</p>
+                                <a href="products.html" class="affiliate-link-area" style="width: fit-content; margin-top: 30px;">
+                                    Browse All Products
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    document.title = "Product Not Found";
+                }
+            } catch (error) {
+                console.error('Error loading product data:', error);
+                productDetailPage.innerHTML = `
+                    <div class="contents-container">
+                        <div class="image-section" style="justify-content: center;">
+                            <div class="product-main-title" style="color: #e74c3c;">Error!</div>
+                            <div class="product-label-credit">Data Loading Failed</div>
+                        </div>
+                        <div class="details-section" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                            <div class="product-details-title">Failed to Load</div>
+                            <p class="detail-text">There was an issue retrieving the product details. Please try again later.</p>
+                            <a href="products.html" class="affiliate-link-area" style="width: fit-content; margin-top: 30px;">
+                                Return to Products
+                            </a>
+                        </div>
+                    </div>
+                `;
+                document.title = "Loading Error";
+            }
         }
 
-        // Format price with currency symbol
-        function formatPrice(price) {
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD'
-            }).format(price);
+        function generateProductHTMLContentsStyle(product) {
+            // Create specifications HTML based on product data
+            const specsHTML = `
+                <div class="spec-item">
+                    <div class="spec-label">Brand</div>
+                    <div class="spec-value">${product.name.split(' - ')[0]}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Model</div>
+                    <div class="spec-value">${product.name.split(' - ')[1] || product.name}</div>
+                </div>
+                ${product.weight ? `
+                <div class="spec-item">
+                    <div class="spec-label">Weight</div>
+                    <div class="spec-value">${product.weight} kg</div>
+                </div>` : ''}
+                ${product.width && product.height ? `
+                <div class="spec-item">
+                    <div class="spec-label">Dimensions</div>
+                    <div class="spec-value">${product.width}" x ${product.height}"</div>
+                </div>` : ''}
+                <div class="spec-item">
+                    <div class="spec-label">Status</div>
+                    <div class="spec-value">${product.status.name}</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Availability</div>
+                    <div class="spec-value">${product.stock > 0 ? 'In Stock' : 'Out of Stock'}</div>
+                </div>
+                ${product.affiliate_provider ? `
+                <div class="spec-item">
+                    <div class="spec-label">Sold By</div>
+                    <div class="spec-value">${product.affiliate_provider.name}</div>
+                </div>` : ''}
+            `;
+
+            return `
+                <div class="contents-container">
+                    <div class="image-section">
+                        <div class="product-main-title">${product.name}</div>
+                        <div class="image-gallery-wrapper">
+                            ${product.images.length > 1 ? `
+                                <div class="product-thumbnails-vertical">
+                                    ${product.images.map((imgSrc, index) => `
+                                        <img src="${imgSrc}" alt="${product.name} thumbnail ${index + 1}" data-index="${index}" ${index === 0 ? 'class="active"' : ''}>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            <img src="${product.images[0]}" alt="${product.name}" class="main-product-image" id="mainProductImageContents">
+                        </div>
+                        <div class="product-label-credit">Category: <strong>${product.label}</strong></div>
+                    </div>
+                    
+                    <div class="details-section">
+                        <div class="product-details-title">Product Overview</div>
+                        
+                        <div class="product-detail-item">
+                            <div class="detail-heading">#1</div>
+                            <div class="detail-category">Description</div>
+                            <p class="detail-text">
+                                ${Array.isArray(product.description) ? product.description.join('<br><br>') : product.description}
+                            </p>
+                        </div>
+
+                        <div class="product-detail-item">
+                            <div class="detail-heading">#2</div>
+                            <div class="detail-category">Specifications</div>
+                            <div class="specs-grid">
+                                ${specsHTML}
+                            </div>
+                        </div>
+
+                        <div class="product-price-badge">
+                            <div class="label-text">BUY FOR ONLY</div>
+                            <div class="price-amount">$${product.price.toFixed(2)}</div>
+                            <div class="currency-text">USD</div>
+                        </div>
+
+                        <a href="${product.product_url}" target="_blank" class="affiliate-link-area">
+                            BUY NOW FROM ${product.affiliate_provider.name.toUpperCase()}
+                        </a>
+                    </div>
+                </div>
+            `;
         }
 
-        // Setup thumbnail images
-        function setupThumbnails(images, mainImage) {
-            const container = document.getElementById("thumbnail-container");
-            container.innerHTML = "";
+        function setupImageGalleryContentsStyle() {
+            const mainImage = document.getElementById('mainProductImageContents');
+            const thumbnailsContainer = document.querySelector('.product-thumbnails-vertical');
             
-            images.forEach((img, i) => {
-                const thumb = document.createElement("img");
-                thumb.src = img;
-                thumb.className = "thumbnail" + (i === 0 ? " active" : "");
-                thumb.onclick = () => {
-                    mainImage.src = img;
-                    document.querySelectorAll(".thumbnail").forEach(t => t.classList.remove("active"));
-                    thumb.classList.add("active");
-                };
-                container.appendChild(thumb);
+            if (!mainImage || !thumbnailsContainer) {
+                return;
+            }
+
+            const thumbnails = thumbnailsContainer.querySelectorAll('img');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    mainImage.src = this.src;
+                });
             });
         }
 
-        // Set stock status display
-        function setStockStatus(stock) {
-            const stockElement = document.getElementById("stock-status");
-            
-            if (stock > 20) {
-                stockElement.textContent = 'In Stock';
-                stockElement.className = 'stock-status in-stock';
-            } else if (stock > 0) {
-                stockElement.textContent = `Only ${stock} left!`;
-                stockElement.className = 'stock-status low-stock';
-            } else {
-                stockElement.textContent = 'Out of Stock';
-                stockElement.className = 'stock-status out-of-stock';
-            }
-        }
-
-        // Create specifications list
-        function createSpecs(product) {
-            const specsContainer = document.getElementById("specs-container");
-            
-            const specs = [
-                { label: "Weight", value: product.weight ? `${product.weight} kg` : 'N/A' },
-                { label: "Dimensions", value: product.width && product.height ? `${product.width} × ${product.height} cm` : 'N/A' },
-                { label: "Status", value: product.status?.name || 'Pending' },
-                { label: "Category", value: `Category ${product.category_id}` }
-            ];
-            
-            specsContainer.innerHTML = specs.map(spec => `
-                <div class="spec-item">
-                    <span class="spec-label">${spec.label}</span>
-                    <span class="spec-value">${spec.value}</span>
-                </div>
-            `).join('');
-        }
-
-        // Load product data from JSON file
-        async function loadProduct() {
-            try {
-                const id = getProductId();
-                if (!id) throw new Error("No product ID specified");
-                
-                const response = await fetch('../data/products-data.json');
-                if (!response.ok) throw new Error("Failed to load products");
-                
-                const products = await response.json();
-                const product = products.find(p => p.id.toString() === id);
-                if (!product) throw new Error("Product not found");
-                
-                // Create product HTML
-                const productHTML = `
-                    <div class="product-container">
-                        <div class="product-header animate-fade">
-                            <h1 class="product-title">${product.name}</h1>
-                            <span class="product-label">${product.label}</span>
-                        </div>
-
-                        <div class="product-content">
-                            <div class="product-gallery animate-fade delay-1">
-                                <img id="main-image" class="main-image" src="${product.images[0]}" alt="${product.name}">
-                                <div class="thumbnail-container" id="thumbnail-container"></div>
-                            </div>
-
-                            <div class="product-details">
-                                <div class="price-container animate-fade delay-2">
-                                    <span class="current-price">${formatPrice(product.price)}</span>
-                                    ${product.discount > 0 ? `
-                                        <span class="original-price">${formatPrice(product.price + product.discount)}</span>
-                                        <span class="discount-badge">${Math.round((product.discount / (product.price + product.discount)) * 100)}% OFF</span>
-                                    ` : ''}
-                                </div>
-
-                                <div class="stock-status" id="stock-status"></div>
-
-                                <div class="product-description animate-fade delay-3">
-                                    ${product.description && product.description.length > 0 ? 
-                                        product.description[0] : 'No description available.'}
-                                </div>
-
-                                <div class="specs-container animate-fade delay-3" id="specs-container"></div>
-
-                                <div class="action-buttons animate-fade delay-4">
-                                    <button class="btn btn-primary">
-                                        <i class="fas fa-shopping-cart"></i> Add to Cart
-                                    </button>
-                                    <button class="btn btn-secondary">
-                                        <i class="far fa-heart"></i> Wishlist
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-footer animate-fade delay-4">
-                            <a href="products.html" class="back-link">
-                                <i class="fas fa-arrow-left"></i> Back to Products
-                            </a>
-                            <div class="provider-info">
-                                <span>Sold by</span>
-                                <img class="provider-logo" src="${
-                                    product.affiliate_provider?.name === 'Amazon' ? 
-                                        'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' :
-                                        product.affiliate_provider?.name === 'Walmart' ? 
-                                        'https://upload.wikimedia.org/wikipedia/commons/1/14/Walmart_Spark.svg' :
-                                        product.affiliate_provider?.name === 'BestBuy' ? 
-                                        'https://upload.wikimedia.org/wikipedia/commons/9/9e/Best_Buy_Logo.svg' :
-                                        'https://via.placeholder.com/24'
-                                }" alt="${product.affiliate_provider?.name || 'Provider'} logo">
-                                <span>${product.affiliate_provider?.name || 'Unknown'}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // Update the page
-                document.getElementById("product-container").innerHTML = productHTML;
-                
-                // Setup dynamic elements
-                setupThumbnails(product.images, document.getElementById("main-image"));
-                setStockStatus(product.stock);
-                createSpecs(product);
-                
-                // Update page title
-                document.title = `${product.name} - Modern Store`;
-                
-            } catch (error) {
-                console.error("Error loading product:", error);
-                document.getElementById("product-container").innerHTML = `
-                    <div class="error-message">
-                        <h2>Error loading product</h2>
-                        <p>${error.message}</p>
-                        <a href="products.html" class="back-link">
-                            <i class="fas fa-arrow-left"></i> Back to Products
-                        </a>
-                    </div>
-                `;
-            }
-        }
-
-        // Load the product when page loads
-        window.addEventListener('DOMContentLoaded', loadProduct);
+        document.addEventListener('DOMContentLoaded', loadProductDetailContentsStyle);
     </script>
 </body>
 </html>
