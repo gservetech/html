@@ -555,7 +555,7 @@
         async function loadProduct() {
             try {
                 const productId = getProductId();
-                const response = await fetch('../data/products-data.json');
+                const response = await fetch('data/products-data.json');
                 
                 if (!response.ok) throw new Error('Failed to fetch');
                 
