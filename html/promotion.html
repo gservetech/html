@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Open Graph Meta Tags for Facebook -->
   <meta property="og:title" content="Vibrant & Professional Printing - Print.GServeTech.com" />
   <meta property="og:description" content="Posters, Menus, Banners, Business Cards & More. Vivid Color. Same-Day Turnaround. No Minimum!" />
   <meta property="og:image" content="https://gservetech.github.io/html/html/images/1.jpg" />
   <meta property="og:url" content="https://gservetech.github.io/html/html/promotion.html" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <title>Print Everything You Imagine | Print.GServeTech.com</title>
-
   <style>
     html, body {
       margin: 0;
@@ -22,13 +18,11 @@
       background: #fff;
       color: #333;
     }
-
     a.full-link {
       display: block;
       color: inherit;
       text-decoration: none;
     }
-
     .top-banner {
       background-color: #d81b60;
       color: white;
@@ -38,20 +32,16 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
-
     .hero {
       position: relative;
       text-align: center;
-      background-color: #000;
     }
-
     .hero img {
       width: 100%;
       max-height: 600px;
       object-fit: cover;
       opacity: 0.92;
     }
-
     .hero h1 {
       position: absolute;
       top: 20%;
@@ -61,92 +51,73 @@
       font-weight: bold;
       text-shadow: 3px 3px 6px #000;
     }
-
     .section {
       padding: 50px 20px;
       text-align: center;
     }
-
     .section h2 {
       font-size: 2.2em;
       margin-bottom: 20px;
       color: #d81b60;
     }
-
     .section p {
       font-size: 1.2em;
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.6;
     }
-
-    .highlights {
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .highlight-box {
+    .service-box {
       background: #fce4ec;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 250px;
-      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       color: #c2185b;
+      font-weight: bold;
     }
-
+    .contact-bar {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+    .contact-bar a {
+      color: #ffdf00;
+      text-decoration: underline;
+    }
+    .contact-bar strong {
+      color: #ffdf00;
+    }
+    .contact-bar div {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .contact-bar small {
+      font-size: 14px;
+      color: #e0e0e0;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      padding: 0 10px;
+      padding: 40px 20px;
     }
-
     .grid img {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-
-    .cta {
-      background: #d81b60;
-      color: #fff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .cta p {
-      margin: 0;
-      font-size: 1.1em;
-    }
-
-    .extra-content {
-      background: #f9f9f9;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .extra-content h2 {
-      color: #333;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    .extra-content p {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
     footer {
       background: #111;
       color: #ccc;
@@ -154,7 +125,6 @@
       padding: 20px;
       font-size: 0.9em;
     }
-
     footer a {
       color: #00e676;
       text-decoration: none;
@@ -163,64 +133,50 @@
   </style>
 </head>
 <body>
-
 <a class="full-link" href="https://print.gservetech.com" target="_blank">
-
-  <div class="top-banner">
-    Print GServeTech – Canada’s Local Print Powerhouse
-  </div>
-
+  <div class="top-banner">Print GServeTech – Canada’s Local Print Powerhouse</div>
   <div class="hero">
     <img src="https://gservetech.github.io/html/html/images/1.jpg" alt="Print Showcase" />
     <h1>Your Vision, Printed to Perfection</h1>
   </div>
-
   <div class="section">
     <h2>Where Creativity Meets Quality</h2>
     <p>
       From eye-popping posters and elegant menus to branded business cards, large-scale banners, canvas prints, and vibrant labels —
       we deliver premium print solutions tailored to your needs. No minimums. Same-day service. Designed to impress.
     </p>
-
-    <div class="highlights">
-      <div class="highlight-box">📌 Posters & Signage</div>
-      <div class="highlight-box">📇 Business Cards</div>
-      <div class="highlight-box">🖼️ Canvas & Art Prints</div>
-      <div class="highlight-box">📋 Restaurant Menus</div>
-      <div class="highlight-box">🎯 Vinyl Banners</div>
-      <div class="highlight-box">🏷️ Product Labels</div>
+    <div class="services-grid">
+      <div class="service-box">Flyers & Brochures</div>
+      <div class="service-box">Business Cards & Loyalty Cards</div>
+      <div class="service-box">Restaurant Menus & Takeout Flyers</div>
+      <div class="service-box">Posters, Large Format Prints</div>
+      <div class="service-box">Vinyl Banners & Retractable Banners</div>
+      <div class="service-box">Stickers, Labels & Packaging</div>
+      <div class="service-box">Canvas Prints & Photo Gifts</div>
+      <div class="service-box">Presentation Folders & Booklets</div>
+      <div class="service-box">Branded Merchandise & Apparel</div>
+    </div>
+    <div class="contact-bar">
+      <div>
+        📞 <strong>416-635-0502</strong> &nbsp;|&nbsp;
+        ✉️ <a href="mailto:info@gservetech.com">info@gservetech.com</a> &nbsp;|&nbsp;
+        💬 <a href="https://wa.me/16477822919" target="_blank">Chat on WhatsApp</a>
+      </div>
+      <small>&copy; 2025 <strong>Print.GServeTech.com</strong></small>
     </div>
   </div>
-
   <div class="grid">
-    <img src="https://gservetech.github.io/html/html/images/2.jpg" alt="Colorful Portrait" height="700">
-    <img src="https://gservetech.github.io/html/html/images/3.jpg" alt="Fruit Splash Design" height="700">
-    <img src="https://gservetech.github.io/html/html/images/3.webp" alt="Textured Art Face" height="700">
-    <img src="https://gservetech.github.io/html/html/images/4.jpg" alt="Food Menu Poster" height="700">
+    <img src="https://gservetech.github.io/html/html/images/2.jpg" alt="Colorful Portrait">
+    <img src="https://gservetech.github.io/html/html/images/3.jpg" alt="Fruit Splash Design">
+    <img src="https://gservetech.github.io/html/html/images/3.webp" alt="Textured Art Face">
+    <img src="https://gservetech.github.io/html/html/images/4.jpg" alt="Food Menu Poster">
   </div>
-
-  <div class="extra-content">
-    <h2>Boost Your Brand with Custom Printing</h2>
-    <p>
-      Whether you're promoting your business, hosting an event, or launching a new product — we’ve got you covered. Our team brings
-      your ideas to life with high-impact materials: flyers, postcards, invitations, branded merchandise, custom packaging, and more.
-      Trusted by small businesses and startups across Canada.
-    </p>
+  <div class="grid">
+    <img src="https://gservetech.github.io/html/html/images/board.jpg" alt="Poster Board">
+    <img src="https://gservetech.github.io/html/html/images/busines-card.png" alt="Business Card">
+    <img src="https://gservetech.github.io/html/html/images/freeposter.jpg" alt="Free Poster">
+    <img src="https://gservetech.github.io/html/html/images/here.gif" alt="Promotional Image">
   </div>
-
-  <div class="cta">
-    <h2>Let’s Print Something Amazing</h2>
-    <p>Click anywhere to explore our full print catalog at Print.GServeTech.com</p>
-  </div>
-
-  <footer>
-    📞 <strong>416-635-0502</strong> |
-    ✉️ <a href="mailto:info@gservetech.com">info@gservetech.com</a> |
-    💬 <a href="https://wa.me/16477822919" target="_blank">Chat on WhatsApp</a><br>
-    &copy; 2025 Print.GServeTech.com
-  </footer>
-
 </a>
-
 </body>
 </html>
