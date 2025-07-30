@@ -5,24 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turmeric and Vitamin C Clay Mask</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Turmeric and Vitamin C Clay Mask">
+  <meta property="og:description" content="Discover the power of turmeric and Vitamin C in one luxurious clay mask. Hydrate, clear pores, and brighten skin naturally.">
+  <meta property="og:image" content="https://gservetech.github.io/html/html/amazon/product.jpg"> <meta property="og:url" content="https://yourwebsite.com/turmeric-vitamin-c-clay-mask.html"> <meta property="og:type" content="product">
   <style>
+    /* Global styles and your existing layout structure */
     body {
-      font-family: 'Montserrat', sans-serif; /* Professional sans-serif font for general text */
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f8f8f8; /* Slightly off-white for a softer look */
+      padding: 0; /* Removed padding here, managed by main-content */
+      background: #f8f8f8;
       color: #333;
-      line-height: 1.6; /* Improved readability */
+      line-height: 1.6;
     }
     .container {
       display: flex;
       flex-direction: column;
-      max-width: 1200px; /* Limit width for better readability on large screens */
-      margin: 0 auto; /* Center the container */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       background-color: #fff;
-      border-radius: 8px; /* Rounded corners for a modern feel */
-      overflow: hidden; /* Ensures shadow and rounded corners apply correctly */
+      border-radius: 8px;
+      overflow: hidden;
     }
     @media (min-width: 768px) {
       .container {
@@ -31,12 +36,12 @@
       }
       .left-column {
         width: 60%;
-        padding: 40px; /* More padding for spacious layout */
+        padding: 40px;
       }
       .right-column {
         width: 35%;
         padding: 40px;
-        background-color: #f0f0f0; /* Different background for right column */
+        background-color: #f0f0f0;
       }
     }
     .left-column, .right-column {
@@ -44,13 +49,13 @@
       padding: 20px;
     }
     h2 {
-      font-family: 'Lora', serif; /* Elegant serif font for headings */
+      font-family: 'Lora', serif;
       color: #222;
-      font-size: 2.2em; /* Larger heading */
+      font-size: 2.2em;
       margin-bottom: 20px;
-      border-bottom: 2px solid #f4a300; /* Subtle underline for headings */
+      border-bottom: 2px solid #f4a300;
       padding-bottom: 10px;
-      display: inline-block; /* Makes border-bottom only as wide as text */
+      display: inline-block;
     }
     h3 {
         font-family: 'Lora', serif;
@@ -61,66 +66,84 @@
     .section {
       margin-bottom: 30px;
     }
-    .image {
-      width: 100%;
-      margin-top: 20px;
-      height: auto;
-      border-radius: 8px; /* Rounded corners for images */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Soft shadow for images */
+    /* Image Link Styling */
+    .image-link {
+        display: block; /* Ensures the link wraps the image properly */
+        margin-top: 20px; /* Maintains original margin above image */
+        border-radius: 8px; /* Apply border-radius to the link for consistent look */
+        overflow: hidden; /* Ensures the border-radius cuts off image corners too */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Initial shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+        cursor: pointer; /* Indicate it's clickable, even if hover navigates */
     }
+    .image-link img {
+      width: 100%;
+      height: auto;
+      display: block; /* Prevents extra space below image */
+      border-radius: 0; /* Remove border-radius from img if already on parent link */
+    }
+    .image-link:hover {
+        transform: scale(1.02); /* Slightly zoom in on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+    }
+    /* Specific tip image links - less aggressive hover */
+    .tip .image-link {
+        margin-top: 0; /* Adjust margin for tip images */
+        margin-bottom: 15px; /* Add margin below tip image link */
+    }
+    .tip .image-link:hover {
+        transform: none; /* No scale for smaller tip images by default */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* A bit more pronounced shadow */
+    }
+
     .note {
       background: #fef7e0;
-      padding: 20px; /* More padding */
-      border-left: 5px solid #f4a300; /* Thicker border */
-      border-radius: 4px; /* Slightly rounded corners for notes */
-      margin-top: 30px; /* Space above note */
+      padding: 20px;
+      border-left: 5px solid #f4a300;
+      border-radius: 4px;
+      margin-top: 30px;
     }
     .tip {
-      margin-bottom: 25px; /* More space between tips */
+      margin-bottom: 25px;
       padding-bottom: 15px;
-      border-bottom: 1px dashed #ddd; /* Dashed line for a clean separator */
+      border-bottom: 1px dashed #ddd;
     }
     .tip:last-child {
-        border-bottom: none; /* No border for the last tip */
+        border-bottom: none;
     }
-    .tip img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    }
+    
     .title {
       font-weight: bold;
       color: #3a3a3a;
-      text-transform: uppercase; /* Uppercase for titles */
-      letter-spacing: 0.5px; /* Slightly more spaced letters */
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .highlight {
       color: #f4a300;
-      font-weight: 700; /* Use bolder weight from Montserrat */
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     /* First character decoration */
     .left-column p:first-of-type::first-letter {
-      font-family: 'Lora', serif; /* Use serif font for the drop cap */
-      font-size: 3.5em; /* Significantly larger */
+      font-family: 'Lora', serif;
+      font-size: 3.5em;
       line-height: 1;
       float: left;
       margin-right: 10px;
-      color: #f4a300; /* Highlight color */
+      color: #f4a300;
       font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on the letter */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     /* Text decoration for product description */
     .left-column p:first-of-type {
-        text-align: justify; /* Justify text for a more formal look */
-        padding-bottom: 10px; /* Space below the first paragraph */
+        text-align: justify;
+        padding-bottom: 10px;
     }
 
-    /* General link styling (if any links were present) */
+    /* General link styling */
     a {
         color: #f4a300;
         text-decoration: none;
@@ -130,38 +153,258 @@
         color: #e09400;
         text-decoration: underline;
     }
+
+    /* --- Fixed Vertical Button Styles --- */
+    .vertical-button-container {
+      position: fixed; /* Stays in place when scrolling */
+      top: 0;
+      left: 0;
+      height: 100vh; /* Takes full viewport height */
+      width: 40px; /* Fixed width, adjusted to 40px */
+      background-color: #007bff; /* Vibrant Blue background */
+      display: flex;
+      align-items: center; /* Vertically centers the content */
+      justify-content: center; /* Horizontally centers the content */
+      z-index: 999; /* Ensures it stays on top of other content */
+      box-shadow: 2px 0 8px rgba(0,0,0,0.3); /* More pronounced shadow */
+    }
+    .vertical-button-container a {
+      writing-mode: vertical-lr; /* Makes text flow top-to-bottom */
+      text-orientation: upright; /* Keeps characters upright */
+      color: white; /* White text for readability */
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px; /* Increased font size */
+      padding: 10px; /* Padding around the text */
+      border-radius: 8px; /* Rounded corners */
+      background-color: #007bff; /* Match container background */
+      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+      display: flex; /* Using flexbox to center content vertically */
+      align-items: center; /* Center the text within the link's height */
+      justify-content: center; /* Center the text within the link's width */
+      height: 100%; /* Make the button link fill the container height */
+      width: 100%; /* Make the button link fill the container width */
+    }
+    .vertical-button-container a:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+      color: white; /* Keep white text on hover for readability */
+    }
+
+    /* Main content needs a left margin to not be hidden by the fixed button */
+    .main-content {
+      margin-left: 40px; /* Matches the new width of the vertical button container */
+      padding: 20px; /* Existing padding */
+    }
+
+    /* --- Standard Amazon Button Styling --- */
+    .amazon-button {
+      display: block; /* Makes the link behave like a block element */
+      width: 80%; /* Adjusted width */
+      max-width: 300px; /* Max width to prevent it from getting too wide on large screens */
+      margin: 30px auto; /* Centered and with vertical spacing */
+      padding: 15px 25px; /* Ample padding for a big button feel */
+      background-color: #FF9900; /* Amazon's classic orange */
+      color: #ffffff; /* White text */
+      text-align: center;
+      text-decoration: none; /* Remove underline */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2em; /* Larger font size */
+      font-weight: 700; /* Bold text */
+      border-radius: 25px; /* More rounded corners for a modern button look */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow for professional feel */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Added color transition */
+      letter-spacing: 0.5px; /* Slightly spaced letters */
+    }
+
+    .amazon-button:hover {
+      background-color: #E68A00; /* Darker orange on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+      transform: translateY(-2px); /* Slight lift effect on hover */
+      color: #111; /* Dark text on hover for readability */
+    }
+
+    .amazon-button:active {
+      background-color: #CC7A00; /* Even darker orange when clicked */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Flatter shadow when active */
+      transform: translateY(0); /* Return to original position */
+    }
+
+    /* Button Design Variations (for horizontal group) */
+    .amazon-button--outline {
+      background-color: transparent;
+      color: #FF9900; /* Orange text */
+      border: 2px solid #FF9900; /* Orange border */
+      box-shadow: none; /* Remove default shadow */
+    }
+    .amazon-button--outline:hover {
+      background-color: #FF9900; /* Fill with orange on hover */
+      color: #ffffff; /* White text on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
+      transform: translateY(-1px);
+    }
+    .amazon-button--outline:active {
+      background-color: #E68A00;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transform: translateY(0);
+    }
+
+    .amazon-button--dark {
+      background-color: #4CAF50; /* A dark green */
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    .amazon-button--dark:hover {
+      background-color: #45a049; /* Slightly darker green */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+      color: #ffffff; /* Keep text white */
+    }
+    .amazon-button--dark:active {
+      background-color: #3e8e41;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .amazon-button--green {
+      background-color: #28a745; /* A standard green */
+      color: #ffffff;
+    }
+    .amazon-button--green:hover {
+      background-color: #218838; /* Darker green on hover */
+      color: #ffffff;
+    }
+    .amazon-button--green:active {
+      background-color: #1e7e34;
+    }
+
+    /* Flex container for horizontal buttons */
+    .button-group-horizontal {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      justify-content: center; /* Center buttons horizontally */
+      gap: 15px; /* Space between buttons */
+      margin-top: 40px; /* Space above the group */
+      margin-bottom: 20px;
+    }
+    .button-group-horizontal .amazon-button {
+      width: auto; /* Buttons will size to content + padding */
+      flex-grow: 0; /* Prevent buttons from stretching */
+      margin: 0; /* Remove auto margins from individual buttons */
+    }
+     @media (max-width: 767px) {
+        .button-group-horizontal {
+            flex-direction: column; /* Stack buttons vertically on small screens */
+            align-items: center; /* Center stacked buttons */
+        }
+        .button-group-horizontal .amazon-button {
+            width: 80%; /* Give stacked buttons a good width */
+            max-width: 250px;
+            margin-bottom: 15px; /* Add vertical space between stacked buttons */
+        }
+        /* Fixed vertical button becomes horizontal bar on small screens */
+        .vertical-button-container {
+            width: 100%; /* Take full width */
+        }
+        .vertical-button-container a {
+            font-size: 16px; /* Adjust font size */
+        }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left-column">
-      <div class="section">
-        <h2>Turmeric and Vitamin C Clay Mask</h2>
-        <p>Infused with the natural goodness of turmeric and Vitamin C, this rejuvenating clay mask is your go-to skincare solution for clearer, brighter, and deeply hydrated skin. Designed for all skin types, the mask targets clogged pores, dullness, and dryness in one refreshing application. With a rich, golden hue and creamy texture, it feels as luxurious as it looks. Use it weekly to maintain a youthful glow and refreshed complexion. Bonus: It smells amazing and feels like a spa in a jar!</p>
-        <img src="amazon/product.jpg" alt="Turmeric and Vitamin C Clay Mask" class="image">
-      </div>
-      <div class="section note">
-        <h3>Why Turmeric?</h3>
-        <p>Turmeric is known for its powerful anti-inflammatory and antioxidant properties. When applied to the skin, it helps reduce redness, fight acne-causing bacteria, and enhance natural radiance. Paired with Vitamin C, this clay mask delivers double the skin-brightening power!</p>
-      </div>
-    </div>
-    <div class="right-column">
-      <div class="section">
-        <h3 class="highlight">HOW TO USE</h3>
-        <p>Enjoy an at-home spa ritual with these simple steps.</p>
-        <div class="tip">
-          <img src="amazon/1.jpg" alt="Step 1">
-          <p><span class="title">Cleanse your face</span> — Start with a clean face. Gently pat dry with a soft towel before applying the mask.</p>
+  <div class="vertical-button-container">
+    <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" target="_blank" rel="noopener noreferrer">Buy On Amazon</a>
+  </div>
+  <div class="main-content">
+    <div class="container">
+      <div class="left-column">
+        <div class="section">
+          <h2>Turmeric and Vitamin C Clay Mask</h2>
+          <p>Infused with the natural goodness of turmeric and Vitamin C, this rejuvenating clay mask is your go-to skincare solution for clearer, brighter, and deeply hydrated skin. Designed for all skin types, the mask targets clogged pores, dullness, and dryness in one refreshing application. With a rich, golden hue and creamy texture, it feels as luxurious as it looks. Use it weekly to maintain a youthful glow and refreshed complexion. Bonus: It smells amazing and feels like a spa in a jar!</p>
+          
+          <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="image-link" target="_blank" rel="noopener noreferrer">
+            <img src="https://gservetech.github.io/html/html/amazon/product.jpg" alt="Turmeric and Vitamin C Clay Mask" class="image">
+          </a>
+
+          <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button" target="_blank" rel="noopener noreferrer">
+            Buy On Amazon
+          </a>
         </div>
-        <div class="tip">
-            <img src="amazon/2.jpg" alt="Step 2">
+        <div class="section note">
+          <h3>Why Turmeric?</h3>
+          <p>Turmeric is known for its powerful anti-inflammatory and antioxidant properties. When applied to the skin, it helps reduce redness, fight acne-causing bacteria, and enhance natural radiance. Paired with Vitamin C, this clay mask delivers double the skin-brightening power!</p>
+        </div>
+
+        <div class="section">
+          <h3>Different Designs:</h3>
+          <div class="button-group-horizontal">
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button amazon-button--outline" target="_blank" rel="noopener noreferrer">
+              Buy On Amazon
+            </a>
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button amazon-button--dark" target="_blank" rel="noopener noreferrer">
+              Buy On Amazon
+            </a>
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button amazon-button--green" target="_blank" rel="noopener noreferrer">
+              Buy On Amazon
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="right-column">
+        <div class="section">
+          <h3 class="highlight">HOW TO USE</h3>
+          <p>Enjoy an at-home spa ritual with these simple steps.</p>
+          <div class="tip">
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="image-link" target="_blank" rel="noopener noreferrer">
+                <img src="https://gservetech.github.io/html/html/amazon/1.jpg" alt="Step 1">
+            </a>
+            <p><span class="title">Cleanse your face</span> — Start with a clean face. Gently pat dry with a soft towel before applying the mask.</p>
+          </div>
+          <div class="tip">
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="image-link" target="_blank" rel="noopener noreferrer">
+                <img src="https://gservetech.github.io/html/html/amazon/2.jpg" alt="Step 2">
+            </a>
             <p><span class="title">Apply the mask</span> — Spread an even layer over your clean face, avoiding the eye and lip areas. Relax and let it work for 10-15 minutes.</p>
             <p><span class="title">Rinse thoroughly</span> — Gently rinse with warm water, massaging in circular motions to exfoliate. Pat your skin dry.</p>
-             <p><span class="title">Follow with moisturizer</span> — For best results, follow up with your favorite moisturizer to lock in hydration.</p>
+            <p><span class="title">Follow with moisturizer</span> — For best results, follow up with your favorite moisturizer to lock in hydration.</p>
+          </div>
         </div>
-        
+
+        <div class="section">
+            <h3>More Options (Right Column):</h3>
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button amazon-button--dark" target="_blank" rel="noopener noreferrer">
+              Buy On Amazon
+            </a>
+            <a href="https://www.amazon.ca/Turmeric-Vitamin-Clearing-Hydrating-Moisturizing/dp/B0DD4DFWG3?tag=gservetechdig-20" class="amazon-button amazon-button--outline" target="_blank" rel="noopener noreferrer">
+              Buy On Amazon
+            </a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // WARNING: This JavaScript code implements navigation on mouse-over,
+    // which is generally NOT recommended for good user experience.
+    // Users expect links to activate on CLICK. This can lead to accidental
+    // page changes and user frustration.
+    // Use this feature with extreme caution.
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const imageLinks = document.querySelectorAll('.image-link');
+
+        imageLinks.forEach(link => {
+            link.addEventListener('mouseover', function(event) {
+                const url = this.href; // Get the URL from the anchor tag
+                if (url) {
+                    // Open the URL in a new tab
+                    // 'noopener,noreferrer' are added for security best practices
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                    // Prevent the default link behavior (click) to avoid double actions
+                    event.preventDefault();
+                }
+            });
+        });
+    });
+  </script>
 </body>
 </html>
