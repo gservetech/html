@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turmeric and Vitamin C Clay Mask</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif; /* Professional sans-serif font for general text */
+      margin: 0;
+      padding: 20px;
+      background: #f8f8f8; /* Slightly off-white for a softer look */
+      color: #333;
+      line-height: 1.6; /* Improved readability */
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px; /* Limit width for better readability on large screens */
+      margin: 0 auto; /* Center the container */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      background-color: #fff;
+      border-radius: 8px; /* Rounded corners for a modern feel */
+      overflow: hidden; /* Ensures shadow and rounded corners apply correctly */
+    }
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .left-column {
+        width: 60%;
+        padding: 40px; /* More padding for spacious layout */
+      }
+      .right-column {
+        width: 35%;
+        padding: 40px;
+        background-color: #f0f0f0; /* Different background for right column */
+      }
+    }
+    .left-column, .right-column {
+      width: 100%;
+      padding: 20px;
+    }
+    h2 {
+      font-family: 'Lora', serif; /* Elegant serif font for headings */
+      color: #222;
+      font-size: 2.2em; /* Larger heading */
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f4a300; /* Subtle underline for headings */
+      padding-bottom: 10px;
+      display: inline-block; /* Makes border-bottom only as wide as text */
+    }
+    h3 {
+        font-family: 'Lora', serif;
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .image {
+      width: 100%;
+      margin-top: 20px;
+      height: auto;
+      border-radius: 8px; /* Rounded corners for images */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Soft shadow for images */
+    }
+    .note {
+      background: #fef7e0;
+      padding: 20px; /* More padding */
+      border-left: 5px solid #f4a300; /* Thicker border */
+      border-radius: 4px; /* Slightly rounded corners for notes */
+      margin-top: 30px; /* Space above note */
+    }
+    .tip {
+      margin-bottom: 25px; /* More space between tips */
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #ddd; /* Dashed line for a clean separator */
+    }
+    .tip:last-child {
+        border-bottom: none; /* No border for the last tip */
+    }
+    .tip img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .title {
+      font-weight: bold;
+      color: #3a3a3a;
+      text-transform: uppercase; /* Uppercase for titles */
+      letter-spacing: 0.5px; /* Slightly more spaced letters */
+    }
+    .highlight {
+      color: #f4a300;
+      font-weight: 700; /* Use bolder weight from Montserrat */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* First character decoration */
+    .left-column p:first-of-type::first-letter {
+      font-family: 'Lora', serif; /* Use serif font for the drop cap */
+      font-size: 3.5em; /* Significantly larger */
+      line-height: 1;
+      float: left;
+      margin-right: 10px;
+      color: #f4a300; /* Highlight color */
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on the letter */
+    }
+
+    /* Text decoration for product description */
+    .left-column p:first-of-type {
+        text-align: justify; /* Justify text for a more formal look */
+        padding-bottom: 10px; /* Space below the first paragraph */
+    }
+
+    /* General link styling (if any links were present) */
+    a {
+        color: #f4a300;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    a:hover {
+        color: #e09400;
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <div class="section">
+        <h2>Turmeric and Vitamin C Clay Mask</h2>
+        <p>Infused with the natural goodness of turmeric and Vitamin C, this rejuvenating clay mask is your go-to skincare solution for clearer, brighter, and deeply hydrated skin. Designed for all skin types, the mask targets clogged pores, dullness, and dryness in one refreshing application. With a rich, golden hue and creamy texture, it feels as luxurious as it looks. Use it weekly to maintain a youthful glow and refreshed complexion. Bonus: It smells amazing and feels like a spa in a jar!</p>
+        <img src="amazon/product.jpg" alt="Turmeric and Vitamin C Clay Mask" class="image">
+      </div>
+      <div class="section note">
+        <h3>Why Turmeric?</h3>
+        <p>Turmeric is known for its powerful anti-inflammatory and antioxidant properties. When applied to the skin, it helps reduce redness, fight acne-causing bacteria, and enhance natural radiance. Paired with Vitamin C, this clay mask delivers double the skin-brightening power!</p>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="section">
+        <h3 class="highlight">HOW TO USE</h3>
+        <p>Enjoy an at-home spa ritual with these simple steps.</p>
+        <div class="tip">
+          <img src="amazon/1.jpg" alt="Step 1">
+          <p><span class="title">Cleanse your face</span> — Start with a clean face. Gently pat dry with a soft towel before applying the mask.</p>
+        </div>
+        <div class="tip">
+            <img src="amazon/2.jpg" alt="Step 2">
+            <p><span class="title">Apply the mask</span> — Spread an even layer over your clean face, avoiding the eye and lip areas. Relax and let it work for 10-15 minutes.</p>
+            <p><span class="title">Rinse thoroughly</span> — Gently rinse with warm water, massaging in circular motions to exfoliate. Pat your skin dry.</p>
+             <p><span class="title">Follow with moisturizer</span> — For best results, follow up with your favorite moisturizer to lock in hydration.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
