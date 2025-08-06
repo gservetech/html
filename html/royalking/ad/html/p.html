@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chicken Parmigiana Email</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      font-family: Arial, sans-serif;
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+    }
+
+    .header {
+      background-color: #b71c1c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .hero-image,
+    .second-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      padding: 20px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: #ffeeee;
+      border-left: 4px solid #b71c1c;
+      padding: 10px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #b71c1c;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    @media only screen and (max-width: 480px) {
+      .content {
+        padding: 15px;
+        font-size: 15px;
+      }
+      .btn {
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <h1>🍝 Chicken Parmigiana at <br />Royal King Pasta & Sandwiches</h1>
+    </div>
+
+    <!-- Hero Image -->
+    <img
+      src="https://gservetech.github.io/html/html/royalking/ad/images/1.jpeg"
+      alt="Chicken Parmigiana"
+      class="hero-image"
+    />
+
+    <!-- Content -->
+    <div class="content">
+      <p>
+        Discover the ultimate comfort food at <strong style="color:#b71c1c;">Royal King Pasta & Sandwiches</strong> – our signature
+        <strong>Chicken Parmigiana</strong> is a rich, crispy, cheesy sensation.
+      </p>
+
+      <div class="highlight">
+        A golden-fried chicken cutlet smothered in tangy tomato sauce, layered with gooey mozzarella and Parmesan, and baked to bubbling perfection.
+      </div>
+
+      <p>
+        Served hot and fresh with garlic bread or pasta, this dish is everything you crave when you think of Italian comfort.
+      </p>
+
+      <!-- CTA Button -->
+      <div class="btn-container">
+        <a href="https://www.royalkingon.com/menu?itemId=31" class="btn">🍴 Order Chicken Parmigiana Now</a>
+      </div>
+
+      <!-- Second Image -->
+      <img
+        src="https://gservetech.github.io/html/html/royalking/ad/images/3.jpg"
+        alt="Woman Enjoying Pasta"
+        class="second-image"
+      />
+
+      <p>
+        📍 Visit us at <strong>3450 Bathurst Street, Toronto</strong><br />
+        📞 Call: <a href="tel:4167818383" style="color:#b71c1c;">(416) 781-8383</a><br />
+        📧 Email: <a href="mailto:order@royalkingon.com" style="color:#b71c1c;">order@royalkingon.com</a><br />
+        🌐 <a href="https://www.royalkingon.com" style="color:#b71c1c;">www.royalkingon.com</a>
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        You're receiving this email because you signed up for updates from <strong style="color:#b71c1c;">Royal King Pasta & Sandwiches</strong>.
+      </p>
+      <p>
+        <a href="{{ unsubscribe }}" style="color: #b71c1c; text-decoration: underline;">Unsubscribe here</a> if you no longer wish to receive emails.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
