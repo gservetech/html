@@ -86,7 +86,7 @@
     "size": "Small",
     "price": 60,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-meat.jpg"
+    "imageUrl": "/images/lasagna-meat.png"
   },
   {
     "id": "lasagna-meat-l",
@@ -95,7 +95,7 @@
     "size": "Large",
     "price": 110,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-meat.jpg"
+    "imageUrl": "/images/lasagna-meat.png"
   },
   {
     "id": "lasagna-veggie-s",
@@ -104,7 +104,7 @@
     "size": "Small",
     "price": 55,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-veggie.jpg"
+    "imageUrl": "/images/lasagna-veggie.png"
   },
   {
     "id": "lasagna-veggie-l",
@@ -113,7 +113,7 @@
     "size": "Large",
     "price": 105,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-veggie.jpg"
+    "imageUrl": "/images/lasagna-veggie.png"
   },
   {
     "id": "lasagna-chicken-s",
@@ -122,7 +122,7 @@
     "size": "Small",
     "price": 60,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-chicken.jpg"
+    "imageUrl": "/images/lasagna-chicken.png"
   },
   {
     "id": "lasagna-chicken-l",
@@ -131,7 +131,7 @@
     "size": "Large",
     "price": 110,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-chicken.jpg"
+    "imageUrl": "/images/lasagna-chicken.png"
   },
   {
     "id": "lasagna-eggplant-s",
