@@ -27,7 +27,7 @@
     "price": 45,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-arrabbiata.jpg"
+    "imageUrl": "/images/penne-arrabbiata.png"
   },
   {
     "id": "penne-arrabbiata-l",
@@ -37,7 +37,7 @@
     "price": 75,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-arrabbiata.jpg"
+    "imageUrl": "/images/penne-arrabbiata.png"
   },
   {
     "id": "penne-rose-s",
@@ -47,7 +47,7 @@
     "price": 50,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-rose.jpg"
+    "imageUrl": "/images/penne-rose.png"
   },
   {
     "id": "penne-rose-l",
@@ -57,7 +57,7 @@
     "price": 90,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-rose.jpg"
+    "imageUrl": "/images/penne-rose.png"
   },
   {
     "id": "penne-meat-s",
