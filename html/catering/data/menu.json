@@ -17,7 +17,7 @@
     "price": 70,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-tomato.jpg"
+    "imageUrl": "/images/penne-tomato.png"
   },
   {
     "id": "penne-arrabbiata-s",
@@ -82,19 +82,19 @@
   {
     "id": "lasagna-meat-s",
     "item": "Lasagna",
-    "variant": "Meat",
+    "variant": "Meat (Beef)",
     "size": "Small",
     "price": 60,
-    "serves": "8–10",
+    "serves": "12 pcs",
     "imageUrl": "/images/lasagna-meat.jpg"
   },
   {
     "id": "lasagna-meat-l",
     "item": "Lasagna",
-    "variant": "Meat",
+    "variant": "Meat (Beef)",
     "size": "Large",
-    "price": 115,
-    "serves": "15–18",
+    "price": 110,
+    "serves": "24 pcs",
     "imageUrl": "/images/lasagna-meat.jpg"
   },
   {
@@ -103,7 +103,7 @@
     "variant": "Veggie",
     "size": "Small",
     "price": 55,
-    "serves": "8–10",
+    "serves": "12 pcs",
     "imageUrl": "/images/lasagna-veggie.jpg"
   },
   {
@@ -111,8 +111,8 @@
     "item": "Lasagna",
     "variant": "Veggie",
     "size": "Large",
-    "price": 100,
-    "serves": "15–18",
+    "price": 105,
+    "serves": "24 pcs",
     "imageUrl": "/images/lasagna-veggie.jpg"
   },
   {
@@ -120,8 +120,8 @@
     "item": "Lasagna",
     "variant": "Chicken",
     "size": "Small",
-    "price": 65,
-    "serves": "8–10",
+    "price": 60,
+    "serves": "12 pcs",
     "imageUrl": "/images/lasagna-chicken.jpg"
   },
   {
@@ -129,8 +129,8 @@
     "item": "Lasagna",
     "variant": "Chicken",
     "size": "Large",
-    "price": 120,
-    "serves": "15–18",
+    "price": 110,
+    "serves": "24 pcs",
     "imageUrl": "/images/lasagna-chicken.jpg"
   },
   {
@@ -138,8 +138,8 @@
     "item": "Lasagna",
     "variant": "Eggplant",
     "size": "Small",
-    "price": 60,
-    "serves": "8–10",
+    "price": 50,
+    "serves": "12 pcs",
     "imageUrl": "/images/lasagna-eggplant.jpg"
   },
   {
@@ -147,8 +147,64 @@
     "item": "Lasagna",
     "variant": "Eggplant",
     "size": "Large",
-    "price": 115,
-    "serves": "15–18",
+    "price": 100,
+    "serves": "24 pcs",
     "imageUrl": "/images/lasagna-eggplant.jpg"
+  },
+  {
+    "id": "side-peas-mushrooms",
+    "item": "Sides",
+    "variant": "Peas & Mushrooms",
+    "size": "Small",
+    "price": 40,
+    "serves": "6-8"
+  },
+  {
+    "id": "side-potatoes",
+    "item": "Sides",
+    "variant": "Home Style Oven Potatoes",
+    "size": "Small",
+    "price": 30,
+    "serves": "6-8"
+  },
+  {
+    "id": "side-fries",
+    "item": "Sides",
+    "variant": "French Fries",
+    "size": "Small",
+    "price": 25,
+    "serves": "6-8"
+  },
+  {
+    "id": "entree-grilled-chicken",
+    "item": "Entrees",
+    "variant": "Grilled Chicken with Tomato Sauce",
+    "size": "N/A",
+    "price": 7,
+    "serves": "1 pc"
+  },
+  {
+    "id": "entree-breaded-chicken",
+    "item": "Entrees",
+    "variant": "Breaded Chicken with Tomato Sauce",
+    "size": "N/A",
+    "price": 8,
+    "serves": "1 pc"
+  },
+  {
+    "id": "entree-grilled-beef",
+    "item": "Entrees",
+    "variant": "Grilled Beef with Tomato Sauce",
+    "size": "N/A",
+    "price": 6,
+    "serves": "1 pc"
+  },
+  {
+    "id": "special-wings",
+    "item": "Special",
+    "variant": "40 Chicken Wings",
+    "size": "N/A",
+    "price": 55,
+    "serves": "10-12"
   }
 ]
