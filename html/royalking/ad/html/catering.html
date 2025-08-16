@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Royal King Italian Catering</title>
+<style>
+  body{margin:0;background:#0c0c0c;color:#111;font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:720px;margin:0 auto;background:#ffffff}
+  .bar{background:linear-gradient(135deg,#b5121b,#e11d2e 60%,#ff6a6a);color:#fff;text-align:center}
+  .bar .inner{padding:20px 16px}
+  h1,h2,h3,p{margin:0}
+  .tagline{font-size:14px;letter-spacing:.08em;opacity:.95}
+  .title{font-size:26px;font-weight:800;line-height:1.1;margin-top:6px}
+  .sub{font-size:13px;opacity:.9;margin-top:6px}
+  /* === Hero === */
+  .hero{position:relative;overflow:hidden;background:radial-gradient(1200px 480px at 70% -60%, #ffd5d7 0%, #ffe9ea 35%, #fff 70%);}
+  .hero-inner{display:flex;gap:16px;align-items:center;padding:20px 16px}
+  .hero-copy{flex:1;min-width:0}
+  .hero-copy h2{font-size:22px;line-height:1.2;margin-bottom:8px;color:#b5121b}
+  .hero-copy p{font-size:14px;color:#333;margin-bottom:12px}
+  .ctas{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px}
+  .btn.primary{background:#b5121b;color:#fff}
+  .btn.light{background:#fff;border:2px solid #b5121b;color:#b5121b}
+  /* === Inline SVG (elegant Indian/Italian glam hostess) === */
+  .hostess{width:230px;height:auto;flex:0 0 230px}
+  @media (max-width:560px){
+    .hero-inner{flex-direction:column-reverse;text-align:center}
+    .hostess{width:70%}
+  }
+  /* === Sections === */
+  .section{padding:22px 16px}
+  .section h3{font-size:18px;color:#111;margin-bottom:12px;border-left:6px solid #b5121b;padding-left:10px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .card{border:1px solid #eee;border-radius:14px;padding:14px}
+  .item{display:flex;justify-content:space-between;gap:8px;font-size:14px}
+  .name{font-weight:700;color:#333}
+  .price{white-space:nowrap;color:#111}
+  .note{font-size:12px;color:#666;margin-top:10px}
+  .addons{background:#fff6f6;border:1px dashed #e11d2e;color:#7a0f15;padding:10px;border-radius:12px;font-size:13px;margin-top:10px}
+  .serves{font-size:12px;color:#333;margin-top:6px}
+  /* === Footer === */
+  .foot{background:#fafafa;color:#555;text-align:center;padding:20px 16px;font-size:13px;border-top:1px solid #eee}
+  .foot a{color:#b5121b;text-decoration:none;font-weight:700}
+  .brand{font-weight:800;color:#b5121b}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Top Bar -->
+    <div class="bar">
+      <div class="inner">
+        <div class="tagline">ROYAL KING PASTA & SANDWICHES</div>
+        <div class="title">Fresh. Local. Delicious.</div>
+        <div class="sub">Hot Italian catering for parties, family gatherings & corporate events</div>
+      </div>
+    </div>
+
+    <!-- Hero with Inline SVG Illustration -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h2>Italian Catering that Wows</h2>
+          <p>Make your event unforgettable with generous trays of pasta and lasagna — delivered hot and ready to serve. Add chicken or meatballs to level it up.</p>
+          <div class="ctas">
+            <a class="btn primary" href="https://www.royalkingon.com/menu" target="_blank" rel="noopener">Order Online</a>
+            <a class="btn light" href="tel:+14167818383">Call 416-781-8383</a>
+          </div>
+        </div>
+
+        <!-- Tasteful glam hostess (Indian/Italian fusion style) -->
+        <svg class="hostess" viewBox="0 0 360 560" xmlns="http://www.w3.org/2000/svg" aria-label="Elegant Indian/Italian hostess with catering tray">
+          <defs>
+            <!-- Skin / Hair / Fabric Gradients -->
+            <linearGradient id="skin" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#f2c19d"/><stop offset="1" stop-color="#de9c74"/>
+            </linearGradient>
+            <radialGradient id="blush" cx="50%" cy="50%" r="60%">
+              <stop offset="0" stop-color="#f7b2a0" stop-opacity=".5"/><stop offset="1" stop-color="#f7b2a0" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="dress" x1="0" x2="1">
+              <stop offset="0" stop-color="#b5121b"/><stop offset="1" stop-color="#e11d2e"/>
+            </linearGradient>
+            <linearGradient id="sari" x1="0" x2="1">
+              <stop offset="0" stop-color="#ffd35a"/><stop offset="1" stop-color="#ffb800"/>
+            </linearGradient>
+            <linearGradient id="hair" x1="0" x2="1">
+              <stop offset="0" stop-color="#1f120b"/><stop offset="1" stop-color="#3b2417"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Hair (long, wavy) -->
+          <path d="M188 110c48 0 86 36 86 85 0 56-40 84-64 94-6 3-12 1-16-4-11-13-14-22-35-20-16 1-22 6-32 15-8 7-19 6-25-4-12-21-21-47-18-75 6-54 45-91 104-91z" fill="url(#hair)"/>
+
+          <!-- Face -->
+          <ellipse cx="184" cy="146" rx="33" ry="38" fill="url(#skin)"/>
+          <!-- Eyes -->
+          <ellipse cx="173" cy="145" rx="5.5" ry="3" fill="#2b1b12"/>
+          <ellipse cx="195" cy="145" rx="5.5" ry="3" fill="#2b1b12"/>
+          <!-- Brows -->
+          <path d="M164 138c5-4 13-6 18-3" stroke="#2b1b12" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M194 135c6-3 13-2 18 2" stroke="#2b1b12" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Nose -->
+          <path d="M183 151c1 6-2 10-4 12" stroke="#8f5a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Lips -->
+          <path d="M172 163c6 5 18 5 24 0" fill="none" stroke="#b63a3f" stroke-width="2" stroke-linecap="round"/>
+          <!-- Bindi (subtle) -->
+          <circle cx="184" cy="136" r="2.5" fill="#d62d2d"/>
+
+          <!-- Necklace -->
+          <circle cx="202" cy="178" r="4" fill="#ffd400"/>
+          <circle cx="188" cy="182" r="3.5" fill="#ffd400"/>
+          <circle cx="174" cy="178" r="4" fill="#ffd400"/>
+
+          <!-- Dress (Italian red evening dress) -->
+          <path d="M124 190c24-12 90-12 114 0 35 18 48 63 33 120-12 45-40 103-62 143-10 19-35 19-46 0-22-40-50-98-62-143-15-57-1-102 23-120z" fill="url(#dress)"/>
+
+          <!-- Sari-style golden drape (Indian flair) -->
+          <path d="M118 210c28-10 140-10 168 0-6 22-20 42-40 52-20 10-64 10-84 0-20-10-36-30-44-52z" fill="url(#sari)" opacity=".8"/>
+
+          <!-- Left arm & hand holding tray -->
+          <path d="M106 240c-10 7-15 20-9 32 14 30 44 64 63 59 18-3 11-27-1-41-12-12-19-32-25-44-5-10-17-10-28-6z" fill="url(#skin)"/>
+
+          <!-- Silver tray with steaming pasta & lasagna slice -->
+          <g transform="translate(48,-4)">
+            <rect x="150" y="230" width="130" height="14" rx="7" fill="#666"/>
+            <ellipse cx="215" cy="236" rx="55" ry="5" fill="#999" opacity=".45"/>
+            <!-- Bowl of penne -->
+            <path d="M166 205c0 18 19 34 43 34s43-16 43-34h-86z" fill="#fff"/>
+            <ellipse cx="209" cy="205" rx="43" ry="6" fill="#e5e5e5"/>
+            <ellipse cx="209" cy="203" rx="30" ry="4" fill="#f5d77a"/>
+            <ellipse cx="209" cy="201" rx="26" ry="3" fill="#d62828"/>
+            <!-- Lasagna slice -->
+            <g transform="translate(145,178)">
+              <rect x="0" y="22" width="38" height="18" rx="3" fill="#f5d77a"/>
+              <rect x="0" y="14" width="38" height="10" fill="#c93a3a"/>
+              <rect x="0" y="8"  width="38" height="8"  fill="#f5d77a"/>
+              <rect x="0" y="2"  width="38" height="8"  fill="#c93a3a"/>
+              <rect x="0" y="0"  width="38" height="4"  fill="#ffe9b0"/>
+            </g>
+            <!-- Steam -->
+            <path d="M194 168c-7 10 6 12 2 24-4 10-20 6-13 18" stroke="#cfcfcf" stroke-width="2" fill="none"/>
+            <path d="M219 164c-7 10 6 12 2 24-4 10-20 6-13 18" stroke="#cfcfcf" stroke-width="2" fill="none"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Menu: Pasta -->
+    <div class="section">
+      <h3>🍝 Pasta Trays</h3>
+      <div class="grid">
+        <div class="card">
+          <div class="item"><span class="name">Penne Tomato Sauce</span><span class="price">Small Tray $40 (6–8)</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $70 (12–15)</span></div>
+          <div class="item"><span class="name">Penne Arrabiata</span><span class="price">Small Tray $45</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $75</span></div>
+        </div>
+        <div class="card">
+          <div class="item"><span class="name">Penne Rosé</span><span class="price">Small Tray $50</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $90</span></div>
+          <div class="item"><span class="name">Penne Meat Sauce</span><span class="price">Small Tray $55</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $99</span></div>
+        </div>
+      </div>
+      <div class="addons">Add chicken pieces +$5 &nbsp;•&nbsp; Add meatballs (7 pcs) +$5</div>
+      <div class="serves">Small Tray: 6–8 people (pasta) • Large Tray: 12–15 people (pasta)</div>
+    </div>
+
+    <!-- Menu: Lasagna -->
+    <div class="section">
+      <h3>🧀 Lasagna Trays</h3>
+      <div class="grid">
+        <div class="card">
+          <div class="item"><span class="name">Meat Lasagna</span><span class="price">Small Tray $60</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $115</span></div>
+          <div class="item"><span class="name">Veggie Lasagna</span><span class="price">Small Tray $55</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $100</span></div>
+        </div>
+        <div class="card">
+          <div class="item"><span class="name">Chicken Lasagna</span><span class="price">Small Tray $65</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $120</span></div>
+          <div class="item"><span class="name">Eggplant Lasagna</span><span class="price">Small Tray $60</span></div>
+          <div class="item"><span class="name"></span><span class="price">Large Tray $115</span></div>
+        </div>
+      </div>
+      <div class="serves">Small Tray: 8–10 people • Large Tray: 15–18 people</div>
+    </div>
+
+    <!-- Secondary CTA -->
+    <div class="section" style="padding-top:0">
+      <div class="card" style="border-color:#b5121b;background:#fff5f5">
+        <div class="item" style="font-size:15px">
+          <span class="name" style="color:#b5121b">Ready when you are:</span>
+          <span class="price"><a href="https://www.royalkingon.com/menu" target="_blank" rel="noopener" style="color:#b5121b;text-decoration:none">royalkingon.com/menu</a></span>
+        </div>
+        <div class="item"><span>☎</span><span class="price"><a href="tel:+14167818383" style="color:#111;text-decoration:none">416-781-8383</a></span></div>
+        <div class="item"><span>✉</span><span class="price"><a href="mailto:order@royalkingon.com" style="color:#111;text-decoration:none">order@royalkingon.com</a></span></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="foot">
+      <div><span class="brand">Royal King Pasta & Sandwiches</span> • <a href="https://www.royalkingon.com" target="_blank" rel="noopener">www.royalkingon.com</a></div>
+      <div style="margin-top:8px">You're receiving this because you asked about catering. <a href="{{ unsubscribe }}">Unsubscribe</a>.</div>
+    </div>
+  </div>
+</body>
+</html>
