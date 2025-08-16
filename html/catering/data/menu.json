@@ -67,7 +67,7 @@
     "price": 55,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-meat.jpg"
+    "imageUrl": "/images/penne-meat.png"
   },
   {
     "id": "penne-meat-l",
@@ -77,7 +77,7 @@
     "price": 99,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-meat.jpg"
+    "imageUrl": "/images/penne-meat.png"
   },
   {
     "id": "lasagna-meat-s",
@@ -157,7 +157,8 @@
     "variant": "Peas & Mushrooms",
     "size": "Small",
     "price": 40,
-    "serves": "6-8"
+    "serves": "6-8",
+    "imageUrl": "/images/side-peas-mushrooms.png"
   },
   {
     "id": "side-potatoes",
@@ -166,7 +167,7 @@
     "size": "Small",
     "price": 30,
     "serves": "6-8",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/side-potatoes.webp"
   },
   {
     "id": "side-fries",
@@ -175,7 +176,7 @@
     "size": "Small",
     "price": 25,
     "serves": "6-8",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/Fries-Catering.jpg"
   },
   {
     "id": "entree-grilled-chicken",
@@ -184,7 +185,7 @@
     "size": "N/A",
     "price": 7,
     "serves": "1 pc",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/entree-grilled-chicken.webp"
   },
   {
     "id": "entree-breaded-chicken",
@@ -193,7 +194,7 @@
     "size": "N/A",
     "price": 8,
     "serves": "1 pc",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/entree-grilled-chicken.webp"
   },
   {
     "id": "entree-grilled-beef",
@@ -202,7 +203,7 @@
     "size": "N/A",
     "price": 6,
     "serves": "1 pc",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/entree-grilled-beef.jpg"
   },
   {
     "id": "special-wings",
@@ -211,6 +212,6 @@
     "size": "N/A",
     "price": 55,
     "serves": "10-12",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/images/special-wings.webp"
   }
 ]
