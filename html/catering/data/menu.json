@@ -1,0 +1,154 @@
+[
+  {
+    "id": "penne-tomato-s",
+    "item": "Penne",
+    "variant": "Tomato Sauce",
+    "size": "Small",
+    "price": 40,
+    "serves": "6–8",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-tomato.jpg"
+  },
+  {
+    "id": "penne-tomato-l",
+    "item": "Penne",
+    "variant": "Tomato Sauce",
+    "size": "Large",
+    "price": 70,
+    "serves": "12–15",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-tomato.jpg"
+  },
+  {
+    "id": "penne-arrabbiata-s",
+    "item": "Penne",
+    "variant": "Arrabbiata",
+    "size": "Small",
+    "price": 45,
+    "serves": "6–8",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-arrabbiata.jpg"
+  },
+  {
+    "id": "penne-arrabbiata-l",
+    "item": "Penne",
+    "variant": "Arrabbiata",
+    "size": "Large",
+    "price": 75,
+    "serves": "12–15",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-arrabbiata.jpg"
+  },
+  {
+    "id": "penne-rose-s",
+    "item": "Penne",
+    "variant": "Rose",
+    "size": "Small",
+    "price": 50,
+    "serves": "6–8",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-rose.jpg"
+  },
+  {
+    "id": "penne-rose-l",
+    "item": "Penne",
+    "variant": "Rose",
+    "size": "Large",
+    "price": 90,
+    "serves": "12–15",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-rose.jpg"
+  },
+  {
+    "id": "penne-meat-s",
+    "item": "Penne",
+    "variant": "Meat Sauce",
+    "size": "Small",
+    "price": 55,
+    "serves": "6–8",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-meat.jpg"
+  },
+  {
+    "id": "penne-meat-l",
+    "item": "Penne",
+    "variant": "Meat Sauce",
+    "size": "Large",
+    "price": 99,
+    "serves": "12–15",
+    "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
+    "imageUrl": "/images/penne-meat.jpg"
+  },
+  {
+    "id": "lasagna-meat-s",
+    "item": "Lasagna",
+    "variant": "Meat",
+    "size": "Small",
+    "price": 60,
+    "serves": "8–10",
+    "imageUrl": "/images/lasagna-meat.jpg"
+  },
+  {
+    "id": "lasagna-meat-l",
+    "item": "Lasagna",
+    "variant": "Meat",
+    "size": "Large",
+    "price": 115,
+    "serves": "15–18",
+    "imageUrl": "/images/lasagna-meat.jpg"
+  },
+  {
+    "id": "lasagna-veggie-s",
+    "item": "Lasagna",
+    "variant": "Veggie",
+    "size": "Small",
+    "price": 55,
+    "serves": "8–10",
+    "imageUrl": "/images/lasagna-veggie.jpg"
+  },
+  {
+    "id": "lasagna-veggie-l",
+    "item": "Lasagna",
+    "variant": "Veggie",
+    "size": "Large",
+    "price": 100,
+    "serves": "15–18",
+    "imageUrl": "/images/lasagna-veggie.jpg"
+  },
+  {
+    "id": "lasagna-chicken-s",
+    "item": "Lasagna",
+    "variant": "Chicken",
+    "size": "Small",
+    "price": 65,
+    "serves": "8–10",
+    "imageUrl": "/images/lasagna-chicken.jpg"
+  },
+  {
+    "id": "lasagna-chicken-l",
+    "item": "Lasagna",
+    "variant": "Chicken",
+    "size": "Large",
+    "price": 120,
+    "serves": "15–18",
+    "imageUrl": "/images/lasagna-chicken.jpg"
+  },
+  {
+    "id": "lasagna-eggplant-s",
+    "item": "Lasagna",
+    "variant": "Eggplant",
+    "size": "Small",
+    "price": 60,
+    "serves": "8–10",
+    "imageUrl": "/images/lasagna-eggplant.jpg"
+  },
+  {
+    "id": "lasagna-eggplant-l",
+    "item": "Lasagna",
+    "variant": "Eggplant",
+    "size": "Large",
+    "price": 115,
+    "serves": "15–18",
+    "imageUrl": "/images/lasagna-eggplant.jpg"
+  }
+]
