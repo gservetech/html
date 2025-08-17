@@ -7,7 +7,7 @@
     "price": 40,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-tomato.png"
+    "imageUrl": "/catering/images/penne-tomato.png"
   },
   {
     "id": "penne-tomato-l",
@@ -17,7 +17,7 @@
     "price": 70,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-tomato.png"
+    "imageUrl": "/catering/images/penne-tomato.png"
   },
   {
     "id": "penne-arrabbiata-s",
@@ -27,7 +27,7 @@
     "price": 45,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-arrabbiata.png"
+    "imageUrl": "/catering/images/penne-arrabbiata.png"
   },
   {
     "id": "penne-arrabbiata-l",
@@ -37,7 +37,7 @@
     "price": 75,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-arrabbiata.png"
+    "imageUrl": "/catering/images/penne-arrabbiata.png"
   },
   {
     "id": "penne-rose-s",
@@ -47,7 +47,7 @@
     "price": 50,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-rose.png"
+    "imageUrl": "/catering/images/penne-rose.png"
   },
   {
     "id": "penne-rose-l",
@@ -57,7 +57,7 @@
     "price": 90,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-rose.png"
+    "imageUrl": "/catering/images/penne-rose.png"
   },
   {
     "id": "penne-meat-s",
@@ -67,7 +67,7 @@
     "price": 55,
     "serves": "6–8",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-meat.png"
+    "imageUrl": "/catering/images/penne-meat.png"
   },
   {
     "id": "penne-meat-l",
@@ -77,7 +77,7 @@
     "price": 99,
     "serves": "12–15",
     "addons": ["Add chicken pcs $5", "Add meatballs (7 pcs) $5"],
-    "imageUrl": "/images/penne-meat.png"
+    "imageUrl": "/catering/images/penne-meat.png"
   },
   {
     "id": "lasagna-meat-s",
@@ -86,7 +86,7 @@
     "size": "Small",
     "price": 60,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-meat.png"
+    "imageUrl": "/catering/images/lasagna-meat.png"
   },
   {
     "id": "lasagna-meat-l",
@@ -95,7 +95,7 @@
     "size": "Large",
     "price": 110,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-meat.png"
+    "imageUrl": "/catering/images/lasagna-meat.png"
   },
   {
     "id": "lasagna-veggie-s",
@@ -104,7 +104,7 @@
     "size": "Small",
     "price": 55,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-veggie.png"
+    "imageUrl": "/catering/images/lasagna-veggie.png"
   },
   {
     "id": "lasagna-veggie-l",
@@ -113,7 +113,7 @@
     "size": "Large",
     "price": 105,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-veggie.png"
+    "imageUrl": "/catering/images/lasagna-veggie.png"
   },
   {
     "id": "lasagna-chicken-s",
@@ -122,7 +122,7 @@
     "size": "Small",
     "price": 60,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-chicken.png"
+    "imageUrl": "/catering/images/lasagna-chicken.png"
   },
   {
     "id": "lasagna-chicken-l",
@@ -131,7 +131,7 @@
     "size": "Large",
     "price": 110,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-chicken.png"
+    "imageUrl": "/catering/images/lasagna-chicken.png"
   },
   {
     "id": "lasagna-eggplant-s",
@@ -140,7 +140,7 @@
     "size": "Small",
     "price": 50,
     "serves": "12 pcs",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/catering/images/lasagna-eggplant.png"
   },
   {
     "id": "lasagna-eggplant-l",
@@ -149,7 +149,7 @@
     "size": "Large",
     "price": 100,
     "serves": "24 pcs",
-    "imageUrl": "/images/lasagna-eggplant.png"
+    "imageUrl": "/catering/images/lasagna-eggplant.png"
   },
   {
     "id": "side-peas-mushrooms",
@@ -158,7 +158,7 @@
     "size": "Small",
     "price": 40,
     "serves": "6-8",
-    "imageUrl": "/images/side-peas-mushrooms.png"
+    "imageUrl": "/catering/images/side-peas-mushrooms.png"
   },
   {
     "id": "side-potatoes",
@@ -167,7 +167,7 @@
     "size": "Small",
     "price": 30,
     "serves": "6-8",
-    "imageUrl": "/images/side-potatoes.webp"
+    "imageUrl": "/catering/images/side-potatoes.webp"
   },
   {
     "id": "side-fries",
@@ -176,7 +176,7 @@
     "size": "Small",
     "price": 25,
     "serves": "6-8",
-    "imageUrl": "/images/Fries-Catering.jpg"
+    "imageUrl": "/catering/images/Fries-Catering.jpg"
   },
   {
     "id": "entree-grilled-chicken",
@@ -185,7 +185,7 @@
     "size": "N/A",
     "price": 7,
     "serves": "1 pc",
-    "imageUrl": "/images/entree-grilled-chicken.webp"
+    "imageUrl": "/catering/images/entree-grilled-chicken.webp"
   },
   {
     "id": "entree-breaded-chicken",
@@ -194,7 +194,7 @@
     "size": "N/A",
     "price": 8,
     "serves": "1 pc",
-    "imageUrl": "/images/entree-grilled-chicken.webp"
+    "imageUrl": "/catering/images/entree-grilled-chicken.webp"
   },
   {
     "id": "entree-grilled-beef",
@@ -203,7 +203,7 @@
     "size": "N/A",
     "price": 6,
     "serves": "1 pc",
-    "imageUrl": "/images/entree-grilled-beef.jpg"
+    "imageUrl": "/catering/images/entree-grilled-beef.jpg"
   },
   {
     "id": "special-wings",
@@ -212,6 +212,6 @@
     "size": "N/A",
     "price": 55,
     "serves": "10-12",
-    "imageUrl": "/images/special-wings.webp"
+    "imageUrl": "/catering/images/special-wings.webp"
   }
 ]
