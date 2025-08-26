@@ -1,0 +1,72 @@
+[
+  {
+    "site_name": "The Pasta Queen",
+    "url": "https://thepastaqueen.cooking/lets-cook/",
+    "image": "https://thepastaqueen.cooking/wp-content/uploads/Truffle-Tagliatelle-500x500.webp",
+    "title": "Truffle Tagliatelle",
+    "description": "Three Words: Truffle, Parmesan and Butter! This pasta starts with a homemade Tagliatelle and is combined with a luxurious butter and truffle infusion. Sprinkle some fresh Parmigiano and you have something ‘Just Gorgeous.’"
+  },
+  {
+    "site_name": "Emiko Davies",
+    "url": "https://www.emikodavies.com/recipes/",
+    "image": "https://www.emikodavies.com/wordpress/wp-content/uploads/2020/05/spoon-sweets-IMG_8144-blog.jpg",
+    "title": "Grape and fig leaf spoon sweets",
+    "description":"A traditional Italian preserve made by slowly cooking fresh grapes with tender fig leaves, creating a fragrant, honey-like syrup. Served by the spoonful, it’s a rustic sweet treat often enjoyed with bread, cheese, or as a delicate finish to a meal."
+  },
+  {
+    "site_name": "Vincenzo's Plate",
+    "url": "https://www.vincenzosplate.com/easy-italian-stuffed-calamari-recipe/",
+    "image": "https://www.vincenzosplate.com/wp-content/uploads/2025/04/1800x1800-Photo-4_4332-How-to-Make-Stuffed-Calamari-Like-an-Italian-V1-1-1024x1024.jpg.webp",
+    "title": "Easy Italian Stuffed Calamari Recipe",
+    "description": "Tender calamari tubes filled with a flavorful breadcrumb and herb stuffing, simmered in a rich tomato sauce."
+  },
+  {
+    "site_name": "Italian Food Forever",
+    "url": "https://italianfoodforever.com/category/recipes/fresh-pasta-recipes/",
+    "image": "https://italianfoodforever.com/wp-content/uploads/2025/08/pappardelleragu9.jpg",
+    "title": "Venetian Duck Ragu With Pappardelle",
+    "description": "A rich and hearty Venetian specialty where tender duck is slow-cooked into a flavorful ragù and served with wide ribbons of pappardelle, capturing the rustic elegance of northern Italian cuisine."
+  },
+  {
+    "site_name": "Christina's Cucina",
+    "url": "https://www.christinascucina.com/recipes/?fwp_cuisine=italian",
+    "image": "https://www.christinascucina.com/wp-content/uploads/2019/09/fullsizeoutput_c032-735x924.jpeg",
+    "title": "Gnocchi alla Sorrentina (Authentic Italian Recipe)",
+    "description": "A classic dish from Sorrento featuring soft potato gnocchi baked with tomato sauce, fresh mozzarella, and basil—simple, comforting, and authentically Italian."
+  },
+  {
+    "site_name": "Serious Eats",
+    "url": "https://www.seriouseats.com/italian-sausage-with-peppers-sandwich-recipe-8410214",
+    "image": "https://www.seriouseats.com/thmb/UXBfH5IgRRZGhJN_u1NpRsImWLM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20231204-SEA-ItalianSausagesandPeppers-VictorProtasio-01-2a18561eca914f849f9f9bbe57880c2b.jpg",
+    "title": "Italian Sausage and Peppers Sandwich",
+    "description": "A classic Italian-American street food featuring grilled sausages, sautéed peppers and onions, served on a crusty roll."
+  },
+  {
+    "site_name": "Memorie di Angelina",
+    "url": "https://memoriediangelina.com/abruzzo/",
+    "image": "https://i0.wp.com/memoriediangelina.com/wp-content/uploads/2013/10/Pallotte-cacio-e-uova.jpg?w=640&ssl=1",
+    "title": "Pallotte cacio e uova (Cheese and Egg Balls)",
+    "description": "Pallotte cacio e uova, iconic to Abruzzos cucina povera, are cheese and egg balls made from leftover bread and cheese, fried and simmered in tomato sauce. Once a humble meat substitute, today they’re enjoyed as a delicious antipasto."
+  },
+  {
+    "site_name": "An Italian in My Kitchen",
+    "url": "https://anitalianinmykitchen.com/beef-white-wine-sauce/",
+    "image": "https://anitalianinmykitchen.com/wp-content/uploads/2018/02/beef-wine-sauce-1-of-1.jpg",
+    "title": "Beef With White Wine Sauce",
+    "description": "Tender beef simmered in a savory white wine sauce with herbs, creating an elegant and flavorful Italian main dish."
+  },
+  {
+    "site_name": "The Italian Dish",
+    "url": "https://www.theitaliandishblog.com/imported-20090913150324/2013/7/30/fried-lemon-gnocchi-with-basil.html",
+    "image": "https://static1.squarespace.com/static/686eadf5f2bfdd65063943dd/t/686ee14a4d1946087974da47/1375124828747/1000w/lemongnocchicloseup.jpg",
+    "title": "Fried Lemon Gnocchi with Basil",
+    "description": "Crispy pan-fried gnocchi with fresh lemon and basil, offering a delightful twist on traditional potato dumplings."
+  },
+  {
+    "site_name": "giallozafferano",
+    "url": "https://www.giallozafferano.com/recipes/roast-chicken.html",
+    "image": "https://www.giallozafferano.com/images/284-28436/roast-chicken_1200x800.jpg",
+    "title": "Roast Chicken",
+    "description": "Roast chicken is a classic oven-baked meat main course, seasoned with a mixture of aromatic herbs. Discover the recipe for a perfect result!"
+  }
+]
