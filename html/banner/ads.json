@@ -1,0 +1,34 @@
+{
+  "ads": [
+    {
+      "id": 1,
+      "image": "../images/ads/banner1.jpg",
+      "alt": "Ad Banner 1"
+    },
+    {
+      "id": 2,
+      "image": "../images/ads/2.jpg",
+      "alt": "Ad Banner 2"
+    },
+    {
+      "id": 3,
+      "image": "../images/ads/3.jpg",
+      "alt": "Ad Banner 3"
+    },
+    {
+      "id": 4,
+      "image": "../images/ads/3.webp",
+      "alt": "Ad Banner 3 WebP"
+    },
+    {
+      "id": 5,
+      "image": "../images/ads/4.jpg",
+      "alt": "Ad Banner 4"
+    },
+    {
+      "id": 6,
+      "image": "../images/ads/5.jpg",
+      "alt": "Ad Banner 5"
+    }
+  ]
+}

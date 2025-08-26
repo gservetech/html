@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ad Banner Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: #f8f8f8;
+    }
+    img.banner {
+      width: 100%;
+      max-width: 1200px; /* optional max size */
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<h2>Ads from JSON</h2>
+<div id="ads-container"></div>
+
+<script>
+  // Fetch the ads.json file
+  fetch("ads.json")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("ads-container");
+
+      // Loop through all ads in the JSON
+      data.ads.forEach(ad => {
+        const img = document.createElement("img");
+        img.src = ad.image;       // path from JSON
+        img.alt = ad.alt || "Ad"; // fallback alt text
+        img.className = "banner";
+        container.appendChild(img);
+      });
+    })
+    .catch(err => console.error("Error loading ads.json:", err));
+</script>
+
+</body>
+</html>

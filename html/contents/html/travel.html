@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Italian Travel Sites — Gallery</title>
+  <style>
+    :root {
+      --maxw: 1200px;
+      --gap: 16px;
+      --radius: 18px;
+      --shadow: 0 8px 20px rgba(0,0,0,.08);
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text: #1b1b1b;
+      --muted: #5a5a5a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+    }
+    header { padding: 24px; text-align: center; }
+    header h1 { margin: 0 0 6px; font-size: clamp(24px, 3vw, 34px); }
+    header p { margin: 0; color: var(--muted); }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--gap);
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: transform .12s ease, box-shadow .12s ease;
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
+    .card:focus-visible { outline: 3px solid #1a73e8; outline-offset: 2px; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
+    .thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* make it square */
+      object-fit: cover;
+      display: block;
+      background: #eaeaea;
+    }
+    .content { padding: 12px 14px 16px; display: grid; gap: 6px; }
+    .title { font-weight: 700; line-height: 1.2; font-size: 16px; }
+    .desc { color: var(--muted); font-size: 14px; line-height: 1.4; }
+    .empty { text-align:center; color:var(--muted); padding:40px 0; }
+    footer { text-align: center; padding: 18px; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>Italian Travel Sites</h1>
+    <p>Useful Italian travel blogs, guides and local discovery sites.</p>
+  </header>
+
+  <main class="container">
+    <div class="grid" id="grid" role="list"></div>
+  </main>
+
+  <footer>
+    
+  </footer>
+
+  <script>
+    async function loadCards() {
+      const url = `../data/travel.json?ts=${Date.now()}`;
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const items = await res.json();
+        if (!items || items.length === 0) {
+          grid.innerHTML = '<div class="empty">No items found.</div>';
+          return;
+        }
+        for (const item of items) {
+          const a = document.createElement("a");
+          a.href = item.url || '#';
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.className = "card";
+          a.setAttribute("role","listitem");
+          a.innerHTML = `
+            <img class="thumb" loading="lazy" alt="${(item.title||'').replace(/"/g,'&quot;')}" src="${item.image||''}"/>
+            <div class="content">
+              <div class="title">${item.title||''}</div>
+              <div class="desc">${item.description||''}</div>
+            </div>
+          `;
+          grid.appendChild(a);
+        }
+      } catch (err) {
+        grid.innerHTML = `<div class="empty">Could not load gallery (${err.message}).</div>`;
+      }
+    }
+    loadCards();
+  </script>
+</body>
+</html>
