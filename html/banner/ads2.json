@@ -1,0 +1,25 @@
+[
+  {
+    "image_url": "https://example.com/images/product1.jpg",
+    "host_url": "https://example.com/product/1",
+    "title": "Ultra-Slim Laptop",
+    "summary": "Lightweight laptop with powerful performance.",
+    "description": "The Ultra-Slim Laptop offers a sleek design, 16GB RAM, 512GB SSD, and a vivid 14-inch display, perfect for professionals and students alike."
+  },
+  {
+    "image_url": "https://example.com/images/product2.jpg",
+    "host_url": "https://example.com/product/2",
+    "title": "Wireless Headphones",
+    "summary": "Noise-cancelling over-ear headphones.",
+    "description": "Enjoy crystal clear sound and deep bass with 30 hours of playtime, Bluetooth 5.0 connectivity, and an ergonomic fit for all-day comfort."
+  },
+  {
+    "image_url": "https://example.com/images/product3.jpg",
+    "host_url": "https://example.com/product/3",
+    "title": "Smartwatch Pro",
+    "summary": "Advanced smartwatch with health tracking.",
+    "description": "The Smartwatch Pro includes heart rate monitoring, GPS tracking, sleep analysis, and compatibility with iOS and Android devices."
+  }
+
+
+]

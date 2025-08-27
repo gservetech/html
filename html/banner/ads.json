@@ -3,32 +3,62 @@
     {
       "id": 1,
       "image": "../images/ads/banner1.jpg",
-      "alt": "Ad Banner 1"
+      "alt": "Ad Banner 1",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     },
     {
       "id": 2,
-      "image": "../images/ads/2.jpg",
-      "alt": "Ad Banner 2"
+      "image": "../images/ads/banner2.jpg",
+      "alt": "Ad Banner 2",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     },
     {
       "id": 3,
-      "image": "../images/ads/3.jpg",
-      "alt": "Ad Banner 3"
+      "image": "../images/ads/banner3.jpg",
+      "alt": "Ad Banner 3",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     },
     {
       "id": 4,
-      "image": "../images/ads/3.webp",
-      "alt": "Ad Banner 3 WebP"
+      "image": "../images/ads/banner4.jpg",
+      "alt": "Ad Banner 4",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     },
     {
       "id": 5,
-      "image": "../images/ads/4.jpg",
-      "alt": "Ad Banner 4"
+      "image": "../images/ads/banner5.jpg",
+      "alt": "Ad Banner 5",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     },
     {
       "id": 6,
-      "image": "../images/ads/5.jpg",
-      "alt": "Ad Banner 5"
+      "image": "../images/ads/banner6.jpg",
+      "alt": "Ad Banner 6",
+      "image_url": "",
+      "host_url": "",
+      "title": "",
+      "summary": "",
+      "description": ""
     }
   ]
 }
