@@ -62,8 +62,10 @@
     }
     .thumb {
       width: 100%;
-      aspect-ratio: 1 / 1; /* 👈 square image box */
+      /* make visible image area a rectangle instead of square */
+      aspect-ratio: 3 / 4; /* wider than tall */
       object-fit: cover;
+      object-position: center;
       display: block;
       background: #eaeaea;
     }
