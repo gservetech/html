@@ -2,8 +2,8 @@
   "promotions": [
     {
       "id": 1,
-      "url": "https://royalkingon.com/menu/pasta",
-      "image": "https://gservetech.github.io/html/html/royalking/ad/images/pasta-offer.png"
+      "host_url": "https://royalkingon.com/menu/pasta",
+      "image": "../images/ads/banner1.jpg"
     },
     {
       "id": 2,
@@ -23,8 +23,8 @@
     },
     {
       "id": 6,
-      "url": "https://royalkingon.com/menu/sandwiches/chicken-parm",
-      "image": "https://gservetech.github.io/html/html/royalking/ad/images/chicken-parm.png"
+      "host_url": "https://royalkingon.com/menu/pasta",
+      "image": "../images/ads/banner1.jpg"
     }
   ]
 }
