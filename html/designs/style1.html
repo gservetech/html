@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Striped Upholstery</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Playfair Display & Inter fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;800&family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-headline {
+        font-family: "Playfair Display", serif;
+      }
+      .font-body {
+        font-family: Inter, sans-serif;
+      }
+
+      /* Drop cap for first letter */
+      .dropcap::first-letter {
+        font-size: 3rem; /* Big first letter */
+        font-weight: 700;
+        float: left;
+        line-height: 1;
+        margin-right: 6px;
+        color: #d81b60; /* pink accent */
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 font-body">
+    <div class="max-w-3xl mx-auto my-10 px-4">
+      <section
+        class="grid grid-cols-[12px_1fr] border-r-4 border-pink-600 bg-white"
+      >
+        <!-- Left pink bar -->
+        <div class="bg-pink-600"></div>
+
+        <!-- Content -->
+        <div class="pl-5 relative">
+          <p
+            class="uppercase text-pink-600 font-extrabold tracking-wide text-sm md:text-base mb-1"
+          >
+            The Ideal Home View On…
+          </p>
+          <h1
+            class="font-headline font-extrabold uppercase text-3xl md:text-4xl leading-tight mb-3"
+          >
+            Striped Upholstery
+          </h1>
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed mb-2 font-medium"
+          >
+            We’ve heard the experts explain why it’s becoming popular – so, do
+            we think this microtrend is here to stay?
+          </p>
+          <p class="text-gray-800 text-base md:text-lg font-semibold mb-4">
+            Deputy Editor
+            <span class="text-pink-600 font-bold">Ginevra Benedetti</span>
+            weighs in…
+          </p>
+
+          <!-- Editorial italic view with dropcap + quotes -->
+          <!-- Editorial italic view with dropcap + quotes -->
+          <p
+            class="relative italic font-headline text-base md:text-lg leading-relaxed dropcap pl-6"
+          >
+            <!-- Opening quote -->
+            <span
+              class="absolute -left-4 -top-2 text-4xl md:text-5xl text-pink-600 font-bold not-italic"
+              >“</span
+            >
+
+            Stripes are a truly timeless design – one that can straddle both
+            traditional and contemporary styles – so it stands to reason that
+            this trend is a lasting one. However, upholstered furniture is
+            expensive and you really have to be invested in the look to make it
+            worthy of the spend. So in my opinion, the success of this trend is
+            ultimately down to personal choice. I wouldn’t risk the financial
+            plunge on striped living room seating in my home – I’d just be
+            worried that I’d want to change it before too long. If, however,
+            it’s something you really crave, always trust your gut and go with
+            what you love!
+
+            <!-- Closing quote with extra space -->
+            <span
+              class="inline-block align-baseline text-4xl md:text-5xl text-pink-600 font-bold not-italic leading-none ml-4"
+              >”</span
+            >
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
