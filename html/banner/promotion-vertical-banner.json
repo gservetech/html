@@ -2,8 +2,8 @@
   "promotions": [
     {
       "id": 1,
-      "host_url": "https://royalkingon.com/menu/pasta",
-      "image": "../images/ads/banner1.jpg"
+      "host_url": "https://www.royalkingon.com/menu?itemId=25",
+      "image": "../images/ads/banner1.png"
     },
     {
       "id": 2,
