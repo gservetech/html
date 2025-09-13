@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Best Pasta in Toronto | Royal King Pasta & Sandwiches</title>
+  <meta name="description" content="Craving the best pasta in Toronto? Royal King Pasta & Sandwiches serves handcrafted pasta, melty sandwiches, and comfort classics for pickup, delivery, or dine-in in North York." />
+  <meta name="keywords" content="Best pasta Toronto, Royal King Pasta & Sandwiches, Toronto pasta restaurant, North York pasta, pasta delivery Toronto, Italian comfort food, pasta takeout, handcrafted pasta, hot sandwiches Toronto" />
+  <link rel="canonical" href="https://www.royalkingon.com/best-pasta-toronto" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Best Pasta in Toronto | Royal King Pasta & Sandwiches" />
+  <meta property="og:description" content="Handcrafted pasta. Melty sandwiches. Big flavor. Order pickup or delivery today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.royalkingon.com/best-pasta-toronto" />
+  <meta property="og:image" content="https://picsum.photos/1200/630?random=41" />
+
+  <style>
+    /* ---------- Minimal Reset ---------- */
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;color:#111;background:#fafafa}
+    img{max-width:100%;height:auto;display:block}
+
+    /* ---------- Brand Tokens ---------- */
+    :root{
+      --brand:#b1050a;           /* Royal King red accent */
+      --ink:#111;
+      --muted:#666;
+      --card:#fff;
+      --ring: #b1050a;
+      --shadow:0 8px 30px rgba(0,0,0,.06);
+      --border:1px solid rgba(0,0,0,.06);
+    }
+
+    /* ---------- Page Shell ---------- */
+    .wrap{
+      max-width:1100px;
+      margin-inline:auto;
+      padding:2rem clamp(1rem,3vw,2rem);
+      display:grid;
+      gap:clamp(1.25rem,2.5vw,2rem);
+    }
+
+    .hero{
+      text-align:center;
+      padding: clamp(1.25rem, 2.5vw, 2.25rem);
+      background: #fff;
+      border: var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1{
+      margin:0 0 .5rem 0;
+      font-weight:800;
+      line-height:1.08;
+      font-size: clamp(1.6rem, 1.2rem + 2.4vw, 2.6rem);
+      text-wrap:balance;
+    }
+    .hero p{margin:.25rem 0 1rem 0;color:#2a2a2a;text-wrap:pretty}
+    .actions{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:.55ch;
+      padding:.7rem 1rem;border-radius:999px;text-decoration:none;
+      font-weight:700;border:1px solid #e8e8ee;background:var(--ink);color:#fff
+    }
+    .btn.alt{background:#fff;color:var(--ink);border:1px solid #ddd}
+
+    /* ---------- Content Blocks (2-col) ---------- */
+    .grid{
+      display:grid;grid-template-columns:1fr;gap:clamp(1rem,2vw,1.5rem);
+      align-items:start;background:var(--card);border-radius:18px;
+      padding:clamp(1rem,2.5vw,2rem);box-shadow:var(--shadow);border:var(--border)
+    }
+    @media (min-width:860px){
+      .grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+      .grid:nth-of-type(even) .media{order:2}
+      .grid:nth-of-type(even) .copy{order:1}
+    }
+
+    .media figure{margin:0;border-radius:14px;overflow:hidden;background:#f0f0f0}
+    .media figcaption{font-size:.82rem;color:#555;margin-top:.5rem;text-wrap:balance}
+
+    /* ---------- Editorial Typography ---------- */
+    .copy{max-width:66ch;line-height:1.6;letter-spacing:.01em;word-spacing:.02em;
+      hyphens:auto;hanging-punctuation:first allow-end;text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;font-kerning:normal;
+      font-variant-ligatures:common-ligatures contextual;font-feature-settings:"liga" 1,"kern" 1}
+    .eyebrow{font-variant-caps:small-caps;letter-spacing:.08em;color:#7a7a7a;margin-bottom:.25rem}
+    .title{margin:0 0 .6rem 0;font-weight:700;line-height:1.15;font-size:clamp(1.35rem,1.2rem + 1.6vw,2rem);text-wrap:balance}
+    .meta{display:flex;flex-wrap:wrap;gap:.6rem 1rem;margin-bottom:.75rem;color:var(--muted);font-size:.9rem}
+    .meta .tag{background:#f3f3f5;border:1px solid #e8e8ee;border-radius:999px;padding:.2rem .6rem;font-size:.8rem}
+
+    .copy p{margin:0 0 .9rem 0;text-wrap:pretty}
+    .copy p.kicker{font-weight:600;color:#1a1a1a;margin-bottom:.6rem}
+    .lede{margin:0 0 .7rem 0;color:#2a2a2a;font-size:clamp(1rem,.95rem + .4vw,1.125rem);position:relative}
+    .lede::first-letter{
+      initial-letter:3 2; -webkit-initial-letter:3 2; font-weight:800; margin-right:.075em; color:var(--brand);
+    }
+    @supports not (initial-letter: 3){
+      .lede::first-letter{float:left;font-size:3.2em;line-height:.9;padding-right:.12em;padding-top:.05em}
+    }
+    .copy blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:4px solid var(--brand);
+      background:linear-gradient(90deg, rgba(177,5,10,.06), transparent 60%);font-style:italic}
+
+    .cta{display:inline-flex;align-items:center;gap:.55ch;margin-top:.2rem;padding:.6rem .9rem;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid #e8e8ee;background:var(--ink);color:#fff}
+    .cta.alt{background:#fff;color:var(--ink)}
+    .cta:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+
+    @media (prefers-reduced-motion:no-preference){
+      .grid{transition:transform .25s ease, box-shadow .25s ease}
+      .grid:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,0,0,.08)}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-label="Best Pasta in Toronto — Royal King Pasta & Sandwiches">
+    <!-- HERO -->
+    <header class="hero">
+      <h1>Best Pasta in Toronto — <span style="color:var(--brand)">Royal King Pasta & Sandwiches</span></h1>
+      <p>Handcrafted pasta made daily, melty sandwiches, and comfort classics. Order pickup or delivery in North York & across Toronto.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.royalkingon.com/menu">View Menu →</a>
+        
+      </div>
+    </header>
+
+    <!-- BLOCK 1 — image left, text right -->
+    <section class="grid" role="article" aria-labelledby="t1">
+      <div class="media">
+        <figure>
+          <img src="https://picsum.photos/960/640?random=101" alt="Steam rising from a bowl of fresh fettuccine Alfredo with parsley" loading="lazy" width="960" height="640" />
+          <figcaption>House-made fettuccine tossed to order for the perfect bite.</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <div class="eyebrow">Signature</div>
+        <h2 id="t1" class="title">Toronto’s Favorite Comfort Pasta</h2>
+        <div class="meta">
+          <time datetime="2025-09-13">Sep 13, 2025</time>
+          <span class="tag">North York</span>
+          <span class="tag">Handcrafted</span>
+        </div>
+        <p class="lede">Our pasta starts with fresh dough and ends with a clean plate. Texture leads, sauces follow, and every bowl lands warm, glossy, and generous.</p>
+        <p class="kicker">Readable design, irresistible dishes.</p>
+        <p>We keep line length comfortable, hyphenation on, and headings balanced so the story of each dish reads as smoothly as it tastes. From Alfredo to Arrabbiata, you’ll find bold flavor without the fuss.</p>
+        <a class="cta" href="https://www.royalkingon.com/menu#pasta" aria-label="Explore pasta menu">Explore Pasta Menu →</a>
+      </div>
+    </section>
+
+    <!-- BLOCK 2 — text left, image right -->
+    <section class="grid" role="article" aria-labelledby="t2">
+      <div class="media">
+        <figure>
+          <img src="https://picsum.photos/960/640?random=102" alt="Grilled chicken panini with melted cheese on toasted bread" loading="lazy" width="960" height="640" />
+          <figcaption>Sandwiches built to satisfy—golden, melty, and stacked right.</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <div class="eyebrow">Combo</div>
+        <h2 id="t2" class="title">Pasta & Sandwich Pairings That Just Work</h2>
+        <div class="meta">
+          <time datetime="2025-09-13">Sep 13, 2025</time>
+          <span class="tag">Combos</span>
+          <span class="tag">Value</span>
+        </div>
+        <p class="lede">Pair your favorite bowl with a hot, melty sandwich—ideal for a quick lunch or a hearty dinner you don’t have to overthink.</p>
+        <p>Try the <strong>Chicken Parm</strong> with penne rosé or the <strong>Classic Meatball</strong> with spaghetti marinara. Balanced portions, bold flavor, and pricing that keeps weekday meals easy.</p>
+        <a class="cta" href="https://www.royalkingon.com/menu#combos" aria-label="See pasta and sandwich combos">See Combos →</a>
+      </div>
+    </section>
+
+    <!-- BLOCK 3 — image left, text right -->
+    <section class="grid" role="article" aria-labelledby="t3">
+      <div class="media">
+        <figure>
+          <img src="https://picsum.photos/960/640?random=103" alt="Courier handing off a takeout bag at a Toronto apartment lobby" loading="lazy" width="960" height="640" />
+          <figcaption>Fast local delivery across Toronto, reliable and hot.</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <div class="eyebrow">Delivery</div>
+        <h2 id="t3" class="title">Best Pasta, Delivered Hot</h2>
+        <div class="meta">
+          <time datetime="2025-09-13">Sep 13, 2025</time>
+          <span class="tag">Delivery</span>
+          <span class="tag">Toronto</span>
+        </div>
+        <p class="lede">We pack smart so your pasta arrives glossy, not gummy. Lids vented, portions right, and sauces that travel like a charm.</p>
+        <p>Order direct for the best experience. Prefer a platform? We’re on major delivery apps citywide—just search <em>Royal King Pasta &amp; Sandwiches</em>.</p>
+        <a class="cta" href="https://www.royalkingon.com/order/delivery" aria-label="Order delivery">Order Delivery →</a>
+      </div>
+    </section>
+
+    <!-- BLOCK 4 — text left, image right -->
+    <section class="grid" role="article" aria-labelledby="t4">
+      <div class="media">
+        <figure>
+          <img src="https://picsum.photos/960/640?random=104" alt="Open kitchen station tossing pasta in a pan with red sauce" loading="lazy" width="960" height="640" />
+          <figcaption>Open-kitchen energy—sauces finished to order, every time.</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <div class="eyebrow">Dine-In</div>
+        <h2 id="t4" class="title">Drop In for Fresh, Stay for Seconds</h2>
+        <div class="meta">
+          <time datetime="2025-09-13">Sep 13, 2025</time>
+          <span class="tag">Dine-In</span>
+          <span class="tag">Comfort Food</span>
+        </div>
+        <p class="lede">From first twirl to last bite, we serve the kind of pasta that makes you plan your next visit before you’ve finished this one.</p>
+        <p>Cozy seating, friendly faces, and a menu that treats classics with care. Bring friends—portion sizes make sharing easy.</p>
+        <a class="cta" href="https://www.royalkingon.com/menu" aria-label="View full menu">View Full Menu →</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
