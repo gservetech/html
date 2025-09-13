@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veal & Chicken Sandwiches • Handcrafted Pasta Dishes — Patterns</title>
+<style>
+  /* ====== Design Tokens ====== */
+  :root{
+    --crimson:#c1121f;      /* primary red */
+    --cream:#fff9f2;        /* soft paper */
+    --ink:#111827;          /* near-black */
+    --olive:#6b8e23;        /* earthy accent */
+    --teal:#1d9a8f;         /* cool accent */
+    --gold:#e9c46a;         /* warm accent */
+    --charcoal:#0f172a;     /* deep text */
+    --rule:#f7d8d8;         /* light red rule */
+    --muted:#6b7280;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+  }
+  *{ box-sizing:border-box }
+  body{
+    margin:0; font-family:ui-serif, Georgia, Cambria, "Times New Roman", serif;
+    color:var(--charcoal); background:#fff;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  img{ max-width:100%; height:auto; display:block }
+  .wrap{ max-width:1200px; margin:40px auto; padding:0 20px }
+
+  .eyebrow{
+    display:inline-block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--crimson); border:1px solid var(--rule); background:#fff5f5;
+    border-radius:999px; padding:6px 10px; margin-bottom:10px
+  }
+  .kicker{ color:var(--muted); font-style:italic; margin:2px 0 12px }
+
+  /* Shared vertical heading styles */
+  .vhead{
+    writing-mode: vertical-rl; text-orientation: mixed; letter-spacing:.08em;
+    font-weight:800; color:#fff; background:var(--crimson);
+    border-radius:12px; padding:16px 10px; user-select:none;
+  }
+  /* Fallback for older browsers that ignore writing-mode */
+  @supports not (writing-mode: vertical-rl){
+    .vhead{ writing-mode: horizontal-tb; transform:rotate(-90deg); transform-origin:left top }
+  }
+
+  /* ====== Pattern A: Split Hero with Vertical Rail ====== */
+  .pattern-a{
+    display:grid; grid-template-columns: 80px 1fr; gap:18px;
+    background:linear-gradient(180deg, #fff, var(--cream));
+    border:1px solid #eee; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+  }
+  .pattern-a .rail{
+    display:flex; align-items:center; justify-content:center; background:var(--crimson);
+  }
+  .pattern-a .rail .vhead{ background:transparent; font-size:1.05rem }
+  .pattern-a .content{
+    display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; padding:18px;
+  }
+  .pattern-a figure{ border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff }
+  .pattern-a h2{ margin:6px 0 6px; font-size:clamp(1.5rem,3vw,2.1rem); color:var(--crimson) }
+  .pattern-a .lead{ font-style:italic; font-size:1.05rem; color:var(--muted) }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
+  .tag{ padding:6px 10px; border-radius:999px; border:1px solid #eee; background:#fff }
+  .tag.red{ color:var(--crimson); border-color:var(--crimson); background:#fff0f0 }
+  .cta{
+    display:inline-block; margin-top:12px; padding:10px 14px; border-radius:12px;
+    background:var(--olive); color:#fff; text-decoration:none; font-weight:700;
+  }
+  @media (max-width:900px){ .pattern-a .content{ grid-template-columns: 1fr } }
+
+  /* ====== Pattern B: Vertical Headings Over Staggered Cards ====== */
+  .pattern-b{
+    margin-top:28px; border-radius:var(--radius); border:1px solid #eee; overflow:hidden;
+    background:#fff; box-shadow:var(--shadow); position:relative;
+  }
+  .pattern-b .header{
+    display:flex; gap:16px; align-items:flex-start; padding:18px; background:#f9fafb;
+    border-bottom:1px solid #eee;
+  }
+  .pattern-b .header .vhead{ background:var(--teal) }
+  .pattern-b h2{ margin:0; font-size:clamp(1.4rem,3vw,2rem); color:var(--teal) }
+  .grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; padding:18px;
+  }
+  .card{
+    border:1px solid #eee; border-radius:14px; overflow:hidden; background:#fff; box-shadow:var(--shadow);
+    display:flex; flex-direction:column;
+  }
+  .card .body{ padding:12px 14px }
+  .card h3{ margin:4px 0 4px; font-size:1.2rem; color:var(--ink) }
+  .card p{ margin:0; color:var(--muted) }
+  .badge-vert{
+    position:absolute; top:12px; right:12px; writing-mode:vertical-rl; text-orientation:mixed;
+    background:var(--gold); color:#111; padding:8px 6px; border-radius:8px; font-weight:700; font-size:.8rem;
+  }
+  .price{ margin-top:10px; font-weight:800; color:var(--crimson) }
+  @media (max-width:980px){ .grid{ grid-template-columns: repeat(2, 1fr) } }
+  @media (max-width:640px){ .grid{ grid-template-columns: 1fr } }
+
+  /* ====== Pattern C: Magazine Columns with Vertical Section Labels ====== */
+  .pattern-c{
+    margin-top:28px; border:1px solid #eee; border-radius:var(--radius);
+    box-shadow:var(--shadow); background:linear-gradient(180deg, #fff, #f7fffd);
+    padding:18px;
+  }
+  .section{
+    display:grid; grid-template-columns: 60px 1fr; gap:16px; align-items:start; margin:8px 0 18px;
+  }
+  .section .label{
+    writing-mode:vertical-rl; text-orientation:upright; letter-spacing:.12em;
+    background:var(--gold); color:#111; border-radius:12px; padding:10px 8px; font-weight:800;
+  }
+  .columns{
+    -webkit-column-count: 2; column-count: 2;
+    -webkit-column-gap: 1.8rem; column-gap: 1.8rem;
+    -webkit-column-rule: 2px solid #e7f6f4; column-rule: 2px solid #e7f6f4;
+  }
+  .columns p{ margin:0 0 1rem; hyphens:auto; -webkit-hyphens:auto }
+  .columns em{ font-style:italic; color:var(--teal) }
+  @media (max-width:800px){ .columns{ -webkit-column-count:1; column-count:1 } }
+
+  /* Utility */
+  .italic{ font-style:italic }
+  .sep{ height:1px; background:#eee; margin:18px 0 }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- ===== Pattern A: Split Hero (Veal/Chicken Sandwiches) ===== -->
+    <section class="pattern-a" aria-label="Veal and Chicken Sandwiches">
+      <aside class="rail" aria-hidden="true">
+        <div class="vhead">VEAL • CHICKEN • SANDWICHES</div>
+      </aside>
+      <div class="content">
+        <figure>
+          <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
+               alt="Crispy veal sandwich with melted cheese, tomato sauce, and fresh bun" />
+        </figure>
+        <div>
+          <span class="eyebrow">North York • Toronto</span>
+          <h2 class="italic">Veal & Chicken Sandwiches</h2>
+          <p class="lead italic">Crisp cutlets, molten cheese, and bright sauces—built to stay perfect in transit.</p>
+          <p>Choose from <em>classic veal</em>, <em>chicken parm</em>, or <em>spicy calabrese</em>. Baked after assembly for a just-set melt and a soft-crisp bun.</p>
+          <div class="tags">
+            <span class="tag red">Veal Parm</span>
+            <span class="tag">Chicken Cutlet</span>
+            <span class="tag">Spicy Calabrese</span>
+            <span class="tag">Add Provolone</span>
+          </div>
+          <a class="cta" href="#order">Order Sandwiches</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ===== Pattern B: Staggered Cards with Vertical Badges (Handcrafted Pasta Dishes) ===== -->
+    <section class="pattern-b" aria-label="Handcrafted Pasta Dishes">
+      <div class="header">
+        <div class="vhead">HANDCRAFTED</div>
+        <div>
+          <h2><em>Handcrafted Pasta Dishes</em></h2>
+          <p class="kicker">Al dente textures, glossy sauces, finished to order. Comfort with finesse.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div style="position:relative">
+            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
+                 alt="Penne alla Vodka topped with parmesan and basil" />
+            <span class="badge-vert">CHEF PICK</span>
+          </div>
+          <div class="body">
+            <h3 class="italic">Penne alla Vodka</h3>
+            <p>Tomato-cream, chili warmth, buttery finish. Holds heat, travels beautifully.</p>
+            <div class="price">$17</div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div style="position:relative">
+            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
+                 alt="Spaghetti Pomodoro with San Marzano sauce" />
+            <span class="badge-vert" style="background:var(--teal); color:#fff;">SIGNATURE</span>
+          </div>
+          <div class="body">
+            <h3 class="italic">Spaghetti Pomodoro</h3>
+            <p>San Marzano brightness, basil, olive oil—classic and clean.</p>
+            <div class="price">$16</div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div style="position:relative">
+            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
+                 alt="Linguine al Limone with lemon zest and parsley" />
+            <span class="badge-vert" style="background:var(--crimson); color:#fff;">NEW</span>
+          </div>
+          <div class="body">
+            <h3 class="italic">Linguine al Limone</h3>
+            <p>Lemon-cream, cracked pepper, fresh parsley—light yet lush.</p>
+            <div class="price">$18</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ===== Pattern C: Magazine Columns with Vertical Labels ===== -->
+    <section class="pattern-c" aria-label="Details & Pairings">
+      <div class="section">
+        <div class="label">PASTA</div>
+        <div class="columns">
+          <p><em>Handcrafted Pasta Dishes</em> arrive al dente with sauces finished to order for gloss and cling. Request extra heat-seal for longer trips.</p>
+          <p>Favorites: penne alla vodka, spaghetti pomodoro, linguine al limone, and slow-simmered bolognese.</p>
+          <p>Textures matter—short cuts keep bite; long cuts carry sauce. Add chili oil or extra Parm for a custom finish.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">SANDW.</div>
+        <div class="columns">
+          <p><em>Veal/Chicken Sandwiches</em> feature crisp cutlets, melty cheese, and sauced buns toasted for structural integrity.</p>
+          <p>Pro tips: ask for sauce on side for crunch, or “double-melt” for max comfort. Add giardiniera for brightness.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">PAIR</div>
+        <div class="columns">
+          <p>Pair with <em>garlic toast</em>, <em>house salad</em>, and a citrus soda. Finish with tiramisu or cannoli.</p>
+          <p>Heat packs available on request. Utensils and napkins included by default—opt out to reduce waste.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
