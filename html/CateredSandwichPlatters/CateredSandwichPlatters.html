@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Catered Sandwich Platters — Royal King Toronto</title>
+  <meta name="description" content="Catered sandwich platters for meetings and events in North York, Toronto. Crisp cutlets, fresh greens, and house sauces—packaged for easy service with on-time delivery windows." />
+  <link rel="canonical" href="https://www.royalkingon.com/catered-sandwich-platters" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- OG/Twitter (no share UI, but good previews) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Catered Sandwich Platters — Royal King Toronto" />
+  <meta property="og:description" content="Cutlets, greens, and house sauces—meeting-ready sandwich platters with precise delivery windows." />
+  <meta property="og:image" content="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/2.jpg" />
+  <meta property="og:site_name" content="Royal King Pasta & Sandwiches" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="color-scheme" content="light only" />
+
+  <style>
+    /* ===== GFMag-inspired tokens (business-mag look) ===== */
+    :root{
+      --ink:#121212;         /* primary text */
+      --muted:#5b6472;       /* secondary text */
+      --line:#e6e8eb;        /* hairline */
+      --accent:#c81e1e;      /* editorial red */
+      --bg:#ffffff;
+      --max: 880px;          /* content width slightly wider than TIME-like */
+      --gutter: 22px;
+      --shadow: 0 10px 28px rgba(0,0,0,.08);
+      --radius: 14px;
+      --chip:#f8fafc;
+    }
+
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{ max-width:100%; height:auto; display:block }
+
+    /* ===== Global header substitute (lean) ===== */
+    .mast{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .mast .inner{
+      max-width:var(--max); margin:0 auto; padding:12px var(--gutter);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+      font-size:.86rem; color:var(--accent);
+    }
+    .crumbs{
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+      font-size:.86rem; color:#475266;
+    }
+    .crumbs a{ color:#475266; text-decoration:none }
+    .crumbs a:hover{ text-decoration:underline }
+
+    /* ===== Article header ===== */
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 var(--gutter) 80px }
+    .cat-ribbon{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--accent); background:#fff;
+      border:1px solid var(--line); border-left:4px solid var(--accent);
+      border-radius:6px; padding:6px 10px; margin-top:14px;
+    }
+    .hed{
+      font-weight:800; line-height:1.08;
+      font-size:clamp(2.1rem, 5.2vw, 3.1rem);
+      margin:10px 0 6px;
+    }
+    .deck{
+      font-size:clamp(1.06rem, 2.3vw, 1.25rem);
+      color:var(--muted); margin:0 0 12px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      border-top:1px solid var(--line); padding-top:10px;
+      color:#3c4552; font-size:.96rem;
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      margin:16px 0 18px; border-radius:var(--radius); overflow:hidden;
+      background:#fff; box-shadow:var(--shadow);
+    }
+    .hero img{ width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center }
+    .caption{
+      font-size:.92rem; color:#4b5563; padding:10px 12px; border-top:1px solid var(--line); background:#fff;
+    }
+
+    /* ===== Body layout (single column, business-mag vibe) ===== */
+    .body{ max-width: 70ch; }
+    .body p{ margin:0 0 1.1rem }
+    .body p:first-of-type::first-letter{
+      float:left; font-size:3.3rem; line-height:.9;
+      padding:.2rem .6rem .2rem 0; font-weight:800; color:var(--accent);
+    }
+
+    /* Subheads */
+    .h2{
+      display:flex; align-items:baseline; gap:10px;
+      font-weight:800; font-size:clamp(1.25rem, 2.2vw, 1.6rem);
+      margin:22px 0 10px;
+    }
+    .h2 .bar{
+      width:22px; height:22px; border-radius:999px; border:1px solid var(--line);
+      display:grid; place-items:center; font-size:.86rem; font-weight:900; color:var(--accent);
+    }
+
+    /* Data table (GFMag pages often carry charts/tables) */
+    .table{
+      margin:12px 0 18px; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff; box-shadow:var(--shadow);
+    }
+    .table table{ width:100%; border-collapse:collapse; font-size:.98rem }
+    .table th, .table td{ padding:12px 14px; border-bottom:1px solid var(--line) }
+    .table th{ text-align:left; font-weight:800; background:#f8fafc }
+    .table tr:last-child td{ border-bottom:0 }
+
+    /* Pull-quote */
+    .pull{
+      border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);
+      padding:14px 0; margin:18px 0; font-style:italic;
+      font-size:clamp(1.15rem, 2vw, 1.45rem);
+    }
+
+    /* Promo banner (fresh message) */
+    .promo{
+      margin:18px 0 18px; border:1px dashed var(--accent); border-radius:12px; padding:14px 16px; background:#fff;
+    }
+    .promo strong{ color:var(--accent) }
+    .promo a{ color:var(--accent); font-weight:800; text-decoration:none }
+    .promo a:hover{ text-decoration:underline }
+
+    /* Info chips */
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0 }
+    .chip{
+      font-size:.86rem; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--chip); color:#263141;
+      white-space:nowrap;
+    }
+
+    /* Footer */
+    footer.article{
+      border-top:1px solid var(--line); margin-top:26px; padding-top:18px; color:#475569;
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; font-size:.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .body{ max-width: 100% }
+    }
+
+    /* Print */
+    @media print{
+      .promo{ border-style:solid }
+      .hero, .table{ break-inside:avoid; box-shadow:none }
+      a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:.85em; color:#555 }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top mast / breadcrumb -->
+  <div class="mast">
+    <div class="inner">
+      <div class="brand">Royal King</div>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/catering">Catering</a>
+        <span aria-hidden="true">›</span>
+        <span style="color:#111">Catered Sandwich Platters</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- Category ribbon -->
+    <div class="cat-ribbon">Catering & Corporate Orders</div>
+
+    <!-- Hed + deck + meta -->
+    <h1 class="hed">Catered Sandwich Platters</h1>
+    <p class="deck">Meeting-ready platters with crisp cutlets, fresh greens, and house-made sauces—built for easy service and reliable delivery windows across North York.</p>
+    <div class="meta">
+      <span><strong>Royal King Pasta &amp; Sandwiches</strong></span>
+      <span aria-hidden="true">•</span>
+      <time datetime="2025-09-13">September 13, 2025</time>
+      <span aria-hidden="true">•</span>
+      <span>Toronto, ON</span>
+    </div>
+
+    <!-- Hero -->
+    <figure class="hero">
+      <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/2.jpg" alt="Assorted chicken and veal cutlet sandwiches arranged as a platter" />
+      <figcaption class="caption">Platters arrive labeled and layered for quick setup—sauces and greens packed to keep texture.</figcaption>
+    </figure>
+
+    <!-- Article body -->
+    <article class="body">
+      <p>Every platter starts with toasted buns for lift, cutlets fried to a clean crackle, and sauces stirred in small batches. Add-ons—greens, pickles, peppers—are packed separately so teams can assemble to taste without losing crunch.</p>
+
+      <!-- Promo banner: different message -->
+      <div class="promo" role="note" aria-label="Autumn Catering Promotion">
+        <strong>Autumn Lunch Bonus:</strong> Free <em>cannoli bite tray</em> with catering orders over <strong>$200</strong>. Use code <strong>AUTUMNFEAST</strong> at checkout. <a href="#order">Book your platter</a>.
+        <div class="chips" aria-label="Popular configurations">
+          <span class="chip">12-sandwich platter (feeds 6–8)</span>
+          <span class="chip">18-sandwich platter (feeds 9–12)</span>
+          <span class="chip">Gluten-friendly option</span>
+        </div>
+      </div>
+
+      <!-- What’s inside -->
+      <h2 class="h2"><span class="bar">1</span><span>What’s Included</span></h2>
+      <p>Choose a mix of <em>veal parm</em>, <em>chicken cutlet</em>, and <em>spicy Calabrese</em>. Each platter ships with house giardiniera, shredded lettuce, sliced tomatoes, and Parm packets. Individual labels note allergens.</p>
+
+      <!-- Sizes & pricing -->
+      <h2 class="h2"><span class="bar">2</span><span>Sizes &amp; Pricing</span></h2>
+      <div class="table" role="region" aria-label="Platter sizes and pricing">
+        <table>
+          <thead>
+            <tr>
+              <th>Platter</th>
+              <th>Sandwich Count</th>
+              <th>Feeds</th>
+              <th>Price</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Standard</td>
+              <td>12 halves</td>
+              <td>6–8</td>
+              <td>$95</td>
+              <td>Mix 2 styles; sauces on side</td>
+            </tr>
+            <tr>
+              <td>Large</td>
+              <td>18 halves</td>
+              <td>9–12</td>
+              <td>$139</td>
+              <td>Mix 3 styles; add greens kit</td>
+            </tr>
+            <tr>
+              <td>Executive</td>
+              <td>24 halves</td>
+              <td>12–16</td>
+              <td>$179</td>
+              <td>Includes salad bowl + peppers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Delivery & timing -->
+      <h2 class="h2"><span class="bar">3</span><span>Delivery Windows</span></h2>
+      <p>Weekdays 10:30am–2:30pm and 4:30pm–7:30pm. We recommend a <em>15–30 minute</em> arrival buffer. For multi-floor offices, provide drop-off instructions to speed service.</p>
+
+      <!-- Image block (secondary) -->
+      <figure class="hero" style="margin-top:10px;">
+        <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg" alt="Side salad and condiments arranged alongside sandwich platter" />
+        <figcaption class="caption">Add a salad bowl and citrus sodas to round out the table—easy to plate, easy to clean.</figcaption>
+      </figure>
+
+      <!-- Add-ons -->
+      <h2 class="h2"><span class="bar">4</span><span>Add-Ons</span></h2>
+      <p>House salad (serves 8), garlic bread, extra provolone, and heat packs for longer trips. Gluten-friendly buns available on request.</p>
+
+      <!-- Pull quote -->
+      <blockquote class="pull">“The secret to a good platter is simple: toast for structure, sauce control for crunch, and clear labels so teams can build fast.”</blockquote>
+
+      <!-- Ordering -->
+      <h2 class="h2"><span class="bar">5</span><span>How To Order</span></h2>
+      <p>Give us your headcount, preferred mix, and arrival time. We’ll confirm your window, label everything, and coordinate building access. Same-day availability varies; 24-hour notice is best for large groups.</p>
+
+      <footer class="article">
+        <span>Call: <a href="tel:+14167818383">416-781-8383</a></span>
+        <span>Email: <a href="mailto:order@royalkingon.com">order@royalkingon.com</a></span>
+        <span id="order">Order: <a href="/order">Pickup &amp; Delivery</a></span>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,150 +1,346 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Veal & Chicken Sandwiches • Handcrafted Pasta Dishes — Patterns</title>
-<style>
-  /* ====== Design Tokens ====== */
-  :root{
-    --crimson:#c1121f;      /* primary red */
-    --cream:#fff9f2;        /* soft paper */
-    --ink:#111827;          /* near-black */
-    --olive:#6b8e23;        /* earthy accent */
-    --teal:#1d9a8f;         /* cool accent */
-    --gold:#e9c46a;         /* warm accent */
-    --charcoal:#0f172a;     /* deep text */
-    --rule:#f7d8d8;         /* light red rule */
-    --muted:#6b7280;
-    --radius:16px;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-  }
-  *{ box-sizing:border-box }
-  body{
-    margin:0; font-family:ui-serif, Georgia, Cambria, "Times New Roman", serif;
-    color:var(--charcoal); background:#fff;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  img{ max-width:100%; height:auto; display:block }
-  .wrap{ max-width:1200px; margin:40px auto; padding:0 20px }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  .eyebrow{
-    display:inline-block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--crimson); border:1px solid var(--rule); background:#fff5f5;
-    border-radius:999px; padding:6px 10px; margin-bottom:10px
-  }
-  .kicker{ color:var(--muted); font-style:italic; margin:2px 0 12px }
+  <!-- Primary SEO -->
+  <title>Veal & Chicken Sandwiches + Handcrafted Pasta Dishes — Royal King Toronto</title>
+  <meta name="description" content="Handcrafted pasta and hot veal/chicken sandwiches from Royal King Pasta & Sandwiches in North York, Toronto. Finished to order, packed to travel, available for pickup or delivery." />
+  <meta name="keywords" content="Best pasta Toronto, Royal King Pasta & Sandwiches, Toronto pasta restaurant, North York pasta, pasta delivery Toronto, Italian comfort food, pasta takeout, handcrafted pasta, hot sandwiches Toronto" />
+  <meta name="author" content="Royal King Pasta & Sandwiches" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://www.royalkingon.com/handcrafted-pasta-sandwiches" />
+  <link rel="alternate" href="https://www.royalkingon.com/handcrafted-pasta-sandwiches" hreflang="en-CA" />
 
-  /* Shared vertical heading styles */
-  .vhead{
-    writing-mode: vertical-rl; text-orientation: mixed; letter-spacing:.08em;
-    font-weight:800; color:#fff; background:var(--crimson);
-    border-radius:12px; padding:16px 10px; user-select:none;
-  }
-  /* Fallback for older browsers that ignore writing-mode */
-  @supports not (writing-mode: vertical-rl){
-    .vhead{ writing-mode: horizontal-tb; transform:rotate(-90deg); transform-origin:left top }
-  }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Veal & Chicken Sandwiches + Handcrafted Pasta Dishes — Royal King Toronto" />
+  <meta property="og:description" content="Crispy veal & chicken sandwiches and handcrafted pasta dishes—glossy sauces, melty cheese, perfectly packed for delivery." />
+  <meta property="og:url" content="https://www.royalkingon.com/handcrafted-pasta-sandwiches" />
+  <meta property="og:image" content="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg" />
+  <meta property="og:site_name" content="Royal King Pasta & Sandwiches" />
+  <meta property="og:locale" content="en_CA" />
 
-  /* ====== Pattern A: Split Hero with Vertical Rail ====== */
-  .pattern-a{
-    display:grid; grid-template-columns: 80px 1fr; gap:18px;
-    background:linear-gradient(180deg, #fff, var(--cream));
-    border:1px solid #eee; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
-  }
-  .pattern-a .rail{
-    display:flex; align-items:center; justify-content:center; background:var(--crimson);
-  }
-  .pattern-a .rail .vhead{ background:transparent; font-size:1.05rem }
-  .pattern-a .content{
-    display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; padding:18px;
-  }
-  .pattern-a figure{ border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff }
-  .pattern-a h2{ margin:6px 0 6px; font-size:clamp(1.5rem,3vw,2.1rem); color:var(--crimson) }
-  .pattern-a .lead{ font-style:italic; font-size:1.05rem; color:var(--muted) }
-  .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
-  .tag{ padding:6px 10px; border-radius:999px; border:1px solid #eee; background:#fff }
-  .tag.red{ color:var(--crimson); border-color:var(--crimson); background:#fff0f0 }
-  .cta{
-    display:inline-block; margin-top:12px; padding:10px 14px; border-radius:12px;
-    background:var(--olive); color:#fff; text-decoration:none; font-weight:700;
-  }
-  @media (max-width:900px){ .pattern-a .content{ grid-template-columns: 1fr } }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Veal & Chicken Sandwiches + Handcrafted Pasta Dishes — Royal King Toronto" />
+  <meta name="twitter:description" content="Handcrafted pasta & hot sandwiches delivered across North York. Order now." />
+  <meta name="twitter:image" content="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg" />
+  <meta name="twitter:site" content="@royalkingpasta" />
 
-  /* ====== Pattern B: Vertical Headings Over Staggered Cards ====== */
-  .pattern-b{
-    margin-top:28px; border-radius:var(--radius); border:1px solid #eee; overflow:hidden;
-    background:#fff; box-shadow:var(--shadow); position:relative;
-  }
-  .pattern-b .header{
-    display:flex; gap:16px; align-items:flex-start; padding:18px; background:#f9fafb;
-    border-bottom:1px solid #eee;
-  }
-  .pattern-b .header .vhead{ background:var(--teal) }
-  .pattern-b h2{ margin:0; font-size:clamp(1.4rem,3vw,2rem); color:var(--teal) }
-  .grid{
-    display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; padding:18px;
-  }
-  .card{
-    border:1px solid #eee; border-radius:14px; overflow:hidden; background:#fff; box-shadow:var(--shadow);
-    display:flex; flex-direction:column;
-  }
-  .card .body{ padding:12px 14px }
-  .card h3{ margin:4px 0 4px; font-size:1.2rem; color:var(--ink) }
-  .card p{ margin:0; color:var(--muted) }
-  .badge-vert{
-    position:absolute; top:12px; right:12px; writing-mode:vertical-rl; text-orientation:mixed;
-    background:var(--gold); color:#111; padding:8px 6px; border-radius:8px; font-weight:700; font-size:.8rem;
-  }
-  .price{ margin-top:10px; font-weight:800; color:var(--crimson) }
-  @media (max-width:980px){ .grid{ grid-template-columns: repeat(2, 1fr) } }
-  @media (max-width:640px){ .grid{ grid-template-columns: 1fr } }
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  /* ====== Pattern C: Magazine Columns with Vertical Section Labels ====== */
-  .pattern-c{
-    margin-top:28px; border:1px solid #eee; border-radius:var(--radius);
-    box-shadow:var(--shadow); background:linear-gradient(180deg, #fff, #f7fffd);
-    padding:18px;
-  }
-  .section{
-    display:grid; grid-template-columns: 60px 1fr; gap:16px; align-items:start; margin:8px 0 18px;
-  }
-  .section .label{
-    writing-mode:vertical-rl; text-orientation:upright; letter-spacing:.12em;
-    background:var(--gold); color:#111; border-radius:12px; padding:10px 8px; font-weight:800;
-  }
-  .columns{
-    -webkit-column-count: 2; column-count: 2;
-    -webkit-column-gap: 1.8rem; column-gap: 1.8rem;
-    -webkit-column-rule: 2px solid #e7f6f4; column-rule: 2px solid #e7f6f4;
-  }
-  .columns p{ margin:0 0 1rem; hyphens:auto; -webkit-hyphens:auto }
-  .columns em{ font-style:italic; color:var(--teal) }
-  @media (max-width:800px){ .columns{ -webkit-column-count:1; column-count:1 } }
+  <!-- Preload hero for LCP -->
+  <link rel="preload" as="image"
+        href="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg"
+        imagesrcset="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg 1600w"
+        imagesizes="(max-width: 768px) 100vw, 1200px" />
 
-  /* Utility */
-  .italic{ font-style:italic }
-  .sep{ height:1px; background:#eee; margin:18px 0 }
-</style>
+  <!-- Structured Data: Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Royal King Pasta & Sandwiches",
+    "image": "https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3450 Bathurst Street",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M6A 2C5",
+      "addressCountry": "CA"
+    },
+    "telephone": "+1-416-781-8383",
+    "servesCuisine": ["Italian", "Pasta", "Sandwiches"],
+    "url": "https://www.royalkingon.com",
+    "priceRange": "$$",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/royalkingon",
+      "https://www.instagram.com/royalkingpasta"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do your pasta dishes travel well for delivery?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We finish sauces to order, pack with steam control, and seal entrées to keep texture and heat." }
+    },{
+      "@type": "Question",
+      "name": "Can I get sauce on the side for sandwiches?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Ask for sauce on the side for maximum crunch, or double-melt for extra comfort." }
+    },{
+      "@type": "Question",
+      "name": "Do you offer utensils and napkins?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Utensils and napkins are included by default. You can opt out to reduce waste." }
+    }]
+  }
+  </script>
+
+  <!-- GA4: Replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <meta name="color-scheme" content="light only" />
+
+  <style>
+    /* ===== Tokens ===== */
+    :root{
+      --crimson:#c1121f;
+      --cream:#fff9f2;
+      --ink:#111827;
+      --olive:#6b8e23;
+      --teal:#1d9a8f;
+      --gold:#e9c46a;
+      --charcoal:#0f172a;
+      --muted:#6b7280;
+      --rule:#f7d8d8;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+
+      /* Vertical-panel palette */
+      --full-bg: linear-gradient(180deg, #0b3d3b 0%, #0a2f2e 100%);
+      --full-ink: #f6fdfc;
+      --full-muted:#c8e6e1;
+      --full-accent:#1dd1a1;
+      --full-gold:#e9c46a;
+    }
+
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{
+      margin:0; font-family:ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      color:var(--charcoal); background:#fff; line-height:1.7;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+    img{ max-width:100%; height:auto; display:block }
+    figure{ margin:0 }
+    .wrap{ max-width:1200px; margin:40px auto; padding:0 20px }
+
+    .eyebrow{
+      display:inline-block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--crimson); border:1px solid var(--rule); background:#fff5f5;
+      border-radius:999px; padding:6px 10px; margin-bottom:10px
+    }
+    .kicker{ color:var(--muted); font-style:italic; margin:2px 0 12px }
+
+    /* Vertical text chips — text-only (no background) */
+    .vhead{
+      writing-mode: vertical-rl; text-orientation: mixed; letter-spacing:.08em;
+      font-family: inherit; font-weight:800; font-style:normal; color: currentColor;
+      background: transparent; border-radius:0; padding:0; user-select:none;
+    }
+    @supports not (writing-mode: vertical-rl){
+      .vhead{ writing-mode: horizontal-tb; transform:rotate(-90deg); transform-origin:left top }
+    }
+
+    /* ===== Hero ===== */
+    header.hero{
+      border:2px solid var(--crimson);
+      border-radius:var(--radius);
+      padding:20px 24px;
+      background:linear-gradient(180deg, #fff, var(--cream));
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:6px 0 8px;
+      font-weight:800;
+      font-size:clamp(1.6rem,3.2vw,2.4rem);
+      line-height:1.2; color:var(--crimson);
+    }
+    .sub{ margin:0; color:var(--muted); font-size:clamp(.98rem,1.6vw,1.05rem) }
+    .hero-figure{
+      margin:18px 0 0; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#fff
+    }
+    .hero-figure img{
+      width:100%; aspect-ratio: 16 / 9; object-fit:cover; object-position:center
+    }
+    .hero-figure figcaption{
+      padding:10px 14px; font-size:.95rem; color:#0f172a; background:#fff; border-top:1px solid rgba(0,0,0,.06)
+    }
+
+    /* ===== Pattern A: Split Hero (Sandwiches) ===== */
+    .pattern-a{
+      display:grid; grid-template-columns: clamp(72px, 8vw, 120px) 1fr; gap:18px;
+      background:linear-gradient(180deg, #fff, var(--cream));
+      border:1px solid #eee; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+      margin-top:26px;
+    }
+    .pattern-a .rail{ display:flex; align-items:center; justify-content:center; background: transparent }
+    .pattern-a .content{ display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; padding:18px }
+    .pattern-a figure{ border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff }
+    .pattern-a h2{ margin:6px 0 6px; font-size:clamp(1.5rem,3vw,2.1rem); color:var(--crimson); font-style:italic }
+    .pattern-a .lead{ font-style:italic; font-size:1.05rem; color:var(--muted) }
+    .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
+    .tag{ padding:6px 10px; border-radius:999px; border:1px solid #eee; background:#fff }
+    .tag.red{ color:var(--crimson); border-color:var(--crimson); background:#fff0f0 }
+    .cta{
+      display:inline-block; margin-top:12px; padding:10px 14px; border-radius:12px;
+      background:var(--olive); color:#fff; text-decoration:none; font-weight:700;
+    }
+    @media (max-width:900px){ .pattern-a .content{ grid-template-columns: 1fr } }
+
+    /* ===== Pattern B: Staggered Cards (Pasta) ===== */
+    .pattern-b{
+      margin-top:28px; border-radius:var(--radius); border:1px solid #eee; overflow:hidden;
+      background:#fff; box-shadow:var(--shadow); position:relative;
+    }
+    .pattern-b .header{
+      display:flex; gap:16px; align-items:flex-start; padding:18px; background:#f9fafb;
+      border-bottom:1px solid #eee; color: var(--teal);
+    }
+    .pattern-b h2{ margin:0; font-size:clamp(1.4rem,3vw,2rem); color:var(--teal) }
+    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; padding:18px }
+    .card{
+      border:1px solid #eee; border-radius:14px; overflow:hidden; background:#fff; box-shadow:var(--shadow);
+      display:flex; flex-direction:column;
+    }
+    .card .body{ padding:12px 14px }
+    .card h3{ margin:4px 0 4px; font-size:1.2rem; color:var(--ink); font-style:italic }
+    .card p{ margin:0; color:var(--muted) }
+    .badge-vert{
+      position:absolute; top:12px; right:12px; writing-mode:vertical-rl; text-orientation:mixed;
+      background: transparent; color:#111; padding:0; border-radius:0; font-weight:700; font-size:.8rem;
+    }
+    .price{ margin-top:10px; font-weight:800; color:var(--crimson) }
+    @media (max-width:980px){ .grid{ grid-template-columns: repeat(2, 1fr) } }
+    @media (max-width:640px){ .grid{ grid-template-columns: 1fr } }
+
+    .sep{ height:1px; background:#eee; margin:22px 0 }
+
+    /* ===== PATTERN C (CONSTRAINED): same width as .wrap, but 100vh panels ===== */
+    .pattern-c{
+      margin-top:28px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      background: var(--full-bg);
+      color: var(--full-ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .pattern-c .panel{
+      min-height: 100vh;  /* full viewport height */
+      display: grid;
+      grid-template-columns: clamp(72px, 9vw, 140px) minmax(0,1fr);
+      gap: 0;
+      align-items: stretch;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .label-rail{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent; /* text-only vertical rail */
+    }
+    .label-rail .vtext{
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: .22em;
+      font-family: inherit;
+      font-weight: 800;
+      font-style: normal;
+      color: var(--full-ink);
+      font-size: clamp(.8rem, 1.4vw, 1.05rem);
+      user-select: none;
+    }
+    @supports not (writing-mode: vertical-rl){
+      .label-rail .vtext{ writing-mode: horizontal-tb; transform: rotate(-90deg); transform-origin: left top; }
+    }
+    .panel .content{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(18px, 3vw, 28px);
+      align-items: center;
+      padding: clamp(24px, 5vw, 64px);
+    }
+    .panel h2{
+      margin: 0 0 8px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--full-gold);
+      font-style: italic;
+    }
+    .panel .kicker{
+      margin: 0 0 14px;
+      color: var(--full-muted);
+      font-style: italic;
+    }
+    .bullet{ display: flex; gap: 12px; align-items: flex-start; margin: 0 0 12px; }
+    .bullet i{ width: 10px; height: 10px; margin-top: .5rem; background: var(--full-accent); border-radius: 2px; }
+    .panel .major-fig{
+      border-radius: 16px; overflow: hidden; background: rgba(255,255,255,.06);
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+    .panel .major-fig img{ width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: center; }
+
+    /* Responsive */
+    @media (max-width: 1000px){
+      .panel .content{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px){
+      .pattern-c .panel{ grid-template-columns: 100%; }
+      .label-rail{ height: 56px; }
+      .label-rail .vtext{ writing-mode: horizontal-tb; transform: none; letter-spacing: .28em; }
+    }
+
+    /* A11y / Motion */
+    @media (prefers-reduced-motion:reduce){
+      *{ animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+    }
+  </style>
 </head>
 <body>
   <main class="wrap">
+    <!-- HERO -->
+    <header class="hero" role="banner" aria-label="Veal and chicken sandwiches with handcrafted pasta dishes">
+      <span class="eyebrow">North York • Toronto</span>
+      <h1>Veal & Chicken Sandwiches • <em>Handcrafted Pasta Dishes</em></h1>
+      <p class="sub">Crispy cutlets, molten cheese, glossy sauces — finished to order and packed to arrive perfect.</p>
+      <figure class="hero-figure">
+        <img
+          src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg"
+          alt="Royal King — handcrafted pasta and hot sandwiches plated fresh"
+          decoding="async" fetchpriority="high" />
+        <figcaption>Open-kitchen energy — sauces finished to order, every time.</figcaption>
+      </figure>
+    </header>
 
-    <!-- ===== Pattern A: Split Hero (Veal/Chicken Sandwiches) ===== -->
+    <!-- PATTERN A: SANDWICHES -->
     <section class="pattern-a" aria-label="Veal and Chicken Sandwiches">
       <aside class="rail" aria-hidden="true">
         <div class="vhead">VEAL • CHICKEN • SANDWICHES</div>
       </aside>
       <div class="content">
         <figure>
-          <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
-               alt="Crispy veal sandwich with melted cheese, tomato sauce, and fresh bun" />
+          <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/2.jpg"
+               alt="Crispy veal sandwich with melted cheese and bright tomato sauce" />
         </figure>
         <div>
-          <span class="eyebrow">North York • Toronto</span>
-          <h2 class="italic">Veal & Chicken Sandwiches</h2>
-          <p class="lead italic">Crisp cutlets, molten cheese, and bright sauces—built to stay perfect in transit.</p>
-          <p>Choose from <em>classic veal</em>, <em>chicken parm</em>, or <em>spicy calabrese</em>. Baked after assembly for a just-set melt and a soft-crisp bun.</p>
+          <h2><em>Veal & Chicken Sandwiches</em></h2>
+          <p class="lead">Crisp cutlets, melty cheese, bright sauces—built to stay perfect in transit.</p>
+          <p>Choose <em>veal parm</em>, <em>chicken cutlet</em>, or <em>spicy calabrese</em>. Baked after assembly for a just-set melt and a soft-crisp bun.</p>
           <div class="tags">
             <span class="tag red">Veal Parm</span>
             <span class="tag">Chicken Cutlet</span>
@@ -158,7 +354,7 @@
 
     <div class="sep"></div>
 
-    <!-- ===== Pattern B: Staggered Cards with Vertical Badges (Handcrafted Pasta Dishes) ===== -->
+    <!-- PATTERN B: PASTA CARDS -->
     <section class="pattern-b" aria-label="Handcrafted Pasta Dishes">
       <div class="header">
         <div class="vhead">HANDCRAFTED</div>
@@ -172,12 +368,12 @@
         <!-- Card 1 -->
         <article class="card">
           <div style="position:relative">
-            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
-                 alt="Penne alla Vodka topped with parmesan and basil" />
+            <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg"
+                 alt="Penne alla Vodka — creamy tomato-cream sauce with basil" />
             <span class="badge-vert">CHEF PICK</span>
           </div>
           <div class="body">
-            <h3 class="italic">Penne alla Vodka</h3>
+            <h3><em>Penne alla Vodka</em></h3>
             <p>Tomato-cream, chili warmth, buttery finish. Holds heat, travels beautifully.</p>
             <div class="price">$17</div>
           </div>
@@ -186,12 +382,12 @@
         <!-- Card 2 -->
         <article class="card">
           <div style="position:relative">
-            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
-                 alt="Spaghetti Pomodoro with San Marzano sauce" />
-            <span class="badge-vert" style="background:var(--teal); color:#fff;">SIGNATURE</span>
+            <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/3.jpg"
+                 alt="Spaghetti Pomodoro — San Marzano tomato sauce with olive oil and basil" />
+            <span class="badge-vert">SIGNATURE</span>
           </div>
           <div class="body">
-            <h3 class="italic">Spaghetti Pomodoro</h3>
+            <h3><em>Spaghetti Pomodoro</em></h3>
             <p>San Marzano brightness, basil, olive oil—classic and clean.</p>
             <div class="price">$16</div>
           </div>
@@ -200,12 +396,12 @@
         <!-- Card 3 -->
         <article class="card">
           <div style="position:relative">
-            <img src="https://gservetech.github.io/html/html/youtube/thumb/1.png"
-                 alt="Linguine al Limone with lemon zest and parsley" />
-            <span class="badge-vert" style="background:var(--crimson); color:#fff;">NEW</span>
+            <img src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/2.jpg"
+                 alt="Linguine al Limone — lemon cream sauce with parsley" />
+            <span class="badge-vert">NEW</span>
           </div>
           <div class="body">
-            <h3 class="italic">Linguine al Limone</h3>
+            <h3><em>Linguine al Limone</em></h3>
             <p>Lemon-cream, cracked pepper, fresh parsley—light yet lush.</p>
             <div class="price">$18</div>
           </div>
@@ -215,34 +411,77 @@
 
     <div class="sep"></div>
 
-    <!-- ===== Pattern C: Magazine Columns with Vertical Labels ===== -->
-    <section class="pattern-c" aria-label="Details & Pairings">
-      <div class="section">
-        <div class="label">PASTA</div>
-        <div class="columns">
-          <p><em>Handcrafted Pasta Dishes</em> arrive al dente with sauces finished to order for gloss and cling. Request extra heat-seal for longer trips.</p>
-          <p>Favorites: penne alla vodka, spaghetti pomodoro, linguine al limone, and slow-simmered bolognese.</p>
-          <p>Textures matter—short cuts keep bite; long cuts carry sauce. Add chili oil or extra Parm for a custom finish.</p>
+    <!-- PATTERN C (CONSTRAINED): same width as .wrap, 100vh panels -->
+    <section class="pattern-c" aria-label="Details, Sandwich Tips, and Pairings">
+      <!-- PANEL 1: PASTA -->
+      <div class="panel" id="panel-pasta">
+        <aside class="label-rail" aria-hidden="true">
+          <div class="vtext">PASTA</div>
+        </aside>
+        <div class="content">
+          <div class="text">
+            <h2><em>Handcrafted Pasta Dishes</em></h2>
+            <p class="kicker">Al dente textures, sauces finished to order for gloss and cling.</p>
+
+            <div class="bullet"><i></i><p><em>Finished to order</em> so heat and texture arrive just right.</p></div>
+            <div class="bullet"><i></i><p>Favorites: <em>penne alla vodka</em>, <em>spaghetti pomodoro</em>, <em>linguine al limone</em>, slow-simmered bolognese.</p></div>
+            <div class="bullet"><i></i><p>Pro tip: add chili oil or extra Parm; request <em>heat-seal</em> for longer trips.</p></div>
+          </div>
+
+          <figure class="major-fig">
+            <img
+              src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/3.jpg"
+              alt="Close-up of spaghetti in bright San Marzano tomato sauce with basil" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
 
-      <div class="section">
-        <div class="label">SANDW.</div>
-        <div class="columns">
-          <p><em>Veal/Chicken Sandwiches</em> feature crisp cutlets, melty cheese, and sauced buns toasted for structural integrity.</p>
-          <p>Pro tips: ask for sauce on side for crunch, or “double-melt” for max comfort. Add giardiniera for brightness.</p>
+      <!-- PANEL 2: SANDWICHES -->
+      <div class="panel" id="panel-sandwiches">
+        <aside class="label-rail" aria-hidden="true">
+          <div class="vtext">SANDW.</div>
+        </aside>
+        <div class="content">
+          <div class="text">
+            <h2><em>Veal & Chicken Sandwiches</em></h2>
+            <p class="kicker">Crisp cutlets, molten cheese, sauced buns toasted for structure.</p>
+
+            <div class="bullet"><i></i><p>Ask for <em>sauce on the side</em> for maximum crunch, or <em>double-melt</em> for comfort.</p></div>
+            <div class="bullet"><i></i><p>Add <em>giardiniera</em> or banana peppers for brightness and a gentle kick.</p></div>
+            <div class="bullet"><i></i><p>Built to travel: steam control + insulated packing to hold heat.</p></div>
+          </div>
+
+          <figure class="major-fig">
+            <img
+              src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/2.jpg"
+              alt="Chicken cutlet sandwich with melted cheese and bright tomato sauce" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
 
-      <div class="section">
-        <div class="label">PAIR</div>
-        <div class="columns">
-          <p>Pair with <em>garlic toast</em>, <em>house salad</em>, and a citrus soda. Finish with tiramisu or cannoli.</p>
-          <p>Heat packs available on request. Utensils and napkins included by default—opt out to reduce waste.</p>
+      <!-- PANEL 3: PAIRINGS -->
+      <div class="panel" id="panel-pairings">
+        <aside class="label-rail" aria-hidden="true">
+          <div class="vtext">PAIR</div>
+        </aside>
+        <div class="content">
+          <div class="text">
+            <h2><em>Smart Pairings</em></h2>
+            <p class="kicker">Balance richness with crunch and freshness.</p>
+
+            <div class="bullet"><i></i><p>Pair with <em>garlic toast</em>, <em>house salad</em>, and a citrus soda; finish with tiramisu or cannoli.</p></div>
+            <div class="bullet"><i></i><p>Utensils and napkins included by default — opt out to reduce waste.</p></div>
+            <div class="bullet"><i></i><p>Heat packs available on request; “leave at door” speeds drop-off and keeps heat.</p></div>
+          </div>
+
+          <figure class="major-fig">
+            <img
+              src="https://gservetech.github.io/html/html/HandcraftedPastaDishes/images/1.jpg"
+              alt="Side salad and garlic bread pairing for pasta" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
     </section>
-
   </main>
 </body>
 </html>
