@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Pasta Takeout in Toronto | Royal King Pasta & Sandwiches</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Order pasta takeout in Toronto from Royal King Pasta & Sandwiches. Creamy Alfredo, Rose Penne, Beef Bolognese, family combos, catering platters, and toasted sandwiches. Pickup & delivery in North York and midtown." />
+    <link rel="canonical" href="https://www.royalkingon.com/pasta-takeout" />
+    <meta name="keywords" content="pasta takeout Toronto, Italian food Toronto, pasta delivery, Royal King Pasta, sandwiches Toronto, catering platters Toronto, best pasta Toronto, halal pasta Toronto, North York pasta takeout, family meals Toronto" />
+
+    <meta property="og:title" content="Pasta Takeout in Toronto | Royal King Pasta & Sandwiches" />
+    <meta property="og:description" content="Fresh pasta, toasted sandwiches, catering platters. Fast pickup & delivery in Toronto." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.royalkingon.com/pasta-takeout" />
+    <meta property="og:image" content="https://gservetech.github.io/html/html/ItalianFoodDeliveryNearMe/images/1.jpg" />
+    <meta property="og:locale" content="en_CA" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --primary-color: #A32929; /* Deep Red */
+            --secondary-color: #FFC107; /* Amber Gold */
+            --text-color: #333;
+            --light-bg: #F5F5F5;
+            --dark-bg: #2C2C2C;
+            --subtle-gray: #E0E0E0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        p { margin-bottom: 1.2rem; }
+        
+        strong { color: var(--primary-color); }
+        
+        .wrap {
+            width: min(1200px, 90vw);
+            margin: auto;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 4rem 0;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 900px) {
+            .cta {
+                justify-content: center;
+            }
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(163, 41, 41, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            background: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .highlight {
+            background: var(--secondary-color);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .testimonials {
+            padding: 3rem 0;
+            background: var(--light-bg);
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-style: italic;
+            text-align: left;
+        }
+        
+        .testimonial-card cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: #E0E0E0;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+        
+        .contactline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .contactline span, .contactline a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contactline i {
+            color: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap hero">
+        <div class="hero-content">
+            <h1>Pasta Takeout That Feels Like Dining In</h1>
+            <p>Royal King Pasta & Sandwiches brings <span class="highlight">restaurant-quality pasta</span> to your home or office. Creamy Alfredo, Rose Penne, Beef Bolognese, and gourmet sandwiches are packed fresh, fast, and hot — every single order.</p>
+            <div class="cta">
+                <a href="tel:4167818383" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="#order" class="btn btn-secondary"><i class="fas fa-utensils"></i> Order Online</a>
+            </div>
+        </div>
+        <div>
+            <img src="https://gservetech.github.io/html/html/ItalianFoodDeliveryNearMe/images/1.jpg" alt="Pasta takeout box with basil garnish" />
+        </div>
+    </div>
+    
+
+    <section class="wrap">
+        <h2>Our Signature Dishes</h2>
+        <p style="text-align:center; max-width: 800px; margin: auto;">Every pasta dish is finished to order, with sauce tossed right before sealing. Our eco-friendly packaging is designed to lock in heat and freshness, ensuring a perfect meal every time, no matter the distance. </p>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1621996346565-f4fd4f9d885a" alt="Creamy Chicken Alfredo">
+                <div class="menu-item-content">
+                    <h3>Creamy Chicken Alfredo</h3>
+                    <p>Rich cream sauce, real parmesan, and perfectly grilled chicken over fettuccine. Pure comfort in a bowl.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594950346743-b26a117b9b1e" alt="Rose Penne with Mushrooms">
+                <div class="menu-item-content">
+                    <h3>Rose Penne with Mushrooms</h3>
+                    <p>A creamy tomato sauce balanced with sautéed mushrooms. A vibrant and tangy crowd-favorite.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1599815049581-229ef5e921d7" alt="Classic Beef Bolognese">
+                <div class="menu-item-content">
+                    <h3>Classic Beef Bolognese</h3>
+                    <p>A slow-simmered, herby beef and tomato sauce. The ultimate classic perfected.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1628172808779-f19ac3e0019a" alt="Toasted Chicken Parm Roll">
+                <div class="menu-item-content">
+                    <h3>Toasted Chicken Parm Roll</h3>
+                    <p>Crispy chicken breast, marinara, and melted mozzarella, toasted to a golden finish. Our sandwich star.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="testimonials">
+        <div class="wrap">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"The Alfredo is the best I've had outside of a restaurant. The pasta was cooked perfectly, and the sauce was incredibly rich. Will definitely order again!"</p>
+                    <cite>- Sarah T., Toronto</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I ordered a Family Pasta Pack for a dinner party, and everyone was blown away. So much food and incredible quality. The Rose Penne is a must-try!"</p>
+                    <cite>- Mark R., North York</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The Chicken Parm Roll is a game-changer. It's crispy, cheesy, and packed with flavor. My go-to for a quick, delicious lunch."</p>
+                    <cite>- Emily L., Midtown</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wrap" id="order" style="text-align: center; padding: 3rem 0;">
+        <h2 style="color: var(--primary-color);">Ready to Order?</h2>
+        <p>Pickup is ready in 15 minutes, and delivery covers most of North York and midtown Toronto. Call us, order online, or stop by to grab your favorites hot and fresh.</p>
+        <div class="cta" style="justify-content: center; margin-top: 1.5rem;">
+            <a href="tel:4167818383" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 416-781-8383</a>
+            <a href="#order" class="btn btn-secondary"><i class="fas fa-external-link-alt"></i> Order Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div><strong>Royal King Pasta & Sandwiches</strong></div>
+            <div class="contactline">
+                <span><i class="fas fa-map-marker-alt"></i> 3450 Bathurst Street, Toronto, ON</span>
+                <a href="tel:4167818383"><i class="fas fa-phone-alt"></i> 416-781-8383</a>
+                <a href="mailto:order@royalkingon.com"><i class="fas fa-envelope"></i> order@royalkingon.com</a>
+            </div>
+            <p style="margin-top:.6rem;">Open daily • Fast pickup • Delivery in North York & midtown</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Restaurant",
+            "name":"Royal King Pasta & Sandwiches",
+            "url":"https://www.royalkingon.com/pasta-takeout",
+            "image":"https://gservetech.github.io/html/html/ItalianFoodDeliveryNearMe/images/1.jpg",
+            "telephone":"+1-416-781-8383",
+            "priceRange":"$$",
+            "servesCuisine":["Italian","Sandwiches","Pasta"],
+            "address":{
+                "@type":"PostalAddress",
+                "streetAddress":"3450 Bathurst Street",
+                "addressLocality":"Toronto",
+                "addressRegion":"ON",
+                "postalCode":"M6A",
+                "addressCountry":"CA"
+            },
+            "openingHoursSpecification":[{
+                "@type":"OpeningHoursSpecification",
+                "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens":"09:00",
+                "closes":"22:00"
+            }]
+        }
+    </script>
+</body>
+</html>
