@@ -1,0 +1,50 @@
+[
+  {
+    menu_item_id: 18,
+    name: "MEAT RAVIOLI",
+    description: "with tomato sauce",
+    price: 14.99,
+    image_url: "/menu/meatravioli.jpeg",
+    category: "mainItems",
+    prepTime: "12-15 min",
+    serves: "1 people",
+    rating: 4.8,
+    features: ["Handmade pasta", "Premium meat filling", "Fresh tomato sauce", "Authentic Italian recipe"]
+  },
+  {
+    menu_item_id: 30,
+    name: "CHICKEN PARMIGIANA",
+    description: "2pcs breaded chicken tomato sauce with melted cheese",
+    price: 26.99,
+    image_url: "/menu/chickenparmigiana.avif",
+    category: "mainItems",
+    prepTime: "12-15 min",
+    serves: "1-2 people",
+    rating: 4.9,
+    features: ["Crispy golden coating", "Fresh mozzarella", "House marinara", "Served with pasta"]
+  },
+  {
+    menu_item_id: 31,
+    name: "VEAL PARMIGIANA",
+    description: "3pcs veal tomato sauce with melted cheese",
+    price: 25.99,
+    image_url: "/menu/vealparmigiana.jpg",
+    category: "mainItems",
+    prepTime: "12-15 min",
+    serves: "1 people",
+    rating: 4.9,
+    features: ["Premium veal cutlets", "Fresh mozzarella", "House marinara", "Served with pasta"]
+  },
+  {
+    menu_item_id: 14,
+    name: "PENNE",
+    description: "with tomato sauce",
+    price: 12.99,
+    image_url: "/menu/penne.jpeg",
+    category: "mainItems",
+    prepTime: "12-15 min",
+    serves: "1-2 people",
+    rating: 4.7,
+    features: ["Fresh penne pasta", "Rich tomato sauce", "Italian herbs", "Customizable toppings"]
+  }
+];
