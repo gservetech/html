@@ -1,373 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Lunch Special: Pasta & Sandwich | Royal King Pasta & Sandwiches</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Enjoy our exclusive Lunch Special: Choose any pasta bowl and a toasted sandwich for one great price. Fast pickup & delivery in Toronto." />
-    <link rel="canonical" href="https://www.royalkingon.com/lunch-special" />
+  <meta charset="utf-8" />
+  <title>Lunch Special: Pasta & Sandwich | Royal King Pasta & Sandwiches</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Enjoy our exclusive Lunch Special: Choose any pasta bowl and a toasted sandwich for one great price. Fast pickup & delivery in Toronto." />
 
-    <meta property="og:title" content="Royal King's Exclusive Lunch Special" />
-    <meta property="og:description" content="Elevate your lunch with our Pasta & Sandwich Combo. Delicious, fresh, and made to order. Order now for takeout or delivery!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.royalkingon.com/lunch-special" />
-    <meta property="og:image" content="https://gservetech.github.io/html/html/PastaTakeout/images/1.jpg" />
-    <meta property="og:image:alt" content="A fresh pasta bowl and toasted sandwich" />
-    <meta property="fb:app_id" content="1360870231595026" />
+  <!-- ✅ Canonical URL must match the actual link you share -->
+  <link rel="canonical" href="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/LunchSpecialPastaSandwich.html" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@royalking" /> <meta name="twitter:creator" content="@royalking" /> <meta name="twitter:title" content="Lunch Special: Pasta & Sandwich Combo" />
-    <meta name="twitter:description" content="Elevate your lunch with our exclusive special. Get delicious pasta & a toasted sandwich for one great price. Order now!" />
-    <meta name="twitter:image" content="https://gservetech.github.io/html/html/PastaTakeout/images/1.jpg" />
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Lunch Special: Pasta & Sandwich | Royal King" />
+  <meta property="og:description" content="Elevate your lunch with our Pasta & Sandwich combo — fresh, fast, and made to order. Order for pickup or delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/LunchSpecialPastaSandwich.html" />
+  <meta property="og:image" content="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/og.jpg" />
+  <meta property="og:image:alt" content="Fresh pasta bowl with a toasted sandwich - Royal King Lunch Special" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Royal King Pasta & Sandwiches" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lunch Special: Pasta & Sandwich | Royal King" />
+  <meta name="twitter:description" content="Pick any pasta + toasted sandwich for one great price. Order online for pickup or delivery." />
+  <meta name="twitter:image" content="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/og.jpg" />
 
-    <style>
-        :root {
-            --primary-color: #f7a502; /* Warm Gold */
-            --secondary-color: #fff;
-            --text-color-light: #f0f0f0;
-            --text-color-dark: #222;
-            --background-dark: #1a1a1a;
-            --background-light: #2c2c2c;
-            --border-color: #444;
-        }
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color-light);
-            background: var(--background-dark);
-            line-height: 1.6;
-        }
+  <style>
+    :root {
+      --primary-color: #f7a502; /* Warm Gold */
+      --secondary-color: #fff;
+      --text-color-light: #f0f0f0;
+      --text-color-dark: #222;
+      --background-dark: #1a1a1a;
+      --background-light: #2c2c2c;
+      --border-color: #444;
+    }
 
-        h1, h2, h3, h4 {
-            font-family: 'Lora', serif;
-            font-weight: 700;
-        }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color-light);
+      background: var(--background-dark);
+      line-height: 1.6;
+    }
 
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-        }
+    h1, h2, h3, h4 {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+    }
 
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            color: var(--secondary-color);
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
 
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 5px;
-        }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--secondary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
 
-        p {
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            text-align: center;
-        }
-        
-        strong { color: var(--primary-color); }
-        
-        .wrap {
-            width: min(1200px, 92vw);
-            margin: auto;
-            padding: 2rem 0;
-        }
-        
-        .hero {
-            position: relative;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            overflow: hidden;
-        }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      border-radius: 5px;
+    }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://gservetech.github.io/html/html/PastaTakeout/images/1.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.4) blur(3px);
-            z-index: -1;
-        }
+    p {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+    
+    strong { color: var(--primary-color); }
+    
+    .wrap {
+      width: min(1200px, 92vw);
+      margin: auto;
+      padding: 2rem 0;
+    }
+    
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      overflow: hidden;
+    }
 
-        .hero-content {
-            z-index: 1;
-            transform: translateY(-20px);
-        }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://gservetech.github.io/html/html/PastaTakeout/images/1.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.4) blur(3px);
+      z-index: -1;
+    }
 
-        .hero p {
-            font-size: 1.3rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 1rem;
-        }
+    .hero-content {
+      z-index: 1;
+      transform: translateY(-20px);
+    }
 
-        .cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-        }
-        
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--text-color-dark);
-            box-shadow: 0 5px 15px rgba(247, 165, 2, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--secondary-color);
-            border: 2px solid var(--secondary-color);
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            background: var(--secondary-color);
-            color: var(--text-color-dark);
-        }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1rem;
+    }
 
-        .special-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin: 3rem 0;
-        }
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-color-dark);
+      box-shadow: 0 5px 15px rgba(247, 165, 2, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary-color);
+      border: 2px solid var(--secondary-color);
+    }
+    
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background: var(--secondary-color);
+      color: var(--text-color-dark);
+    }
 
-        .special-item {
-            background: var(--background-light);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            text-align: center;
-            padding: 2rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
-        
-        .special-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin: 3rem 0;
+    }
 
-        .special-item img {
-            width: 100%;
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            border: 3px solid var(--primary-color);
-        }
+    .special-item {
+      background: var(--background-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 2rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    }
+    
+    .special-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
-        .special-item h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        
-        .special-item p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: var(--text-color-light);
-        }
+    .special-item img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      border: 3px solid var(--primary-color);
+    }
 
-        .reviews {
-            background: var(--background-light);
-            padding: 4rem 0;
-            margin-top: 4rem;
-        }
+    .special-item h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+    
+    .special-item p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-color-light);
+    }
 
-        .review-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
-        }
+    .reviews {
+      background: var(--background-light);
+      padding: 4rem 0;
+      margin-top: 4rem;
+    }
 
-        .review-card {
-            background: var(--background-dark);
-            border-left: 5px solid var(--primary-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 3rem;
+    }
 
-        .review-card .quote {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-color-light);
-        }
+    .review-card {
+      background: var(--background-dark);
+      border-left: 5px solid var(--primary-color);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
 
-        .review-card .author {
-            display: block;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
+    .review-card .quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-color-light);
+    }
 
-        .star-rating {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+    .review-card .author {
+      display: block;
+      margin-top: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
 
-        footer {
-            background: var(--background-dark);
-            color: var(--text-color-light);
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
+    .star-rating {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
 
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+    footer {
+      background: var(--background-dark);
+      color: var(--text-color-light);
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
 
-        footer a:hover {
-            color: var(--secondary-color);
-        }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-        .contactline {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
+    footer a:hover {
+      color: var(--secondary-color);
+    }
 
-        .contactline span, .contactline a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-    </style>
+    .contactline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .contactline span, .contactline a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="hero">
-        <a href="https://www.royalkingon.com/menu" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></a>
-        <div class="hero-content">
-            <h1>Lunch Special</h1>
-            <p>A perfect pairing for your midday craving.</p>
-            <div class="cta">
-                <a href="https://www.royalkingon.com/menu" class="btn btn-primary"><i class="fas fa-utensils"></i> View Special</a>
-                <a href="#reviews" class="btn btn-secondary"><i class="fas fa-star"></i> Customer Reviews</a>
-            </div>
-        </div>
-    </header>
+  <header class="hero">
+    <a href="https://www.royalkingon.com/menu" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></a>
+    <div class="hero-content">
+      <h1>Lunch Special</h1>
+      <p>A perfect pairing for your midday craving.</p>
+      <div class="cta">
+        <a href="https://www.royalkingon.com/menu" class="btn btn-primary"><i class="fas fa-utensils"></i> View Special</a>
+        <a href="#reviews" class="btn btn-secondary"><i class="fas fa-star"></i> Customer Reviews</a>
+      </div>
+    </div>
+  </header>
 
-    <section id="special" class="wrap">
-        <h2>Pasta & Sandwich Combo</h2>
-        <p>Elevate your lunch break with our exclusive combo deal. Enjoy a perfectly portioned pasta bowl paired with one of our signature toasted sandwiches.</p>
-        <div class="special-grid">
-            <div class="special-item">
-                <a href="https://www.royalkingon.com/menu">
-                    <img src="https://gservetech.github.io/html/html/PastaTakeout/images/3.jpg" alt="Rose Penne Pasta">
-                </a>
-                <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Pasta</a></h3>
-                <p>Pick from our top-selling pasta bowls: Creamy Alfredo, Rose Penne, or Classic Beef Bolognese. Each is made fresh to order with high-quality ingredients.</p>
-            </div>
-            <div class="special-item">
-                <a href="https://www.royalkingon.com/menu">
-                    <img src="https://gservetech.github.io/html/html/PastaTakeout/images/4.jpg" alt="Toasted Chicken Parm Roll">
-                </a>
-                <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Sandwich</a></h3>
-                <p>Pair it with a toasted sandwich. Our options include the famous Chicken Parm Roll, Pesto Veggie Melt, or our classic Turkey Provolone.</p>
-            </div>
-        </div>
-    </section>
+  <section id="special" class="wrap">
+    <h2>Pasta & Sandwich Combo</h2>
+    <p>Elevate your lunch break with our exclusive combo deal. Enjoy a perfectly portioned pasta bowl paired with one of our signature toasted sandwiches.</p>
+    <div class="special-grid">
+      <div class="special-item">
+        <a href="https://www.royalkingon.com/menu">
+          <img src="https://gservetech.github.io/html/html/PastaTakeout/images/3.jpg" alt="Rose Penne Pasta">
+        </a>
+        <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Pasta</a></h3>
+        <p>Pick from our top-selling pasta bowls: Creamy Alfredo, Rose Penne, or Classic Beef Bolognese. Each is made fresh to order with high-quality ingredients.</p>
+      </div>
+      <div class="special-item">
+        <a href="https://www.royalkingon.com/menu">
+          <img src="https://gservetech.github.io/html/html/PastaTakeout/images/4.jpg" alt="Toasted Chicken Parm Roll">
+        </a>
+        <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Sandwich</a></h3>
+        <p>Pair it with a toasted sandwich. Our options include the famous Chicken Parm Roll, Pesto Veggie Melt, or our classic Turkey Provolone.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="reviews" class="reviews">
-        <div class="wrap">
-            <h2><a href="https://share.google/l8isTTEEmkvGFfWyB" style="color:inherit; text-decoration: none;" target="_blank">What Our Customers Say</a></h2>
-            <div class="review-grid">
-                <div class="review-card">
-                    <div class="star-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"The lunch special is an absolute steal! The portions are perfect, and everything was hot and delicious. The chicken parm roll is a must-try."</p>
-                    <cite class="author">
-                        <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Jane P., Google Reviews</a>
-                    </cite>
-                </div>
-                <div class="review-card">
-                    <div class="star-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"Ordered the Rose Penne and a Turkey Provolone for lunch, and it was the best food I've had all week. Fast service and fantastic quality."</p>
-                    <cite class="author">
-                        <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Mike S., Yelp</a>
-                    </cite>
-                </div>
-                <div class="review-card">
-                    <div class="star-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="quote">"This place never disappoints. The food always tastes fresh, and the staff is so friendly. The lunch combo is the perfect way to get a taste of everything."</p>
-                    <cite class="author">
-                        <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Chloe L., TripAdvisor</a>
-                    </cite>
-                </div>
-            </div>
+  <section id="reviews" class="reviews">
+    <div class="wrap">
+      <h2><a href="https://share.google/l8isTTEEmkvGFfWyB" style="color:inherit; text-decoration: none;" target="_blank">What Our Customers Say</a></h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="quote">"The lunch special is an absolute steal! The portions are perfect, and everything was hot and delicious. The chicken parm roll is a must-try."</p>
+          <cite class="author">
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Jane P., Google Reviews</a>
+          </cite>
         </div>
-    </section>
+        <div class="review-card">
+          <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="quote">"Ordered the Rose Penne and a Turkey Provolone for lunch, and it was the best food I've had all week. Fast service and fantastic quality."</p>
+          <cite class="author">
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Mike S., Yelp</a>
+          </cite>
+        </div>
+        <div class="review-card">
+          <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="quote">"This place never disappoints. The food always tastes fresh, and the staff is so friendly. The lunch combo is the perfect way to get a taste of everything."</p>
+          <cite class="author">
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Chloe L., TripAdvisor</a>
+          </cite>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="wrap">
-            <p><strong>Royal King Pasta & Sandwiches</strong></p>
-            <div class="contactline">
-                <span><i class="fas fa-map-marker-alt"></i> 3450 Bathurst Street, Toronto, ON</span>
-                <a href="tel:4167818383"><i class="fas fa-phone-alt"></i> 416-781-8383</a>
-                <a href="mailto:order@royalkingon.com"><i class="fas fa-envelope"></i> order@royalkingon.com</a>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <div class="wrap">
+      <p><strong>Royal King Pasta & Sandwiches</strong></p>
+      <div class="contactline">
+        <span><i class="fas fa-map-marker-alt"></i> 3450 Bathurst Street, Toronto, ON</span>
+        <a href="tel:4167818383"><i class="fas fa-phone-alt"></i> 416-781-8383</a>
+        <a href="mailto:order@royalkingon.com"><i class="fas fa-envelope"></i> order@royalkingon.com</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
