@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "productId": 7,
+    "title": "Electric Bike Flash Sale",
+    "subtitle": "Limited Time Offer - Ride the Future!",
+    "description": "Get your Aventon Level.2 500W Electric Bike at an unbeatable price. Perfect for eco-friendly commuting with up to 96km range!",
+    "originalPrice": 2399.99,
+    "offerPrice": 1899.99,
+    "discount": 21,
+    "offerType": "flash_sale",
+    "category": "Electronics",
+    "validUntil": "2025-12-31",
+    "badge": "HOT DEAL",
+    "bannerColor": "gradient-to-r from-red-500 to-orange-500",
+    "layoutType": "modern_card",
+    "animationType": "pulse",
+    "features": [
+      "500W Powerful Motor",
+      "96km Battery Range", 
+      "Premium Clay Finish",
+      "Free Shipping Included"
+    ],
+    "images": [
+      "https://multimedia.bbycastatic.ca/multimedia/products/500x500/167/16712/16712242.jpg",
+      "https://multimedia.bbycastatic.ca/multimedia/products/large/167/16712/16712242_2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "productId": 8,
+    "title": "Standing Desk Revolution",
+    "subtitle": "Transform Your Workspace Today",
+    "description": "Upgrade to the MotionGrey Standing Desk with electric height adjustment. Perfect for health-conscious professionals!",
+    "originalPrice": 399.99,
+    "offerPrice": 299.99,
+    "discount": 25,
+    "offerType": "weekend_special",
+    "category": "Furniture",
+    "validUntil": "2025-11-30",
+    "badge": "WEEKEND SPECIAL",
+    "bannerColor": "gradient-to-r from-blue-600 to-purple-600",
+    "layoutType": "split_layout",
+    "animationType": "slide_in",
+    "features": [
+      "Electric Motor Height Adjustment",
+      "43\"x24\" White Tabletop",
+      "Modern White Frame",
+      "Ergonomic Design"
+    ],
+    "images": [
+      "https://motiongrey.com/cdn/shop/files/Motion_Series_Standing_Desk_S_BO_BL_45S_f05a97ad-9072-4f46-97b7-542f5e8aa3d9_1024x1024.jpg?v=1754687000",
+      "https://motiongrey.com/cdn/shop/files/Motion_Series_Standing_Desk_S_BO_BL_Front_1024x1024.jpg?v=1754687000"
+    ]
+  },
+  {
+    "id": 3,
+    "productId": 13,
+    "title": "Home Theater Bundle Bonanza",
+    "subtitle": "Cinema Experience at Home",
+    "description": "XGIMI MoGo 3 Pro Projector with PowerBase Stand - 4K support, Netflix licensed, and Bluetooth speakers included!",
+    "originalPrice": 849.99,
+    "offerPrice": 679.99,
+    "discount": 20,
+    "offerType": "bundle_deal",
+    "category": "Entertainment",
+    "validUntil": "2025-10-31",
+    "badge": "BUNDLE DEAL",
+    "bannerColor": "gradient-to-r from-purple-500 to-pink-500",
+    "layoutType": "hero_banner",
+    "animationType": "zoom_in",
+    "features": [
+      "4K Support Technology",
+      "Licensed Netflix Access",
+      "Harman Kardon Speakers",
+      "PowerBase Stand Included"
+    ],
+    "images": [
+      "https://us.xgimi.com/cdn/shop/files/02.2.jpg?v=1724655567",
+      "https://us.xgimi.com/cdn/shop/files/04.4.jpg?v=1724655566"
+    ]
+  },
+  {
+    "id": 4,
+    "productId": 6,
+    "title": "Gaming Setup Extravaganza",
+    "subtitle": "Level Up Your Gaming Experience",
+    "description": "IMGadgets Z-Shaped Gaming Desk with LED lighting, carbon fiber surface, and gaming accessories included!",
+    "originalPrice": 189.99,
+    "offerPrice": 149.99,
+    "discount": 21,
+    "offerType": "gaming_special",
+    "category": "Gaming",
+    "validUntil": "2025-12-15",
+    "badge": "GAMER'S CHOICE",
+    "bannerColor": "gradient-to-r from-green-500 to-teal-500",
+    "layoutType": "neon_style",
+    "animationType": "glow_effect",
+    "features": [
+      "Dynamic LED Lighting",
+      "47\"x24\" Carbon Fiber Surface",
+      "80kg Load Capacity",
+      "Cup Holder & Headphone Hook"
+    ],
+    "images": [
+      "https://i5.walmartimages.com/asr/9b684754-5249-4326-a841-c41c830d4a6b.8b06d211df0adea08fd0df94ba2b88cd.jpeg",
+      "https://i5.walmartimages.com/asr/42a21a84-36fd-444e-ba35-5513757a7003.95240f5f160af2b30eb47f9a205cdee2.jpeg"
+    ]
+  },
+  {
+    "id": 5,
+    "productId": 24,
+    "title": "Sound & Light Festival",
+    "subtitle": "Party Starter Pack",
+    "description": "Wireless Bluetooth Speaker with Colorful LED Lights - Perfect for parties, home entertainment, or travel adventures!",
+    "originalPrice": 22.99,
+    "offerPrice": 16.99,
+    "discount": 26,
+    "offerType": "clearance",
+    "category": "Audio",
+    "validUntil": "2025-09-30",
+    "badge": "CLEARANCE",
+    "bannerColor": "gradient-to-r from-yellow-400 to-red-400",
+    "layoutType": "compact_card",
+    "animationType": "bounce",
+    "features": [
+      "Colorful LED Lighting",
+      "Bluetooth Connectivity",
+      "Portable Design",
+      "High-Quality Sound"
+    ],
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1b8e6760697040aeb43e1e5bd66b4c3bI.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6d3726f5735548a49fd2a2c6164613b48.jpg_220x220q75.jpg_.avif"
+    ]
+  },
+  {
+    "id": 6,
+    "productId": 25,
+    "title": "Smart Kitchen Revolution",
+    "subtitle": "Future of Kitchen Technology",
+    "description": "304 Stainless Steel Kitchen Faucet with Digital Display and Soap Dispenser - Modern convenience meets elegant design!",
+    "originalPrice": 195.38,
+    "offerPrice": 149.99,
+    "discount": 23,
+    "offerType": "new_arrival",
+    "category": "Kitchen",
+    "validUntil": "2025-11-15",
+    "badge": "NEW ARRIVAL",
+    "bannerColor": "gradient-to-r from-slate-600 to-blue-600",
+    "layoutType": "luxury_showcase",
+    "animationType": "fade_in",
+    "features": [
+      "Digital Temperature Display",
+      "304 Stainless Steel",
+      "Integrated Soap Dispenser",
+      "Modern Ergonomic Design"
+    ],
+    "images": [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S77824510b2f84dc6923f278fe3ee1cbcA.jpg_220x220q75.jpg_.avif",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4d6d2d839af44fe0a27506df275b7dd0g.jpg_220x220q75.jpg_.avif"
+    ]
+  }
+]
