@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Facebook",
+    "logo": "https://gservetech.github.io/html/html/enhancement/socialmedai/facebook.svg",
+    "url": "https://www.facebook.com/"
+  },
+  {
+    "name": "Instagram",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    "url": "https://www.instagram.com/"
+  },
+  {
+    "name": "Twitter (X)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg",
+    "url": "https://x.com/"
+  },
+  {
+    "name": "LinkedIn",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg",
+    "url": "https://www.linkedin.com/"
+  },
+  {
+    "name": "YouTube",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg",
+    "url": "https://www.youtube.com/"
+  },
+  {
+    "name": "TikTok",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/0/0a/TikTok_logo.svg",
+    "url": "https://www.tiktok.com/"
+  },
+  {
+    "name": "Pinterest",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png",
+    "url": "https://www.pinterest.com/"
+  },
+  {
+    "name": "Snapchat",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg",
+    "url": "https://www.snapchat.com/"
+  },
+  {
+    "name": "Reddit",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/5/58/Reddit_logo_new.svg",
+    "url": "https://www.reddit.com/"
+  },
+  {
+    "name": "WhatsApp",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
+    "url": "https://www.whatsapp.com/"
+  },
+  {
+    "name": "Telegram",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+    "url": "https://telegram.org/"
+  },
+  {
+    "name": "Discord",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg",
+    "url": "https://discord.com/"
+  },
+  {
+    "name": "WeChat",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/WeChat_Logo.svg",
+    "url": "https://www.wechat.com/"
+  },
+  {
+    "name": "Tumblr",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tumblr_Logos_2018.svg",
+    "url": "https://www.tumblr.com/"
+  },
+  {
+    "name": "Threads",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Threads_%28app%29_logo.svg",
+    "url": "https://www.threads.net/"
+  }
+]

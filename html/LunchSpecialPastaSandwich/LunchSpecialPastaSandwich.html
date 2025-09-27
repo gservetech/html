@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Enjoy our exclusive Lunch Special: Choose any pasta bowl and a toasted sandwich for one great price. Fast pickup & delivery in Toronto." />
 
-  <!-- ✅ Canonical URL must match the actual link you share -->
   <link rel="canonical" href="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/LunchSpecialPastaSandwich.html" />
 
-  <!-- ✅ Open Graph -->
   <meta property="og:title" content="Lunch Special: Pasta & Sandwich | Royal King" />
   <meta property="og:description" content="Elevate your lunch with our Pasta & Sandwich combo — fresh, fast, and made to order. Order for pickup or delivery." />
   <meta property="og:type" content="website" />
@@ -20,13 +18,11 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Royal King Pasta & Sandwiches" />
 
-  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lunch Special: Pasta & Sandwich | Royal King" />
   <meta name="twitter:description" content="Pick any pasta + toasted sandwich for one great price. Order online for pickup or delivery." />
   <meta name="twitter:image" content="https://gservetech.github.io/html/html/LunchSpecialPastaSandwich/og.jpg" />
 
-  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -156,7 +152,7 @@
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
     }
     
     .btn-primary {
@@ -176,6 +172,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       background: var(--secondary-color);
       color: var(--text-color-dark);
+    }
+    
+    /* Utility class for links that inherit color */
+    .inherit-link {
+        color: inherit; 
+        text-decoration: none;
     }
 
     .special-grid {
@@ -294,12 +296,27 @@
       align-items: center;
       gap: 8px;
     }
+
+    /* --- MEDIA QUERIES FOR RESPONSIVE BEHAVIOR --- */
+
+    /* Mobile First: Make hero section more compact on smaller devices */
+    @media (max-width: 768px) {
+        .hero {
+            height: 60vh;
+        }
+    }
+
+    /* Desktop Enhancement: Add parallax effect to hero background */
+    @media (min-width: 1024px) {
+      .hero::before {
+        background-attachment: fixed;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header class="hero">
-    <a href="https://www.royalkingon.com/menu" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></a>
     <div class="hero-content">
       <h1>Lunch Special</h1>
       <p>A perfect pairing for your midday craving.</p>
@@ -318,14 +335,14 @@
         <a href="https://www.royalkingon.com/menu">
           <img src="https://gservetech.github.io/html/html/PastaTakeout/images/3.jpg" alt="Rose Penne Pasta">
         </a>
-        <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Pasta</a></h3>
+        <h3><a href="https://www.royalkingon.com/menu" class="inherit-link">Choose Your Pasta</a></h3>
         <p>Pick from our top-selling pasta bowls: Creamy Alfredo, Rose Penne, or Classic Beef Bolognese. Each is made fresh to order with high-quality ingredients.</p>
       </div>
       <div class="special-item">
         <a href="https://www.royalkingon.com/menu">
           <img src="https://gservetech.github.io/html/html/PastaTakeout/images/4.jpg" alt="Toasted Chicken Parm Roll">
         </a>
-        <h3><a href="https://www.royalkingon.com/menu" style="color: inherit; text-decoration: none;">Choose Your Sandwich</a></h3>
+        <h3><a href="https://www.royalkingon.com/menu" class="inherit-link">Choose Your Sandwich</a></h3>
         <p>Pair it with a toasted sandwich. Our options include the famous Chicken Parm Roll, Pesto Veggie Melt, or our classic Turkey Provolone.</p>
       </div>
     </div>
@@ -333,7 +350,7 @@
 
   <section id="reviews" class="reviews">
     <div class="wrap">
-      <h2><a href="https://share.google/l8isTTEEmkvGFfWyB" style="color:inherit; text-decoration: none;" target="_blank">What Our Customers Say</a></h2>
+      <h2><a href="https://share.google/l8isTTEEmkvGFfWyB" class="inherit-link" target="_blank" rel="noopener noreferrer">What Our Customers Say</a></h2>
       <div class="review-grid">
         <div class="review-card">
           <div class="star-rating">
@@ -341,7 +358,7 @@
           </div>
           <p class="quote">"The lunch special is an absolute steal! The portions are perfect, and everything was hot and delicious. The chicken parm roll is a must-try."</p>
           <cite class="author">
-            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Jane P., Google Reviews</a>
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" class="inherit-link" target="_blank" rel="noopener noreferrer">- Jane P., Google Reviews</a>
           </cite>
         </div>
         <div class="review-card">
@@ -350,7 +367,7 @@
           </div>
           <p class="quote">"Ordered the Rose Penne and a Turkey Provolone for lunch, and it was the best food I've had all week. Fast service and fantastic quality."</p>
           <cite class="author">
-            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Mike S., Yelp</a>
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" class="inherit-link" target="_blank" rel="noopener noreferrer">- Mike S., Yelp</a>
           </cite>
         </div>
         <div class="review-card">
@@ -359,7 +376,7 @@
           </div>
           <p class="quote">"This place never disappoints. The food always tastes fresh, and the staff is so friendly. The lunch combo is the perfect way to get a taste of everything."</p>
           <cite class="author">
-            <a href="https://share.google/l8isTTEEmkvGFfWyB" style="color: inherit; text-decoration: none;" target="_blank">- Chloe L., TripAdvisor</a>
+            <a href="https://share.google/l8isTTEEmkvGFfWyB" class="inherit-link" target="_blank" rel="noopener noreferrer">- Chloe L., TripAdvisor</a>
           </cite>
         </div>
       </div>
