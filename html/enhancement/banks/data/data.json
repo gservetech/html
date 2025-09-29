@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Royal Bank of Canada (RBC)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/RBC.png",
+    "url": "https://www.rbc.com/",
+    "description": "Canada’s largest bank by market capitalization, offering personal, business, wealth management, and capital markets services globally."
+  },
+  {
+    "name": "Toronto-Dominion Bank (TD)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/TD_Bank_logo.svg",
+    "url": "https://www.td.com/ca/",
+    "description": "One of the largest banks in North America, TD provides retail, commercial, investment, and wholesale banking."
+  },
+  {
+    "name": "Scotiabank",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/Scotiabank_2020.svg",
+    "url": "https://www.scotiabank.com/",
+    "description": "A top Canadian bank with a strong international presence, offering retail banking, investment banking, and global capital markets."
+  },
+  {
+    "name": "Bank of Montreal (BMO)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.bmo.com/",
+    "description": "Canada’s oldest bank, offering personal, business, wealth management, and investment banking under BMO Capital Markets."
+  },
+  {
+    "name": "Canadian Imperial Bank of Commerce (CIBC)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.cibc.com/",
+    "description": "One of the Big 5 banks, CIBC offers consumer banking, wealth management, and investment banking through CIBC Capital Markets."
+  },
+  {
+    "name": "National Bank of Canada",
+    "logo": "https://gservetech.github.io/html/html/enhancement/4/42/National_Bank_of_Canada_logo.svg",
+    "url": "https://www.nbc.ca/",
+    "description": "Headquartered in Montreal, offering retail, corporate, and capital markets banking with strong presence in Quebec."
+  },
+  {
+    "name": "Desjardins Group",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/5/5f/Desjardins_Group_logo.svg",
+    "url": "https://www.desjardins.com/",
+    "description": "The largest federation of credit unions in North America, offering retail banking, insurance, and investment services."
+  },
+  {
+    "name": "Laurentian Bank of Canada",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.laurentianbank.ca/",
+    "description": "A Quebec-based bank serving retail, business, and institutional clients across Canada."
+  },
+  {
+    "name": "Canadian Western Bank (CWB)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.cwbank.com/",
+    "description": "Focused on business banking, equipment financing, and real estate lending."
+  },
+  {
+    "name": "Manulife Bank of Canada",
+    "logo": "https://gservetech.github.io/html/html/enhancement/f/f0/Manulife_Financial_logo.svg",
+    "url": "https://www.manulifebank.ca/",
+    "description": "A subsidiary of Manulife Financial, offering mortgages, loans, and investment-linked banking solutions."
+  },
+  {
+    "name": "Equitable Bank (EQ Bank)",
+    "logo": "https://gservetech.github.io/html/html/enhancement/5/54/EQ_Bank_logo.svg",
+    "url": "https://www.eqbank.ca/",
+    "description": "A leading digital-only bank in Canada with high-interest savings, mortgages, and GIC investments."
+  },
+  {
+    "name": "Home Trust Company",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.hometrust.ca/",
+    "description": "A trust company specializing in residential mortgages, credit cards, and alternative lending."
+  },
+  {
+    "name": "First National Financial",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.firstnational.ca/",
+    "description": "Canada’s largest non-bank mortgage lender with over $100B in mortgages under administration."
+  },
+  {
+    "name": "Community Trust Company",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.communitytrust.com/",
+    "description": "Provides mortgage lending, deposit services, and investment products for individuals and businesses."
+  },
+  {
+    "name": "MCAP Mortgage Corporation",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.mcap.com/",
+    "description": "One of Canada’s largest independent mortgage finance companies, specializing in residential and commercial lending."
+  },
+  {
+    "name": "RBC Capital Markets",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.rbccm.com/",
+    "description": "The investment banking and global markets division of RBC, providing M&A, equity, fixed income, and bond trading."
+  },
+  {
+    "name": "TD Securities",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.tdsecurities.com/",
+    "description": "The investment banking arm of TD, focusing on capital markets, investment banking, and fixed income/bonds."
+  },
+  {
+    "name": "BMO Capital Markets",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://capitalmarkets.bmo.com/",
+    "description": "The investment and corporate banking division of BMO, specializing in equities, bonds, and corporate finance."
+  },
+  {
+    "name": "Scotiabank Global Banking and Markets",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.gbm.scotiabank.com/",
+    "description": "Scotiabank’s investment banking arm with a focus on fixed income, bonds, commodities, and M&A."
+  },
+  {
+    "name": "CIBC Capital Markets",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://cibccm.com/",
+    "description": "Investment banking and capital markets division of CIBC, offering bond trading, advisory, and equity research."
+  },
+  {
+    "name": "National Bank Financial Markets",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.nbfm.ca/",
+    "description": "The investment banking subsidiary of National Bank, specializing in bonds, structured finance, and asset management."
+  },
+  {
+    "name": "Brookfield Asset Management",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://bam.brookfield.com/",
+    "description": "One of the world’s largest alternative investment managers based in Canada, managing real estate, infrastructure, and bonds."
+  },
+  {
+    "name": "CI Financial",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.cifinancial.com/",
+    "description": "A Canadian independent wealth and asset management firm with mutual funds, ETFs, and bond portfolios."
+  },
+  {
+    "name": "Fairfax Financial",
+    "logo": "https://gservetech.github.io/html/html/enhancement/banks/images/",
+    "url": "https://www.fairfax.ca/",
+    "description": "A financial holding company in Canada engaged in insurance, reinsurance, and investment in equities and bonds."
+  }
+]
