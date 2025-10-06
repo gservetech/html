@@ -1,0 +1,104 @@
+{
+  "executiveplatter": [
+    {
+      "menu": "Veal Sandwich",
+      "unit_price": 11.99,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 126.99,
+      "image_url": "menu/veelsandwich.avif"
+    },
+    {
+      "menu": "Breaded Chicken Sandwich",
+      "unit_price": 13.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 141.99,
+      "image_url": "menu/breadedchicken.avif"
+    },
+    {
+      "menu": "Breaded Chicken L.T.M. Sandwich",
+      "unit_price": 15.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 162.99,
+      "image_url": "menu/breadedchickenltm.jpeg"
+    },
+    {
+      "menu": "Grilled Chicken Sandwich",
+      "unit_price": 12.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 131.99,
+      "image_url": "menu/grilledchickensandwich.avif"
+    },
+    {
+      "menu": "Steak Sandwich",
+      "unit_price": 14.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 152.99,
+      "image_url": "menu/steak.jpeg"
+    },
+    {
+      "menu": "Meatball Sandwich",
+      "unit_price": 11.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 120.99,
+      "image_url": "menu/meatball.jpeg"
+    },
+    {
+      "menu": "Veggie Sandwich",
+      "unit_price": 10.49,
+      "number_of_people": "Serves 10-12 people (20 half sandwiches)",
+      "total": 110.99,
+      "image_url": "menu/veggie.jpeg"
+    }
+  ],
+  "officemeetingplatter": [
+    {
+      "menu": "Veal Sandwich",
+      "unit_price": 11.99,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 152.99,
+      "image_url": "menu/veelsandwich.avif"
+    },
+    {
+      "menu": "Breaded Chicken Sandwich",
+      "unit_price": 13.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 171.99,
+      "image_url": "menu/breadedchicken.avif"
+    },
+    {
+      "menu": "Breaded Chicken L.T.M. Sandwich",
+      "unit_price": 15.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 197.99,
+      "image_url": "menu/breadedchickenltm.jpeg"
+    },
+    {
+      "menu": "Grilled Chicken Sandwich",
+      "unit_price": 12.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 159.99,
+      "image_url": "menu/grilledchickensandwich.avif"
+    },
+    {
+      "menu": "Steak Sandwich",
+      "unit_price": 14.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 184.99,
+      "image_url": "menu/steak.jpeg"
+    },
+    {
+      "menu": "Meatball Sandwich",
+      "unit_price": 11.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 146.99,
+      "image_url": "menu/meatball.jpeg"
+    },
+    {
+      "menu": "Veggie Sandwich",
+      "unit_price": 10.49,
+      "number_of_people": "Serves 15-20 people (30 half sandwiches)",
+      "total": 133.99,
+      "image_url": "menu/veggie.jpeg"
+    }
+  ]
+}

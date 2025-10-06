@@ -1,0 +1,104 @@
+{
+  "smallpastatray": [
+    {
+      "menu": "Penne",
+      "unit_price": 11.99,
+      "number_of_people": "Serves 8-10 people",
+      "total": 105.99,
+      "image_url": "menu/penne.jpeg"
+    },
+    {
+      "menu": "Spaghetti",
+      "unit_price": 12.49,
+      "number_of_people": "Serves 8-10 people",
+      "total": 117.99,
+      "image_url": "menu/spaghettini.jpeg"
+    },
+    {
+      "menu": "Gnocchi",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 8-10 people",
+      "total": 117.99,
+      "image_url": "menu/gnocchi.jpeg"
+    },
+    {
+      "menu": "cheese Tortellini",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 8-10 people",
+      "total": 117.99,
+      "image_url": "menu/cheesetortellini.avif"
+    },
+    {
+      "menu": "meat ravioli",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 8-10 people",
+      "total": 121.99,
+      "image_url": "menu/meatravioli.jpeg"
+    },
+    {
+      "menu": "fettuccine",
+      "unit_price": 14.49,
+      "number_of_people": "Serves 8-10 people",
+      "total": 130.99,
+      "image_url": "menu/fettuccine.jpeg"
+    },
+    {
+      "menu": "meat lasagna",
+      "unit_price": 15.49,
+      "number_of_people": "Serves 8-10 people",
+      "total": 130.99,
+      "image_url": "menu/meatlasagna.jpeg"
+    }
+  ],
+  "largepastatray": [
+    {
+      "menu": "Penne",
+      "unit_price": 11.99,
+      "number_of_people": "Serves 15-20 people",
+      "total": 152.99,
+      "image_url": "menu/penne.jpeg"
+    },
+    {
+      "menu": "Spaghetti",
+      "unit_price": 12.49,
+      "number_of_people": "Serves 15-20 people",
+      "total": 159.99,
+      "image_url": "menu/spaghettini.jpeg"
+    },
+    {
+      "menu": "Gnocchi",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 15-20 people",
+      "total": 178.99,
+      "image_url": "menu/gnocchi.jpeg"
+    },
+    {
+      "menu": "cheese Tortellini",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 15-20 people",
+      "total": 178.99,
+      "image_url": "menu/cheesetortellini.avif"
+    },
+    {
+      "menu": "meat ravioli",
+      "unit_price": 13.99,
+      "number_of_people": "Serves 15-20 people",
+      "total": 178.99,
+      "image_url": "menu/meatravioli.jpeg"
+    },
+    {
+      "menu": "fettuccine",
+      "unit_price": 14.49,
+      "number_of_people": "Serves 15-20 people",
+      "total": 184.99,
+      "image_url": "menu/fettuccine.jpeg"
+    },
+    {
+      "menu": "meat lasagna",
+      "unit_price": 15.49,
+      "number_of_people": "Serves 15-20 people",
+      "total": 197.99,
+      "image_url": "menu/meatlasagna.jpeg"
+    }
+  ]
+}
