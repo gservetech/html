@@ -4,7 +4,7 @@
       "id": 1,
       "host_url": "https://www.royalkingon.com/menu?itemId=25",
       "desktop_image": "images/ads/banner1.png",
-      "mobile_image": "images/ads/banner1.png",
+      "mobile_image": "images/ads/banner1.png"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "id": 6,
       "host_url": "https://www.royalkingon.com/menu?itemId=25",
       "desktop_image": "images/ads/banner1.png",
-      "mobile_image": "images/ads/banner1.png",
+      "mobile_image": "images/ads/banner1.png"
     }
   ]
 }
