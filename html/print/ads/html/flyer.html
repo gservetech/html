@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Print GServeTech — Weekly Flyer</title>
+<meta name="description" content="Weekly flyer and print specials from Print GServeTech: flyers, banners, roll-up stands, coroplast signs, business cards, and more." />
+
+<style>
+  /* =========================
+     THEME TOKENS
+  ========================== */
+  :root{
+    --brand:#c82129;           /* primary accent (Home Hardware–style red) */
+    --brand-dark:#a11016;      /* darker red for hovers/shadows */
+    --ink:#1b1b1b;             /* body text */
+    --muted:#5e5e5e;           /* subtext */
+    --bg:#ffffff;              /* background */
+    --card:#fcfcfc;            /* card base */
+    --line:#e9e9e9;            /* borders */
+    --deal:#ffc92a;            /* deal badge */
+    --save:#16a34a;            /* save/sale green */
+    --strike:#888;             /* compare-at price */
+  }
+
+  /* Global Reset-ish */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+  /* Page Wrapper with Safe Print Margins */
+  .page{
+    max-width: 1120px;
+    margin: 24px auto 56px;
+    padding: 0 16px;
+  }
+
+  /* Header */
+  .header{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items:center;
+    border-bottom: 4px solid var(--brand);
+    padding-bottom: 14px;
+  }
+  .brand{
+    display:flex; gap:16px; align-items:center;
+  }
+  .logo{
+    width:58px; height:58px; border-radius:10px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    display:grid; place-items:center; color:#fff; font-weight:800;
+    box-shadow:0 6px 14px rgba(200,33,41,.25);
+    user-select:none;
+  }
+  .brand h1{
+    margin:0; font-size: clamp(20px,3vw,28px); letter-spacing:.2px;
+  }
+  .meta{
+    display:flex; flex-direction:column; gap:4px; align-items:flex-end; text-align:right;
+  }
+  .meta .date{ color:var(--muted); font-size:12px; }
+  .meta .cta{
+    display:inline-block; padding:8px 12px; border-radius:8px;
+    background:var(--brand); color:#fff; text-decoration:none; font-weight:700;
+    box-shadow:0 6px 14px rgba(200,33,41,.25);
+  }
+  .meta .cta:hover{ background:var(--brand-dark); }
+
+  .notice{
+    margin:14px 0 18px; padding:10px 12px; border:1px dashed var(--brand);
+    background: #fff6f6; border-radius:10px; color:#651115;
+    font-size:13px;
+  }
+
+  /* Section Title */
+  .section{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin:18px 0 8px;
+  }
+  .section h2{
+    margin:0; font-size: clamp(16px,2.4vw,22px);
+    border-left:6px solid var(--brand); padding-left:10px;
+  }
+  .section .tag{
+    font-size:12px; color:var(--muted);
+  }
+
+  /* Product Grid */
+  .grid{
+    display:grid; gap:14px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  /* 3-col default on desktop, 2-col tablet, 1-col mobile */
+  .grid--3col > .card{ grid-column: span 4; }
+  @media (max-width: 980px){ .grid--3col > .card{ grid-column: span 6; } }
+  @media (max-width: 640px){ .grid--3col > .card{ grid-column: span 12; } }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    box-shadow:0 6px 16px rgba(0,0,0,.05);
+  }
+
+  /* Image block with safe aspect ratio */
+  .media{
+    position:relative; aspect-ratio: 4 / 3; background:#f4f4f4;
+    display:grid; place-items:center; color:#9a9a9a; font-size:13px;
+  }
+  .media img{ max-width:100%; max-height:100%; object-fit:cover; }
+  .badge{
+    position:absolute; top:10px; left:10px;
+    background:var(--deal); color:#111; font-weight:800; font-size:12px;
+    padding:6px 10px; border-radius:999px; box-shadow:0 8px 14px rgba(0,0,0,.12);
+  }
+  .badge--save{ background: var(--save); color:#fff; }
+
+  .body{ padding:12px 12px 14px; display:flex; flex-direction:column; gap:8px; }
+  .title{ font-weight:800; font-size:15px; margin:0; }
+  .desc{ margin:0; color:var(--muted); font-size:13px; min-height:32px; }
+  .bullets{ margin:2px 0 0 16px; color:#585858; font-size:12px; }
+  .bullets li{ margin:2px 0; }
+
+  /* Price Row */
+  .price-row{
+    display:flex; align-items:flex-end; justify-content:space-between; gap:10px; margin-top:8px;
+  }
+  .price-now{
+    font-size: clamp(18px,3vw,24px);
+    font-weight:900; color:var(--brand);
+    display:flex; align-items:flex-end; gap:6px;
+  }
+  .price-now small{ font-size:.55em; font-weight:700; color:#b21b22; }
+  .price-was{ color:var(--strike); text-decoration: line-through; font-weight:600; }
+  .save-pill{
+    background:#eefaf1; color:var(--save); font-weight:800; font-size:12px;
+    padding:4px 8px; border-radius:999px; border:1px solid #cdebd6;
+  }
+
+  .foot{
+    display:flex; gap:10px; align-items:center; margin-top:10px;
+  }
+  .pill{
+    font-size:11px; border:1px solid var(--line); color:#333; background:#fff;
+    padding:6px 8px; border-radius:999px;
+  }
+
+  /* Footer */
+  .footer{
+    margin-top:30px; padding-top:16px; border-top:1px solid var(--line);
+    display:grid; gap:10px;
+  }
+  .footer .cols{
+    display:grid; gap:14px; grid-template-columns: 2fr 1fr;
+  }
+  @media (max-width: 720px){ .footer .cols{ grid-template-columns: 1fr; } }
+  .footer small{ color:var(--muted); }
+
+  /* Print Styles */
+  @media print{
+    /* Fit to page with safe margins */
+    @page{ size: auto; margin: 12mm; }
+    .meta .cta, .print-btn{ display:none !important; }
+    .page{ margin:0; padding:0; max-width:none; }
+    .card{ break-inside: avoid; }
+    a{ color: inherit; text-decoration: none; }
+  }
+
+  /* Floating Print Button (screen only) */
+  .print-btn{
+    position:fixed; right:18px; bottom:18px; z-index:10;
+    background:var(--brand); color:#fff; border:none; border-radius:999px;
+    padding:12px 16px; font-weight:800; box-shadow:0 10px 20px rgba(200,33,41,.35);
+    cursor:pointer;
+  }
+  .print-btn:hover{ background:var(--brand-dark); }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print Flyer</button>
+
+<main class="page">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">PG</div>
+      <div>
+        <h1>Print GServeTech — Weekly Flyer</h1>
+        <div style="color:var(--muted); font-size:13px;">
+          Flyers • Banners • Roll-Up Stands • Coroplast Signs • Business Cards
+        </div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div class="date">Valid: Oct 13 – Oct 20, 2025 • Toronto & GTA</div>
+      <a class="cta" href="https://print.gservetech.com" target="_blank" rel="noopener">Order Online</a>
+    </div>
+  </header>
+
+  <div class="notice">
+    Limited-time offers. While quantities last. Taxes extra where applicable. Custom sizes & rush available. Call <strong>416-781-8383</strong> or email <strong>info@gservetech.com</strong>.
+  </div>
+
+  <!-- SECTION: FEATURED DEALS -->
+  <section class="section">
+    <h2>Featured Deals</h2>
+    <div class="tag">Best sellers & quick-turn specials</div>
+  </section>
+
+  <section class="grid grid--3col">
+    <!-- CARD 1 -->
+    <article class="card">
+      <div class="media">
+        <!-- Replace with your image -->
+        <img src="https://via.placeholder.com/800x600?text=5.5x8.5+Flyers" alt="5.5 x 8.5 Flyers full color both sides" />
+        <span class="badge">HOT</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Flyers — 5.5" × 8.5" (100lb Text)</h3>
+        <p class="desc">Full-color, double-sided. Satin finish. Perfect for menus, promos, and door drops.</p>
+        <ul class="bullets">
+          <li>Qty 5,000 • 2-sided • Trimmed</li>
+          <li>Typical lead time: 2–4 business days</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>229</span><small>.00</small></div>
+            <div class="price-was">$299.00</div>
+          </div>
+          <div class="save-pill">Save $70</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: FLR-55x85-100T</span>
+          <span class="pill">Both Sides</span>
+          <span class="pill">CMYK</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="card">
+      <div class="media">
+        <img src="https://via.placeholder.com/800x600?text=33.5x79+Roll-Up" alt="33.5 x 79 Roll-Up Stand" />
+        <span class="badge badge--save">SAVE 20%</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Roll-Up Stand — 33.5" × 79"</h3>
+        <p class="desc">Premium aluminum cassette, tear-resistant banner. Carry bag included.</p>
+        <ul class="bullets">
+          <li>Single-sided print • Vivid inks</li>
+          <li>Includes stand & bag</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>149</span><small>.00</small></div>
+            <div class="price-was">$189.00</div>
+          </div>
+          <div class="save-pill">Save $40</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: RUS-335x79</span>
+          <span class="pill">Quick Setup</span>
+          <span class="pill">Indoor</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="card">
+      <div class="media">
+        <img src="https://via.placeholder.com/800x600?text=Coroplast+Signs" alt="Coroplast lawn signs with H-stakes" />
+        <span class="badge">NEW</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Coroplast Signs — 18" × 24" + H-Stakes</h3>
+        <p class="desc">Weather-proof yard signs for events, retail, and real estate.</p>
+        <ul class="bullets">
+          <li>4mm coro • UV inks</li>
+          <li>Bulk discounts available</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>5</span><small>.99 ea</small></div>
+            <div class="price-was">$8.99</div>
+          </div>
+          <div class="save-pill">Save 33%</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: CORO-18x24</span>
+          <span class="pill">Outdoor</span>
+          <span class="pill">H-Stake</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- SECTION: BUSINESS ESSENTIALS -->
+  <section class="section" style="margin-top:22px;">
+    <h2>Business Essentials</h2>
+    <div class="tag">Everyday low prices</div>
+  </section>
+
+  <section class="grid grid--3col">
+    <!-- CARD 4 -->
+    <article class="card">
+      <div class="media">
+        <img src="https://via.placeholder.com/800x600?text=Business+Cards" alt="16pt business cards, matte or gloss" />
+        <span class="badge">BULK</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Business Cards — 16pt (Matte/Gloss)</h3>
+        <p class="desc">Crisp, pro-grade cards. Rounded corners optional.</p>
+        <ul class="bullets">
+          <li>Qty 1,000 (1 name)</li>
+          <li>Double-sided included</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>59</span><small>.00</small></div>
+            <div class="price-was">$79.00</div>
+          </div>
+          <div class="save-pill">Save $20</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: BC-16PT</span>
+          <span class="pill">2-Sided</span>
+          <span class="pill">Rounded Opt.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 5 -->
+    <article class="card">
+      <div class="media">
+        <img src="https://via.placeholder.com/800x600?text=Vinyl+Banner" alt="13oz vinyl banner hem + grommets" />
+        <span class="badge badge--save">SAVE $10</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Vinyl Banner — 6' × 3' (13oz)</h3>
+        <p class="desc">Hemmed edges, grommets every 2–3 ft. Suitable for indoor/outdoor.</p>
+        <ul class="bullets">
+          <li>Weather-resistant</li>
+          <li>High-vis applications</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>69</span><small>.00</small></div>
+            <div class="price-was">$79.00</div>
+          </div>
+          <div class="save-pill">Save $10</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: BAN-6x3-13OZ</span>
+          <span class="pill">Grommets</span>
+          <span class="pill">Outdoor</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 6 -->
+    <article class="card">
+      <div class="media">
+        <img src="https://via.placeholder.com/800x600?text=Posters" alt="Posters 12x18 full color" />
+        <span class="badge">FAST</span>
+      </div>
+      <div class="body">
+        <h3 class="title">Posters — 12" × 18"</h3>
+        <p class="desc">Vibrant indoor posters. Great for menus, boards, and promos.</p>
+        <ul class="bullets">
+          <li>Full-color • Semi-gloss</li>
+          <li>Rush same-day available</li>
+        </ul>
+
+        <div class="price-row">
+          <div>
+            <div class="price-now">$<span>14</span><small>.95</small></div>
+            <div class="price-was">$19.95</div>
+          </div>
+          <div class="save-pill">Save $5</div>
+        </div>
+
+        <div class="foot">
+          <span class="pill">SKU: PST-12x18</span>
+          <span class="pill">Indoor</span>
+          <span class="pill">Rush</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <strong>Print GServeTech</strong><br/>
+        3450 Bathurst St, North York, Toronto, ON<br/>
+        <a href="tel:+14167818383">416-781-8383</a> • <a href="mailto:info@gservetech.com">info@gservetech.com</a> • <a href="https://print.gservetech.com" target="_blank" rel="noopener">print.gservetech.com</a>
+      </div>
+      <div style="text-align:right;">
+        <small>© <span id="yr"></span> GServeTech Inc. All rights reserved. Prices subject to change without notice.</small>
+      </div>
+    </div>
+    <small>Artwork guidelines: 300 dpi, CMYK, add 0.125" bleed on all sides. Turnaround varies by product. Pickup & delivery options available across Toronto & GTA.</small>
+  </footer>
+</main>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
