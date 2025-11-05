@@ -1,0 +1,349 @@
+[
+  {
+    "id": "lasagna-meat-s",
+    "item": "Lasagna",
+    "variant": "Meat (Beef) Lasagna",
+    "size": "Small",
+    "price": 65,
+    "serves": "12 pcs",
+    "imageUrl": "/catering/images/lasagna-meat.png"
+  },
+  {
+    "id": "lasagna-meat-l",
+    "item": "Lasagna",
+    "variant": "Meat (Beef) Lasagna",
+    "size": "Large",
+    "price": 115,
+    "serves": "24 pcs",
+    "imageUrl": "/catering/images/lasagna-meat.png"
+  },
+  {
+    "id": "lasagna-chicken-s",
+    "item": "Lasagna",
+    "variant": "Chicken Lasagna",
+    "size": "Small",
+    "price": 65,
+    "serves": "12 pcs",
+    "imageUrl": "/catering/images/lasagna-chicken.png"
+  },
+  {
+    "id": "lasagna-chicken-l",
+    "item": "Lasagna",
+    "variant": "Chicken Lasagna",
+    "size": "Large",
+    "price": 115,
+    "serves": "24 pcs",
+    "imageUrl": "/catering/images/lasagna-chicken.png"
+  },
+  {
+    "id": "lasagna-eggplant-s",
+    "item": "Lasagna",
+    "variant": "Egg Plant Lasagna",
+    "size": "Small",
+    "price": 60,
+    "serves": "12 pcs",
+    "imageUrl": "/catering/images/lasagna-eggplant.png"
+  },
+  {
+    "id": "lasagna-eggplant-l",
+    "item": "Lasagna",
+    "variant": "Egg Plant Lasagna",
+    "size": "Large",
+    "price": 110,
+    "serves": "24 pcs",
+    "imageUrl": "/catering/images/lasagna-eggplant.png"
+  },
+  {
+    "id": "lasagna-veggie-s",
+    "item": "Lasagna",
+    "variant": "Veggie Lasagna",
+    "size": "Small",
+    "price": 55,
+    "serves": "12 pcs",
+    "imageUrl": "/catering/images/lasagna-veggie.png"
+  },
+  {
+    "id": "lasagna-veggie-l",
+    "item": "Lasagna",
+    "variant": "Veggie Lasagna",
+    "size": "Large",
+    "price": 100,
+    "serves": "24 pcs",
+    "imageUrl": "/catering/images/lasagna-veggie.png"
+  },
+  {
+    "id": "penne-tomato-s",
+    "item": "Penne Pasta",
+    "variant": "Tomato Sauce",
+    "size": "Small",
+    "price": 40,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/penne-tomato.png"
+  },
+  {
+    "id": "penne-tomato-l",
+    "item": "Penne Pasta",
+    "variant": "Tomato Sauce",
+    "size": "Large",
+    "price": 70,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/penne-tomato.png"
+  },
+  {
+    "id": "penne-rose-s",
+    "item": "Penne Pasta",
+    "variant": "Rose Sauce",
+    "size": "Small",
+    "price": 45,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/penne-rose.png"
+  },
+  {
+    "id": "penne-rose-l",
+    "item": "Penne Pasta",
+    "variant": "Rose Sauce",
+    "size": "Large",
+    "price": 80,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/penne-rose.png"
+  },
+  {
+    "id": "penne-meat-s",
+    "item": "Penne Pasta",
+    "variant": "Meat Sauce",
+    "size": "Small",
+    "price": 50,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/penne-meat.png"
+  },
+  {
+    "id": "penne-meat-l",
+    "item": "Penne Pasta",
+    "variant": "Meat Sauce",
+    "size": "Large",
+    "price": 90,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/penne-meat.png"
+  },
+  {
+    "id": "spaghetti-tomato-s",
+    "item": "Spaghetti",
+    "variant": "Tomato Sauce",
+    "size": "Small",
+    "price": 45,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/spaghetti-tomato.png"
+  },
+  {
+    "id": "spaghetti-tomato-l",
+    "item": "Spaghetti",
+    "variant": "Tomato Sauce",
+    "size": "Large",
+    "price": 75,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/spaghetti-tomato.png"
+  },
+  {
+    "id": "spaghetti-rose-s",
+    "item": "Spaghetti",
+    "variant": "Rose Sauce",
+    "size": "Small",
+    "price": 50,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/spaghetti-rose.png"
+  },
+  {
+    "id": "spaghetti-rose-l",
+    "item": "Spaghetti",
+    "variant": "Rose Sauce",
+    "size": "Large",
+    "price": 85,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/spaghetti-rose.png"
+  },
+  {
+    "id": "spaghetti-meat-s",
+    "item": "Spaghetti",
+    "variant": "Meat Sauce",
+    "size": "Small",
+    "price": 55,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/spaghetti-meat.png"
+  },
+  {
+    "id": "spaghetti-meat-l",
+    "item": "Spaghetti",
+    "variant": "Meat Sauce",
+    "size": "Large",
+    "price": 90,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/spaghetti-meat.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-tomato-s",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Tomato Sauce",
+    "size": "Small",
+    "price": 45,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/gnocchi-tomato.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-tomato-l",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Tomato Sauce",
+    "size": "Large",
+    "price": 80,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/gnocchi-tomato.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-rose-s",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Rose Sauce",
+    "size": "Small",
+    "price": 55,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/gnocchi-rose.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-rose-l",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Rose Sauce",
+    "size": "Large",
+    "price": 85,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/gnocchi-rose.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-meat-s",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Meat Sauce",
+    "size": "Small",
+    "price": 55,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/gnocchi-meat.png"
+  },
+  {
+    "id": "gnocchi-ravioli-tortelini-meat-l",
+    "item": "Gnocchi / Ravioli / Tortelini",
+    "variant": "Meat Sauce",
+    "size": "Large",
+    "price": 90,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/gnocchi-meat.png"
+  },
+  {
+    "id": "side-peas-mushrooms-s",
+    "item": "Sides",
+    "variant": "Green Peas & Mushrooms",
+    "size": "Small",
+    "price": 40,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/side-peas-mushrooms.png"
+  },
+  {
+    "id": "side-peas-mushrooms-l",
+    "item": "Sides",
+    "variant": "Green Peas & Mushrooms",
+    "size": "Large",
+    "price": 75,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/side-peas-mushrooms.png"
+  },
+  {
+    "id": "side-roasted-potatoes-s",
+    "item": "Sides",
+    "variant": "Roasted Potatoes",
+    "size": "Small",
+    "price": 30,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/side-roasted-potatoes.png"
+  },
+  {
+    "id": "side-roasted-potatoes-l",
+    "item": "Sides",
+    "variant": "Roasted Potatoes",
+    "size": "Large",
+    "price": 50,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/side-roasted-potatoes.png"
+  },
+  {
+    "id": "side-french-fries-s",
+    "item": "Sides",
+    "variant": "French Fries",
+    "size": "Small",
+    "price": 25,
+    "serves": "6–8",
+    "imageUrl": "/catering/images/side-french-fries.png"
+  },
+  {
+    "id": "side-french-fries-l",
+    "item": "Sides",
+    "variant": "French Fries",
+    "size": "Large",
+    "price": 45,
+    "serves": "12–15",
+    "imageUrl": "/catering/images/side-french-fries.png"
+  },
+  {
+    "id": "wings-breaded-40",
+    "item": "Chicken Wings",
+    "variant": "Breaded",
+    "size": "40 Wings",
+    "price": 55,
+    "imageUrl": "/catering/images/wings-breaded.png"
+  },
+  {
+    "id": "single-breaded-chicken",
+    "item": "Singles",
+    "variant": "Breaded Chicken Cutlet W/Tomato Sauce",
+    "size": "1 Pc",
+    "price": 8,
+    "serves": "1 Pc",
+    "imageUrl": "/catering/images/single-breaded-chicken.png"
+  },
+  {
+    "id": "single-grilled-chicken",
+    "item": "Singles",
+    "variant": "Grilled Chicken Cutlet W/Tomato Sauce",
+    "size": "1 Pc",
+    "price": 7,
+    "serves": "1 Pc",
+    "imageUrl": "/catering/images/single-grilled-chicken.png"
+  },
+  {
+    "id": "single-veal",
+    "item": "Singles",
+    "variant": "Veal W/Tomato Sauce",
+    "size": "1 Pc",
+    "price": 6.50,
+    "serves": "1 Pc",
+    "imageUrl": "/catering/images/single-veal.png"
+  },
+  {
+    "id": "sauteed-onion-24oz",
+    "item": "Sauteed/Fresh",
+    "variant": "Sauteed Onion",
+    "size": "24 Oz",
+    "price": 15,
+    "imageUrl": "/catering/images/sauteed-onion.png"
+  },
+  {
+    "id": "sauteed-mushrooms-24oz",
+    "item": "Sauteed/Fresh",
+    "variant": "Sauteed Mushrooms",
+    "size": "24 Oz",
+    "price": 18,
+    "imageUrl": "/catering/images/sauteed-mushrooms.png"
+  },
+  {
+    "id": "fresh-rapini-24oz",
+    "item": "Sauteed/Fresh",
+    "variant": "Fresh Rapini",
+    "size": "24 Oz",
+    "price": 20,
+    "imageUrl": "/catering/images/fresh-rapini.png"
+  }
+]
