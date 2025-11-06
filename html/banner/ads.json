@@ -65,6 +65,17 @@
       "title": "",
       "summary": "",
       "description": ""
+    },
+    {
+      "id": 7,
+      "desktop_image": "images/ads/amazon1.jpg",
+      "mobile_image": "images/ads/amazon1.jpg",
+      "alt": "Ad Banner 6",
+      "image_url": "",
+      "host_url": "https://www.royalkingon.com/alcohol",
+      "title": "",
+      "summary": "",
+      "description": ""
     }
   ]
 }
