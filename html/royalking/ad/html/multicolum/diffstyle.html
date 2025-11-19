@@ -1,310 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style>
-    $yellow: #f3f050;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Royal King Pasta - Italian Cuisine Layout</title>
+  <meta name="description" content="Discover the best Italian cuisine featuring Spaghetti, Penne, Lasagna, Ravioli, Carbonara, and more. Authentic pasta dishes at Royal King.">
+  <meta name="keywords" content="Spaghetti, Penne, Fettuccine, Lasagna, Ravioli, Carbonara, Bolognese, Linguine, Tortellini, Alfredo, Gnocchi, Pesto, Fusilli, Rigatoni, Macaroni, Marinara, Farfalle, Ziti, Aglio e Olio, Al Dente, Italian Cuisine">
+  <meta name="author" content="Royal King Pasta & Sandwiches">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f3f050"> 
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.royalkingon.com/promo/141">
+  <meta property="og:title" content="Royal King Pasta - Authentic Italian Cuisine">
+  <meta property="og:description" content="Spaghetti, Penne, Fettuccine, Lasagna, and more. Experience the taste of authentic Italian pasta.">
+  <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png">
+  <meta property="og:image:alt" content="Plate of delicious Italian Pasta">
+  <meta property="og:site_name" content="Royal King Pasta">
+  <meta property="og:locale" content="en_US">
 
-    *,
-    *:before,
-    *:after {
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.royalkingon.com/promo/141">
+  <meta name="twitter:title" content="Royal King Pasta - Italian Cuisine">
+  <meta name="twitter:description" content="Discover the best Italian cuisine featuring Spaghetti, Penne, Lasagna, Ravioli, Carbonara, and more.">
+  <meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png">
+  <meta name="twitter:creator" content="@YourTwitterHandle">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://www.royalkingon.com/promo/141">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS VARIABLES */
+    :root {
+      --yellow: #f3f050;
+      --link-green: #1f7c49;
+      --text-color: #333; 
+    }
+
+    *, *:before, *:after {
       box-sizing: border-box;
     }
 
     body {
-      margin: 40px;
-      font-family: "Inconsolata";
-      font-size: 14px;
+      margin: 20px;
+      font-family: "Merriweather", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.8; 
       background-color: #fff;
-      color: #444;
+      color: var(--text-color);
+      overflow-x: hidden; 
+    }
 
-      a {
-        color: #1f7c49;
-      }
+    a {
+      color: var(--link-green);
+      text-decoration: none; 
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
     hr {
       margin-bottom: 2em;
+      background: var(--yellow);
+      color: var(--yellow);
+      height: 8px;
+      border: none;
     }
 
-    h1,
-    p {
-      margin: 0 0 1em 0;
+    h1, p {
+      margin: 0 0 1.5em 0;
     }
 
     img {
       width: 100%;
+      display: block;
     }
 
-    /* no grid support? */
-
-    .wrapper {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .drop-letter:first-child:first-letter {
-      color: $yellow;
-      float: left;
-      font-family: "Inconsolata";
-      font-size: 75px;
-      line-height: 60px;
-      padding-top: 4px;
-      padding-right: 8px;
-      padding-left: 3px;
-      text-shadow: -4px 2px #1f7c49;
-    }
-
+    /* 2. UNIVERSAL LAYOUT */
     .wrapper {
       display: grid;
-      margin: 0 auto;
-      grid-template-columns: repeat(2, 50%);
+      margin: 0 auto; 
+      max-width: 1000px; 
+      grid-template-columns: 1fr 1fr; 
       grid-template-rows: auto;
-      grid-row-gap: 15px;
-      grid-column-gap: 15px;
+      grid-gap: 30px; 
     }
 
-    .panel-a {
-      grid-row: 1/2;
-      grid-column: 1/3;
+    /* STYLISH DROP CAP */
+    .drop-letter:first-child:first-letter {
+      color: var(--yellow);
+      float: left;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 85px; 
+      line-height: 0.8; 
+      padding-top: 4px;
+      padding-right: 12px;
+      padding-left: 0;
+      text-shadow: -3px 2px var(--link-green); 
     }
 
-    .panel-b {
-      grid-row: 2;
-      grid-column: 1/2;
+    /* --- FIGCAPTION STYLING --- */
+    figcaption {
+      font-weight: bold;
+      font-style: italic;
+      margin: 1.5em;
+      text-align: left; 
+      transform: rotate(-10deg); 
+      display: block;
+      width: 90%; 
+      font-size: 1.3em; 
+      line-height: 1.3; 
+      color: #000;
     }
 
-    .panel-c {
-      grid-row: 2;
-      grid-column: 2/3;
+    /* --- FIX FOR OVERLAP --- */
+    .panel-a figcaption {
+      margin-bottom: 6em; 
     }
 
-    .panel-d {
-      grid-row: 4/5;
-      grid-column: 1/2;
-
-      img {
-        width: 50%;
-      }
-    }
-
-    .panel-e {
-      grid-row: 3/4;
-      grid-column: 1/3;
-    }
-
-    .panel-f {
-      grid-row: 4/5;
-      grid-column: 2/3;
-    }
-
-    .panel-g {
-      grid-row: 5;
-      grid-column: 1/2;
-    }
-
-    .panel-h {
-      grid-row: 5;
-      grid-column: 2/3;
-    }
+    /* --- PANEL PLACEMENTS --- */
+    .panel-a { grid-row: 1; grid-column: 1 / 3; }
+    .panel-b { grid-row: 2; grid-column: 1 / 2; }
+    .panel-c { grid-row: 2; grid-column: 2 / 3; }
+    .panel-e { grid-row: 3; grid-column: 1 / 3; font-size: 1.2em; font-weight: bold; } 
+    .panel-d { grid-row: 4; grid-column: 1 / 2; }
+    .panel-d img { width: 60%; } 
+    .panel-f { grid-row: 4; grid-column: 2 / 3; }
+    .panel-g { grid-row: 5; grid-column: 1 / 2; }
+    .panel-h { grid-row: 5; grid-column: 2 / 3; }
 
     footer {
       grid-row: 6;
-      grid-column: 1/3;
+      grid-column: 1 / 3;
       text-align: right;
+      margin-top: 2em;
+      font-family: sans-serif; 
+      font-size: 0.8em;
     }
-
-    figcaption {
-      font-weight: bold;
-      margin: 1.5em;
-      text-align: center;
-    }
-
-    @media (min-width: 1090px) {
-      .wrapper {
-        max-width: 1200px;
-        margin: 0 20px;
-        display: grid;
-        grid-gap: 20px;
-      }
-
-      .wrapper {
-        display: grid;
-        margin: 2em;
-        grid-template-columns: repeat(6, 12.5em);
-        grid-template-rows: repeat(10, 100px);
-      }
-
-      .panel {
-        /* needed for the flex layout*/
-        margin-left: 5px;
-        margin-right: 5px;
-        flex: 1 1 200px;
-      }
-
-      hr {
-        background: $yellow;
-        color: $yellow;
-        height: 8px;
-        border: none;
-      }
-
-      .catepillar {
-        width: 100%;
-        max-width: 480px;
-        margin-left: -2em;
-      }
-
-      .panel-a {
-        grid-row: 1/2;
-        grid-column: 1/4;
-        margin-bottom: 1em;
-      }
-
-      .panel-b {
-        grid-column: 1/2;
-        grid-row: 5;
-      }
-
-      .panel-c {
-        grid-column: 2/3;
-        grid-row: 5;
-
-        p:first-of-type {
-          margin-top: -3em;
-        }
-      }
-
-      .panel-d {
-        grid-column: 3/4;
-        grid-row: 3;
-
-        img {
-          width: auto;
-          max-width: 380px;
-          margin-top: 3em;
-        }
-      }
-
-      .panel-e {
-        grid-column: 4;
-        grid-row: 1;
-      }
-
-      .panel-f {
-        grid-column: 5;
-        grid-row: 1;
-      }
-
-      .panel-g {
-        grid-column: 6;
-        grid-row: 1;
-      }
-
-      .panel-h {
-        grid-column: 5/7;
-        grid-row: 5;
-      }
-
-      footer {
-        grid-row: 11;
-        grid-column: 6;
-        text-align: right;
-      }
-
-      figcaption {
-        transform: rotate(-10deg);
-        font-size: 2em;
-        margin-bottom: 1em;
-        max-width: 620px;
-        font-weight: normal;
-        margin-left: -2em;
-        text-align: left;
-      }
-    }
-
-    /* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
-
-    @supports (display: grid) {
-      .wrapper>* {
-        margin: 0;
-      }
-    }
-
-    </styoe>
   </style>
 </head>
 
-<header><a href="http://www.christianjespersen.com/wired_magazine/">
-    Where I found the original layout.
-  </a>
-  <hr>
-  <header>
-    <div class="wrapper">
-      <div class="panel panel-a">
+<body>
 
-        <img class="panel__caterpillar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png"
-          alt="catepillar">
-        <figcaption> But if humanity is going to<br> survive, we may have to learn to overcome the ick factor.
-        </figcaption>
-      </div>
-      <div class="panel panel-b">
-        <p class="drop-letter">
-          Pommy ipsum stew and dumps real ale tad squirrel sausage roll off t'pub throw a paddy, nicked twiglets
-          flabbergasted half-inch it pompous in the jacksy stew and dumps, rivetting stuff blimey jammy git pompous
-          porky-pies naff off bottled it. </p>
-        <p>
-          The black death gob Doctor Who on his tod off with her head gravy cheese and chips mince pies bargain Betty
-          Big Ben crisps, I could reet fancy a jolly hockey sticks chav alright duck numbskull easy peasy earwig.
-          Codswallop pigeons in Trafalgar Square a cracking scones cobbles Kate and Will, that's ace up North and could
-          be a bit of a git.
-        </p>
-      </div>
-      <div class="panel panel-c">
-        <p>
-          Pommy ipsum stew and dumps real ale tad squirrel sausage roll off t'pub throw a paddy, nicked twiglets
-          flabbergasted half-inch it pompous in the jacksy stew and dumps, rivetting stuff blimey jammy git pompous
-          porky-pies naff off bottled it. </p>
-        <p>
-          The black death gob Doctor Who on his tod off with her head gravy cheese and chips mince pies bargain Betty
-          Big Ben crisps, I could reet fancy a jolly hockey sticks chav alright duck numbskull easy peasy earwig.
-          Codswallop pigeons in Trafalgar Square a cracking scones cobbles Kate and Will, that's ace up North and could
-          be a bit of a git.
-        </p>
-      </div>
-      <div class="panel panel-d"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/drink.png " alt="drink">
-      </div>
-      <div class="panel panel-e"> The black death gob Doctor Who on his tod off with her head gravy cheese and chips
-        mince pies bargain Betty Big Ben crisps, I could reet fancy a jolly hockey sticks chav alright</div>
-      <div class="panel panel-f">
-        <p>Pommy ipsum gobsmacked pulled out the eating irons grab a jumper it's the dogs bollocks chinwag know your
-          onions, Kate and Will doofer copper it's the dogs bollocks rambunctious absobloodylootely. River Song it's
-          nicked nutter bag egg's old boy terribly blimey one feels that Sonic Screwdriver
-        </p>
-        <p>The Doctor, twiglets sling one's hook what a load of cobblers nosh Queen Elizabeth numpty. Off with her head
-          bull dog god save the queen doing my head in biscuits cottage pie, terribly flog porky-pies. Rivetting stuff
-          trouble and strife bow ties are cool knows bugger all about nowt black pudding roast beef know your onions,
-          darling a cracking up at the crack of dawn proper Bad Wolf.</p>
-      </div>
-      <div class="panel panel-g">
-        <p>Pommy ipsum gobsmacked pulled out the eating irons grab a jumper it's the dogs bollocks chinwag know your
-          onions, Kate and Will doofer copper it's the dogs bollocks rambunctious absobloodylootely. River Song it's
-          nicked nutter bag egg's old boy terribly blimey one feels that Sonic Screwdriver The Doctor, twiglets sling
-          one's hook what a load of cobblers nosh
-        </p>
-        <p>
-          Queen Elizabeth numpty. Off with her head bull dog god save the queen doing my head in biscuits cottage pie,
-          terribly flog porky-pies. Rivetting stuff trouble and strife bow ties are cool knows bugger all about nowt
-          black pudding roast beef know your onions, darling a cracking up at the crack of dawn proper Bad Wolf.
-        </p>
-      </div>
-      <div class="panel panel-h"><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/grasshopper.png'
-          alt='grasshopper'>
-        <figcaption>
-          A cockroach in your drink is gross, but a grasshopper on a stick could be lunch.
-        </figcaption>
-      </div>
+<!-- POLYGON-LIKE CONTACT BLOCK, RED FONT -->
+<div style="
+  max-width: 1000px;
+  margin: 0 auto 24px auto;
+  font-family: 'Merriweather', Georgia, serif;
+  text-align: left;
+">
+  <div style="
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #cc0000;
+    margin-bottom: 6px;
+  ">
+    Royal King Pasta &amp; Sandwiches
+  </div>
+  <div style="
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #cc0000;
+    margin-bottom: 4px;
+  ">
+    3450 Bathurst Street, Toronto, ON
+  </div>
+  <div style="
+    font-size: 16px;
+    color: #cc0000;
+  ">
+    📞 (416) 781-8383 &nbsp;•&nbsp; ✉️ order@royalkingon.com
+  </div>
+</div>
 
-      <footer class="footer">
-        <small>Sep. 2012 <strong>Wired</strong> 048
-        </small>
+<header style="font-family: sans-serif; font-weight: 700; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; margin-bottom: 1.5em; text-align: center;">
+  <a href="https://www.royalkingon.com/promo/141" style="color: #333;">Spaghetti • Penne • Fettuccine • Lasagna • Ravioli • Carbonara • Bolognese • Linguine • Tortellini • Alfredo • Gnocchi • Pesto • Fusilli • Rigatoni • Macaroni • Marinara • Farfalle • Ziti • Aglio e Olio • Al Dente • Italian Cuisine</a>
+</header>
 
-      </footer>
-    </div>
+<hr>
+
+<div class="wrapper">
+  <div class="panel panel-a">
+    <img class="panel__caterpillar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png" alt="catepillar">
+    <figcaption> But if humanity is going to<br> survive, we may have to learn to overcome the ick factor.</figcaption>
+  </div>
+
+  <div class="panel panel-b">
+    <p class="drop-letter">
+      When you want a meal that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is the clear winner. Tender veal cutlets, lightly breaded and cooked to a perfect golden crisp, are stacked in a warm Italian bun and loaded with fresh lettuce, tomatoes, onions, peppers, and more. Every bite balances rich, comforting flavour with the crunch and freshness of real vegetables, giving you a sandwich that eats like a full plate, not a snack.
+    </p>
+    <p>
+      Compared to a basic burger or a plain cold-cut sandwich, the Veal Sandwich Deluxe from Royal King Pasta &amp; Sandwiches gives you more of everything that matters: more flavour, more texture, and more real food satisfaction. The vegetables don’t just decorate the sandwich – they build it: adding sweetness from tomatoes, brightness from lettuce, a gentle bite from onions and peppers, and just enough juiciness to bring the veal to life. It’s the kind of sandwich you finish slowly, enjoy completely, and actually remember.
+    </p>
+  </div>
+
+  <div class="panel panel-c">
+    <p>
+      The Veal Sandwich Deluxe is also a smarter choice when you think about value. Instead of buying a separate salad on the side, you’re getting your protein and your veggies in one generous, made-to-order sandwich. The fresh vegetables help balance the richness of the veal, so you don’t feel heavy or sluggish after eating – just satisfied. Whether it’s lunch on a busy workday or a relaxed evening meal, it’s a complete option that feels premium without the premium price.
+    </p>
+    <p>
+      At Royal King Pasta &amp; Sandwiches, we treat this sandwich like a signature dish, not just another menu item. The veal is prepared with care, the bread is chosen to hold everything together without getting soggy, and the vegetables are stacked to give you flavour in every bite, from first to last. When you compare it to fast-food combos or processed alternatives, the Veal Sandwich Deluxe stands out as the better case for a real meal: freshly made, generously filled, and proudly served.
+    </p>
+  </div>
+
+  <div class="panel panel-d">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/drink.png" alt="drink">
+  </div>
+
+  <div class="panel panel-e"> 
+    The black death gob Doctor Who on his tod off with her head gravy cheese and chips
+    mince pies bargain Betty Big Ben crisps, I could reet fancy a jolly hockey sticks chav alright
+  </div>
+
+  <div class="panel panel-f">
+    <p>
+      The Veal Sandwich Deluxe also pairs perfectly with your favourite drink, making it an easy upgrade from any ordinary quick bite. Instead of grabbing something forgettable, you sit down to a hot, freshly prepared veal sandwich that feels like a proper Italian-style meal in a bun. The vegetables add colour and crunch, turning a simple sandwich into a full experience that looks as good as it tastes.
+    </p>
+    <p>
+      When you’re choosing what to eat, ask yourself: will this keep me full and happy, or will I be hungry again in an hour? Our Veal Sandwich Deluxe answers that question the moment you unwrap it. The hearty veal, the piled-high vegetables, and the warm bun give you the comfort of a homemade meal with the convenience of a sandwich. That’s why so many regulars at Royal King Pasta &amp; Sandwiches keep coming back to it – it simply delivers more.
+    </p>
+  </div>
+
+  <div class="panel panel-g">
+    <p>
+      For anyone who loves Italian flavours but wants something handheld and satisfying, the Veal Sandwich Deluxe is the best of both worlds. You get the savoury richness you’d expect from a classic veal dish, combined with the freshness and crunch of a fully loaded veggie topping. It’s not just meat and bread; it’s a carefully balanced meal that respects your appetite and your taste buds at the same time.
+    </p>
+    <p>
+      At Royal King Pasta &amp; Sandwiches, we believe a “deluxe” sandwich should truly feel deluxe. That’s why our Veal Sandwich Deluxe with all vegetables is built to be the better choice when you’re serious about your meal. More freshness, more flavour, more satisfaction – all in one sandwich. When you’re ready to trade ordinary for unforgettable, this is the sandwich that proves you made the right decision.
+    </p>
+  </div>
+
+  <div class="panel panel-h">
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/grasshopper.png' alt='grasshopper'>
+    <figcaption>
+      A cockroach in your drink is gross, but a grasshopper on a stick could be lunch.
+    </figcaption>
+  </div>
+
+  <footer class="footer">
+    <small>Sep. 2012 <strong>Wired</strong> 048</small>
+  </footer>
+</div>
+
+</body>
+</html>
