@@ -1,0 +1,621 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOGUE | Fall/Winter 2024</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #fff;
+        color: #333;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      .magazine-container {
+        width: 700px;
+        height: 700px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(0);
+      }
+
+      .cover.opened {
+        transform: translateY(-100%);
+      }
+
+      .cover-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 6rem;
+        font-weight: 900;
+        letter-spacing: -2px;
+        line-height: 0.9;
+        margin: 40px 20px 0;
+        color: #111;
+        mix-blend-mode: difference;
+        z-index: 2;
+      }
+
+      .cover-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin: 20px 20px;
+        color: #333;
+      }
+
+      .open-magazine {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        padding: 12px 24px;
+        background: #111;
+        color: #fff;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .open-magazine:hover {
+        background: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .magazine-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .magazine-content::-webkit-scrollbar {
+        display: none;
+      }
+
+      section {
+        padding: 40px 20px;
+        position: relative;
+      }
+
+      .title-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 10px;
+        color: #111;
+      }
+
+      h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #111;
+      }
+
+      .issue-info {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #999;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        margin-right: 10px;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 30px);
+        gap: 15px;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .image-item {
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-item:hover {
+        transform: scale(1.02);
+        z-index: 2;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .image-item:nth-child(1) {
+        grid-column: 1 / 9;
+        grid-row: 1 / 7;
+        background-image: url('https://images.unsplash.com/photo-1610624498812-47bf2b917dc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+      }
+
+      .image-item:nth-child(2) {
+        grid-column: 9 / 13;
+        grid-row: 2 / 9;
+        background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+      }
+
+      .image-item:nth-child(3) {
+        grid-column: 1 / 7;
+        grid-row: 7 / 13;
+        background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+      }
+
+      .image-item:nth-child(4) {
+        grid-column: 7 / 13;
+        grid-row: 9 / 13;
+        background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .image-item:hover .caption {
+        transform: translateY(0);
+      }
+
+      .article {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 15px;
+        margin: 60px 0;
+      }
+
+      .article-header {
+        grid-column: 1 / 13;
+        margin-bottom: 30px;
+      }
+
+      .article-intro {
+        grid-column: 1 / 5;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #555;
+        font-weight: 300;
+        padding-right: 20px;
+      }
+
+      .article-content {
+        grid-column: 5 / 13;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .article-content p {
+        margin-bottom: 20px;
+      }
+
+      .pull-quote {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.8rem;
+        line-height: 1.4;
+        color: #111;
+        margin: 30px 0;
+        padding-left: 20px;
+        border-left: 3px solid #111;
+      }
+
+      .designer-feature {
+        margin: 40px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .designer-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .designer-info {
+        flex: 1;
+      }
+
+      .designer-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+
+      .designer-role {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .nav-dots {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 100;
+      }
+
+      .nav-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-dot.active {
+        background-color: #111;
+        transform: scale(1.3);
+      }
+
+      .nav-dot:hover {
+        background-color: #111;
+      }
+
+      .color-accent {
+        display: inline-block;
+        position: relative;
+      }
+
+      .color-accent::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -5%;
+        width: 110%;
+        height: 8px;
+        background-color: rgba(255, 99, 71, 0.3);
+        z-index: -1;
+        transition: height 0.3s ease;
+      }
+
+      .color-accent:hover::after {
+        height: 100%;
+      }
+
+      @media (max-width: 700px) {
+        .cover-title {
+          font-size: 4rem;
+        }
+
+        .image-grid {
+          grid-template-rows: repeat(20, 25px);
+        }
+
+        .article {
+          grid-template-columns: 1fr;
+        }
+
+        .article-intro,
+        .article-content {
+          grid-column: 1 / -1;
+        }
+
+        .article-intro {
+          margin-bottom: 20px;
+        }
+
+        .nav-dots {
+          display: none;
+        }
+      }
+
+      @keyframes fadeSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        opacity: 0;
+        animation: fadeSlideIn 0.8s forwards;
+      }
+
+      .animation-delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .animation-delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .animation-delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      .animation-delay-4 {
+        animation-delay: 0.8s;
+      }
+
+      .back-to-cover {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 16px;
+        background: #111;
+        color: #fff;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 5;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .back-to-cover.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .back-to-cover:hover {
+        background: #333;
+      }
+
+      .cover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 450px;
+        z-index: 1;
+        opacity: 0.6;
+        object-fit: cover;
+        animation: floatImage 8s infinite ease-in-out;
+      }
+
+      @keyframes floatImage {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-15px) rotate(2deg);
+        }
+
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="magazine-container">
+      <div class="cover">
+        <img
+          src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+          class="cover-image">
+        <h1 class="cover-title">AVANT<br>GARDE</h1>
+        <p class="cover-subtitle">The Boundary Breakers Issue</p>
+        <button class="open-magazine">Read Now</button>
+      </div>
+
+      <div class="magazine-content">
+        <section id="section1">
+          <div class="title-block">
+            <div>
+              <h1 class="fade-slide-in">The New Asymmetry</h1>
+              <p class="fade-slide-in animation-delay-1">Redefining balance in high fashion</p>
+            </div>
+            <div class="issue-info fade-slide-in animation-delay-1">Fall/Winter 2024</div>
+          </div>
+
+          <div class="image-grid fade-slide-in animation-delay-2">
+            <div class="image-item">
+              <div class="caption">Rei Kawakubo's deconstructed silhouettes at Paris Fashion Week</div>
+            </div>
+            <div class="image-item">
+              <div class="caption">Alexander McQueen's geometric precision</div>
+            </div>
+            <div class="image-item">
+              <div class="caption">Conceptual layers from Maison Margiela</div>
+            </div>
+            <div class="image-item">
+              <div class="caption">Yohji Yamamoto's avant-garde draping techniques</div>
+            </div>
+          </div>
+
+          <div class="article">
+            <div class="article-header fade-slide-in animation-delay-3">
+              <h2>Asymmetry as the New Symmetry</h2>
+            </div>
+            <div class="article-intro fade-slide-in animation-delay-3">
+              Paris, Milan, New York, and Tokyo have surrendered to the allure of the unbalanced. This season marks a
+              defining shift away from conventional equilibrium toward a deliberate imbalance that speaks to our
+              fragmented times.
+            </div>
+            <div class="article-content fade-slide-in animation-delay-4">
+              <p>The runways of 2024 have become battlegrounds where traditional notions of balance are being challenged
+                and reconstructed. Leading the charge is <span class="color-accent">Rei Kawakubo</span>, whose Comme des
+                Garçons Fall collection defies not only symmetry but the very concept of the human form.</p>
+
+              <p>"I'm interested in creating something that hasn't been seen before," Kawakubo noted backstage after her
+                Paris show. Her sculptural pieces force viewers to reconsider what clothing can be—flowing
+                asymmetrically around the body rather than conforming to it.</p>
+
+              <div class="pull-quote">"Asymmetry isn't merely aesthetic; it's a philosophy—an acknowledgment that
+                perfection exists in imperfection."</div>
+
+              <p>At Balenciaga, Demna Gvasalia continues his exploration of exaggerated proportions with deliberately
+                offset tailoring. Shoulders tilt at precise angles, hems dip unexpectedly, and seams trace unpredictable
+                paths across garments. What appears haphazard is, in fact, meticulously calculated.</p>
+
+              <p>Even traditional houses like Dior, under Maria Grazia Chiuri, have embraced asymmetrical elements in
+                their otherwise classical silhouettes. Her latest collection features evening gowns with deliberately
+                mismatched sides—one structured, one flowing—creating visual tension that captivates the eye.</p>
+            </div>
+          </div>
+
+          <div class="designer-feature fade-slide-in">
+            <img
+              src="https://images.unsplash.com/photo-1601935111741-ae98b2b230b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+              alt="Designer Portrait" class="designer-image">
+            <div class="designer-info">
+              <h3 class="designer-name">Miuccia Prada</h3>
+              <p class="designer-role">Creative Director, Prada</p>
+              <p>"Asymmetry allows for movement and freedom. It creates space for the unexpected to happen. In fashion
+                now, we need this unpredictability."</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="nav-dots">
+        <div class="nav-dot active" data-section="section1"></div>
+      </div>
+
+      <button class="back-to-cover">Back to Cover</button>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const cover = document.querySelector('.cover');
+        const openButton = document.querySelector('.open-magazine');
+        const backButton = document.querySelector('.back-to-cover');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const sections = document.querySelectorAll('section');
+
+        openButton.addEventListener('click', function () {
+          cover.classList.add('opened');
+          setTimeout(() => {
+            backButton.classList.add('visible');
+          }, 500);
+        });
+
+        backButton.addEventListener('click', function () {
+          cover.classList.remove('opened');
+          backButton.classList.remove('visible');
+        });
+
+        navDots.forEach(dot => {
+          dot.addEventListener('click', function () {
+            const sectionId = this.getAttribute('data-section');
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+
+        // Intersection Observer for detecting which section is in view
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const sectionId = entry.target.getAttribute('id');
+              navDots.forEach(dot => {
+                dot.classList.toggle('active', dot.getAttribute('data-section') === sectionId);
+              });
+            }
+          });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+
+        // Reveal animations as elements come into view
+        const fadeElements = document.querySelectorAll('.fade-slide-in');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+          fadeObserver.observe(element);
+        });
+
+        // Image hover effect enhancement
+        const imageItems = document.querySelectorAll('.image-item');
+
+        imageItems.forEach(item => {
+          item.addEventListener('mouseenter', function () {
+            imageItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.style.filter = 'grayscale(0.8)';
+                otherItem.style.opacity = '0.7';
+              }
+            });
+          });
+
+          item.addEventListener('mouseleave', function () {
+            imageItems.forEach(otherItem => {
+              otherItem.style.filter = 'none';
+              otherItem.style.opacity = '1';
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+
+</html>

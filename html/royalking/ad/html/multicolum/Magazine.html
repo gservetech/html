@@ -1,0 +1,174 @@
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+  * {
+    /* I know I could write "margin: 0; padding: 0;". But that's not performant. */
+    font-family: 'Open Sans';
+    line-height: 170%;
+    color: #444;
+  }
+
+  body,
+  p,
+  h1,
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  mark {
+    background-color: white;
+    padding: 0px 3px;
+  }
+
+  .wrapper {
+    padding: 100px;
+    margin: 0 0 50px 0;
+    text-align: left;
+    height: 40vh;
+    background: url('https://source.unsplash.com/KqVHRmHVwwM/1600x900') no-repeat center center fixed;
+    background-size: cover;
+    transition: all 0.4s ease;
+  }
+
+  .articleText {
+    margin: 0 10% 30px 20%;
+    width: 60%;
+    max-width: 800px;
+    padding-left: 30px;
+    border-left: 1px solid #cccccc;
+    transition: all 0.4s ease;
+  }
+
+  .introduction {
+    margin-bottom: 20px;
+  }
+
+  .accountInfo {
+    transition: all ease 0.5s;
+    display: none;
+    height: 420px;
+    width: 250px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .accountInfo .header {
+    background: url('https://source.unsplash.com/V6s1cmE39XM/250x250') no-repeat;
+    height: 120px;
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .accountInfo .profilePicture {
+    z-index: 1;
+    margin: -25px auto 10px auto;
+    background: url('https://source.unsplash.com/LyeduBb2Auk/100x100') no-repeat;
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  .accountInfo .profileText {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 16px;
+    width: 100%;
+    background: white;
+    border: 0;
+    padding: 12px 0px;
+    transition: all ease 0.5s;
+    cursor: pointer;
+  }
+
+  button:hover {
+    box-shadow: inset 400px 0 0 0 #444;
+    color: white;
+  }
+
+  @media only screen and (max-width: 1000px) {
+
+    /* For tablets: */
+    .articleText {
+      margin: 0 10% 30px 10%;
+      width: 80%;
+      max-width: 800px;
+      padding-left: 0px;
+      border: 0;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .articleText {
+      margin: 0 5% 30px 5%;
+      width: 90%;
+    }
+
+    .wrapper {
+      padding: 5%;
+    }
+  }
+</style>
+
+<div class="article">
+  <div class="wrapper">
+    <div class="wrapperText">
+      <h1>
+        <mark>Tattooed helvetica celiac leggings waistcoat vegan retro selfies</mark>
+      </h1>
+      <p id="author">
+        <mark>by Lina Regental</mark>
+      </p>
+      <div id="accountDetail" class="accountInfo">
+        <div class="header">
+          <h2><mark>Lina Regental</mark></h2>
+          <p><mark>Producer & Author</mark></p>
+        </div>
+        <div class="profilePicture"></div>
+        <p class="profileText">Chef, Community Volunteer, Conveyor of Messages, Electro Producer, Scapegoat. Is that a
+          double rainbow? D:.</p>
+        <button>Check me out ></button>
+      </div>
+    </div>
+  </div>
+  <!--The Text is generated with hipsum.co :) Check it out! -->
+  <div class="articleText">
+    <h4 class="introduction">Three wolf moon post-ironic bespoke lomo tattooed kinfolk. Retro typewriter gluten-free
+      hashtag cold-pressed. Beard cliche echo park banh mi. Tattooed helvetica celiac, leggings waistcoat vegan retro
+      selfies art party distillery mustache echo park.</h4>
+    <p>Beard cliche echo park banh mi. Salvia tousled sustainable fap, poutine direct trade scenester. Vinyl gastropub
+      put a bird on it, skateboard YOLO ethical flannel flexitarian kale chips. 3 wolf moon post-ironic bespoke lomo
+      tattooed kinfolk. Retro typewriter gluten-free hashtag cold-pressed. Meh paleo aesthetic, chia mlkshk etsy pickled
+      ethical. Tattooed helvetica celiac, leggings waistcoat vegan retro selfies art party distillery mustache echo
+      park.</p>
+    <h2>Kale chips</h2>
+    <p>Occupy gluten-free umami wayfarers, post-ironic normcore semiotics listicle deep v health goth cold-pressed. Raw
+      denim williamsburg synth normcore actually. Health goth post-ironic whatever, flannel mlkshk tacos thundercats
+      seitan put a bird on it try-hard migas small batch. Occupy small batch intelligentsia, food truck gochujang viral
+      iPhone letterpress chicharrones etsy flannel. Banjo +1 slow-carb venmo hashtag health goth. Tumblr DIY occupy
+      try-hard. Quinoa scenester disrupt brooklyn mixtape, banh mi hoodie beard messenger bag locavore kale chips.</p>
+    <p>Pop-up echo park semiotics williamsburg, next level literally retro neutra. Microdosing twee lo-fi squid actually
+      art party, intelligentsia sartorial try-hard tote bag irony. Cliche mlkshk freegan, truffaut master cleanse
+      bushwick offal distillery chicharrones man bun occupy thundercats vice pork belly yr. Small batch mixtape
+      helvetica +1. Godard ethical tote bag 8-bit fixie, raw denim pitchfork. Fap venmo four loko lo-fi chicharrones,
+      small batch umami retro intelligentsia irony pug man braid flannel migas. Gentrify taxidermy bicycle rights
+      sustainable, chia tattooed meggings chicharrones literally actually gochujang fanny pack.</p>
+    <h2>Helvetica cray</h2>
+    <p>Locavore YOLO asymmetrical polaroid, aesthetic bitters mumblecore gochujang master cleanse cray helvetica kogi.
+      Put a bird on it helvetica food truck pop-up etsy, echo park forage organic readymade trust fund. Post-ironic
+      try-hard echo park, selfies wolf selvage synth squid single-origin coffee raw denim tacos twee hella. Art party
+      meggings pug shoreditch waistcoat. Post-ironic hammock quinoa, pickled pop-up cardigan cred put a bird on it banh
+      mi green juice cliche paleo. 90's cray fingerstache, irony chia slow-carb butcher deep v direct trade YOLO.
+      Helvetica cray vegan freegan four loko put a bird on it, gentrify etsy locavore wayfarers pickled aesthetic
+      tousled.</p>
+  </div>
+</div>
