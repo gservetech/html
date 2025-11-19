@@ -12,26 +12,6 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#f3f050"> 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.royalkingon.com/promo/141">
-  <meta property="og:title" content="Royal King Pasta - Authentic Italian Cuisine">
-  <meta property="og:description" content="Spaghetti, Penne, Fettuccine, Lasagna, and more. Experience the taste of authentic Italian pasta.">
-  <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png">
-  <meta property="og:image:alt" content="Plate of delicious Italian Pasta">
-  <meta property="og:site_name" content="Royal King Pasta">
-  <meta property="og:locale" content="en_US">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://www.royalkingon.com/promo/141">
-  <meta name="twitter:title" content="Royal King Pasta - Italian Cuisine">
-  <meta name="twitter:description" content="Discover the best Italian cuisine featuring Spaghetti, Penne, Lasagna, Ravioli, Carbonara, and more.">
-  <meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png">
-  <meta name="twitter:creator" content="@YourTwitterHandle">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="canonical" href="https://www.royalkingon.com/promo/141">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -64,6 +44,93 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+
+    /* --- LIVE PREVIEW POPUP STYLES --- */
+    #site-preview-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6); /* Dark background behind popup */
+      z-index: 9998;
+    }
+
+    #site-preview-popup {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;   /* 90% of screen width */
+      height: 85vh;  /* 85% of screen height */
+      background-color: white;
+      z-index: 9999; /* On top of everything */
+      box-shadow: 0 0 50px rgba(0,0,0,0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #333;
+      
+      /* ENABLE INTERACTION so users can scroll the site and click Close */
+      pointer-events: auto; 
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* THE BIG CLOSE BUTTON AREA */
+    #popup-header {
+      width: 100%;
+      background: #cc0000; /* Red background */
+      color: white;
+      text-align: right;
+      padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #popup-title {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    #close-btn {
+      background-color: white;
+      color: #cc0000;
+      border: none;
+      padding: 10px 25px;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: transform 0.2s;
+    }
+
+    #close-btn:hover {
+      transform: scale(1.1);
+      background-color: #ffebeb;
+    }
+
+    #site-preview-popup iframe {
+      width: 100%;
+      flex-grow: 1; /* Fills remaining height */
+      border: none;
+    }
+
+    /* Hover Triggers */
+    .hover-trigger {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .hover-trigger:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
     hr {
@@ -121,19 +188,13 @@
       color: #000;
     }
 
-    /* --- FIX FOR OVERLAP --- */
-    .panel-a figcaption {
-      margin-bottom: 6em; 
-    }
+    .panel-a figcaption { margin-bottom: 6em; }
 
     /* --- PANEL PLACEMENTS --- */
     .panel-a { grid-row: 1; grid-column: 1 / 3; }
     .panel-b { grid-row: 2; grid-column: 1 / 2; }
     .panel-c { grid-row: 2; grid-column: 2 / 3; }
-
-    /* NEW: recipe card panel in its own row */
-    .panel-i { grid-row: 3; grid-column: 1 / 3; }
-
+    .panel-i { grid-row: 3; grid-column: 1 / 3; } /* Recipe Card */
     .panel-e { grid-row: 4; grid-column: 1 / 3; font-size: 1.2em; font-weight: bold; } 
     .panel-d { grid-row: 5; grid-column: 1 / 2; }
     .panel-d img { width: 60%; } 
@@ -150,14 +211,14 @@
       font-size: 0.8em;
     }
 
-    /* === RECIPE CARD STYLES (UPDATED: MOBILE STYLE EVERYWHERE) === */
+    /* === RECIPE CARD STYLES === */
     .recipe-card {
       position: relative;
       width: 100%;
       max-width: 1200px;
       overflow: hidden;
       margin: 0 auto;
-      height: auto; /* Ensures it grows with content */
+      height: auto; 
     }
 
     .recipe-image {
@@ -166,51 +227,23 @@
       display: block;
     }
 
-    /* Updated content box to look like the mobile version on ALL screens */
     .recipe-content {
-      position: relative; /* Changed from absolute to relative/static flow */
+      position: relative; 
       top: auto;
       right: auto;
       transform: none;
       background-color: white;
       padding: 40px;
-      max-width: 90%; /* Adjust width as desired */
-      margin: -80px auto 0 auto; /* Negative top margin pulls it up over the image */
+      max-width: 90%; 
+      margin: -80px auto 0 auto; 
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
-    .category {
-      font-size: 14px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .recipe-title {
-      font-size: 36px;
-      font-weight: 700;
-      color: #2c2c2c;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .recipe-description {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    .recipe-description a {
-      color: #5a4fcf;
-      text-decoration: none;
-    }
-
-    .recipe-description a:hover {
-      text-decoration: underline;
-    }
+    .category { font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 500; }
+    .recipe-title { font-size: 36px; font-weight: 700; color: #2c2c2c; line-height: 1.2; margin-bottom: 20px; }
+    .recipe-description { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 30px; }
+    .recipe-description a { color: #5a4fcf; text-decoration: none; }
+    .recipe-description a:hover { text-decoration: underline; }
 
     .view-recipe-btn {
       display: inline-block;
@@ -224,66 +257,37 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+    .view-recipe-btn:hover { background-color: #95c9a8; }
 
-    .view-recipe-btn:hover {
-      background-color: #95c9a8;
-    }
-
-    /* Minor adjustments for very small screens (fonts/margins) */
     @media (max-width: 480px) {
-      .recipe-content {
-        padding: 25px;
-        margin-top: -60px;
-        width: 95%; /* Wider on small phones */
-      }
-
-      .recipe-title {
-        font-size: 24px;
-      }
-
-      .category {
-        font-size: 12px;
-      }
-
-      .view-recipe-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 24px;
-      }
+      .recipe-content { padding: 25px; margin-top: -60px; width: 95%; }
+      .recipe-title { font-size: 24px; }
+      .category { font-size: 12px; }
+      .view-recipe-btn { width: 100%; text-align: center; padding: 12px 24px; }
     }
   </style>
 </head>
 
 <body>
 
-<div style="
-  max-width: 1000px;
-  margin: 0 auto 24px auto;
-  font-family: 'Merriweather', Georgia, serif;
-  text-align: left;
-">
-  <div style="
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #cc0000;
-    margin-bottom: 6px;
-  ">
+<div id="site-preview-overlay" onclick="closePopup()"></div>
+
+<div id="site-preview-popup">
+  <div id="popup-header">
+    <span id="popup-title">www.royalkingon.com</span>
+    <button id="close-btn" onclick="closePopup()">✖ Close Preview</button>
+  </div>
+  <iframe id="preview-frame" src=""></iframe>
+</div>
+
+<div style="max-width: 1000px; margin: 0 auto 24px auto; font-family: 'Merriweather', Georgia, serif; text-align: left;">
+  <div style="font-size: 24px; text-transform: uppercase; letter-spacing: 0.18em; color: #cc0000; margin-bottom: 6px;">
     RoyalKing Pasta &amp; Sandwiches
   </div>
-  <div style="
-    font-size: 24px;
-    line-height: 1.2;
-    font-weight: 700;
-    color: #cc0000;
-    margin-bottom: 4px;
-  ">
+  <div style="font-size: 24px; line-height: 1.2; font-weight: 700; color: #cc0000; margin-bottom: 4px;">
     3450 Bathurst Street, Toronto, ON
   </div>
-  <div style="
-    font-size: 16px;
-    color: #cc0000;
-  ">
+  <div style="font-size: 16px; color: #cc0000;">
     📞 (416) 781-8383 &nbsp;•&nbsp; ✉️ order@royalkingon.com
   </div>
 </div>
@@ -295,26 +299,30 @@
 <hr>
 
 <div class="wrapper">
+  
   <div class="panel panel-a">
-    <img class="panel__caterpillar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png" alt="catepillar">
+    <img class="panel__caterpillar hover-trigger" 
+         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/catepillar.png" 
+         alt="catepillar"
+         onmouseenter="showPopup()">
     <figcaption> But if humanity is going to<br> survive, we may have to learn to overcome the ick factor.</figcaption>
   </div>
 
   <div class="panel panel-b">
     <p class="drop-letter">
-      When you want a meal that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is the clear winner. Tender veal cutlets, lightly breaded and cooked to a perfect golden crisp, are stacked in a warm Italian bun and loaded with fresh lettuce, tomatoes, onions, peppers, and more. Every bite balances rich, comforting flavour with the crunch and freshness of real vegetables, giving you a sandwich that eats like a full plate, not a snack.
+      When you want a meal that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is the clear winner. Tender veal cutlets, lightly breaded and cooked to a perfect golden crisp, are stacked in a warm Italian bun and loaded with fresh lettuce, tomatoes, onions, peppers, and more.
     </p>
     <p>
-      Compared to a basic burger or a plain cold-cut sandwich, the Veal Sandwich Deluxe from Royal King Pasta &amp; Sandwiches gives you more of everything that matters: more flavour, more texture, and more real food satisfaction. The vegetables don’t just decorate the sandwich – they build it: adding sweetness from tomatoes, brightness from lettuce, a gentle bite from onions and peppers, and just enough juiciness to bring the veal to life. It’s the kind of sandwich you finish slowly, enjoy completely, and actually remember.
+      Compared to a basic burger or a plain cold-cut sandwich, the Veal Sandwich Deluxe from Royal King Pasta &amp; Sandwiches gives you more of everything that matters: more flavour, more texture, and more real food satisfaction.
     </p>
   </div>
 
   <div class="panel panel-c">
     <p>
-      The Veal Sandwich Deluxe is also a smarter choice when you think about value. Instead of buying a separate salad on the side, you’re getting your protein and your veggies in one generous, made-to-order sandwich. The fresh vegetables help balance the richness of the veal, so you don’t feel heavy or sluggish after eating – just satisfied. Whether it’s lunch on a busy workday or a relaxed evening meal, it’s a complete option that feels premium without the premium price.
+      The Veal Sandwich Deluxe is also a smarter choice when you think about value. Instead of buying a separate salad on the side, you’re getting your protein and your veggies in one generous, made-to-order sandwich.
     </p>
     <p>
-      At Royal King Pasta &amp; Sandwiches, we treat this sandwich like a signature dish, not just another menu item. The veal is prepared with care, the bread is chosen to hold everything together without getting soggy, and the vegetables are stacked to give you flavour in every bite, from first to last. When you compare it to fast-food combos or processed alternatives, the Veal Sandwich Deluxe stands out as the better case for a real meal: freshly made, generously filled, and proudly served.
+      At Royal King Pasta &amp; Sandwiches, we treat this sandwich like a signature dish, not just another menu item. The veal is prepared with care, the bread is chosen to hold everything together without getting soggy.
     </p>
   </div>
 
@@ -322,13 +330,14 @@
     <div class="recipe-card">
       <img src="cardModified1.jpg" 
            alt="Homemade Peanut Butter Cups" 
-           class="recipe-image">
+           class="recipe-image hover-trigger"
+           onmouseenter="showPopup()">
       
       <div class="recipe-content">
         <div class="category">Dessert</div>
         <h1 class="recipe-title">Homemade Peanut Butter Cups</h1>
         <p class="recipe-description">
-          Homemade Peanut Butter Cups... SO YUM! I am a sucker for everything chocolate and peanut butter. And, when I can make my own treats with this flavor combination, it is even better! With this treat, there are no added preservatives like when buying peanut butter cups from the store. If you need some holiday treats, add them to your easy-finger food 
+          Homemade Peanut Butter Cups... SO YUM! I am a sucker for everything chocolate and peanut butter. 
           <a href="#">Christmas party options</a> or as a part of your 
           <a href="#">Christmas dessert charcuterie board</a>!
         </p>
@@ -339,33 +348,39 @@
 
   <div class="panel panel-e"> 
     The black death gob Doctor Who on his tod off with her head gravy cheese and chips
-    mince pies bargain Betty Big Ben crisps, I could reet fancy a jolly hockey sticks chav alright
+    mince pies bargain Betty Big Ben crisps...
   </div>
 
   <div class="panel panel-d">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/drink.png" alt="drink">
+    <img class="hover-trigger" 
+         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/drink.png" 
+         alt="drink"
+         onmouseenter="showPopup()">
   </div>
 
   <div class="panel panel-f">
     <p>
-      The Veal Sandwich Deluxe also pairs perfectly with your favourite drink, making it an easy upgrade from any ordinary quick bite. Instead of grabbing something forgettable, you sit down to a hot, freshly prepared veal sandwich that feels like a proper Italian-style meal in a bun. The vegetables add colour and crunch, turning a simple sandwich into a full experience that looks as good as it tastes.
+      The Veal Sandwich Deluxe also pairs perfectly with your favourite drink, making it an easy upgrade from any ordinary quick bite. Instead of grabbing something forgettable, you sit down to a hot, freshly prepared veal sandwich.
     </p>
     <p>
-      When you’re choosing what to eat, ask yourself: will this keep me full and happy, or will I be hungry again in an hour? Our Veal Sandwich Deluxe answers that question the moment you unwrap it. The hearty veal, the piled-high vegetables, and the warm bun give you the comfort of a homemade meal with the convenience of a sandwich. That’s why so many regulars at Royal King Pasta &amp; Sandwiches keep coming back to it – it simply delivers more.
+      When you’re choosing what to eat, ask yourself: will this keep me full and happy, or will I be hungry again in an hour? Our Veal Sandwich Deluxe answers that question the moment you unwrap it.
     </p>
   </div>
 
   <div class="panel panel-g">
     <p>
-      For anyone who loves Italian flavours but wants something handheld and satisfying, the Veal Sandwich Deluxe is the best of both worlds. You get the savoury richness you’d expect from a classic veal dish, combined with the freshness and crunch of a fully loaded veggie topping. It’s not just meat and bread; it’s a carefully balanced meal that respects your appetite and your taste buds at the same time.
+      For anyone who loves Italian flavours but wants something handheld and satisfying, the Veal Sandwich Deluxe is the best of both worlds.
     </p>
     <p>
-      At Royal King Pasta &amp; Sandwiches, we believe a “deluxe” sandwich should truly feel deluxe. That’s why our Veal Sandwich Deluxe with all vegetables is built to be the better choice when you’re serious about your meal. More freshness, more flavour, more satisfaction – all in one sandwich. When you’re ready to trade ordinary for unforgettable, this is the sandwich that proves you made the right decision.
+      At Royal King Pasta &amp; Sandwiches, we believe a “deluxe” sandwich should truly feel deluxe. That’s why our Veal Sandwich Deluxe with all vegetables is built to be the better choice.
     </p>
   </div>
 
   <div class="panel panel-h">
-    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/grasshopper.png' alt='grasshopper'>
+    <img class="hover-trigger" 
+         src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/grasshopper.png' 
+         alt='grasshopper'
+         onmouseenter="showPopup()">
     <figcaption>
       A cockroach in your drink is gross, but a grasshopper on a stick could be lunch.
     </figcaption>
@@ -375,6 +390,30 @@
     <small>Sep. 2012 <strong>Wired</strong> 048</small>
   </footer>
 </div>
+
+<script>
+  const popup = document.getElementById('site-preview-popup');
+  const overlay = document.getElementById('site-preview-overlay');
+  const iframe = document.getElementById('preview-frame');
+
+  // 1. Show Popup logic
+  function showPopup() {
+    // Only load it if it isn't already open to prevent flickering
+    if(popup.style.display !== 'flex') {
+        iframe.src = "https://www.royalkingon.com";
+        overlay.style.display = "block";
+        popup.style.display = "flex";
+    }
+  }
+
+  // 2. Hide Popup logic
+  function closePopup() {
+    overlay.style.display = "none";
+    popup.style.display = "none";
+    // Clear src to stop loading/playing
+    iframe.src = "";
+  }
+</script>
 
 </body>
 </html>
