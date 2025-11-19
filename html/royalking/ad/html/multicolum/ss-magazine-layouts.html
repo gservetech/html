@@ -1,0 +1,476 @@
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    .magazine-spread {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-auto-rows: auto;
+      background-color: white;
+    }
+
+    .magazine-header {
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .magazine-title {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .issue-info {
+      font-size: 12px;
+      color: #777;
+      margin: 0;
+    }
+
+    .main-content {
+      grid-column: 1 / 2;
+      padding: 40px;
+      position: relative;
+    }
+
+    .sidebar {
+      grid-column: 2 / 3;
+      background-color: #000;
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .article-title {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .article-subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+
+    .byline {
+      font-size: 14px;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 30px;
+      font-style: normal;
+    }
+
+    .main-image {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 51, 102, 0.2);
+      mix-blend-mode: multiply;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: #777;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    .article-text {
+      column-count: 2;
+      column-gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .drop-cap::first-letter {
+      font-size: 3.5em;
+      float: left;
+      line-height: 0.8;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .pull-quote {
+      background-color: transparent;
+      border-top: 2px solid #FF3366;
+      border-bottom: 2px solid #FF3366;
+      padding: 30px 0;
+      margin: 40px 0;
+      font-size: 36px;
+      line-height: 1.2;
+      font-style: normal;
+      column-span: all;
+      font-weight: 300;
+      font-family: 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+
+    .pull-quote p {
+      margin-bottom: 0;
+      font-size: 36px;
+      line-height: 1.2;
+      font-family: 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif;
+      font-style: normal;
+    }
+
+    .quote-attribution {
+      font-size: 16px;
+      text-align: center;
+      font-style: normal;
+      margin-top: 15px;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sidebar-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 2px solid white;
+      padding-bottom: 10px;
+    }
+
+    .timeline {
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+
+    .timeline-item {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 20px;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 20px;
+    }
+
+    .timeline-year {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background-color: #FF3366;
+      border-radius: 50%;
+    }
+
+    .colorful-squares {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .color-square {
+      aspect-ratio: 1;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .color-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .square-1 .overlay {
+      background-color: rgba(255, 51, 102, 0.5);
+    }
+
+    .square-2 .overlay {
+      background-color: rgba(0, 204, 255, 0.5);
+    }
+
+    .square-3 .overlay {
+      background-color: rgba(255, 204, 0, 0.5);
+    }
+
+    .square-4 .overlay {
+      background-color: rgba(0, 204, 102, 0.5);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+    }
+
+    .dot-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background-image: radial-gradient(circle, white 2px, transparent 2px);
+      background-size: 15px 15px;
+      opacity: 0.2;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #FF3366;
+    }
+
+    h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .key-works {
+      margin-top: 40px;
+    }
+
+    .key-works h3 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .work-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .work-item:last-child {
+      border-bottom: none;
+    }
+
+    .work-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<article class="magazine-spread">
+  <header class="magazine-header">
+    <h1 class="magazine-title">ART HISTORY QUARTERLY</h1>
+    <p class="issue-info">SPRING 2025 • ISSUE 38</p>
+  </header>
+
+  <main class="main-content">
+    <header>
+      <h2 class="article-title">Andy Warhol: Beyond the Icon</h2>
+      <p class="article-subtitle">Examining the lasting influence of pop art's most famous provocateur, and why his work
+        continues to resonate in contemporary visual culture.</p>
+      <address class="byline">By Alexandra Martin • Photography courtesy of The Andy Warhol Foundation</address>
+    </header>
+
+    <figure class="main-image">
+      <img src="https://assets.codepen.io/406785/warhol1.webp"
+        alt="Andy Warhol working in his silver-walled studio, The Factory, in New York City, 1965" />
+      <div class="image-overlay" aria-hidden="true"></div>
+      <figcaption class="caption">Warhol at work in his studio, "The Factory," New York City, 1965. The silver-walled
+        space became a nexus for artists, musicians, and celebrities.</figcaption>
+    </figure>
+
+    <section class="article-text">
+      <p class="drop-cap">Few artists have permeated popular culture as thoroughly as Andy Warhol. More than three
+        decades after his death, his vision continues to inform how we understand celebrity, consumer culture, and the
+        very notion of what constitutes art. While his silk-screened Marilyns and Campbell's soup cans have become
+        visual shorthand for Pop Art, Warhol's true legacy lies in his radical reconceptualization of the artist's role
+        in society.</p>
+      <p>Born Andrew Warhola in Pittsburgh to working-class immigrants, Warhol's journey from commercial illustrator to
+        art world superstar embodied the American dream, even as his work offered subtle critiques of consumerism and
+        celebrity worship. His famous proclamation that "in the future, everyone will be world-famous for 15 minutes"
+        proved remarkably prescient in our age of viral fame and social media influencers.</p>
+      <p>While critics initially dismissed his appropriation of commercial imagery as superficial, Warhol's deadpan
+        embrace of mass culture concealed more complex intentions. "I want to be a machine," he once stated, yet his
+        work reveals a deep fascination with human desire, mortality, and the mechanisms of fame.</p>
+
+      <blockquote class="pull-quote">
+        <p>"Art is what you can get away with."</p>
+        <cite class="quote-attribution">— Andy Warhol</cite>
+      </blockquote>
+
+      <p>Perhaps most revolutionary was Warhol's understanding of the artist as brand. Through his silver-wigged
+        persona, deadpan interviews, and entrepreneurial ventures like Interview magazine, he crafted a public image as
+        carefully as any of his silkscreens. This approach anticipated today's boundary-blurring between art, commerce,
+        and personal branding.</p>
+      <p>His studio, famously dubbed "The Factory," functioned simultaneously as production facility, social club, and
+        performance space. Through this innovative model, Warhol challenged the romantic notion of the solitary artist,
+        instead embracing collaboration and mechanical reproduction. The Factory became home to a revolving cast of
+        collaborators—from socialites to street people—all participants in what might be considered Warhol's greatest
+        creation: his scene.</p>
+
+      <section>
+        <h3>Beyond the Silkscreen</h3>
+        <p>While his silkscreened images remain his most recognizable work, Warhol's experimentation extended far beyond
+          this technique. His pioneering films like "Empire" (1964)—an eight-hour static shot of the Empire State
+          Building—challenged conventional notions of narrative and viewership in ways that anticipated both structural
+          film and social media's celebration of the mundane.</p>
+        <p>His work with The Velvet Underground demonstrated his understanding that cultural influence could extend
+          beyond traditional artistic boundaries. By bringing together experimental music, performance art, and
+          multimedia presentation, these collaborations helped establish the template for interdisciplinary art that
+          dominates contemporary practice.</p>
+      </section>
+
+      <section>
+        <h3>The Business of Being Warhol</h3>
+        <p>Perhaps most prescient was Warhol's understanding of the increasingly blurred boundaries between art and
+          commerce. While previous generations of artists had sought to position themselves outside market
+          considerations, Warhol openly embraced the commercial aspects of artmaking, accepting portrait commissions
+          from wealthy clients and declaring, "Making money is art and working is art and good business is the best
+          art."</p>
+      </section>
+    </section>
+  </main>
+
+  <aside class="sidebar">
+    <div class="dot-pattern" aria-hidden="true"></div>
+    <h2 class="sidebar-title">The Warhol Timeline</h2>
+
+    <section class="timeline">
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1928</h4>
+        <p>Born in Pittsburgh, Pennsylvania to immigrant parents from present-day Slovakia.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1949</h4>
+        <p>Graduates from Carnegie Institute of Technology with a degree in Pictorial Design.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1962</h4>
+        <p>First solo exhibition of his Campbell's Soup Cans at Ferus Gallery in Los Angeles.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1969</h4>
+        <p>Founds Interview magazine, which combines celebrity gossip, art, fashion, and provocative interviews.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1964</h4>
+        <p>Opens "The Factory," his silver-painted studio that becomes a cultural hub for artists, musicians, and
+          celebrities.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1968</h4>
+        <p>Survives assassination attempt by radical feminist Valerie Solanas, which significantly affects his later
+          work and outlook.</p>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <h4 class="timeline-year">1987</h4>
+        <p>Dies in New York City at age 58 from complications following gallbladder surgery.</p>
+      </article>
+    </section>
+
+    <section class="colorful-squares">
+      <figure class="color-square square-1">
+        <img src="https://assets.codepen.io/406785/marilyn.jpg" alt="Warhol's Marilyn Monroe artwork" />
+        <div class="overlay" aria-hidden="true"></div>
+      </figure>
+      <figure class="color-square square-2">
+        <img src="https://assets.codepen.io/406785/soup.webp" alt="Warhol's Campbell's Soup Cans artwork" />
+        <div class="overlay" aria-hidden="true"></div>
+      </figure>
+      <figure class="color-square square-3">
+        <img src="https://assets.codepen.io/406785/chair.jpg" alt="Warhol's Electric Chair artwork" />
+        <div class="overlay" aria-hidden="true"></div>
+      </figure>
+      <figure class="color-square square-4">
+        <img src="https://assets.codepen.io/406785/andy-warhol.jpg" alt="Portrait of Andy Warhol" />
+        <div class="overlay" aria-hidden="true"></div>
+      </figure>
+    </section>
+
+    <section class="key-works">
+      <h3>KEY WORKS</h3>
+      <article class="work-item">
+        <h4 class="work-title">Campbell's Soup Cans (1962)</h4>
+        <p>32 canvases, each depicting a variety of Campbell's soup, helped define Pop Art's engagement with consumer
+          culture.</p>
+      </article>
+      <article class="work-item">
+        <h4 class="work-title">Marilyn Diptych (1962)</h4>
+        <p>Created shortly after Monroe's death, this iconic work explores celebrity worship and mortality through
+          repetition.</p>
+      </article>
+      <article class="work-item">
+        <h4 class="work-title">Empire (1964)</h4>
+        <p>Eight-hour film consisting of a single static shot of the Empire State Building, challenging conventional
+          cinema.</p>
+      </article>
+      <article class="work-item">
+        <h4 class="work-title">Silver Clouds (1966)</h4>
+        <p>An interactive installation of silver helium-filled balloons that float freely, blurring the boundary between
+          sculpture and environment.</p>
+      </article>
+    </section>
+  </aside>
+</article>

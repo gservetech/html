@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homemade Peanut Butter Cups</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .recipe-card {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: 700px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .recipe-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .recipe-content {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 40px;
+      max-width: 380px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .category {
+      font-size: 14px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .recipe-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #2c2c2c;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .recipe-description {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .recipe-description a {
+      color: #5a4fcf;
+      text-decoration: none;
+    }
+
+    .recipe-description a:hover {
+      text-decoration: underline;
+    }
+
+    .view-recipe-btn {
+      display: inline-block;
+      background-color: #a8d5ba;
+      color: #2c2c2c;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-recipe-btn:hover {
+      background-color: #95c9a8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .recipe-card {
+        height: auto;
+        min-height: 600px;
+      }
+
+      .recipe-content {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: -80px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .recipe-title {
+        font-size: 28px;
+      }
+
+      .recipe-description {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recipe-content {
+        padding: 25px;
+        margin-top: -60px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      .recipe-title {
+        font-size: 24px;
+      }
+
+      .category {
+        font-size: 12px;
+      }
+
+      .view-recipe-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="recipe-card">
+    <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1200&h=700&fit=crop" 
+         alt="Homemade Peanut Butter Cups" 
+         class="recipe-image">
+    
+    <div class="recipe-content">
+      <div class="category">Dessert</div>
+      <h1 class="recipe-title">Homemade Peanut Butter Cups</h1>
+      <p class="recipe-description">
+        Homemade Peanut Butter Cups... SO YUM! I am a sucker for everything chocolate and peanut butter. And, when I can make my own treats with this flavor combination, it is even better! With this treat, there are no added preservatives like when buying peanut butter cups from the store. If you need some holiday treats, add them to your easy-finger food <a href="#">Christmas party options</a> or as a part of your <a href="#">Christmas dessert charcuterie board</a>!
+      </p>
+      <a href="#" class="view-recipe-btn">View Recipe</a>
+    </div>
+  </div>
+</body>
+</html>

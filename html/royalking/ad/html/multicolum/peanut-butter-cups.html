@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homemade Peanut Butter Cups Recipe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8f8f8;
+      line-height: 1.6;
+    }
+
+    .recipe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .recipe-card {
+      position: absolute;
+      top: 50%;
+      right: 60px;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 45px;
+      max-width: 420px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .category {
+      font-size: 13px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .recipe-title {
+      font-size: 38px;
+      font-weight: 700;
+      color: #333;
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .recipe-description {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 35px;
+    }
+
+    .recipe-description a {
+      color: #5865f2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .recipe-description a:hover {
+      text-decoration: underline;
+    }
+
+    .view-recipe-button {
+      display: inline-block;
+      background-color: #a8d5ba;
+      color: #2d2d2d;
+      padding: 15px 35px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-recipe-button:hover {
+      background-color: #96c7a9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .recipe-card {
+        right: 40px;
+        max-width: 380px;
+        padding: 35px;
+      }
+
+      .recipe-title {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .recipe-container {
+        height: auto;
+        min-height: auto;
+      }
+
+      .background-image {
+        position: relative;
+        height: 500px;
+      }
+
+      .recipe-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        max-width: 100%;
+        margin: -80px 20px 20px;
+      }
+
+      .recipe-title {
+        font-size: 28px;
+      }
+
+      .recipe-description {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recipe-card {
+        padding: 30px 25px;
+        margin: -60px 15px 15px;
+      }
+
+      .recipe-title {
+        font-size: 24px;
+      }
+
+      .category {
+        font-size: 12px;
+      }
+
+      .view-recipe-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="recipe-container">
+    <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1600&h=900&fit=crop&q=80" 
+         alt="Homemade Peanut Butter Cups on wooden surface" 
+         class="background-image">
+    
+    <div class="recipe-card">
+      <div class="category">Dessert</div>
+      
+      <h1 class="recipe-title">Homemade Peanut Butter Cups</h1>
+      
+      <p class="recipe-description">
+        Homemade Peanut Butter Cups... SO YUM! I am a sucker for everything chocolate and peanut butter. And, when I can make my own treats with this flavor combination, it is even better! With this treat, there are no added preservatives like when buying peanut butter cups from the store. If you need some holiday treats, add them to your easy-finger food <a href="#">Christmas party options</a> or as a part of your <a href="#">Christmas dessert charcuterie board</a>!
+      </p>
+      
+      <a href="#recipe" class="view-recipe-button">View Recipe</a>
+    </div>
+  </div>
+</body>
+</html>
