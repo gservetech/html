@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalKing - Indie Design</title>
+    <link rel="stylesheet" href="indie_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav-flex">
+            <div class="logo">ROYALKING <span style="color:white; font-weight:400;">INDIE</span></div>
+            <nav>
+                <a href="#" style="color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 600;">Products</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 600;">Community</a>
+                <a href="#" style="color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 600;">About</a>
+            </nav>
+            <button class="btn-primary">Join Now</button>
+        </div>
+    </header>
+
+    <div class="container main-grid">
+        <!-- Left Sidebar (Navigation/Menu) -->
+        <aside class="sidebar-left">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Discover</div>
+                <details open>
+                    <summary>Top Products</summary>
+                    <div class="details-content">
+                        <p>Explore the highest rated items this week.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>New Arrivals</summary>
+                    <div class="details-content">
+                        <p>Fresh from the kitchen.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Discussions</summary>
+                    <div class="details-content">
+                        <p>Join the conversation.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Trending Tags</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">#pasta</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">#organic</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">#catering</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">#deals</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <span class="hero-tag">FEATURED STORY</span>
+                    <h1 class="hero-title">The Secret to Perfect Chicken Parmesan</h1>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Discover how we layer flavors to create the ultimate comfort food experience. A deep dive into our culinary process.
+                    </p>
+                    <div class="feed-meta">
+                        <div class="author-avatar"></div>
+                        <span>By Chef Mario</span>
+                        <span>•</span>
+                        <span>12 min read</span>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <img src="../../images/chickenParmesan.png" alt="Chicken Parmesan" class="hero-image">
+                </div>
+            </div>
+
+            <!-- Tabs System (Radio Hack) -->
+            <div class="tabs-container">
+                <input type="radio" name="tab-control" id="tab1" checked>
+                <input type="radio" name="tab-control" id="tab2">
+                <input type="radio" name="tab-control" id="tab3">
+
+                <div class="tabs-header">
+                    <label for="tab1" class="tab-label">Popular</label>
+                    <label for="tab2" class="tab-label">Newest</label>
+                    <label for="tab3" class="tab-label">Following</label>
+                </div>
+
+                <div class="tab-panels">
+                    <!-- Tab 1 Content -->
+                    <div class="tab-content content-1">
+                        <!-- Item 1 -->
+                        <article class="feed-item">
+                            <div class="feed-vote">
+                                <span>▲</span>
+                                <span>42</span>
+                            </div>
+                            <div class="feed-content">
+                                <h3>Gluten Free Penne Delight</h3>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                                    A healthy alternative that doesn't compromise on taste. Freshly made every morning.
+                                </p>
+                                <div class="feed-meta">
+                                    <span>in Pasta</span>
+                                    <span>•</span>
+                                    <span>3 hours ago</span>
+                                </div>
+                            </div>
+                            <img src="../../images/glutenfreepenne.jpeg" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-left: auto;" alt="Penne">
+                        </article>
+
+                        <!-- Item 2 -->
+                        <article class="feed-item">
+                            <div class="feed-vote">
+                                <span>▲</span>
+                                <span>28</span>
+                            </div>
+                            <div class="feed-content">
+                                <h3>Bruschetta & Friends</h3>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                                    The perfect starter for any meal. Crispy, fresh, and full of flavor.
+                                </p>
+                                <div class="feed-meta">
+                                    <span>in Starters</span>
+                                    <span>•</span>
+                                    <span>5 hours ago</span>
+                                </div>
+                            </div>
+                            <img src="../../images/bruschettaEating.jpeg" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-left: auto;" alt="Bruschetta">
+                        </article>
+                    </div>
+
+                    <!-- Tab 2 Content -->
+                    <div class="tab-content content-2">
+                        <article class="feed-item">
+                            <div class="feed-vote">
+                                <span>▲</span>
+                                <span>12</span>
+                            </div>
+                            <div class="feed-content">
+                                <h3>New Craft Beer Selection</h3>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                                    We've just added a new range of local craft beers to our menu.
+                                </p>
+                                <div class="feed-meta">
+                                    <span>in Drinks</span>
+                                    <span>•</span>
+                                    <span>Just now</span>
+                                </div>
+                            </div>
+                            <img src="../../images/beer.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-left: auto;" alt="Beer">
+                        </article>
+                    </div>
+
+                    <!-- Tab 3 Content -->
+                    <div class="tab-content content-3">
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <p>You aren't following anyone yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="card newsletter-box sidebar-section">
+                <h3 style="margin-bottom: 0.5rem;">Newsletter</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">The power of the indie founder is exploding. Subscribe to keep up.</p>
+                <div class="input-group">
+                    <input type="email" placeholder="Email address" class="input-field">
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Subscribe</button>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Gallery</div>
+                <div class="mini-gallery">
+                    <img src="../../images/mix.jpg" class="mini-img" alt="Gallery 1">
+                    <img src="../../images/glutenfreepenne.jpeg" class="mini-img" alt="Gallery 2">
+                    <img src="../../images/chickenParmesan.png" class="mini-img" alt="Gallery 3">
+                    <img src="../../images/bruschettaEating.jpeg" class="mini-img" alt="Gallery 4">
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Top Contributors</div>
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <div style="width: 32px; height: 32px; background: #3b82f6; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">Sarah Jenkins</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">1,204 points</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 32px; height: 32px; background: #10b981; border-radius: 50%;"></div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">Mike Ross</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">982 points</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
