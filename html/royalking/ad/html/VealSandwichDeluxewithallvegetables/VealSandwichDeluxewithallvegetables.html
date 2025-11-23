@@ -23,6 +23,7 @@
 
     <link rel="preload" href="VealSandwichDeluxewithallvegetables1.jpg" as="image" />
     <link rel="preload" href="cardModified1.jpg" as="image" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +32,7 @@
     />
 
     <style>
-      /* CSS VARIABLES */
+      /* --- 1. BASE VARIABLES & RESETS --- */
       :root {
         --brand-red: #cc0000;
         --text-color: #1a1a1a;
@@ -56,7 +57,7 @@
         -webkit-font-smoothing: antialiated;
       }
 
-      /* --- LOADER STYLES --- */
+      /* --- LOADER --- */
       .loader {
         position: fixed;
         top: 0;
@@ -67,7 +68,7 @@
         justify-content: center;
         align-items: center;
         background-color: #fff;
-        z-index: 99999; /* Highest priority */
+        z-index: 99999;
         transition: opacity 0.75s ease, visibility 0.75s ease;
       }
 
@@ -91,7 +92,19 @@
         to { transform: rotate(1turn); }
       }
 
-      /* --- FANCY DETAILS (Bottom Header) --- */
+      /* --- IMAGES & MEDIA --- */
+      img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- HEADER / FOOTER ELEMENTS --- */
       .fancy-name {
         font-family: "Playfair Display", serif;
         font-weight: 700;
@@ -101,6 +114,7 @@
         margin-bottom: 8px;
         text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
         letter-spacing: -0.5px;
+        text-align: center;
       }
 
       .fancy-details-row {
@@ -114,6 +128,7 @@
         letter-spacing: 1.5px;
         font-weight: 900;
         color: #000;
+        text-align: center;
       }
 
       .fancy-link {
@@ -133,11 +148,57 @@
         font-weight: 900;
       }
 
-      .main-container {
-        margin: 40px 20px;
+      .editorial-meta {
+        max-width: 960px;
+        margin: 2em auto 1em auto;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #555;
       }
 
-      /* --- TYPOGRAPHY UTILITIES --- */
+      .page-header {
+        max-width: 960px;
+        margin: 0 auto 3em;
+        padding: 0 20px 20px 20px;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        border-bottom: 1px solid #000;
+        line-height: 2;
+      }
+
+      .page-header a { text-decoration: none; color: #000; }
+      .page-header a:hover { color: var(--brand-red); }
+
+      /* --- LAYOUT GRID (Desktop) --- */
+      .main-container {
+        margin: 0 20px 40px 20px;
+      }
+
+      .wrapper {
+        display: grid;
+        margin: 0 auto;
+        max-width: 960px;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+      }
+
+      /* --- PANELS & TYPOGRAPHY --- */
+      h1, h2, h3, h4 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        margin: 0 0 0.5em 0;
+        color: #000;
+        line-height: 1.1;
+      }
+      p { margin: 0 0 1.5em 0; }
+
       .drop-cap {
         float: left;
         font-family: "Playfair Display", serif;
@@ -148,6 +209,7 @@
         padding-right: 12px;
         color: var(--brand-red);
       }
+
       .lead-phrase {
         font-family: "Lato", sans-serif;
         font-weight: 900;
@@ -164,10 +226,8 @@
         color: #000;
         font-size: 1.1em;
       }
-      .red-highlight {
-        color: var(--brand-red);
-        font-weight: 700;
-      }
+      .red-highlight { color: var(--brand-red); font-weight: 700; }
+      
       a {
         color: var(--text-color);
         text-decoration: underline;
@@ -180,33 +240,22 @@
         text-decoration-thickness: 2px;
       }
 
-      h1, h2, h3, h4 {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-        margin: 0 0 0.5em 0;
-        color: #000;
-        line-height: 1.1;
-      }
-      p {
-        margin: 0 0 1.5em 0;
-      }
-      img {
-        width: 100%;
-        display: block;
-      }
+      /* Panel Assignments (Desktop) */
+      .panel-a { grid-column: 1 / 3; grid-row: 1; }
+      .panel-b { grid-row: 2; grid-column: 1 / 2; }
+      .panel-c { grid-row: 2; grid-column: 2 / 3; }
+      .panel-i { grid-row: 3; grid-column: 1 / 3; }
+      .panel-e { grid-row: 4; grid-column: 1 / 3; }
+      .panel-d { grid-row: 5; grid-column: 1 / 2; }
+      .panel-f { grid-row: 5; grid-column: 2 / 3; }
+      .panel-g { grid-row: 6; grid-column: 1 / 2; }
+      .panel-h { grid-row: 6; grid-column: 2 / 3; }
+      .panel-reviews { grid-row: 7; grid-column: 1 / 3; }
+      .panel-video { grid-row: 8; grid-column: 1 / 3; }
+      .footer-contact { grid-row: 9; grid-column: 1 / 3; }
 
-      .wrapper {
-        display: grid;
-        margin: 0 auto;
-        max-width: 960px;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 50px;
-      }
-
-      /* --- PANELS --- */
+      /* --- SPECIFIC PANEL STYLES --- */
       .panel-a {
-        grid-column: 1 / 3;
-        grid-row: 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -249,6 +298,19 @@
       .left-caption { text-align: right; margin-right: -40px; }
       .right-caption { text-align: left; margin-left: -40px; }
 
+      .panel-e {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        margin: 40px 0;
+        padding: 30px 0;
+        border-top: 4px solid #000;
+        border-bottom: 1px solid #ccc;
+        line-height: 1.2;
+      }
+
       .promo-sticker {
         background: #fff;
         border: 4px solid var(--brand-red);
@@ -262,85 +324,24 @@
         z-index: 10;
         transition: transform 0.3s;
       }
-
-      .promo-sticker:hover {
-        transform: skewX(-10deg) rotate(-5deg) scale(1.05);
-      }
-
+      .promo-sticker:hover { transform: skewX(-10deg) rotate(-5deg) scale(1.05); }
       .promo-headline {
         font-family: "Lato", sans-serif;
-        font-weight: 900;
-        font-size: 16px;
+        font-weight: 900; font-size: 16px;
         color: var(--brand-red);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 8px;
-        display: block;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 8px;
+        text-transform: uppercase; letter-spacing: 2px;
+        margin-bottom: 8px; display: block;
+        border-bottom: 1px solid #eee; padding-bottom: 8px;
       }
-
       .promo-body {
         font-family: "Playfair Display", serif;
         font-size: 19px;
-        font-style: italic;
-        font-weight: 700;
-        color: #000;
-        line-height: 1.3;
+        font-style: italic; font-weight: 700;
+        color: #000; line-height: 1.3;
       }
 
-      /* Editorial Meta (Top) */
-      .editorial-meta {
-        max-width: 960px;
-        margin: 0 auto 1em auto;
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #555;
-      }
-
-      .page-header {
-        max-width: 960px;
-        margin: 0 auto 3em;
-        padding: 0 20px 20px 20px;
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        font-weight: 700;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        border-bottom: 1px solid #000;
-      }
-
-      .page-header a { text-decoration: none; color: #000; }
-      .page-header a:hover { color: var(--brand-red); }
-
-      .panel-b { grid-row: 2; grid-column: 1 / 2; }
-      .panel-c { grid-row: 2; grid-column: 2 / 3; }
-      .panel-i { grid-row: 3; grid-column: 1 / 3; }
-      .panel-e {
-        grid-row: 4; grid-column: 1 / 3;
-        font-family: "Playfair Display", serif;
-        font-size: 36px;
-        font-weight: 700;
-        font-style: italic;
-        text-align: center;
-        margin: 40px 0;
-        padding: 30px 0;
-        border-top: 4px solid #000;
-        border-bottom: 1px solid #ccc;
-        line-height: 1.2;
-      }
-      .panel-d { grid-row: 5; grid-column: 1 / 2; }
-      .panel-f { grid-row: 5; grid-column: 2 / 3; }
-      .panel-g { grid-row: 6; grid-column: 1 / 2; }
-      .panel-h { grid-row: 6; grid-column: 2 / 3; }
-
+      /* Reviews */
       .panel-reviews {
-        grid-row: 7;
-        grid-column: 1 / 3;
         column-count: 3;
         column-gap: 50px;
         column-rule: 1px solid var(--brand-red);
@@ -350,19 +351,14 @@
       }
       .review-item { break-inside: avoid-column; margin-bottom: 40px; }
       .review-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        margin-bottom: 20px;
-        filter: grayscale(100%);
+        width: 100%; height: 200px; object-fit: cover;
+        margin-bottom: 20px; filter: grayscale(100%);
         border-bottom: 2px solid var(--brand-red);
       }
       .review-text { font-size: 15px; line-height: 1.6; text-align: justify; }
 
-      /* --- VIDEO PANEL --- */
+      /* Video */
       .panel-video {
-        grid-row: 8;
-        grid-column: 1 / 3;
         margin-top: 60px;
         padding: 50px 0;
         border-top: 4px solid #000;
@@ -372,42 +368,25 @@
         align-items: center;
         text-align: center;
       }
-
       .video-wrapper {
-        width: 100%;
-        max-width: 800px;
+        width: 100%; max-width: 800px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         border: 2px solid #000;
         margin-bottom: 30px;
         background: #000;
       }
-
-      video {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
       .video-promo-text h3 {
-        font-size: 32px;
-        font-style: italic;
-        color: var(--brand-red);
-        margin-bottom: 10px;
+        font-size: 32px; font-style: italic;
+        color: var(--brand-red); margin-bottom: 10px;
       }
-
       .video-promo-text p {
-        font-family: "Lato", sans-serif;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
-        color: #333;
+        font-family: "Lato", sans-serif; font-size: 14px;
+        text-transform: uppercase; letter-spacing: 2px;
+        font-weight: 700; color: #333;
       }
 
-      /* --- BOTTOM FOOTER (Contact Info) --- */
+      /* Footer Contact */
       .footer-contact {
-        grid-row: 9;
-        grid-column: 1 / 3;
         background-color: #fff;
         border-top: 3px double var(--brand-red);
         padding: 40px 20px;
@@ -418,27 +397,17 @@
         margin-top: 40px;
       }
 
-      /* POPUP */
+      /* POPUP STYLES */
       #site-preview-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9998;
-        backdrop-filter: blur(2px);
+        display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.5); z-index: 9998; backdrop-filter: blur(2px);
       }
       #site-preview-popup {
-        display: none;
-        position: fixed;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90vw; height: 85vh;
-        background: white;
-        z-index: 9999;
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
-        flex-direction: column;
-        overflow: hidden;
+        display: none; position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%); width: 90vw; height: 85vh;
+        background: white; z-index: 9999;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3); border-radius: 8px;
+        flex-direction: column; overflow: hidden;
       }
       #popup-header {
         width: 100%; background: #f0f0f0; padding: 10px 15px;
@@ -466,9 +435,78 @@
         font-weight: 900; font-size: 12px; background: none;
         border: none; color: #666; text-transform: uppercase;
       }
-      .close-btn:hover { color: var(--brand-red); }
-      #site-preview-popup iframe {
-        width: 100%; flex-grow: 1; border: none; background: #fff;
+
+      #site-preview-popup iframe { width: 100%; flex-grow: 1; border: none; background: #fff; }
+
+
+      /* =========================================
+         MOBILE / RESPONSIVE STYLES
+         ========================================= */
+      @media (max-width: 768px) {
+        body { font-size: 17px; }
+
+        .wrapper {
+          display: flex; /* Switch from Grid to Flex Column */
+          flex-direction: column;
+          gap: 30px;
+          margin: 0;
+        }
+
+        /* Reset all grid positioning */
+        .panel-a, .panel-b, .panel-c, .panel-i, .panel-e, 
+        .panel-d, .panel-f, .panel-g, .panel-h, 
+        .panel-reviews, .panel-video, .footer-contact {
+          grid-column: auto !important;
+          grid-row: auto !important;
+          width: 100%;
+        }
+
+        /* Panel A: Stack Hero content */
+        .panel-a {
+          flex-direction: column;
+          gap: 30px;
+          padding: 30px 10px;
+        }
+        .stylish-caption {
+          transform: none; /* Remove Skew */
+          max-width: 100%;
+          text-align: center;
+          margin: 0;
+        }
+        .left-caption, .right-caption {
+          margin: 0;
+          text-align: center;
+        }
+        .panel-a img {
+          width: 80%;
+          max-width: 300px;
+          transform: rotate(-2deg);
+        }
+
+        /* Typography Adjustments */
+        .drop-cap { font-size: 60px; line-height: 0.8; }
+        .panel-e { font-size: 24px; padding: 20px 0; }
+        
+        /* Reviews */
+        .panel-reviews {
+          column-count: 1; /* Single column reviews */
+        }
+        
+        /* Video */
+        .video-promo-text h3 { font-size: 24px; }
+        
+        /* Footer */
+        .fancy-details-row {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .separator { display: none; } /* Hide dots in vertical stack */
+
+        /* Popup on Mobile */
+        #site-preview-popup {
+          width: 95vw;
+          height: 90vh;
+        }
       }
     </style>
   </head>
@@ -521,7 +559,7 @@
               (with all vegetables)
             </span>
           </figcaption>
-          <div style="flex: 0 0 auto">
+          <div style="flex: 0 0 auto; text-align: center;">
             <img
               class="hover-trigger"
               src="VealSandwichDeluxewithallvegetables1.jpg"
@@ -575,10 +613,11 @@
               alt="Veal Sandwich Combo"
               class="recipe-image hover-trigger"
               onmouseenter="showPopup()"
+              style="cursor: pointer"
             />
-            <div class="recipe-content">
-              <div class="category">Signature Combo</div>
-              <h1 class="recipe-title">Veal Sandwich Deluxe</h1>
+            <div class="recipe-content" style="margin-top: 20px;">
+              <div class="category" style="text-transform: uppercase; font-size: 11px; letter-spacing: 2px; font-weight: 900; color: #777;">Signature Combo</div>
+              <h1 class="recipe-title" style="font-size: 28px; margin: 10px 0;">Veal Sandwich Deluxe</h1>
               <article>
                 <strong
                   style="
@@ -613,6 +652,16 @@
               <a
                 href="https://www.royalkingon.com/menu?itemId=141"
                 class="view-recipe-btn"
+                style="
+                    display: inline-block;
+                    margin-top: 20px;
+                    background: var(--brand-red);
+                    color: white;
+                    padding: 10px 25px;
+                    text-decoration: none;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                "
               >
                 ORDER NOW
               </a>
@@ -671,10 +720,9 @@
           <img
             class="hover-trigger"
             src="garlicbread.png"
-            alt="pop can"
+            alt="garlic bread"
             onmouseenter="showPopup()"
           />
-         
         </div>
 
         <div class="panel-reviews">
@@ -696,7 +744,7 @@
               src="reviewer1.jpg"
               alt="Reviewer 1"
               class="review-img"
-              style="background: #ddd; min-height: 400px; cursor: pointer;"
+              style="background: #ddd; min-height: 500px; cursor: pointer;"
               onmouseenter="showPopup()"
             />
             <p class="review-text">
@@ -716,7 +764,7 @@
               src="reviewer2.jpg"
               alt="Reviewer 2"
               class="review-img"
-              style="background: #ddd; min-height: 400px; cursor: pointer;"
+              style="background: #ddd; min-height: 500px; cursor: pointer;"
               onmouseenter="showPopup()"
             />
             <p class="review-text">
@@ -735,7 +783,7 @@
               src="reviewer3.jpg"
               alt="Reviewer 3"
               class="review-img"
-              style="background: #ddd; min-height: 400px; cursor: pointer;"
+              style="background: #ddd; min-height: 500px; cursor: pointer;"
               onmouseenter="showPopup()"
             />
             <p class="review-text">
@@ -763,7 +811,7 @@
                 </video>
             </div>
             
-            <div style="max-width: 600px; font-style: italic;">
+            <div style="max-width: 600px; font-style: italic; padding: 0 10px;">
                 "From the first slice of fresh bread to the final drizzle of our signature sauce, watch how we build the sandwich that Toronto can't stop talking about."
             </div>
         </div>
@@ -798,7 +846,7 @@
           loader.classList.add("loader-hidden");
           loader.addEventListener("transitionend", () => {
               // Optionally remove from DOM
-              // document.body.removeChild(loader);
+              if(loader.parentNode) loader.parentNode.removeChild(loader);
           });
       });
 
