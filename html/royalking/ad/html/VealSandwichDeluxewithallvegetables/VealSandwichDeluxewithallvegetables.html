@@ -5,23 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Royal King Pasta - Editorial Layout</title>
 
-    <meta name="description" content="Experience the best Veal Sandwich in Toronto at Royal King Pasta & Sandwiches. Fresh ingredients, massive portions, and authentic Italian taste." />
-    <meta name="keywords" content="Veal Sandwich, Italian Sandwiches Toronto, Royal King Pasta, Bathurst Street Food, Italian Catering" />
+    <meta
+      name="description"
+      content="Experience the best Veal Sandwich in Toronto at Royal King Pasta & Sandwiches. Fresh ingredients, massive portions, and authentic Italian taste."
+    />
+    <meta
+      name="keywords"
+      content="Veal Sandwich, Italian Sandwiches Toronto, Royal King Pasta, Bathurst Street Food, Italian Catering"
+    />
     <meta name="author" content="Royal King Pasta & Sandwiches" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.royalkingon.com/" />
-    <meta property="og:title" content="The Veal Sandwich Deluxe - Royal King Pasta" />
-    <meta property="og:description" content="Watch how we build Toronto's favorite sandwich. Tender veal, fresh veggies, and the royal treatment." />
-    <meta property="og:image" content="https://www.royalkingon.com/VealSandwichDeluxewithallvegetables1.jpg" />
+    <meta
+      property="og:title"
+      content="The Veal Sandwich Deluxe - Royal King Pasta"
+    />
+    <meta
+      property="og:description"
+      content="Watch how we build Toronto's favorite sandwich. Tender veal, fresh veggies, and the royal treatment."
+    />
+    <meta
+      property="og:image"
+      content="https://www.royalkingon.com/VealSandwichDeluxewithallvegetables1.jpg"
+    />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.royalkingon.com/" />
-    <meta property="twitter:title" content="The Veal Sandwich Deluxe - Royal King Pasta" />
-    <meta property="twitter:description" content="Watch how we build Toronto's favorite sandwich. Tender veal, fresh veggies, and the royal treatment." />
-    <meta property="twitter:image" content="https://www.royalkingon.com/VealSandwichDeluxewithallvegetables1.jpg" />
+    <meta
+      property="twitter:title"
+      content="The Veal Sandwich Deluxe - Royal King Pasta"
+    />
+    <meta
+      property="twitter:description"
+      content="Watch how we build Toronto's favorite sandwich. Tender veal, fresh veggies, and the royal treatment."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.royalkingon.com/VealSandwichDeluxewithallvegetables1.jpg"
+    />
 
-    <link rel="preload" href="VealSandwichDeluxewithallvegetables1.jpg" as="image" />
+    <link
+      rel="preload"
+      href="VealSandwichDeluxewithallvegetables1.jpg"
+      as="image"
+    />
     <link rel="preload" href="cardModified1.jpg" as="image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -489,99 +517,6 @@
         margin-top: 40px;
       }
 
-      /* POPUP STYLES */
-      #site-preview-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9998;
-        backdrop-filter: blur(2px);
-      }
-      #site-preview-popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90vw;
-        height: 85vh;
-        background: white;
-        z-index: 9999;
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      #popup-header {
-        width: 100%;
-        background: #f0f0f0;
-        padding: 10px 15px;
-        border-bottom: 1px solid #ccc;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .browser-controls {
-        display: flex;
-        gap: 6px;
-      }
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: block;
-      }
-      .dot.red {
-        background: #ff5f56;
-        cursor: pointer;
-      }
-      .dot.yellow {
-        background: #ffbd2e;
-      }
-      .dot.green {
-        background: #27c93f;
-      }
-      .url-bar-container {
-        flex-grow: 1;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-      }
-      .url-bar-input {
-        width: 100%;
-        border: none;
-        outline: none;
-        font-family: "Lato", sans-serif;
-        font-size: 13px;
-        color: #333;
-        background: transparent;
-      }
-      .close-btn {
-        cursor: pointer;
-        font-family: "Lato", sans-serif;
-        font-weight: 900;
-        font-size: 12px;
-        background: none;
-        border: none;
-        color: #666;
-        text-transform: uppercase;
-      }
-
-      #site-preview-popup iframe {
-        width: 100%;
-        flex-grow: 1;
-        border: none;
-        background: #fff;
-      }
-
       /* =========================================
          TABLET STYLES (<= 1024px)
          ========================================= */
@@ -736,12 +671,6 @@
         .separator {
           display: none; /* Hide dots in vertical stack */
         }
-
-        /* Popup on Mobile */
-        #site-preview-popup {
-          width: 95vw;
-          height: 90vh;
-        }
       }
     </style>
   </head>
@@ -750,28 +679,6 @@
     <div class="loader"></div>
 
     <div class="main-container">
-      <div id="site-preview-overlay" onclick="closePopup()"></div>
-      <div id="site-preview-popup">
-        <div id="popup-header">
-          <div class="browser-controls">
-            <span class="dot red" onclick="closePopup()"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="url-bar-container">
-            <span style="color: #888; margin-right: 8px">🔒</span>
-            <input
-              type="text"
-              class="url-bar-input"
-              value="https://www.royalkingon.com/menu?itemId=141"
-              readonly
-            />
-          </div>
-          <button class="close-btn" onclick="closePopup()">✕</button>
-        </div>
-        <iframe id="preview-frame" src=""></iframe>
-      </div>
-
       <div class="editorial-meta">
         <small>Sep. 2024 <strong>Royal King</strong> 048</small>
       </div>
@@ -799,22 +706,25 @@
               class="hover-trigger"
               src="VealSandwichDeluxewithallvegetables1.jpg"
               alt="Veal Sandwich Deluxe"
-              onmouseenter="showPopup()"
+              onmouseenter="openMenuInNewTab()"
               style="cursor: pointer"
             />
           </div>
           <figcaption class="stylish-caption right-caption">
-            Served with cheese toppings, french fries, spicy olives, garlic bread &amp; a can of pop.
+            Served with cheese toppings, french fries, spicy olives, garlic
+            bread &amp; a can of pop.
           </figcaption>
         </div>
 
         <div class="panel panel-b">
           <p>
-            <span class="drop-cap">W</span><span class="lead-phrase">hen you want a meal</span>
-            that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is
-            the clear winner. Tender veal cutlets, lightly breaded and cooked to
-            a perfect <span class="editorial-accent">golden crisp</span>, are
-            stacked in a warm Italian bun.
+            <span class="drop-cap">W</span
+            ><span class="lead-phrase">hen you want a meal</span>
+            that actually feels like a meal, our Veal Sandwich Deluxe with all
+            vegetables is the clear winner. Tender veal cutlets, lightly
+            breaded and cooked to a perfect
+            <span class="editorial-accent">golden crisp</span>, are stacked in a
+            warm Italian bun.
           </p>
           <p>
             Compared to a basic burger or a plain cold-cut sandwich, the
@@ -846,7 +756,7 @@
               src="VealSandwichDeluxewithallvegetables1.jpg"
               alt="Veal Sandwich Combo"
               class="recipe-image hover-trigger"
-              onmouseenter="showPopup()"
+              onmouseenter="openMenuInNewTab()"
               style="cursor: pointer"
             />
             <div class="recipe-content" style="margin-top: 20px;">
@@ -909,6 +819,8 @@
                   font-weight: 700;
                   letter-spacing: 1px;
                 "
+                target="_blank"
+                rel="noopener"
               >
                 ORDER NOW
               </a>
@@ -925,7 +837,8 @@
             class="hover-trigger"
             src="cardModified1.jpg"
             alt="Veal Sandwich"
-            onmouseenter="showPopup()"
+            onmouseenter="openMenuInNewTab()"
+            style="cursor: pointer;"
           />
         </div>
 
@@ -953,12 +866,14 @@
             class="hover-trigger"
             src="popcan.png"
             alt="pop can"
-            onmouseenter="showPopup()"
+            onmouseenter="openMenuInNewTab()"
+            style="cursor: pointer;"
           />
           <figcaption class="promo-sticker">
             <span class="promo-headline">★ The Royal Treatment ★</span>
             <span class="promo-body">
-              Includes Golden Fries, Garlic Bread, Spicy Olives &amp; A Cold Pop.
+              Includes Golden Fries, Garlic Bread, Spicy Olives &amp; A Cold
+              Pop.
             </span>
           </figcaption>
         </div>
@@ -968,7 +883,8 @@
             class="hover-trigger"
             src="garlicbread.jpg"
             alt="garlic bread"
-            onmouseenter="showPopup()"
+            onmouseenter="openMenuInNewTab()"
+            style="cursor: pointer;"
           />
         </div>
         <div class="panel panel-h">
@@ -976,7 +892,8 @@
             class="hover-trigger"
             src="olives.jpg"
             alt="olives"
-            onmouseenter="showPopup()"
+            onmouseenter="openMenuInNewTab()"
+            style="cursor: pointer;"
           />
         </div>
 
@@ -1000,7 +917,7 @@
               alt="Reviewer 1"
               class="review-img"
               style="background: #ddd; min-height: 500px; cursor: pointer;"
-              onmouseenter="showPopup()"
+              onmouseenter="openMenuInNewTab()"
             />
             <p class="review-text">
               <strong>— Sophia Marino, Food Critic</strong><br /><br />
@@ -1020,7 +937,7 @@
               alt="Reviewer 2"
               class="review-img"
               style="background: #ddd; min-height: 500px; cursor: pointer;"
-              onmouseenter="showPopup()"
+              onmouseenter="openMenuInNewTab()"
             />
             <p class="review-text">
               <strong>— Daniel Ferraro, Culinary Reviewer</strong><br /><br />
@@ -1039,7 +956,7 @@
               alt="Reviewer 3"
               class="review-img"
               style="background: #ddd; min-height: 500px; cursor: pointer;"
-              onmouseenter="showPopup()"
+              onmouseenter="openMenuInNewTab()"
             />
             <p class="review-text">
               <strong>— Emily DeLuca, Taste Magazine</strong><br /><br />
@@ -1067,7 +984,9 @@
           </div>
 
           <div style="max-width: 600px; font-style: italic; padding: 0 10px;">
-            "From the first slice of fresh bread to the final drizzle of our signature sauce, watch how we build the sandwich that Toronto can't stop talking about."
+            "From the first slice of fresh bread to the final drizzle of our
+            signature sauce, watch how we build the sandwich that Toronto can't
+            stop talking about."
           </div>
         </div>
 
@@ -1076,12 +995,14 @@
           <div class="fancy-details-row">
             <span>3450 Bathurst Street, Toronto, ON</span>
             <span class="separator">•</span>
-            <a href="mailto:order@royalkingon.com" class="fancy-link">order@royalkingon.com</a>
+            <a href="mailto:order@royalkingon.com" class="fancy-link"
+              >order@royalkingon.com</a
+            >
             <span class="separator">•</span>
             <a
               href="https://www.royalkingon.com/menu?itemId=141"
               class="fancy-link"
-              onmouseenter="showPopup()"
+              onclick="openMenuInNewTab(); return false;"
               style="cursor: pointer"
             >
               www.royalkingon.com
@@ -1103,23 +1024,11 @@
         });
       });
 
-      // POPUP LOGIC
-      const popup = document.getElementById("site-preview-popup");
-      const overlay = document.getElementById("site-preview-overlay");
-      const iframe = document.getElementById("preview-frame");
+      // HOVER -> OPEN NEW TAB LOGIC
       const targetUrl = "https://www.royalkingon.com/menu?itemId=141";
 
-      function showPopup() {
-        if (popup.style.display !== "flex") {
-          iframe.src = targetUrl;
-          overlay.style.display = "block";
-          popup.style.display = "flex";
-        }
-      }
-      function closePopup() {
-        overlay.style.display = "none";
-        popup.style.display = "none";
-        iframe.src = "";
+      function openMenuInNewTab() {
+        window.open(targetUrl, "_blank", "noopener");
       }
     </script>
   </body>
