@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal King Pasta - Editorial Layout</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS VARIABLES */
+    :root {
+      --brand-red: #cc0000;  
+      --text-color: #1a1a1a; 
+      --bg-color: #fff;
+    }
+
+    *, *:before, *:after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 19px;     
+      line-height: 1.9; 
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- FANCY HEADER --- */
+    .promo-bar {
+      background-color: #fff;
+      border-bottom: 3px double var(--brand-red);
+      padding: 15px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .fancy-name {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 26px;
+      color: var(--brand-red);
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
+      letter-spacing: -0.5px;
+    }
+
+    .fancy-details-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      font-family: "Lato", sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 900; 
+      color: #000;      
+    }
+
+    .fancy-link {
+      color: #000; 
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .fancy-link:hover {
+      color: var(--brand-red);
+      border-bottom: 1px solid var(--brand-red);
+    }
+
+    .separator {
+      color: var(--brand-red);
+      font-weight: 900;
+    }
+
+    .main-container { margin: 40px 20px; }
+
+    /* --- TYPOGRAPHY UTILITIES --- */
+    .drop-cap {
+      float: left; font-family: "Playfair Display", serif; font-weight: 700;
+      font-size: 94px; line-height: 0.7; padding-top: 8px; padding-right: 12px; color: var(--brand-red); 
+    }
+    .lead-phrase {
+      font-family: "Lato", sans-serif; font-weight: 900; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 2px; color: #000; vertical-align: 2px; 
+    }
+    .editorial-accent {
+      font-family: "Playfair Display", serif; font-weight: 700; font-style: italic; color: #000; font-size: 1.1em;
+    }
+    .red-highlight { color: var(--brand-red); font-weight: 700; }
+    a { 
+      color: var(--text-color); text-decoration: underline; 
+      text-decoration-color: var(--brand-red); text-decoration-thickness: 1px; text-underline-offset: 4px;
+    }
+    a:hover { color: var(--brand-red); text-decoration-thickness: 2px; }
+
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", serif; font-weight: 700; margin: 0 0 0.5em 0; color: #000; line-height: 1.1;
+    }
+    p { margin: 0 0 1.5em 0; }
+    img { width: 100%; display: block; }
+
+    .wrapper {
+      display: grid; margin: 0 auto; max-width: 960px; grid-template-columns: 1fr 1fr; grid-gap: 50px; 
+    }
+
+    /* --- PANEL A STYLES --- */
+    .panel-a { 
+        grid-column: 1 / 3; grid-row: 1; 
+        display: flex; align-items: center; justify-content: center;
+        gap: 60px; 
+        border-top: 1px solid #000; border-bottom: 1px solid #000;
+        padding: 60px 0; background-color: #fff; position: relative;
+        overflow: hidden; 
+    }
+
+    .panel-a:before, .panel-a:after {
+        content: ""; position: absolute; height: 100%; width: 1px; background: #eee; top: 0; z-index: 0;
+    }
+    .panel-a:before { left: 25%; }
+    .panel-a:after { right: 25%; }
+
+    .panel-a img {
+        width: 300px; height: auto; z-index: 2;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: rotate(-2deg); border: 5px solid #fff;
+    }
+
+    .stylish-caption {
+        flex: 1; 
+        max-width: 260px;
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 900; 
+        font-style: italic;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 2;
+        color: var(--brand-red); 
+        transform: skewX(-10deg); 
+        background-color: #fff; 
+        padding: 20px 30px; 
+        box-shadow: 8px 8px 0px #000; 
+        border: 2px solid #000;
+    }
+    .left-caption { text-align: right; margin-right: -40px; }
+    .right-caption { text-align: left; margin-left: -40px; }
+
+    /* --- PANEL H STYLES (The Promotion) --- */
+    /* New class for the promo caption */
+    .promo-sticker {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: #fff;
+      background: #000; /* Black background */
+      padding: 20px;
+      
+      /* THE SLOPE EFFECT */
+      transform: skewX(-20deg) rotate(-5deg); 
+      
+      /* Red Drop Shadow for visual pop */
+      box-shadow: 10px 10px 0 var(--brand-red); 
+      
+      width: fit-content;
+      margin: 30px auto 0 auto; /* Center it */
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.5;
+      border: 2px solid #fff;
+      display: block;
+    }
+
+    /* REST OF LAYOUT */
+    .page-header {
+      max-width: 960px; margin: 0 auto 3em; padding: 0 20px 20px 20px;
+      text-align: center; font-family: "Lato", sans-serif; font-weight: 700;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px solid #000;
+    }
+    .page-header a { text-decoration: none; color: #000; }
+    .page-header a:hover { color: var(--brand-red); }
+
+    .panel-b { grid-row: 2; grid-column: 1 / 2; }
+    .panel-c { grid-row: 2; grid-column: 2 / 3; }
+    .panel-i { grid-row: 3; grid-column: 1 / 3; }
+    
+    .panel-e { 
+      grid-row: 4; grid-column: 1 / 3; 
+      font-family: "Playfair Display", serif; font-size: 36px; font-weight: 700;
+      font-style: italic; text-align: center; margin: 40px 0; padding: 30px 0;
+      border-top: 4px solid #000; border-bottom: 1px solid #ccc; line-height: 1.2;
+    }
+    .panel-d { grid-row: 5; grid-column: 1 / 2; }
+    .panel-f { grid-row: 5; grid-column: 2 / 3; }
+    .panel-g { grid-row: 6; grid-column: 1 / 2; }
+    .panel-h { grid-row: 6; grid-column: 2 / 3; }
+    
+    .panel-reviews {
+      grid-row: 7; grid-column: 1 / 3;
+      -webkit-column-count: 3; -moz-column-count: 3; column-count: 3;
+      -webkit-column-gap: 50px; -moz-column-gap: 50px; column-gap: 50px;
+      column-rule: 1px solid var(--brand-red);
+      margin-top: 40px; padding-top: 40px; border-top: 4px solid #000;
+    }
+    .review-item { break-inside: avoid-column; page-break-inside: avoid; margin-bottom: 40px; }
+    .review-img { width: 100%; height: 200px; object-fit: cover; margin-bottom: 20px; filter: grayscale(100%); border-bottom: 2px solid var(--brand-red); }
+    .review-text { font-size: 15px; line-height: 1.6; text-align: justify; }
+
+    footer {
+      grid-row: 8; grid-column: 1 / 3;
+      text-align: center; margin-top: 4em; padding-top: 2em;
+      border-top: 1px solid #000;
+      font-family: "Lato", sans-serif; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 2px;
+    }
+
+    .recipe-card { width: 100%; max-width: 1200px; margin: 0 auto; }
+    .recipe-image { width: 100%; height: auto; display: block; }
+    .recipe-content {
+      position: relative; background-color: white;
+      padding: 40px; max-width: 85%; margin: -60px auto 0 auto;
+      border: 1px solid #eee; text-align: center;
+    }
+    .category { font-family: "Lato", sans-serif; font-size: 11px; color: var(--brand-red); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700; }
+    .recipe-title { font-family: "Playfair Display", serif; font-size: 42px; font-weight: 700; color: #000; margin-bottom: 15px; }
+
+    article {
+      -webkit-column-width: 250px; -moz-column-width: 250px; column-width: 250px;
+      -webkit-column-gap: 40px; -moz-column-gap: 40px; column-gap: 40px;
+      -moz-column-rule: 1px dotted #ccc; -webkit-column-rule: 1px dotted #ccc; column-rule: 1px dotted #ccc;
+      text-align: left; font-size: 16px; margin-bottom: 30px; line-height: 1.8;
+    }
+    .view-recipe-btn {
+      display: inline-block; background-color: #000; color: #fff;
+      padding: 16px 30px; font-family: "Lato", sans-serif; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .view-recipe-btn:hover { background-color: var(--brand-red); }
+
+    /* --- POPUP --- */
+    #site-preview-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 9998; backdrop-filter: blur(2px); }
+    #site-preview-popup { 
+      display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+      width: 90vw; height: 85vh; background: white; z-index: 9999; 
+      box-shadow: 0 20px 80px rgba(0,0,0,0.3); border-radius: 8px; flex-direction: column; overflow: hidden;
+    }
+    
+    #popup-header { width: 100%; background: #f0f0f0; padding: 10px 15px; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 15px; }
+    .browser-controls { display: flex; gap: 6px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+    .url-bar-container { flex-grow: 1; background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 5px 10px; display: flex; align-items: center; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
+    .url-bar-input { width: 100%; border: none; outline: none; font-family: "Lato", sans-serif; font-size: 13px; color: #333; background: transparent; }
+    .close-btn { cursor: pointer; font-family: "Lato", sans-serif; font-weight: 900; font-size: 12px; background: none; border: none; color: #666; text-transform: uppercase; }
+    .close-btn:hover { color: var(--brand-red); }
+    #site-preview-popup iframe { width: 100%; flex-grow: 1; border: none; background: #fff; }
+    
+    @media (max-width: 680px) {
+      .promo-bar { padding: 10px; }
+      .fancy-name { font-size: 20px; }
+      .fancy-details-row { flex-direction: column; gap: 5px; align-items: center; }
+      .separator { display: none; }
+      .wrapper { grid-template-columns: 1fr; }
+      .panel-a, .panel-b, .panel-c, .panel-d, .panel-e, .panel-f, .panel-g, .panel-h, .panel-reviews { grid-column: 1 / 2; }
+      .panel-reviews { column-count: 1; }
+      .panel-a { flex-direction: column; text-align: center; padding: 40px 20px; gap: 30px; }
+      .panel-a:before, .panel-a:after { display: none; }
+      .stylish-caption {
+          transform: skewX(0deg); max-width: 100%; margin: 0; box-shadow: none; padding: 10px; font-size: 18px;
+          border: none; background: transparent;
+      }
+      .promo-sticker { transform: skewX(0deg); margin: 20px auto; }
+      .left-caption, .right-caption { text-align: center; margin: 0; }
+      .drop-cap { font-size: 70px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="promo-bar">
+  <div class="fancy-name">Royal King Pasta &amp; Sandwiches</div>
+  
+  <div class="fancy-details-row">
+    <span>3450 Bathurst Street, Toronto, ON</span>
+    <span class="separator">•</span>
+    <a href="mailto:order@royalkingon.com" class="fancy-link">order@royalkingon.com</a>
+    <span class="separator">•</span>
+    <a href="https://www.royalkingon.com" class="fancy-link">www.royalkingon.com</a>
+    <span class="separator">•</span>
+    <a href="tel:5551234567" class="fancy-link">(416) 781-8383</a>
+  </div>
+</div>
+
+<div class="main-container">
+
+    <div id="site-preview-overlay" onclick="closePopup()"></div>
+    
+    <div id="site-preview-popup">
+      <div id="popup-header">
+        <div class="browser-controls">
+          <span class="dot red" onclick="closePopup()" style="cursor:pointer"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="url-bar-container">
+          <span style="color:#888; margin-right:8px;">🔒</span>
+          <input type="text" class="url-bar-input" value="https://www.royalkingon.com/menu?itemId=141" readonly>
+        </div>
+        <button class="close-btn" onclick="closePopup()">✕</button>
+      </div>
+      <iframe id="preview-frame" src=""></iframe>
+    </div>
+
+    <header class="page-header">
+      <a href="#">Spaghetti</a> • <a href="#">Penne</a> • <a href="#">Lasagna</a> • <a href="#">Ravioli</a> • <a href="#">Carbonara</a> • <a href="#">Bolognese</a> • <a href="#">Italian Cuisine</a>
+    </header>
+
+    <div class="wrapper">
+      
+      <div class="panel panel-a">
+        <figcaption class="stylish-caption left-caption">
+          Veal Sandwich Deluxe<br>
+          <span style="font-size:0.7em; font-weight:400; color:#000;">(with all vegetables)</span>
+        </figcaption>
+
+        <div style="flex:0 0 auto;">
+          <img 
+              class="hover-trigger"
+              src="VealSandwichDeluxewithallvegetables1.jpg"
+              alt="Veal Sandwich Deluxe"
+              onmouseenter="showPopup()"
+              style="cursor: pointer;"
+              >
+        </div>
+
+        <figcaption class="stylish-caption right-caption">
+          Served with cheese toppings, french fries, spicy olives, garlic bread &amp; a can of pop.
+        </figcaption>
+      </div>
+
+      <div class="panel panel-b">
+        <p>
+          <span class="drop-cap">W</span><span class="lead-phrase">hen you want a meal</span> that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is the clear winner. Tender veal cutlets, lightly breaded and cooked to a perfect <span class="editorial-accent">golden crisp</span>, are stacked in a warm Italian bun.
+        </p>
+        <p>
+          Compared to a basic burger or a plain cold-cut sandwich, the <span class="red-highlight">Veal Sandwich Deluxe</span> from Royal King Pasta &amp; Sandwiches gives you more of everything that matters: more flavour, more texture, and more <span class="editorial-accent">real food satisfaction</span>.
+        </p>
+      </div>
+
+      <div class="panel panel-c">
+        <p>
+          The Veal Sandwich Deluxe is also a <span class="editorial-accent">smarter choice</span> when you think about value. Instead of buying a separate salad on the side, you’re getting your protein and your veggies in one generous, made-to-order sandwich.
+        </p>
+        <p>
+          At <span class="lead-phrase">Royal King Pasta</span>, we treat this sandwich like a signature dish. The veal is prepared with care, the bread is chosen to hold everything together without getting soggy.
+        </p>
+      </div>
+
+      <div class="panel panel-i">
+        <div class="recipe-card">
+          <img src="VealSandwichDeluxewithallvegetables1.jpg" alt="Veal Sandwich Combo" class="recipe-image hover-trigger" onmouseenter="showPopup()">
+          <div class="recipe-content">
+            <div class="category">Signature Combo</div>
+            <h1 class="recipe-title">Veal Sandwich Deluxe</h1>
+            
+            <article>
+              <strong style="display:block; margin-bottom:15px; font-size:1.1em; letter-spacing:1px; color:#cc0000; text-transform:uppercase;">The Full Experience</strong>
+              <p>
+                The <strong>Veal Sandwich Deluxe</strong> is the centerpiece, stacked high with tender cutlets and fresh vegetables. But a King's meal requires a royal court of sides.
+              </p>
+              <p>
+                We pair it with golden, crispy <span class="red-highlight">French Fries</span> and a slice of toasted, buttery <strong>Garlic Bread</strong> that melts in your mouth.
+              </p>
+              <p>
+                For those who crave a savory kick, our <span class="editorial-accent">Hot Olives</span> provide the perfect spicy contrast. Wash it all down with a refreshing, ice-cold <strong>Can of Pop</strong>.
+              </p>
+            </article>
+
+            <a href="https://www.royalkingon.com/menu?itemId=141" class="view-recipe-btn">ORDER NOW</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-e">
+        "Authentic Italian taste, right here in the neighborhood."
+      </div>
+
+      <div class="panel panel-d">
+        <img class="hover-trigger" src="VealSandwichDeluxewithallvegetables.png" alt="Veal Sandwich" onmouseenter="showPopup()">
+      </div>
+
+      <div class="panel panel-f">
+        <p>
+          The Veal Sandwich Deluxe also pairs perfectly with your <span class="editorial-accent">favourite drink</span>, making it an easy upgrade from any ordinary quick bite. Instead of grabbing something forgettable, you sit down to a hot, freshly prepared veal sandwich.
+        </p>
+      </div>
+
+      <div class="panel panel-g">
+        <p>
+          For anyone who loves Italian flavours but wants something handheld and satisfying, the <span class="red-highlight">Veal Sandwich Deluxe</span> is the best of both worlds.
+        </p>
+      </div>
+
+      <div class="panel panel-h">
+        <img class="hover-trigger" src="popcan.png" alt="pop can" onmouseenter="showPopup()">
+        
+        <figcaption class="promo-sticker">
+          <span style="display:block; font-size:1.2em; color:var(--brand-red); margin-bottom:5px;">PROMOTION!</span>
+          Can of Pop • Fries • Garlic Bread • Hot Olives<br>
+          <span style="font-family:'Playfair Display', serif; font-style:italic; font-size:1.3em; text-transform:none; color:#fff;">What a combination!</span>
+        </figcaption>
+      </div>
+
+      <div class="panel-reviews">
+        <h3 style="column-span: all; text-align:center; margin-bottom:30px; text-transform:uppercase; letter-spacing:2px; font-size:16px;">Critics' Reviews</h3>
+        
+        <div class="review-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/img-1.png" alt="Reviewer 1" class="review-img">
+          <p class="review-text">
+            "The veal is tender, the bread is fresh, and the toppings are generous. It's the kind of sandwich you dream about."
+          </p>
+        </div>
+
+        <div class="review-item">
+          <img src
