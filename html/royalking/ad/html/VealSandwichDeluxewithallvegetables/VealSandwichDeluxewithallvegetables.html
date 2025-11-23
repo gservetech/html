@@ -23,7 +23,7 @@
 
     <link rel="preload" href="VealSandwichDeluxewithallvegetables1.jpg" as="image" />
     <link rel="preload" href="cardModified1.jpg" as="image" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,8 +40,8 @@
       }
 
       *,
-      *:before,
-      *:after {
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
 
@@ -54,7 +54,7 @@
         background-color: var(--bg-color);
         color: var(--text-color);
         overflow-x: hidden;
-        -webkit-font-smoothing: antialiated;
+        -webkit-font-smoothing: antialiased;
       }
 
       /* --- LOADER --- */
@@ -88,8 +88,12 @@
       }
 
       @keyframes loading {
-        from { transform: rotate(0turn); }
-        to { transform: rotate(1turn); }
+        from {
+          transform: rotate(0turn);
+        }
+        to {
+          transform: rotate(1turn);
+        }
       }
 
       /* --- IMAGES & MEDIA --- */
@@ -98,6 +102,7 @@
         display: block;
         height: auto;
       }
+
       video {
         width: 100%;
         height: auto;
@@ -157,6 +162,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         color: #555;
+        padding: 0 15px;
       }
 
       .page-header {
@@ -173,12 +179,20 @@
         line-height: 2;
       }
 
-      .page-header a { text-decoration: none; color: #000; }
-      .page-header a:hover { color: var(--brand-red); }
+      .page-header a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .page-header a:hover {
+        color: var(--brand-red);
+      }
 
       /* --- LAYOUT GRID (Desktop) --- */
       .main-container {
-        margin: 0 20px 40px 20px;
+        margin: 0 auto 40px auto;
+        padding: 0 20px;
+        max-width: 1100px;
       }
 
       .wrapper {
@@ -190,14 +204,20 @@
       }
 
       /* --- PANELS & TYPOGRAPHY --- */
-      h1, h2, h3, h4 {
+      h1,
+      h2,
+      h3,
+      h4 {
         font-family: "Playfair Display", serif;
         font-weight: 700;
         margin: 0 0 0.5em 0;
         color: #000;
         line-height: 1.1;
       }
-      p { margin: 0 0 1.5em 0; }
+
+      p {
+        margin: 0 0 1.5em 0;
+      }
 
       .drop-cap {
         float: left;
@@ -219,6 +239,7 @@
         color: #000;
         vertical-align: 2px;
       }
+
       .editorial-accent {
         font-family: "Playfair Display", serif;
         font-weight: 700;
@@ -226,8 +247,12 @@
         color: #000;
         font-size: 1.1em;
       }
-      .red-highlight { color: var(--brand-red); font-weight: 700; }
-      
+
+      .red-highlight {
+        color: var(--brand-red);
+        font-weight: 700;
+      }
+
       a {
         color: var(--text-color);
         text-decoration: underline;
@@ -235,24 +260,61 @@
         text-decoration-thickness: 1px;
         text-underline-offset: 4px;
       }
+
       a:hover {
         color: var(--brand-red);
         text-decoration-thickness: 2px;
       }
 
       /* Panel Assignments (Desktop) */
-      .panel-a { grid-column: 1 / 3; grid-row: 1; }
-      .panel-b { grid-row: 2; grid-column: 1 / 2; }
-      .panel-c { grid-row: 2; grid-column: 2 / 3; }
-      .panel-i { grid-row: 3; grid-column: 1 / 3; }
-      .panel-e { grid-row: 4; grid-column: 1 / 3; }
-      .panel-d { grid-row: 5; grid-column: 1 / 2; }
-      .panel-f { grid-row: 5; grid-column: 2 / 3; }
-      .panel-g { grid-row: 6; grid-column: 1 / 2; }
-      .panel-h { grid-row: 6; grid-column: 2 / 3; }
-      .panel-reviews { grid-row: 7; grid-column: 1 / 3; }
-      .panel-video { grid-row: 8; grid-column: 1 / 3; }
-      .footer-contact { grid-row: 9; grid-column: 1 / 3; }
+      .panel-a {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .panel-b {
+        grid-row: 2;
+        grid-column: 1 / 2;
+      }
+      .panel-c {
+        grid-row: 2;
+        grid-column: 2 / 3;
+      }
+      .panel-i {
+        grid-row: 3;
+        grid-column: 1 / 3;
+      }
+      .panel-e {
+        grid-row: 4;
+        grid-column: 1 / 3;
+      }
+      .panel-d {
+        grid-row: 5;
+        grid-column: 1 / 2;
+      }
+      .panel-f {
+        grid-row: 5;
+        grid-column: 2 / 3;
+      }
+      .panel-g {
+        grid-row: 6;
+        grid-column: 1 / 2;
+      }
+      .panel-h {
+        grid-row: 6;
+        grid-column: 2 / 3;
+      }
+      .panel-reviews {
+        grid-row: 7;
+        grid-column: 1 / 3;
+      }
+      .panel-video {
+        grid-row: 8;
+        grid-column: 1 / 3;
+      }
+      .footer-contact {
+        grid-row: 9;
+        grid-column: 1 / 3;
+      }
 
       /* --- SPECIFIC PANEL STYLES --- */
       .panel-a {
@@ -295,8 +357,14 @@
         box-shadow: 8px 8px 0px #000;
         border: 2px solid #000;
       }
-      .left-caption { text-align: right; margin-right: -40px; }
-      .right-caption { text-align: left; margin-left: -40px; }
+      .left-caption {
+        text-align: right;
+        margin-right: -40px;
+      }
+      .right-caption {
+        text-align: left;
+        margin-left: -40px;
+      }
 
       .panel-e {
         font-family: "Playfair Display", serif;
@@ -324,20 +392,28 @@
         z-index: 10;
         transition: transform 0.3s;
       }
-      .promo-sticker:hover { transform: skewX(-10deg) rotate(-5deg) scale(1.05); }
+      .promo-sticker:hover {
+        transform: skewX(-10deg) rotate(-5deg) scale(1.05);
+      }
       .promo-headline {
         font-family: "Lato", sans-serif;
-        font-weight: 900; font-size: 16px;
+        font-weight: 900;
+        font-size: 16px;
         color: var(--brand-red);
-        text-transform: uppercase; letter-spacing: 2px;
-        margin-bottom: 8px; display: block;
-        border-bottom: 1px solid #eee; padding-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        display: block;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 8px;
       }
       .promo-body {
         font-family: "Playfair Display", serif;
         font-size: 19px;
-        font-style: italic; font-weight: 700;
-        color: #000; line-height: 1.3;
+        font-style: italic;
+        font-weight: 700;
+        color: #000;
+        line-height: 1.3;
       }
 
       /* Reviews */
@@ -349,13 +425,23 @@
         padding-top: 40px;
         border-top: 4px solid #000;
       }
-      .review-item { break-inside: avoid-column; margin-bottom: 40px; }
+      .review-item {
+        break-inside: avoid-column;
+        margin-bottom: 40px;
+      }
       .review-img {
-        width: 100%; height: 200px; object-fit: cover;
-        margin-bottom: 20px; filter: grayscale(100%);
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        filter: grayscale(100%);
         border-bottom: 2px solid var(--brand-red);
       }
-      .review-text { font-size: 15px; line-height: 1.6; text-align: justify; }
+      .review-text {
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: justify;
+      }
 
       /* Video */
       .panel-video {
@@ -369,20 +455,26 @@
         text-align: center;
       }
       .video-wrapper {
-        width: 100%; max-width: 800px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 800px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         border: 2px solid #000;
         margin-bottom: 30px;
         background: #000;
       }
       .video-promo-text h3 {
-        font-size: 32px; font-style: italic;
-        color: var(--brand-red); margin-bottom: 10px;
+        font-size: 32px;
+        font-style: italic;
+        color: var(--brand-red);
+        margin-bottom: 10px;
       }
       .video-promo-text p {
-        font-family: "Lato", sans-serif; font-size: 14px;
-        text-transform: uppercase; letter-spacing: 2px;
-        font-weight: 700; color: #333;
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: #333;
       }
 
       /* Footer Contact */
@@ -399,63 +491,177 @@
 
       /* POPUP STYLES */
       #site-preview-overlay {
-        display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        background: rgba(0, 0, 0, 0.5); z-index: 9998; backdrop-filter: blur(2px);
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        backdrop-filter: blur(2px);
       }
       #site-preview-popup {
-        display: none; position: fixed; top: 50%; left: 50%;
-        transform: translate(-50%, -50%); width: 90vw; height: 85vh;
-        background: white; z-index: 9999;
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3); border-radius: 8px;
-        flex-direction: column; overflow: hidden;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        height: 85vh;
+        background: white;
+        z-index: 9999;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        flex-direction: column;
+        overflow: hidden;
       }
       #popup-header {
-        width: 100%; background: #f0f0f0; padding: 10px 15px;
-        border-bottom: 1px solid #ccc; display: flex;
-        align-items: center; gap: 15px;
+        width: 100%;
+        background: #f0f0f0;
+        padding: 10px 15px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
-      .browser-controls { display: flex; gap: 6px; }
-      .dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
-      .dot.red { background: #ff5f56; cursor: pointer; }
-      .dot.yellow { background: #ffbd2e; }
-      .dot.green { background: #27c93f; }
+      .browser-controls {
+        display: flex;
+        gap: 6px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: block;
+      }
+      .dot.red {
+        background: #ff5f56;
+        cursor: pointer;
+      }
+      .dot.yellow {
+        background: #ffbd2e;
+      }
+      .dot.green {
+        background: #27c93f;
+      }
       .url-bar-container {
-        flex-grow: 1; background: #fff; border: 1px solid #ddd;
-        border-radius: 4px; padding: 5px 10px;
-        display: flex; align-items: center;
+        flex-grow: 1;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
       }
       .url-bar-input {
-        width: 100%; border: none; outline: none;
-        font-family: "Lato", sans-serif; font-size: 13px;
-        color: #333; background: transparent;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-family: "Lato", sans-serif;
+        font-size: 13px;
+        color: #333;
+        background: transparent;
       }
       .close-btn {
-        cursor: pointer; font-family: "Lato", sans-serif;
-        font-weight: 900; font-size: 12px; background: none;
-        border: none; color: #666; text-transform: uppercase;
+        cursor: pointer;
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        font-size: 12px;
+        background: none;
+        border: none;
+        color: #666;
+        text-transform: uppercase;
       }
 
-      #site-preview-popup iframe { width: 100%; flex-grow: 1; border: none; background: #fff; }
-
+      #site-preview-popup iframe {
+        width: 100%;
+        flex-grow: 1;
+        border: none;
+        background: #fff;
+      }
 
       /* =========================================
-         MOBILE / RESPONSIVE STYLES
+         TABLET STYLES (<= 1024px)
+         ========================================= */
+      @media (max-width: 1024px) {
+        body {
+          font-size: 18px;
+        }
+
+        .main-container {
+          padding: 0 15px;
+        }
+
+        .wrapper {
+          grid-gap: 35px;
+        }
+
+        .panel-a {
+          padding: 40px 20px;
+          gap: 40px;
+        }
+
+        .panel-a img {
+          width: 260px;
+        }
+
+        .stylish-caption {
+          max-width: 220px;
+          font-size: 18px;
+        }
+
+        .panel-e {
+          font-size: 30px;
+        }
+
+        .panel-reviews {
+          column-count: 2;
+          column-gap: 30px;
+        }
+      }
+
+      /* =========================================
+         MOBILE / SMALL DEVICES (<= 768px)
          ========================================= */
       @media (max-width: 768px) {
-        body { font-size: 17px; }
+        body {
+          font-size: 17px;
+          line-height: 1.8;
+        }
+
+        .main-container {
+          padding: 0 10px 30px 10px;
+        }
+
+        .page-header {
+          font-size: 10px;
+          padding: 0 10px 15px 10px;
+          line-height: 1.7;
+        }
 
         .wrapper {
           display: flex; /* Switch from Grid to Flex Column */
           flex-direction: column;
           gap: 30px;
           margin: 0;
+          max-width: 100%;
         }
 
         /* Reset all grid positioning */
-        .panel-a, .panel-b, .panel-c, .panel-i, .panel-e, 
-        .panel-d, .panel-f, .panel-g, .panel-h, 
-        .panel-reviews, .panel-video, .footer-contact {
+        .panel-a,
+        .panel-b,
+        .panel-c,
+        .panel-i,
+        .panel-e,
+        .panel-d,
+        .panel-f,
+        .panel-g,
+        .panel-h,
+        .panel-reviews,
+        .panel-video,
+        .footer-contact {
           grid-column: auto !important;
           grid-row: auto !important;
           width: 100%;
@@ -472,35 +678,64 @@
           max-width: 100%;
           text-align: center;
           margin: 0;
+          box-shadow: 5px 5px 0px #000;
         }
-        .left-caption, .right-caption {
+        .left-caption,
+        .right-caption {
           margin: 0;
           text-align: center;
         }
         .panel-a img {
           width: 80%;
-          max-width: 300px;
+          max-width: 280px;
           transform: rotate(-2deg);
+          margin: 0 auto;
         }
 
         /* Typography Adjustments */
-        .drop-cap { font-size: 60px; line-height: 0.8; }
-        .panel-e { font-size: 24px; padding: 20px 0; }
-        
+        .drop-cap {
+          font-size: 60px;
+          line-height: 0.8;
+        }
+        .panel-e {
+          font-size: 24px;
+          padding: 20px 0;
+          margin: 25px 0;
+        }
+
+        /* Recipe card spacing */
+        .panel-i .recipe-card {
+          display: block;
+        }
+
         /* Reviews */
         .panel-reviews {
           column-count: 1; /* Single column reviews */
+          column-gap: 0;
+          border-top-width: 3px;
         }
-        
+
+        .review-img {
+          min-height: 260px;
+        }
+
         /* Video */
-        .video-promo-text h3 { font-size: 24px; }
-        
+        .video-promo-text h3 {
+          font-size: 24px;
+        }
+
+        .video-wrapper {
+          max-width: 100%;
+        }
+
         /* Footer */
         .fancy-details-row {
-            flex-direction: column;
-            gap: 10px;
+          flex-direction: column;
+          gap: 10px;
         }
-        .separator { display: none; } /* Hide dots in vertical stack */
+        .separator {
+          display: none; /* Hide dots in vertical stack */
+        }
 
         /* Popup on Mobile */
         #site-preview-popup {
@@ -542,12 +777,12 @@
       </div>
 
       <header class="page-header">
-        <a href="#">Spaghetti</a> • 
-        <a href="#">Penne</a> • 
-        <a href="#">Lasagna</a> • 
-        <a href="#">Ravioli</a> • 
-        <a href="#">Carbonara</a> • 
-        <a href="#">Bolognese</a> • 
+        <a href="#">Spaghetti</a> •
+        <a href="#">Penne</a> •
+        <a href="#">Lasagna</a> •
+        <a href="#">Ravioli</a> •
+        <a href="#">Carbonara</a> •
+        <a href="#">Bolognese</a> •
         <a href="#">Italian Cuisine</a>
       </header>
 
@@ -575,9 +810,8 @@
 
         <div class="panel panel-b">
           <p>
-            <span class="drop-cap">W</span
-            ><span class="lead-phrase">hen you want a meal</span> that actually
-            feels like a meal, our Veal Sandwich Deluxe with all vegetables is
+            <span class="drop-cap">W</span><span class="lead-phrase">hen you want a meal</span>
+            that actually feels like a meal, our Veal Sandwich Deluxe with all vegetables is
             the clear winner. Tender veal cutlets, lightly breaded and cooked to
             a perfect <span class="editorial-accent">golden crisp</span>, are
             stacked in a warm Italian bun.
@@ -616,8 +850,21 @@
               style="cursor: pointer"
             />
             <div class="recipe-content" style="margin-top: 20px;">
-              <div class="category" style="text-transform: uppercase; font-size: 11px; letter-spacing: 2px; font-weight: 900; color: #777;">Signature Combo</div>
-              <h1 class="recipe-title" style="font-size: 28px; margin: 10px 0;">Veal Sandwich Deluxe</h1>
+              <div
+                class="category"
+                style="
+                  text-transform: uppercase;
+                  font-size: 11px;
+                  letter-spacing: 2px;
+                  font-weight: 900;
+                  color: #777;
+                "
+              >
+                Signature Combo
+              </div>
+              <h1 class="recipe-title" style="font-size: 28px; margin: 10px 0;">
+                Veal Sandwich Deluxe
+              </h1>
               <article>
                 <strong
                   style="
@@ -653,14 +900,14 @@
                 href="https://www.royalkingon.com/menu?itemId=141"
                 class="view-recipe-btn"
                 style="
-                    display: inline-block;
-                    margin-top: 20px;
-                    background: var(--brand-red);
-                    color: white;
-                    padding: 10px 25px;
-                    text-decoration: none;
-                    font-weight: 700;
-                    letter-spacing: 1px;
+                  display: inline-block;
+                  margin-top: 20px;
+                  background: var(--brand-red);
+                  color: white;
+                  padding: 10px 25px;
+                  text-decoration: none;
+                  font-weight: 700;
+                  letter-spacing: 1px;
                 "
               >
                 ORDER NOW
@@ -716,11 +963,19 @@
           </figcaption>
         </div>
 
-         <div class="panel panel-h">
+        <div class="panel panel-h">
           <img
             class="hover-trigger"
-            src="garlicbread.png"
+            src="garlicbread.jpg"
             alt="garlic bread"
+            onmouseenter="showPopup()"
+          />
+        </div>
+        <div class="panel panel-h">
+          <img
+            class="hover-trigger"
+            src="olives.jpg"
+            alt="olives"
             onmouseenter="showPopup()"
           />
         </div>
@@ -799,55 +1054,53 @@
         </div>
 
         <div class="panel-video">
-            <div class="video-promo-text">
-                <h3>Behind the Scenes</h3>
-                <p>Witness the Art of the Royal Stack</p>
-            </div>
-            
-            <div class="video-wrapper">
-                <video controls preload="auto">
-                    <source src="Timeline.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div style="max-width: 600px; font-style: italic; padding: 0 10px;">
-                "From the first slice of fresh bread to the final drizzle of our signature sauce, watch how we build the sandwich that Toronto can't stop talking about."
-            </div>
+          <div class="video-promo-text">
+            <h3>Behind the Scenes</h3>
+            <p>Witness the Art of the Royal Stack</p>
+          </div>
+
+          <div class="video-wrapper">
+            <video controls preload="auto">
+              <source src="Timeline.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div style="max-width: 600px; font-style: italic; padding: 0 10px;">
+            "From the first slice of fresh bread to the final drizzle of our signature sauce, watch how we build the sandwich that Toronto can't stop talking about."
+          </div>
         </div>
 
         <div class="footer-contact">
-            <div class="fancy-name">Royal King Pasta &amp; Sandwiches</div>
-            <div class="fancy-details-row">
-              <span>3450 Bathurst Street, Toronto, ON</span>
-              <span class="separator">•</span>
-              <a href="mailto:order@royalkingon.com" class="fancy-link">order@royalkingon.com</a>
-              <span class="separator">•</span>
-              <a 
-                href="https://www.royalkingon.com/menu?itemId=141"
-                class="fancy-link"
-                onmouseenter="showPopup()"
-                style="cursor:pointer"
-              >
-                www.royalkingon.com
-              </a>
-              <span class="separator">•</span>
-              <a href="tel:5551234567" class="fancy-link">(416) 781-8383</a>
-            </div>
+          <div class="fancy-name">Royal King Pasta &amp; Sandwiches</div>
+          <div class="fancy-details-row">
+            <span>3450 Bathurst Street, Toronto, ON</span>
+            <span class="separator">•</span>
+            <a href="mailto:order@royalkingon.com" class="fancy-link">order@royalkingon.com</a>
+            <span class="separator">•</span>
+            <a
+              href="https://www.royalkingon.com/menu?itemId=141"
+              class="fancy-link"
+              onmouseenter="showPopup()"
+              style="cursor: pointer"
+            >
+              www.royalkingon.com
+            </a>
+            <span class="separator">•</span>
+            <a href="tel:5551234567" class="fancy-link">(416) 781-8383</a>
+          </div>
         </div>
-
       </div>
     </div>
 
     <script>
       // PRELOADER LOGIC
-      window.addEventListener("load", function() {
-          const loader = document.querySelector(".loader");
-          loader.classList.add("loader-hidden");
-          loader.addEventListener("transitionend", () => {
-              // Optionally remove from DOM
-              if(loader.parentNode) loader.parentNode.removeChild(loader);
-          });
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        loader.classList.add("loader-hidden");
+        loader.addEventListener("transitionend", () => {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        });
       });
 
       // POPUP LOGIC
