@@ -2,35 +2,33 @@
   "promotions": [
     {
       "id": 1,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
-      "desktop_image": "images/ads/banner1.png",
-      "mobile_image": "images/ads/banner1.png"
-    },
-    {
-      "id": 2,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
+      "host_url": "https://www.royalkingon.com/menu?itemId=143",
       "text": "Meat Lasagna [Served with 2 pieces of garlic bread, mini meatballs, and a can of pop]"
     },
     {
+      "id": 2,
+      "host_url": "https://amzn.to/4oWIOL2",
+      "text": "Sulwhasoo Concentrated Ginseng Rejuvenating Cream- Korean Ginseng & Peptide Anti-Aging Moisturizer with Vitamin C Derivative & Squalane for Wrinkles & Deep Hydration"
+    },
+    {
       "id": 3,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
-      "text": "Order catering worth $100 or more and receive an instant 20% discount. Make your gatherings tastier and more affordable."
+      "host_url": "https://amzn.to/4p2Th7L",
+      "text": "Estée Lauder Re-Nutriv Ultimate Lift Age-Correcting Face Moisturizer Cream for Anti-Aging, 50 ml "
     },
     {
       "id": 4,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
-      "text": "Weekend family combo special! Get a complete meal for four and save 25%—a great way to enjoy togetherness."
+      "host_url": "https://amzn.to/4adGkTY",
+      "text": "Moisturizing Renewal Cream Nightly Retexturizer by Revive for Women - 1.7 oz Cream "
     },
     {
       "id": 5,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
-      "text": "Introducing our gourmet chicken parmesan sandwich at an introductory price of just $9.99. Try it before the offer ends!"
+      "host_url": "https://amzn.to/43R3kUZ",
+      "text": "Estée Lauder Re-Nutriv Ultimate Lift Regenerating Youth Eye Cream Rich | Under Eye Cream for Dark Circles & Anti-Aging, 15 ml "
     },
     {
       "id": 6,
-      "host_url": "https://www.royalkingon.com/menu?itemId=25",
-      "desktop_image": "images/ads/banner1.png",
-      "mobile_image": "images/ads/banner1.png"
+      "host_url": "https://amzn.to/44t2wWz",
+      "text": "Estée Lauder Advanced Night Repair Serum Synchronized Multi-Recovery Complex with Hyaluronic Acid & Peptides "
     }
   ]
 }
