@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Book Gallery - Editorial Style</title>
+<style>
+  body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  /* MAIN SECTION */
+  .book-section {
+    background-color: transparent;
+    padding: 30px 20px 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+  }
+
+  /* CLICKABLE WRAPPER (ENTIRE SECTION IS A LINK) */
+  .book-link {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .book-wrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+
+  /* PAGE STYLES */
+  .page {
+    flex: 1;
+    background-color: #fdfdfd;
+    padding: 35px 40px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+
+  .page-left {
+    transform-origin: right center;
+    transform: skewY(3deg);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background: linear-gradient(to right, #fffbf7 85%, #e8e4e0 100%);
+    z-index: 2;
+  }
+
+  .page-right {
+    transform-origin: left center;
+    transform: skewY(-3deg);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: linear-gradient(to left, #fffbf7 85%, #e8e4e0 100%);
+    padding: 0;
+    z-index: 2;
+    position: relative;
+  }
+
+  .text-content {
+    transform: skewY(-3deg);
+  }
+
+  /* AMAZON LOGO */
+  .amazon-logo {
+    width: 140px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .amazon-logo-inline {
+    height: 26px;
+    display: inline-block;
+  }
+
+  .amazon-logo-overlay {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    width: 130px;
+    opacity: 0.9;
+  }
+
+  /* TYPOGRAPHY */
+  .headline {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #111;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  .body-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 25px;
+  }
+
+  .body-text::first-letter {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.85;
+    padding-right: 12px;
+    padding-top: 4px;
+    color: #cc0000;
+    font-family: Georgia, serif;
+    font-weight: bold;
+  }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cta-link {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    color: #cc0000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(204, 0, 0, 0.2);
+    padding-bottom: 2px;
+  }
+
+  .book-link:hover .cta-link {
+    border-bottom-color: rgba(204, 0, 0, 1);
+  }
+
+  /* IMAGE */
+  .full-page-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .book-section { padding: 20px; }
+    .book-wrapper {
+      flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .page { box-shadow: none; padding: 25px; }
+    .page-left, .page-right {
+      transform: none;
+      margin-bottom: 0;
+      background: #fffbf7;
+      border-radius: 0;
+    }
+    .text-content { transform: none; }
+    .page-right { min-height: 300px; }
+    .amazon-logo-overlay {
+      width: 110px;
+      bottom: 8px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- SECTION 1 -->
+<div class="book-section">
+  <a href="https://www.gservetech.com/product/22" target="_blank" rel="noopener noreferrer" class="book-link">
+    <div class="book-wrapper">
+      <div class="page page-left">
+        <div class="text-content">
+          <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo">
+          <div class="headline">The Toner Trio</div>
+          <div class="body-text">
+            Transform your routine with medicube’s Hero Pad Trio — Zero Pore, Deep Vita C, and Super Cica. Together, these 210 toner pads exfoliate, hydrate, and smooth for skin that looks like you just left a K-beauty facial. AHA+BHA help refine the look of pores while vitamin C brightens the appearance of dull spots, so every swipe feels like a professional treatment built into your daily routine.
+          </div>
+          <div class="cta-row">
+            <span class="cta-link">Shop medicube Toner Pads Gift Set →</span>
+            <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-inline">
+          </div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <img src="https://gservetech.github.io/html/html/amazon/image/medicube2.jpg" class="full-page-image" alt="medicube Toner Pads Gift Set Trio">
+        <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-overlay">
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- SECTION 2 -->
+<div class="book-section">
+  <a href="https://www.gservetech.com/product/22" target="_blank" rel="noopener noreferrer" class="book-link">
+    <div class="book-wrapper">
+      <div class="page page-left">
+        <div class="text-content">
+          <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo">
+          <div class="headline">Effortless Radiance</div>
+          <div class="body-text">
+            Deep Vita C pads drench your skin in brightening care, helping to visibly soften the look of dark spots and smooth uneven tone without a complicated routine. Use them in the morning to boost glow under makeup or at night to gently resurface — you wake up to skin that looks clearer, fresher, and more luminous than the day before.
+          </div>
+          <div class="cta-row">
+            <span class="cta-link">Get Instant Glow Pads →</span>
+            <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-inline">
+          </div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <img src="https://gservetech.github.io/html/html/amazon/image/w1email.jpg" class="full-page-image" alt="Radiant Skin with medicube Toner Pads">
+        <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-overlay">
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- SECTION 3 -->
+<div class="book-section">
+  <a href="https://www.gservetech.com/product/22" target="_blank" rel="noopener noreferrer" class="book-link">
+    <div class="book-wrapper">
+      <div class="page page-left">
+        <div class="text-content">
+          <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo">
+          <div class="headline">Confidence Unlocked</div>
+          <div class="body-text">
+            Big days deserve calm, clear skin. Super Cica pads are infused with centella care to help comfort visible irritation and reduce the look of redness, while Zero Pore pads refine texture and minimize the appearance of pores. The result is breathable, soft skin that looks great on its own — no heavy foundation needed.
+          </div>
+          <div class="cta-row">
+            <span class="cta-link">See Why It’s a Best-Seller →</span>
+            <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-inline">
+          </div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <img src="https://gservetech.github.io/html/html/amazon/image/w2email.png" class="full-page-image" alt="Confident Complexion with medicube Pads">
+        <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-overlay">
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- SECTION 4 -->
+<div class="book-section">
+  <a href="https://www.gservetech.com/product/22" target="_blank" rel="noopener noreferrer" class="book-link">
+    <div class="book-wrapper">
+      <div class="page page-left">
+        <div class="text-content">
+          <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo">
+          <div class="headline">Daily Essentials</div>
+          <div class="body-text">
+            From morning coffee to late-night scrolling, this 210-pad medicube set keeps up with your life. Use the textured side to gently exfoliate, then flip to flood your skin with hydration so makeup glides on smoother and bare skin looks softer and more refined. It is a thoughtful gift for moms, skincare lovers, and K-beauty beginners — or the smartest way to stock your own shelf all year long.
+          </div>
+          <div class="cta-row">
+            <span class="cta-link">Stock Up or Gift It Today →</span>
+            <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-inline">
+          </div>
+        </div>
+      </div>
+      <div class="page page-right">
+        <img src="https://gservetech.github.io/html/html/amazon/image/w3email.png" class="full-page-image" alt="Daily Routine with medicube Toner Pads">
+        <img src="https://gservetech.github.io/html/html/amazon/image/Amazon-Logo.png" alt="Amazon" class="amazon-logo-overlay">
+      </div>
+    </div>
+  </a>
+</div>
+
+</body>
+</html>
