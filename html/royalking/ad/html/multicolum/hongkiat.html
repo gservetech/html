@@ -1,253 +1,269 @@
 <!doctype html>
 <html lang="en">
-
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>Veal Sandwich Deluxe – Royal King Pasta & Sandwiches</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CSS3 Multi-column Layout - Hongkiat.com</title>
-
-    <!--  jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../_nav/js/jquery.js"><\/script>')</script>
-
-    <!-- demo scripts -->
-    <link rel="stylesheet" href="normalize.css">
-    <style type="text/css" media="screen">
+    <style>
       body {
-        background-color: #f3f3f3;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #111;
       }
 
-      .demo-wrapper article,
-      section {
-        width: 600px;
-        margin: 50px auto;
-        color: #555;
-        padding: 20px;
+      .page-wrap {
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 0 16px 40px 16px;
       }
 
-      .demo-wrapper h1 {
-        margin-top: 0;
+      /* Make entire promo clickable */
+      .full-link {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: block;
       }
 
-      .demo-wrapper article:target {
-        background-color: #eaeaea;
+      .article-card {
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        padding: 24px 22px 28px 22px;
       }
 
-      /*the columns*/
-      .demo-wrapper article:nth-of-type(1) {
+      .section-label {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b00000;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .headline {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 0 0 8px 0;
+      }
+
+      .highlight-rk {
+        background: #ffeded;
+        padding: 3px 6px;
+        border-left: 4px solid #b00000;
+        font-weight: 700;
+        color: #b00000;
+        display: inline-block;
+      }
+
+      .dek {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #444;
+        margin: 0 0 14px 0;
+      }
+
+      .byline-row {
+        font-size: 12px;
+        color: #777;
+        margin-bottom: 16px;
+      }
+
+      .hero-media img {
+        width: 100%;
+        border-radius: 4px;
+        display: block;
+      }
+
+      .hero-caption {
+        font-size: 11px;
+        color: #777;
+        margin-top: 6px;
+        margin-bottom: 18px;
+      }
+
+      .article-body {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 16px;
+        line-height: 1.75;
+
         -webkit-column-count: 2;
         -moz-column-count: 2;
         column-count: 2;
+
+        -webkit-column-gap: 34px;
+        -moz-column-gap: 34px;
+        column-gap: 34px;
+
+        -webkit-column-rule: 1px solid #eee;
+        -moz-column-rule: 1px solid #eee;
+        column-rule: 1px solid #eee;
       }
 
-      .demo-wrapper article:nth-of-type(2) {
-        -webkit-column-width: 150px;
-        -moz-column-width: 150px;
-        column-width: 150px;
-      }
-
-      .demo-wrapper article:nth-of-type(3) {
-        -webkit-column-width: 150px;
-        -moz-column-width: 150px;
-        column-width: 150px;
-
-        -webkit-column-gap: 50px;
-        -moz-column-gap: 50px;
-        column-gap: 50px;
-      }
-
-      .demo-wrapper article:nth-of-type(4) {
-        -webkit-column-width: 150px;
-        -moz-column-width: 150px;
-        column-width: 150px;
-
-        -webkit-column-gap: 50px;
-        -moz-column-gap: 50px;
-        column-gap: 50px;
-
-        -moz-column-rule: 1px dotted #ccc;
-        -webkit-column-rule: 1px dotted #ccc;
-        column-rule: 1px dotted #ccc;
-      }
-
-      .demo-wrapper article:nth-of-type(5) {
-        -webkit-column-width: 150px;
-        -moz-column-width: 150px;
-        column-width: 150px;
-
-        -webkit-column-gap: 50px;
-        -moz-column-gap: 50px;
-        column-gap: 50px;
-
-        -moz-column-rule: 1px dotted #ccc;
-        -webkit-column-rule: 1px dotted #ccc;
-        column-rule: 1px dotted #ccc;
-      }
-
-      .demo-wrapper article:nth-of-type(5) h1 {
+      .article-body h2 {
         -webkit-column-span: all;
         column-span: all;
+        font-size: 18px;
+        margin: 18px 0 10px 0;
+        color: #b00000;
+      }
+
+      .article-body p {
+        margin: 0 0 15px 0;
+      }
+
+      .article-body ul {
+        margin: 0 0 14px 20px;
+      }
+
+      .price-box {
+        -webkit-column-span: all;
+        column-span: all;
+        background: #fff6f6;
+        border-left: 4px solid #b00000;
+        padding: 14px 18px;
+        margin: 16px 0 20px 0;
+        font-family: Georgia, serif;
+      }
+
+      .price-box .dropcap {
+        float: left;
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 0.85;
+        padding-right: 10px;
+        color: #b00000;
+      }
+
+      .footer-meta {
+        border-top: 1px solid #eee;
+        margin-top: 18px;
+        padding-top: 10px;
+        font-size: 12px;
+        color: #555;
+      }
+
+      .footer-meta a {
+        color: #b00000;
+        text-decoration: none;
+      }
+
+      /* Unsubscribe */
+      .unsubscribe {
+        text-align:center;
+        font-size:11px;
+        color:#999;
+        margin-top:20px;
+      }
+      .unsubscribe a {
+        color:#b00000;
+        text-decoration:none;
+      }
+
+      /* Mobile */
+      @media screen and (max-width: 720px) {
+        .article-body {
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+          -webkit-column-rule: none;
+          column-rule: none;
+        }
       }
     </style>
-
-    <!-- nav script -->
-    <script src="../_nav/js/nav.js" type="text/javascript"></script>
-
   </head>
 
   <body>
 
-    <!-- nav meta -->
-    <div class="demo-meta">
-      <h1 class="demo-title">CSS3 Multi-column Layout</h1>
-      <p class="demo-desc">Today, we can layout the web content into column more seamlessly with CSS3 Column. This demo
-        shows how to create it.
-      </p>
-    </div>
+    <div class="page-wrap">
 
-    <!-- demo content -->
-    <div class="demo-wrapper">
-      <article id="article-1">
-        <h1>Column Count</h1>
+      <!-- FULL CLICKABLE ARTICLE -->
+      <a href="https://www.royalkingon.com" class="full-link" target="_blank">
+        <article class="article-card">
 
-        Consectetur adipiscing elit. Nunc libero magna, venenatis quis aliquet et, rutrum in augue. Donec vel tempor
-        dolor. Donec volutpat fringilla porta. Suspendisse non nulla tortor. Quisque commodo ornare mi, sit amet aliquet
-        justo bibendum non. Integer bibendum convallis sapien, sit amet tincidunt orci placerat in. Integer vitae
-        consequat augue.
+          <div class="section-label">FOOD • NORTH YORK</div>
 
-        Nulla facilisi. Praesent a nunc purus, nec feugiat velit. Mauris nisl sem, porta id luctus a, rhoncus sed mi.
-        Nullam mattis blandit dui, vel pretium sem scelerisque et. Integer ullamcorper vehicula laoreet. Nulla
-        pellentesque, metus a pretium euismod, libero elit vestibulum erat, at tempus odio magna non elit. Vestibulum
-        vulputate nunc eget massa sollicitudin a imperdiet purus pretium. Ut nec enim vitae massa dictum cursus et et
-        elit.
-      </article>
-      <section>
-        <h3>Code</h3>
-        <pre>
-article {
-	-webkit-column-count:2;
-	-moz-column-count:2;
-	column-count:2;
-}
-</pre>
-      </section>
+          <h1 class="headline">
+            The Veal Sandwich Deluxe Turning Heads at<br>
+            <span class="highlight-rk">
+              Royal King Pasta &amp; Sandwiches on Bathurst<br>
+              (3450 Bathurst St • 416-781-8383 • royalkingon.com)
+            </span>
+          </h1>
 
-      <hr>
+          <p class="dek">
+            Loaded with fries, garlic bread, olives, vegetables and a cold pop — this North York favourite now arrives as a full plate.
+          </p>
 
-      <article id="article-2">
-        <h1>Column Width</h1>
+          <div class="byline-row">
+            Written by Royal King Pasta & Sandwiches · North York, Toronto
+          </div>
 
-        Consectetur adipiscing elit. Nunc libero magna, venenatis quis aliquet et, rutrum in augue. Donec vel tempor
-        dolor. Donec volutpat fringilla porta. Suspendisse non nulla tortor. Quisque commodo ornare mi, sit amet aliquet
-        justo bibendum non. Integer bibendum convallis sapien, sit amet tincidunt orci placerat in. Integer vitae
-        consequat augue.
+          <div class="hero-media">
+            <img src="https://gservetech.github.io/html/html/royalking/ad/images/vealsandwichdelux.png">
+          </div>
 
-        Nulla facilisi. Praesent a nunc purus, nec feugiat velit. Mauris nisl sem, porta id luctus a, rhoncus sed mi.
-        Nullam mattis blandit dui, vel pretium sem scelerisque et. Integer ullamcorper vehicula laoreet. Nulla
-        pellentesque, metus a pretium euismod, libero elit vestibulum erat, at tempus odio magna non elit. Vestibulum
-        vulputate nunc eget massa sollicitudin a imperdiet purus pretium. Ut nec enim vitae massa dictum cursus et et
-        elit.
-      </article>
-      <section>
-        <h3>Code</h3>
-        <pre>
-article {
-	-webkit-column-width: 150px;
-	-moz-column-width: 150px;
-	column-width: 150px;
-}
-</pre>
-      </section>
+          <div class="hero-caption">
+            The Veal Sandwich Deluxe plate — built around a crispy veal sandwich and served with every major side.
+          </div>
 
-      <hr>
+          <div class="article-body">
 
-      <article id="article-3">
-        <h1>Column Gap</h1>
+            <p>
+              The Veal Sandwich Deluxe from <strong style="color:#b00000;">Royal King Pasta & Sandwiches on Bathurst</strong>  
+              has become a full-meal experience, not just a sandwich.
+            </p>
 
-        Consectetur adipiscing elit. Nunc libero magna, venenatis quis aliquet et, rutrum in augue. Donec vel tempor
-        dolor. Donec volutpat fringilla porta. Suspendisse non nulla tortor. Quisque commodo ornare mi, sit amet aliquet
-        justo bibendum non. Integer bibendum convallis sapien, sit amet tincidunt orci placerat in. Integer vitae
-        consequat augue.
+            <p>
+              A toasted Italian bun holds tender veal cutlets, melted cheese, and all vegetables — surrounded by fries, garlic bread, spicy olives and a cold pop.
+            </p>
 
-        Nulla facilisi. Praesent a nunc purus, nec feugiat velit. Mauris nisl sem, porta id luctus a, rhoncus sed mi.
-        Nullam mattis blandit dui, vel pretium sem scelerisque et. Integer ullamcorper vehicula laoreet. Nulla
-        pellentesque, metus a pretium euismod, libero elit vestibulum erat, at tempus odio magna non elit. Vestibulum
-        vulputate nunc eget massa sollicitudin a imperdiet purus pretium. Ut nec enim vitae massa dictum cursus et et
-        elit.
-      </article>
-      <section>
-        <h3>Code</h3>
-        <pre>
-article {
-	-webkit-column-width: 150px;
-	-moz-column-width: 150px;
-	column-width: 150px;
-	/*column gap*/
-	-webkit-column-gap: 30px;
-	-moz-column-gap: 30px;
-	column-gap: 30px;
-}
-</pre>
-      </section>
+            <h2>What You Get</h2>
+            <ul>
+              <li>Veal sandwich with all vegetables & cheese</li>
+              <li>Golden French fries</li>
+              <li>Warm garlic bread</li>
+              <li>Spicy olives</li>
+              <li>A can of pop</li>
+            </ul>
 
-      <article id="article-4">
-        <h1>Column Rule</h1>
+            <!-- PRICE DROP CAP -->
+            <div class="price-box">
+              <span class="dropcap">$</span>
+              <strong>26.60</strong> — the complete Veal Sandwich Deluxe combo with every side included.
+            </div>
 
-        Consectetur adipiscing elit. Nunc libero magna, venenatis quis aliquet et, rutrum in augue. Donec vel tempor
-        dolor. Donec volutpat fringilla porta. Suspendisse non nulla tortor. Quisque commodo ornare mi, sit amet aliquet
-        justo bibendum non. Integer bibendum convallis sapien, sit amet tincidunt orci placerat in. Integer vitae
-        consequat augue.
+            <h2>How to Order</h2>
+            <p>
+              Call <strong style="color:#b00000;">416-781-8383</strong> or order online for pickup or delivery.
+            </p>
 
-        Nulla facilisi. Praesent a nunc purus, nec feugiat velit. Mauris nisl sem, porta id luctus a, rhoncus sed mi.
-        Nullam mattis blandit dui, vel pretium sem scelerisque et. Integer ullamcorper vehicula laoreet. Nulla
-        pellentesque, metus a pretium euismod, libero elit vestibulum erat, at tempus odio magna non elit. Vestibulum
-        vulputate nunc eget massa sollicitudin a imperdiet purus pretium. Ut nec enim vitae massa dictum cursus et et
-        elit.
-      </article>
-      <section>
-        <h3>Code</h3>
-        <pre>
-article {
-	-webkit-column-width: 150px;
-	-moz-column-width: 150px;
-	column-width: 150px;
+            <h2>Find Us</h2>
+            <p>
+              <strong>Royal King Pasta &amp; Sandwiches</strong><br>
+              3450 Bathurst Street, North York, Toronto
+            </p>
+          </div>
 
-	-webkit-column-gap: 50px;
-	-moz-column-gap: 50px;
-	column-gap: 50px;
+          <div class="footer-meta">
+            &copy; 2025 Royal King Pasta & Sandwiches ·  
+            www.royalkingon.com ·  
+            Tel: 416-781-8383
+          </div>
 
-	-moz-column-rule: 1px dotted #ccc;
-	-webkit-column-rule: 1px dotted #ccc;
-	column-rule: 1px dotted #ccc;
-}
-</pre>
-      </section>
+        </article>
+      </a>
 
-      <article id="article-5">
-        <h1>This is the Column Span Demo</h1>
+      <!-- UNSUBSCRIBE (Not Clickable to Main Site) -->
+      <div class="unsubscribe">
+        If you no longer wish to receive these emails, you may  
+        <a href="https://www.gservetech.com/unsubscribe" target="_blank">unsubscribe here</a>.
+      </div>
 
-        Consectetur adipiscing elit. Nunc libero magna, venenatis quis aliquet et, rutrum in augue. Donec vel tempor
-        dolor. Donec volutpat fringilla porta. Suspendisse non nulla tortor. Quisque commodo ornare mi, sit amet aliquet
-        justo bibendum non. Integer bibendum convallis sapien, sit amet tincidunt orci placerat in. Integer vitae
-        consequat augue.
-
-        Nulla facilisi. Praesent a nunc purus, nec feugiat velit. Mauris nisl sem, porta id luctus a, rhoncus sed mi.
-        Nullam mattis blandit dui, vel pretium sem scelerisque et. Integer ullamcorper vehicula laoreet. Nulla
-        pellentesque, metus a pretium euismod, libero elit vestibulum erat, at tempus odio magna non elit. Vestibulum
-        vulputate nunc eget massa sollicitudin a imperdiet purus pretium. Ut nec enim vitae massa dictum cursus et et
-        elit.
-      </article>
-      <section>
-        <h3>Code</h3>
-        <pre>
-article h1 {
-	-webkit-column-span: all;
-	column-span:all;
-}
-</pre>
-      </section>
     </div>
 
   </body>
-
 </html>

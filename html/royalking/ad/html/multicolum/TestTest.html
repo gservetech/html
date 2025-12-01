@@ -1,0 +1,456 @@
+<style>
+  @charset "UTF-8";
+  @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+
+  html,
+  body {
+    height: 100%;
+    font-family: "Lora", Garamond, Georgia, serif;
+    background: #fefcf9;
+  }
+
+  .wrapper {
+    display: block;
+    padding: 0.9375rem;
+    float: left;
+  }
+
+  header {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0.9375rem 0;
+  }
+
+  header .category {
+    margin-left: 3.75rem;
+  }
+
+  header .category:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: calc(17px/2);
+    left: -2.5rem;
+    width: 1.875rem;
+    height: 0;
+    border-top: solid 1px red;
+  }
+
+  header .category span {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #474747;
+  }
+
+  aside {
+    position: relative;
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    aside {
+      display: inline-block;
+      z-index: 2;
+      float: left;
+      width: 320px;
+      height: 100%;
+    }
+  }
+
+  aside .chapter {
+    color: #474747;
+    background-color: #474747;
+    background-image: url("https://picsum.photos/1425");
+    background-image: url("https://picsum.photos/1425");
+    background-image: url("https://picsum.photos/1425"), -webkit-linear-gradient(0deg, black 0%, black 100%);
+    background-size: contain;
+    background-position: right top;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(71, 71, 71, 0.4);
+    display: block;
+    float: right;
+    margin-right: 2.1875rem;
+    font-size: 33.125rem;
+  }
+
+  article {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    float: left;
+  }
+
+  @media (min-width: 1024px) {
+    article {
+      padding-left: 1.875rem;
+      border-left: solid 1px black;
+      width: calc(100% - 320px - 1px - 15px);
+      margin-left: -3.75rem;
+      max-width: 58.75rem;
+    }
+  }
+
+  article .chapter {
+    color: #474747;
+    background-color: #474747;
+    background-image: url("https://picsum.photos/1425");
+    background-image: url("https://picsum.photos/1425");
+    background-image: url("https://picsum.photos/1425"), -webkit-linear-gradient(0deg, black 0%, black 100%);
+    background-size: contain;
+    background-position: right top;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(71, 71, 71, 0.4);
+    display: inline-block;
+    font-size: 5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 480px) {
+    article .chapter {
+      float: left;
+      width: auto;
+      font-size: 6.25rem;
+      padding-right: 0.9375rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    article .chapter {
+      display: none;
+    }
+  }
+
+  article .title {
+    color: #474747;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    float: left;
+    margin-bottom: 0.9375rem;
+    width: 100%;
+  }
+
+  @media (min-width: 480px) {
+    article .title {
+      margin-bottom: 1.875rem;
+      max-width: calc(100% - 100px - 30px - 1px);
+      padding-left: 0.9375rem;
+      border-left: solid 1px black;
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    article .title {
+      border-left: none;
+      padding-left: 0;
+      display: block;
+      float: none;
+      max-width: 90%;
+    }
+  }
+
+  article .title:after {
+    content: "";
+    font-family: "FontAwesome";
+    font-size: 1.75rem;
+    font-style: normal;
+    position: relative;
+    display: block;
+    width: 2.5rem;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    article .title:after {
+      margin-top: 1.875rem;
+    }
+  }
+
+  article .cover-img {
+    margin-bottom: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    article .cover-img {
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  article .cover-img img {
+    width: 100%;
+  }
+
+  article .content {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+
+    article .content.first,
+    article .content.two.col {
+      -webkit-columns: 2;
+      columns: 2;
+    }
+  }
+
+  article .content h3 {
+    display: inline-block;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-top: 1.25rem;
+    margin-bottom: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    article .content h3 {
+      font-size: 1.3125rem;
+    }
+  }
+
+  article .content h4 {
+    display: inline-block;
+    color: #474747;
+    font-size: 1.0625rem;
+    line-height: 1.1;
+    font-weight: bold;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.625rem;
+  }
+
+  @media (min-width: 768px) {
+    article .content h4 {
+      font-size: 1.125rem;
+    }
+  }
+
+  article .content p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin-bottom: 0.9375rem;
+  }
+
+  article .content img {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    article .content img {
+      width: initial;
+      max-width: 100%;
+    }
+  }
+
+  article .content img.right {
+    margin: 0 0 0.625rem 0.625rem;
+    float: right;
+  }
+
+  article .content img.left {
+    margin: 0 0.625rem 0.625rem 0;
+    float: left;
+  }
+
+  article .content ul {
+    margin-left: 1.0625rem;
+    list-style: circle;
+  }
+
+  article .content ul li {
+    font-size: 0.9375rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.5;
+  }
+
+  article blockquote {
+    font-size: 1.4375rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    margin-bottom: 0.9375rem;
+    display: inline-block;
+    width: calc(100% - 15px - 20px - 10px);
+  }
+
+  @media (min-width: 768px) {
+    article blockquote {
+      width: 75%;
+      font-size: 1.625rem;
+    }
+  }
+
+  article blockquote.right {
+    float: right;
+    text-align: right;
+    border-right: solid 10px #474747;
+    margin-left: 0.9375rem;
+    margin-right: 0;
+    padding-right: 1.25rem;
+  }
+
+  article blockquote.left {
+    float: left;
+    text-align: left;
+    padding-left: 1.25rem;
+    border-left: solid 10px #474747;
+    margin-right: 0.9375rem;
+    margin-left: 0;
+  }
+
+  article blockquote.full {
+    width: calc(100% - 15px - 20px - 10px);
+    float: none;
+  }
+
+  article .flourish {
+    margin: 1.875rem 0;
+    -webkit-border-image: -webkit-linear-gradient(-360deg, transparent 0%, #333333 50%, transparent 100%) 1;
+    border-image: linear-gradient(90deg, transparent 0%, #333333 50%, transparent 100%) 1;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-bottom-color: transparent;
+  }
+</style>
+
+<header>
+  <div class="category"><span>Lorem ipsum dolor sit amet, consectetur</span></div>
+</header>
+<div class="wrapper">
+
+  <aside>
+    <div class="chapter">
+      <h1>4</h1>
+    </div>
+  </aside>
+  <article>
+    <div class="chapter">
+      <h1>4</h1>
+    </div>
+    <h2 class="title">Lorem ipsum dolor robero, <br />sit maime error illum ullam aspernatur</h2>
+    <div class="cover-img"><img src="https://picsum.photos/640/330" alt="cover image" /></div>
+    <div class="content first">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime error illum, eum placeat quae molestias
+        repudiandae ipsa odit, ab incidunt molestiae, repellendus quam perspiciatis laborum praesentium id doloremque
+        nostrum sit cum fugit. Vero incidunt
+        iste ipsam, explicabo illum libero, enim ullam tenetur id, quaerat sapiente.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ratione asperiores, quam labore ullam dolore
+        a neque molestiae! Facere atque nobis voluptas! Blanditiis tempora adipisci quis nemo expedita voluptate a
+        aspernatur suscipit reiciendis nesciunt possimus illum, assumenda sequi eius voluptas neque! Libero, laborum
+        quos ut corporis totam ducimus magnam quasi, quod pariatur distinctio, alias commodi enim dolores earum
+        obcaecati! Numquam.</p>
+
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum eveniet dolor sequi accusantium, voluptatum
+          mollitia, dolores voluptates omnis officia praesentium veritatis? Dolorum, delectus expedita!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatum deserunt facere voluptas
+          similique ullam doloremque minus harum praesentium, veritatis vel obcaecati fuga dicta molestias error! Sequi.
+        </li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quod.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sapiente molestias quam iste dolorem non itaque
+          vitae ullam.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque magni beatae, eligendi distinctio. Cum,
+          tempora atque inventore repellat ipsum dolore ipsam maxime mollitia sequi earum odit enim consectetur possimus
+          quasi, iusto deleniti et ad. Consectetur vero reiciendis soluta sint, itaque, repellendus molestias
+          consequatur dolorem iure.</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit, repudiandae. Ad facilis, possimus
+        enim, voluptatum aperiam facere nihil totam!</p>
+    </div>
+    <hr class="flourish" />
+    <div class="content">
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et deserunt beatae assumenda saepe dolorem molestiae
+        voluptatem quisquam commodi consequatur tempora. In quisquam rerum repellendus. Cumque architecto atque, maiores
+        necessitatibus. Expedita commodi dolores quos reprehenderit, possimus vel aliquid ducimus ea doloremque nulla
+        beatae harum blanditiis minus officiis eius fuga quod error facilis debitis rem. Sapiente commodi, maiores
+        accusamus earum, animi nihil eos dicta eveniet impedit pariatur eius perspiciatis quis officia quia eligendi
+        ducimus enim possimus nam iusto ipsa itaque sunt rerum quo reiciendis. Tenetur consequuntur quasi numquam omnis
+        perspiciatis laudantium quisquam magnam, labore voluptas, autem ipsam. Consequatur eaque provident molestias
+        doloremque.</p>
+      <blockquote class="right">
+        Now this is a story all about how my life got flipped - turned upside down. And I'd like to take a minute just
+        sit right there, I'll tell you how I became the prince of a town called Bel-Air.
+      </blockquote>
+      <p>
+        <img class="right" src="https://picsum.photos/400/300" alt="image" />Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Quae consequatur est sit non, laboriosam odit quidem mollitia minus. Doloremque eum, atque
+        sunt. Quisquam, totam. Quidem perspiciatis cumque facere blanditiis aspernatur corrupti ut alias et odio aut at
+        consectetur voluptatibus possimus rerum animi sapiente quibusdam suscipit, id modi ex deserunt omnis ipsum
+        architecto nam. Consequuntur, quam culpa. Nisi quidem accusamus voluptates enim cupiditate ullam adipisci
+        dolorem.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis voluptatem, in ad consequuntur inventore
+        voluptatum excepturi amet corporis vel, sed magnam nulla, id. Quam voluptatem quae ipsa corporis tenetur nisi
+        eius amet sint magnam eligendi. Error sequi distinctio officia quia laborum maiores delectus provident vero,
+        architecto qui cupiditate harum totam ea, facilis quas quae non earum ab eveniet quo nulla quis porro vitae. Rem
+        minus nam quas nesciunt eos sed corporis nostrum neque, quia praesentium aperiam! Consectetur optio magnam ab!
+      </p>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
+      <p><img src="https://unsplash.it/220/400" alt="" class="left" />Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Ipsam modi sed minima consequuntur laborum porro doloribus unde alias, eligendi vel voluptas
+        optio ipsum quae!</p>
+      <h4>Lorem ipsum dolor sit amet, consectetur.</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nihil eaque quaerat, facilis dolorum
+        suscipit, saepe maiores, optio libero dignissimos nam iure. Quaerat itaque, reprehenderit possimus cumque fuga,
+        maxime nihil earum accusantium natus veritatis culpa quisquam optio. Harum, facilis. Quas impedit voluptates
+        quia repellat suscipit officia quis, doloremque, beatae consequatur, quaerat commodi! Necessitatibus dolore,
+        ipsum laudantium aperiam placeat doloribus cum. Itaque a unde totam nam sequi provident accusamus, tenetur
+        impedit temporibus. Rerum velit voluptas eum natus cupiditate quos harum nesciunt.</p>
+      <h4>Lorem ipsum dolor sit amet.</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, illum. Mollitia molestiae recusandae fugit
+        dignissimos quae fugiat necessitatibus aperiam quaerat sapiente, officiis labore ullam rerum ex accusamus
+        ratione assumenda consectetur velit ipsa odit dolorem voluptatibus nihil. Atque sunt, eveniet mollitia repellat
+        deserunt nesciunt repellendus minus! In itaque, rerum voluptatum eum deleniti neque quis harum ipsam enim! Ex ab
+        quas consequatur provident debitis. Facilis dignissimos laboriosam corporis, quam ipsam, sint officiis, sunt nam
+        temporibus magni quae quisquam nihil animi minima ab! Fugiat blanditiis necessitatibus pariatur modi dolorum
+        itaque sunt quibusdam amet quisquam corrupti similique voluptate in, quas fuga veniam harum ex.</p>
+      <blockquote class="full left">
+        I had a dream I could buy my way to heaven, <br />
+        when I awoke, I spent that on a necklace <br />
+        I told God I'd be back in a second; <br />
+        Man it's so hard not to act reckless.
+      </blockquote>
+      <hr class="flourish" />
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
+      <p><img src="https://picsum.photos/1100/500/" alt="cover-image-2" /></p>
+    </div>
+    <div class="content two col">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae nisi reiciendis illo odio soluta iusto eos
+        quo ab numquam error nam aliquid quidem facere aperiam commodi aliquam, non excepturi, repellat expedita in
+        alias quaerat eligendi! Illo omnis ipsam maiores porro eos voluptatum, ea distinctio perferendis:</p>
+      <blockquote class="full right">
+        1, 2, 3 and to the 4 -
+        Snoop Doggy Dogg and Dr. Dre is at the door.
+        Ready to make an entrance so back on up,
+        'cause you know we're about to rip shit up.
+      </blockquote>
+      <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit temporibus mollitia voluptate!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis error earum ipsa recusandae,
+          cupiditate magnam.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quis facilis fuga modi voluptate.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt aliquid quaerat quo voluptatibus excepturi,
+          neque assumenda!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reiciendis suscipit dolores deleniti!</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo soluta, fugiat sunt cum non aspernatur tempora
+        praesentium exercitationem aliquid magnam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum itaque laudantium suscipit, id ratione in tempore
+        voluptatum.</p>
+    </div>
+  </article>
+</div>
