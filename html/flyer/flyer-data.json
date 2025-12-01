@@ -75,7 +75,8 @@
   },
   "flyerPage": {
     "id": "page-1",
-    "imageUrl": "/flyer.jpg",
+    "imageUrl": "/flyer.png
+    ",
     "hotspots": [
       { "id": "h1", "productId": "p1", "x": 10, "y": 35, "width": 25, "height": 28 },
       { "id": "h2", "productId": "p2", "x": 35, "y": 35, "width": 30, "height": 28 },
