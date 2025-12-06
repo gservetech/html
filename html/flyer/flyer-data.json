@@ -77,10 +77,10 @@
     "id": "page-1",
     "imageUrl": "/flyer.png",
     "hotspots": [
-      { "id": "h1", "productId": "p1", "x": 10, "y": 35, "width": 25, "height": 28 },
+      { "id": "h1", "productId": "p1", "x": 3, "y": 35, "width": 25, "height": 28 },
       { "id": "h2", "productId": "p2", "x": 35, "y": 35, "width": 30, "height": 28 },
       { "id": "h3", "productId": "p3", "x": 65.5, "y": 35, "width": 27.5, "height": 28 },
-      { "id": "h4", "productId": "p4", "x": 10, "y": 64, "width": 25, "height": 24 },
+      { "id": "h4", "productId": "p4", "x": 3, "y": 64, "width": 25, "height": 24 },
       { "id": "h5", "productId": "p5", "x": 35, "y": 64, "width": 30, "height": 24 },
       { "id": "h6", "productId": "p6", "x": 65.5, "y": 64, "width": 27.5, "height": 24 }
     ]
