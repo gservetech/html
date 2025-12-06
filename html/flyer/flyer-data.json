@@ -2,14 +2,14 @@
   "products": {
     "p1": {
       "id": "p1",
-      "name": "Premium Tool & Cabinet Combo",
-      "brand": "BENCHMARK",
+      "name": "Business cards",
+      "brand": "Print Gservetech",
       "sku": "997-664",
-      "price": 199.99,
-      "originalPrice": 499.99,
-      "description": "9 Drawers, Locking Casters, 300 lb capacity, warning kit included.",
+      "price": 200.99,
+      "originalPrice": 160.00,
+      "description": "BUSINESS CARDS-500-MATT LAMINATE-SPOT UV,BUSINESS CARDS-14PT C2S",
       "imageUrl": "./PremiumTool.png",
-      "category": "Tools",
+      "category": "business card",
       "rating": 4.8
     },
     "p2": {
