@@ -1,7 +1,7 @@
 {
   "products": {
     "p1": {
-      "id": "p1",
+      "id": "15",
       "name": "Business cards",
       "brand": "GserveTech Print",
       "sku": "997-664",
@@ -13,7 +13,7 @@
       "rating": 4.8
     },
     "p2": {
-      "id": "p2",
+      "id": "18",
       "name": "1000 Postcards-5X7 14PT -POST CARDS-2 SIDED",
       "brand": "GserveTech Print",
       "sku": "437-456",
@@ -25,7 +25,7 @@
       "rating": 4.6
     },
     "p3": {
-      "id": "p3",
+      "id": "9",
       "name": "Rollup 33.5 x 79 Rollup 33.5 x 79 WITH STAND",
       "brand": "GserveTech Print",
       "sku": "EP-6312",
@@ -37,7 +37,7 @@
       "rating": 4.5
     },
     "p4": {
-      "id": "p4",
+      "id": "8",
       "name": "Vinyl Banner-4x2",
       "brand": "GserveTech Print",
       "sku": "957-674",
@@ -49,7 +49,7 @@
       "rating": 4.7
     },
     "p5": {
-      "id": "p5",
+      "id": "6",
       "name": "1000 Brochures - Get 1,000 Premium Brochures — Perfect for Any Business Push!",
       "brand": "GserveTech Print",
       "sku": "901-334",
@@ -61,7 +61,7 @@
       "rating": 4.2
     },
     "p6": {
-      "id": "p6",
+      "id": "5",
       "name": "SIGN WITH A FRAME",
       "brand": "GserveTech Print",
       "sku": "67-890",
