@@ -1,6 +1,6 @@
 {
   "products": {
-    "p1": {
+    "15": {
       "id": "15",
       "name": "Business cards",
       "brand": "GserveTech Print",
@@ -12,7 +12,7 @@
       "category": "business card",
       "rating": 4.8
     },
-    "p2": {
+    "18": {
       "id": "18",
       "name": "1000 Postcards-5X7 14PT -POST CARDS-2 SIDED",
       "brand": "GserveTech Print",
@@ -24,7 +24,7 @@
       "category": "Outdoor",
       "rating": 4.6
     },
-    "p3": {
+    "9": {
       "id": "9",
       "name": "Rollup 33.5 x 79 Rollup 33.5 x 79 WITH STAND",
       "brand": "GserveTech Print",
@@ -36,7 +36,7 @@
       "category": "Rollup Banners",
       "rating": 4.5
     },
-    "p4": {
+    "8": {
       "id": "8",
       "name": "Vinyl Banner-4x2",
       "brand": "GserveTech Print",
@@ -48,7 +48,7 @@
       "category": "Banners",
       "rating": 4.7
     },
-    "p5": {
+    "6": {
       "id": "6",
       "name": "1000 Brochures - Get 1,000 Premium Brochures — Perfect for Any Business Push!",
       "brand": "GserveTech Print",
@@ -60,7 +60,7 @@
       "category": "Brochures",
       "rating": 4.2
     },
-    "p6": {
+    "5": {
       "id": "5",
       "name": "SIGN WITH A FRAME",
       "brand": "GserveTech Print",
@@ -77,13 +77,13 @@
       "id": "page-1",
       "imageUrl": "/flyer.png",
       "hotspots": [
-        { "id": "h1", "productId": "p1", "x": 2.5, "y": 33, "width": 30, "height": 32 },  
-        { "id": "h2", "productId": "p2", "x": 34, "y": 32.5, "width": 31, "height": 32 },  
-        { "id": "h3", "productId": "p3", "x": 66, "y": 30, "width": 30, "height": 35 },  
+        { "id": "h1", "productId": "15", "x": 2.5, "y": 33, "width": 30, "height": 32 },  
+        { "id": "h2", "productId": "18", "x": 34, "y": 32.5, "width": 31, "height": 32 },  
+        { "id": "h3", "productId": "9", "x": 66, "y": 30, "width": 30, "height": 35 },  
   
-        { "id": "h4", "productId": "p4", "x": 3, "y": 66, "width": 29, "height": 26 },  
-        { "id": "h5", "productId": "p5", "x": 34.5, "y": 65.5, "width": 30, "height": 26 },  
-        { "id": "h6", "productId": "p6", "x": 66, "y": 64.5, "width": 30, "height": 27 }  
+        { "id": "h4", "productId": "8", "x": 3, "y": 66, "width": 29, "height": 26 },  
+        { "id": "h5", "productId": "6", "x": 34.5, "y": 65.5, "width": 30, "height": 26 },  
+        { "id": "h6", "productId": "5", "x": 66, "y": 64.5, "width": 30, "height": 27 }  
       ]
     }
 }
