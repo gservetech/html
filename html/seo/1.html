@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Slider</title>
+<style>
+  .slider {
+    width: 600px;
+    height: 400px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+  }
+  .slide:nth-child(1) { background: #667eea; }
+  .slide:nth-child(2) { background: #764ba2; }
+  .slide:nth-child(3) { background: #f093fb; }
+  input[type="radio"] {
+    display: none;
+  }
+  .navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  .navigation label {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .navigation label:hover {
+    background: rgba(255,255,255,0.8);
+  }
+  #slide1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  #slide2:checked ~ .slides {
+    transform: translateX(-33.333%);
+  }
+  #slide3:checked ~ .slides {
+    transform: translateX(-66.666%);
+  }
+  #slide1:checked ~ .navigation label[for="slide1"],
+  #slide2:checked ~ .navigation label[for="slide2"],
+  #slide3:checked ~ .navigation label[for="slide3"] {
+    background: white;
+  }
+</style>
+</head>
+<body>
+    <table border="1" frame="box" rules="all">
+  <tr>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+  </tr>
+</table>
+<div class="slider">
+  <input type="radio" name="slider" id="slide1" checked>
+  <input type="radio" name="slider" id="slide2">
+  <input type="radio" name="slider" id="slide3">
+  
+  <div class="slides">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+  </div>
+  
+  <div class="navigation">
+    <label for="slide1"></label>
+    <label for="slide2"></label>
+    <label for="slide3"></label>
+  </div>
+</div>
+
+<details>
+  <summary>Read more</summary>
+  <p>This section expands and collapses with zero JavaScript.</p>
+</details>
+</body>
+</html>
