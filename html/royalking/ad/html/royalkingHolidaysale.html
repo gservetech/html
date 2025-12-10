@@ -1,0 +1,383 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal King Pasta &amp; Sandwiches Online Specials</title>
+  <meta name="description"
+    content="Discover Royal King Pasta &amp; Sandwiches online-only specials featuring handcrafted Italian meals, sandwiches, and desserts ready for pick-up or delivery." />
+  <meta name="keywords" content="Royal King, pasta, sandwiches, Italian food, Toronto restaurant, online orders" />
+  <meta name="author" content="Sarah Frasca" />
+  <link rel="canonical" href="https://www.royalkingon.com/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Royal King Pasta &amp; Sandwiches Online Specials" />
+  <meta property="og:description"
+    content="Order Royal King Pasta &amp; Sandwiches online and enjoy limited-time specials, hearty pasta plates, and gourmet sandwiches." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.royalkingon.com/" />
+  <meta property="og:image" content="https://gservetech.github.io/html/html/menu/cannellonemeat.jpeg" />
+  <meta property="og:site_name" content="Royal King Pasta &amp; Sandwiches" />
+  <meta property="og:locale" content="en_CA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Royal King Pasta &amp; Sandwiches Online Specials" />
+  <meta name="twitter:description"
+    content="See our online-only pasta and sandwich specials from Royal King Pasta &amp; Sandwiches in Toronto." />
+  <meta name="twitter:image" content="https://gservetech.github.io/html/html/menu/cannellonemeat.jpeg" />
+  <meta name="twitter:site" content="@RoyalKingON" />
+  <meta name="twitter:creator" content="@RoyalKingON" />
+  <style>
+    .content {
+      margin: 2rem auto;
+      padding: 4rem 0 0;
+      background: radial-gradient(circle at bottom, var(--frisky-gradient-range));
+      clip-path: polygon(0 3rem, 100% 0%, 100% calc(100% - 3rem), 0 100%);
+      container-type: inline-size;
+      container-name: content;
+    }
+
+    .comic-frame {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .speech {
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      padding: 0 2rem;
+      color: var(--frisky-blue);
+    }
+
+    .speech-row {
+      display: flex;
+      max-width: 40ch;
+    }
+
+    .speech-row.center {
+      justify-content: center;
+    }
+
+    .speech-bubble {
+      background: var(--frisky-white);
+      border-radius: var(--frisky-border-radius-round);
+      padding: 2rem;
+      font-size: 2rem;
+      text-align: center;
+      max-width: 30ch;
+      position: relative;
+      font-family: "Zen Dots", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--frisky-red);
+    }
+
+    .speech-bubble:after {
+      z-index: -1;
+      content: "" "";
+      height: 4rem;
+      width: 1rem;
+      background: var(--frisky-white);
+      position: absolute;
+      right: 2rem;
+      bottom: -3rem;
+      transform: rotate(-20deg);
+    }
+
+    .speech-bubble.last:after {
+      background: transparent;
+      height: 6rem;
+      width: 3rem;
+      right: 1rem;
+      bottom: -3rem;
+      border-right: 2rem solid var(--frisky-white);
+      border-radius: 0 0 100rem 0;
+      transform: rotate(-50deg);
+    }
+
+    .lorem-section {
+      margin: 4rem auto;
+      max-width: min(90%, 110ch);
+      padding: 0 1.5rem 3rem;
+      text-align: center;
+      color: var(--frisky-white);
+    }
+
+    .lorem-section h2 {
+      margin-bottom: 1.5rem;
+      font-family: "Zen Dots", sans-serif;
+      letter-spacing: 0.12rem;
+      text-transform: uppercase;
+      font-size: 2.2rem;
+    }
+
+    .lorem-section__note {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--frisky-blue);
+      font-family: "Space Mono", monospace;
+      font-size: 0.95rem;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+    }
+
+    .lorem-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .lorem-card {
+      background: linear-gradient(140deg, rgba(8, 60, 140, 0.92), rgba(214, 40, 40, 0.88));
+      border-radius: 2.25rem;
+      padding: 2.5rem 2rem;
+      border: 0.3rem solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 1.8rem 3.5rem -1.5rem rgba(0, 0, 0, 0.45);
+      min-height: 14rem;
+    }
+
+    .lorem-card img {
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.3rem solid var(--frisky-white);
+      box-shadow: inset 0 0 0.7rem rgba(214, 40, 40, 0.4);
+    }
+
+    .lorem-card__link {
+      display: grid;
+      gap: 1rem;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .lorem-card__link:focus-visible {
+      outline: 0.3rem solid var(--frisky-white);
+      outline-offset: 0.2rem;
+    }
+
+    .lorem-card h3 {
+      margin: 0;
+      font-family: "Zen Dots", sans-serif;
+      font-size: 1.4rem;
+      color: var(--frisky-white);
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+    }
+
+    .lorem-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: "Space Mono", monospace;
+      font-size: 1rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .price {
+      display: grid;
+      gap: 0.25rem;
+      justify-items: center;
+      font-family: "Space Mono", monospace;
+    }
+
+    .price-original {
+      color: var(--frisky-red);
+      text-decoration: line-through;
+      font-size: 0.95rem;
+    }
+
+    .price-current {
+      font-weight: 700;
+      color: var(--frisky-white);
+      font-size: 1.2rem;
+    }
+
+    .speaker {
+      img {
+        max-height: 35rem;
+      }
+    }
+
+    @container content (width > 80ch) {
+      .comic-frame {
+        flex-direction: row;
+      }
+
+      .speech {
+        align-self: flex-start;
+      }
+
+      .speaker {
+        align-self: flex-end;
+        padding-top: 4rem;
+      }
+
+      .speech-bubble.last:after {
+        border-left: 2rem solid var(--frisky-white);
+        border-right: 0;
+        border-radius: 0 0 0 100rem;
+        transform: rotate(-20deg);
+      }
+    }
+
+    .author {
+      text-align: right;
+      padding: 1rem;
+      color: var(--frisky-white);
+
+      a {
+        color: var(--frisky-white);
+        text-decoration: none;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    html,
+
+    body {
+      font-family: "Space Mono", monospace;
+      font-weight: 400;
+      font-style: normal;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      background: var(--frisky-blue);
+    }
+
+    :root {
+      --frisky-border-radius-round: 500rem;
+      --frisky-white: #ffffff;
+      --frisky-blue: #083c8c;
+      --frisky-red-light: #ff6b6b;
+      --frisky-red: #d62828;
+      --frisky-gradient-range: var(--frisky-red-light) 0%, var(--frisky-white) 45%, var(--frisky-blue) 100%;
+    }
+  </style>
+</head>
+<div class="content">
+  <div class="comic-frame">
+    <div class="speech">
+      <div class="speech-row first">
+        <div class="speech-bubble">Hi!</div>
+      </div>
+      <div class="speech-row center">
+        <div class="speech-bubble last">
+          Sarah here—serving
+          <br />
+          Royal King Pasta &
+          <br />
+          Sandwiches with love!
+        </div>
+      </div>
+    </div>
+    <div class="speaker">
+      <img src="https://assets.codepen.io/198554/sarah.webp" alt="illustration of Sarah waving at the reader" />
+    </div>
+  </div>
+</div>
+<div class="lorem-section">
+  <h2>Patriotic Moments</h2>
+  <span class="lorem-section__note">Online orders only</span>
+  <h3>
+    3450 Bathurst Street, Toronto, ON | 416-781-8383 | order@royalkingon.com | www.royalkingon.com</h3>
+
+  <div class="lorem-grid">
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://www.royalkingon.com/menu?itemId=141"
+        title="Royalking pasta & sandwiches | Veal Sandwich Deluxe (with all vegetables)">
+        <img src="https://gservetech.github.io/html/html/special/1.png"
+          alt="Royalking pasta & sandwiches | Veal Sandwich Deluxe (with all vegetables)" loading="lazy" />
+        <h3>Veal Sandwich Deluxe (with all vegetables)</h3>
+        <div class="price">
+          <span class="price-original">$29.26</span>
+          <span class="price-current">$26.60</span>
+        </div>
+        <p>Served with mini rice balls, garlic bread, and a can of pop.</p>
+      </a>
+    </article>
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://www.royalkingon.com/menu?itemId=140"
+        title="Royalking pasta & sandwiches | Eggplant Parm Plate">
+        <img src="https://gservetech.github.io/html/html/special/2.png"
+          alt="Royalking pasta & sandwiches | Eggplant Parm Plate" loading="lazy" />
+        <h3>Eggplant Parm Plate</h3>
+        <div class="price">
+          <span class="price-original">$29.26</span>
+          <span class="price-current">$26.60</span>
+        </div>
+        <p>Served with mini rice balls, garlic bread, and a can of pop
+        </p>
+      </a>
+    </article>
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://royalkingon.com/"
+        title="Royalking pasta & sandwiches | Cheese Tortellini with Rosé Sauce">
+        <img src="https://gservetech.github.io/html/html/special/3.png"
+          alt="Royalking pasta & sandwiches | Cheese Tortellini with Rosé Sauce" loading="lazy" />
+        <h3>Cheese Tortellini with Rosé Sauce</h3>
+        <div class="price">
+          <span class="price-original">$32.64</span>
+          <span class="price-current">$29.67</span>
+        </div>
+        <p>Served with mini rice balls, garlic bread, and a can of pop.</p>
+      </a>
+    </article>
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://www.royalkingon.com/menu?itemId=143"
+        title="Royalking pasta & sandwiches | Meat Lasagna">
+        <img src="https://gservetech.github.io/html/html/special/4.png"
+          alt="Royalking pasta & sandwiches | Meat Lasagna" loading="lazy" />
+        <h3>Meat Lasagna</h3>
+        <div class="price">
+          <span class="price-original">$31.52</span>
+          <span class="price-current">$28.65</span>
+        </div>
+        <p>Served with mini rice balls, garlic bread, and a can of pop</p>
+      </a>
+    </article>
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://www.royalkingon.com/menu?itemId=144"
+        title="Royalking pasta & sandwiches | Fettuccine Alfredo with Chicken"> <img
+          src="https://gservetech.github.io/html/html/special/5.png"
+          alt="Royalking pasta & sandwiches | Fettuccine Alfredo with Chicken" loading="lazy" />
+        <h3>Fettuccine Alfredo with Chicken</h3>
+        <div class="price">
+          <span class="price-original">$32.64</span>
+          <span class="price-current">$29.67</span>
+        </div>
+        <p>Served with mini rice balls, garlic bread, and a can of pop</p>
+      </a>
+    </article>
+    <article class="lorem-card">
+      <a class="lorem-card__link" href="https://www.royalkingon.com/menu?itemId=147" title="Cannellone Meat">
+        <img src="https://gservetech.github.io/html/html/menu/cannellonemeat.jpeg" alt="Cannellone Meat"
+          title="Royalking pasta & sandwiches | Savory cannelloni filled with meat, served with a side of garlic bread for a delightful Italian experience" />
+        <h3>Cannellone Meat</h3>
+        <div class="price">
+          <span class="price-original">$18.15</span>
+          <span class="price-current">$16.50</span>
+        </div>
+        <p>Savory cannelloni filled with meat, served with a side of garlic bread for a delightful Italian experience
+        </p>
+      </a>
+    </article>
+  </div>
+</div>
+<div class="author">
+  Made with ♥ by
+  <a href="https://www.royalkingon.com">
+    Sarah Frasca
+  </a>
+</div>
