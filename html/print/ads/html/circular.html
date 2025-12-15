@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Carousel - Mobile Responsive</title>
+    
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Draggable Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <!-- MotionPath Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+
+    <style>
+        :root {
+          --color-black: hsla(0, 0%, 12%, 100%);
+          --color-white: hsla(0, 0%, 100%, 100%);
+          --color-white-50: hsla(0, 0%, 50%, 100%);
+          --color-purple: hsla(278, 100%, 75%, 100%);
+          --item-size: 200px;
+          --item-height: 240px;
+          --radius: 400px;
+          --heading-size: 3vw;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          background: radial-gradient(circle at center, #1a1a2e 0%, var(--color-black) 100%);
+          color: var(--color-white);
+          font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          font-optical-sizing: auto;
+          overflow: hidden;
+          height: 100vh;
+          width: 100vw;
+        }
+
+        main {
+          width: 100%;
+          height: 100%;
+        }
+
+        .heading__text {
+          top: 30px;
+          font-size: var(--heading-size);
+          font-weight: 700;
+          left: 50%;
+          letter-spacing: -2px;
+          margin: 0;
+          text-align: center;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          position: absolute;
+          z-index: 10;
+          max-width: 90%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .circular-carousel {
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+        }
+
+        .circular-carousel__list {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .circular-carousel__item {
+          width: var(--item-size);
+          height: var(--item-height);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: calc(var(--item-size) / -2);
+          margin-top: calc(var(--item-height) / -2);
+        }
+
+        .circular-carousel__item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        .circular-carousel__item img:hover {
+          transform: scale(1.08);
+          box-shadow: 0 20px 60px rgba(120, 81, 169, 0.6);
+        }
+
+        .instruction {
+          position: absolute;
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 16px;
+          z-index: 10;
+          text-align: center;
+          padding: 0 20px;
+          max-width: 90%;
+        }
+
+        .center-indicator {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 100px;
+          border: 2px solid rgba(120, 81, 169, 0.3);
+          border-radius: 50%;
+          z-index: 5;
+          pointer-events: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(120, 81, 169, 0.5);
+          font-size: 12px;
+          text-align: center;
+          padding: 10px;
+        }
+
+        /* TABLET (768px and below) */
+        @media (max-width: 768px) {
+          :root {
+            --item-size: 160px;
+            --item-height: 190px;
+            --radius: 280px;
+            --heading-size: 5vw;
+          }
+
+          .heading__text {
+            top: 25px;
+            font-size: var(--heading-size);
+          }
+
+          .instruction {
+            bottom: 30px;
+            font-size: 14px;
+          }
+
+          .center-indicator {
+            width: 80px;
+            height: 80px;
+            font-size: 10px;
+          }
+
+          .circular-carousel__item img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+          }
+
+          .circular-carousel__item img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 15px 40px rgba(120, 81, 169, 0.5);
+          }
+        }
+
+        /* SMALL PHONE (480px and below) */
+        @media (max-width: 480px) {
+          :root {
+            --item-size: 120px;
+            --item-height: 140px;
+            --radius: 200px;
+            --heading-size: 6vw;
+          }
+
+          .heading__text {
+            top: 20px;
+            font-size: var(--heading-size);
+            letter-spacing: 0;
+          }
+
+          .instruction {
+            bottom: 25px;
+            font-size: 12px;
+          }
+
+          .center-indicator {
+            width: 70px;
+            height: 70px;
+            border: 1px solid rgba(120, 81, 169, 0.2);
+            font-size: 9px;
+          }
+
+          .circular-carousel__item img {
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+          }
+
+          .circular-carousel__item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(120, 81, 169, 0.4);
+          }
+        }
+
+        /* VERY SMALL PHONE (360px and below) */
+        @media (max-width: 360px) {
+          :root {
+            --item-size: 100px;
+            --item-height: 120px;
+            --radius: 160px;
+            --heading-size: 7vw;
+          }
+
+          .heading__text {
+            top: 15px;
+          }
+
+          .instruction {
+            bottom: 20px;
+            font-size: 11px;
+          }
+
+          .center-indicator {
+            width: 60px;
+            height: 60px;
+            font-size: 8px;
+          }
+        }
+
+        /* LANDSCAPE MODE */
+        @media (max-height: 600px) {
+          .heading__text {
+            top: 10px;
+          }
+
+          .instruction {
+            bottom: 10px;
+            font-size: 12px;
+          }
+
+          :root {
+            --radius: 280px;
+          }
+        }
+    </style>
+</head>
+
+<body>
+  <main>
+    <h1 class="heading__text">Circular Carousel</h1>
+    
+    <div class="circular-carousel">
+      <div class="center-indicator">Rotate</div>
+      <div class="circular-carousel__list">
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Meisje_met_de_parel.jpg" alt="Painting 1" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_The_Astronomer_-_1668.jpg" alt="Painting 2" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_Lady_at_the_Virginal_with_a_Gentleman%2C_-The_Music_Lesson-_-_Google_Art_Project.jpg" alt="Painting 3" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Jan_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg" alt="Painting 4" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png" alt="Painting 5" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/960px-Vermeer-view-of-delft.jpg" alt="Painting 6" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_The_lacemaker_%28c.1669-1671%29.jpg" alt="Painting 7" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_De_Soldaat_en_het_Lachende_Meisje_-_Google_Art_Project.jpg" alt="Painting 8" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_A_Lady_and_Two_Gentlemen_-_WGA24639.jpg" alt="Painting 9" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Jan_Vermeer_van_Delft_013.jpg" alt="Painting 10" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Vermeer_Lady_Maidservant_Holding_Letter.jpg" alt="Painting 11" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Vermeer_Girl_Interrupted_at_Her_Music.jpg" alt="Painting 12" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/960px-Vermeer_-_Diana_and_Her_Companions.jpg" alt="Painting 13" /></div>
+        <div class="circular-carousel__item"><img src="https://assets.codepen.io/204808/Johannes_Vermeer_-_The_Geographer_-_Google_Art_Project.jpg" alt="Painting 14" /></div>
+      </div>
+    </div>
+
+    <div class="instruction">Auto-rotating • Drag to control</div>
+  </main>
+
+  <script>
+    // Register plugins
+    gsap.registerPlugin(Draggable, MotionPathPlugin);
+
+    const carouselList = document.querySelector(".circular-carousel__list");
+    const carouselItems = gsap.utils.toArray(".circular-carousel__item");
+    const numItems = carouselItems.length;
+    let rotation = 0;
+    let autoRotateTimeline;
+    let radius = 400;
+
+    // Get radius from CSS variable
+    function getRadius() {
+      const cssRadius = getComputedStyle(document.documentElement).getPropertyValue('--radius');
+      return parseFloat(cssRadius);
+    }
+
+    // Position items in a perfect circle
+    function positionItems() {
+      radius = getRadius();
+      carouselItems.forEach((item, i) => {
+        const angle = (i / numItems) * 360;
+        const x = radius * Math.cos((angle * Math.PI) / 180);
+        const y = radius * Math.sin((angle * Math.PI) / 180);
+
+        gsap.set(item, {
+          x: x,
+          y: y,
+          rotation: angle + 90
+        });
+      });
+    }
+
+    function createAutoRotate() {
+      if (autoRotateTimeline) {
+        autoRotateTimeline.kill();
+      }
+
+      autoRotateTimeline = gsap.to(carouselList, {
+        rotation: rotation + 360,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        onUpdate: () => {
+          rotation = gsap.getProperty(carouselList, "rotation");
+        }
+      });
+    }
+
+    // Create Draggable for rotation
+    const draggable = Draggable.create(carouselList, {
+      type: "rotation",
+      inertia: true,
+      throwResistance: 12000,
+      maxDuration: 0.4,
+      snap: (endVal) => gsap.utils.snap(360 / numItems, endVal),
+      onPress: () => {
+        if (autoRotateTimeline) autoRotateTimeline.pause();
+      },
+      onRelease: () => {
+        rotation = gsap.getProperty(carouselList, "rotation");
+        createAutoRotate();
+      }
+    })[0];
+
+    positionItems();
+    createAutoRotate();
+
+    // Handle window resize and orientation change
+    window.addEventListener("resize", () => {
+      gsap.killTweensOf(carouselList);
+      positionItems();
+      createAutoRotate();
+    });
+
+    window.addEventListener("orientationchange", () => {
+      setTimeout(() => {
+        gsap.killTweensOf(carouselList);
+        positionItems();
+        createAutoRotate();
+      }, 100);
+    });
+  </script>
+</body>
+</html>
