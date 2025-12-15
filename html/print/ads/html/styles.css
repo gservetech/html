@@ -1,0 +1,55 @@
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Hides overflow for clean edges */
+    white-space: nowrap; /* Prevents text wrapping */
+    background-color: #f0f0f0; /* Optional: Add a subtle background */
+    border: 1px solid #ddd; /* Visual border for demo */
+    padding: 20px 0; /* Vertical padding for breathing room */
+}
+
+.marquee-wrapper {
+    display: flex;
+    align-items: center; /* Vertically centers text */
+    animation: marquee 20s linear infinite; /* Core animation: name, duration, timing, iteration */
+}
+
+.marquee-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 50px; /* Space between repeated items */
+    flex-shrink: 0; /* Prevents shrinking in flex */
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(0%); /* Start at full width */
+    }
+    100% {
+        transform: translateX(-50%); /* End at half width (matches duplication) */
+    }
+}
+
+.marquee-wrapper:hover {
+    animation-play-state: paused; /* Halts on hover */
+}
+
+ .marquee-wrapper {
+    flex-direction: column;
+    height: 100px; /* Fixed height */
+    animation: vertical-marquee 15s linear infinite;
+}
+
+@keyframes vertical-marquee {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}

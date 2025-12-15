@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Masonry Layout Examples — Columns, Grid, Flex & Native</title>
+  <style>
+    :root{
+      --gap: 1rem;
+      --card-bg: #0f1724;
+      --card-ink: #eef2ff;
+      --row: 8px; /* grid-auto-rows unit for span technique */
+      --min-col: 16rem;
+    }
+
+    /* Reset */
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui,-apple-system, "Segoe UI", Roboto; background:#f6f8fb; color:#0b1220; padding:24px; }
+
+    header { max-width:1100px; margin:0 auto 18px; }
+    main { max-width:1100px; margin:0 auto; }
+
+    h1 { margin:0 0 8px; font-size:1.25rem; }
+    p.lead { margin:0 0 18px; color:#444; }
+
+    .demo { background:#fff; border-radius:12px; padding:14px; box-shadow:0 8px 30px rgba(11,20,40,0.04); margin-bottom:18px; }
+
+    /* Shared card UI */
+    .card { background: var(--card-bg); color:var(--card-ink); border-radius:10px; overflow:hidden; display:block; box-shadow:0 6px 18px rgba(2,6,23,0.08); }
+    .card .media { background:#111; height: 0; padding-bottom: 66.666%; overflow:hidden; position:relative; }
+    .card .media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+    .card .content { padding:12px; }
+    .card h3 { margin:0 0 8px; font-size:1rem; }
+    .card p { margin:0; color:#cbd5e1; font-size:.9rem; }
+
+    /* Focus outlines for keyboard users */
+    .card a:focus-visible, .card:focus-within { outline: 3px solid rgba(11,95,255,0.12); outline-offset:3px; border-radius:10px; }
+
+    /* -----------------------------------------
+       1) Multi-column Masonry (classic)
+       ----------------------------------------- */
+    .masonry-columns {
+      column-width: 18rem; /* responsive */
+      column-gap: var(--gap);
+      padding: var(--gap);
+    }
+    .masonry-columns > .card {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 var(--gap);
+      break-inside: avoid;
+    }
+
+    /* -----------------------------------------
+       2) Grid Masonry — aspect-ratio + row-span
+       ----------------------------------------- */
+    .masonry-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--min-col), 1fr));
+      grid-auto-rows: var(--row); /* small row unit for better packing */
+      gap: var(--gap);
+      padding: var(--gap);
+    }
+    .masonry-grid .card { display:block; }
+    /* Example size classes (server-side or precomputed) */
+    .masonry-grid .card.size-s { grid-row: span 38; } /* 38 * 8px = 304px */
+    .masonry-grid .card.size-m { grid-row: span 56; }
+    .masonry-grid .card.size-l { grid-row: span 76; }
+
+    /* If you want a stable image block, use aspect-ratio on media */
+    .masonry-grid .media { padding-bottom: 56.25%; } /* 16/9 */
+
+    /* Simple JS fallback: .masonry-like will be auto-spanned by script */
+    .masonry-like { display:grid; grid-template-columns: repeat(auto-fill, minmax(var(--min-col), 1fr)); grid-auto-rows: var(--row); gap:var(--gap); padding:var(--gap); }
+
+    /* -----------------------------------------
+       3) Flexbox — column wrap
+       ----------------------------------------- */
+    .masonry-flex {
+      display:flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      height: 46rem; /* fixed height: controls column height */
+      align-content: flex-start; /* start columns left-to-right */
+      padding: var(--gap);
+    }
+    .masonry-flex .card { width: 18rem; /* fixed column width */ }
+
+    /* -----------------------------------------
+       4) Progressive enhancement: Native Grid masonry
+       ----------------------------------------- */
+    .native-masonry {
+      column-width: 18rem; column-gap: var(--gap); padding:var(--gap); /* default fallback columns */
+    }
+    @supports (grid-template-rows: masonry) {
+      .native-masonry {
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--min-col), 1fr));
+        grid-template-rows: masonry;
+        gap: var(--gap);
+        padding: var(--gap);
+      }
+      .native-masonry > .card { margin:0; }
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:640px) {
+      .masonry-flex { height: 36rem; }
+    }
+
+    /* utility */
+    .controls { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+    .btn { padding:6px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:#f3f6ff; cursor:pointer; }
+    .muted { color:#666; font-size:.9rem; }
+
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Masonry Layout Examples</h1>
+      <p class="lead">Four ways to approximate masonry layouts using CSS: Columns, Grid row-span technique, Flex column-wrap and as a progressive enhancement — native Grid masonry (experimental).</p>
+    </header>
+
+    <!-- 1. Columns -->
+    <section class="demo">
+      <h2>1) Multi-Column Masonry (fast & small CSS)</h2>
+      <p class="muted">Good for image galleries where visual pack matters more than reading order.</p>
+      <div class="masonry-columns" aria-label="Columns masonry gallery">
+        <!-- Repeat cards -->
+        <article class="card">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Avenue" loading="lazy" width="1280" height="853"></div>
+          <div class="content"><h3>Title A</h3><p>Short description for A.</p></div>
+        </article>
+        <article class="card">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Tree" loading="lazy" width="1280" height="853"></div>
+          <div class="content"><h3>Title B</h3><p>Short description for B.</p></div>
+        </article>
+        <article class="card">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Mountains" loading="lazy" width="1280" height="853"></div>
+          <div class="content"><h3>Title C</h3><p>Short description for C.</p></div>
+        </article>
+        <article class="card">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Road" loading="lazy" width="1280" height="853"></div>
+          <div class="content"><h3>Title D</h3><p>Short description for D.</p></div>
+        </article>
+        <article class="card">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Flowers" loading="lazy" width="1280" height="853"></div>
+          <div class="content"><h3>Title E</h3><p>Short description for E.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. Grid row-span (aspect-ratio + size classes/auto-span) -->
+    <section class="demo">
+      <h2>2) Grid masonry (row-span technique)</h2>
+      <p class="muted">Use aspect-ratio for predictable heights or coarse size classes to map visual heights to grid rows.</p>
+      <div class="controls">
+        <button class="btn" id="autoSpan">Auto-span grid rows (JS fallback)</button>
+        <div class="muted">Try the button after images load</div>
+      </div>
+
+      <div id="masonryGrid" class="masonry-grid masonry-like" aria-label="Targeted grid masonry">
+        <article class="card size-l">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Texture" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Large tile</h3><p>Longer description—this intentionally takes more space.</p></div>
+        </article>
+
+        <article class="card size-s">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Leaf" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Small tile</h3><p>Short description.</p></div>
+        </article>
+
+        <article class="card size-m">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Abstract" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Medium tile</h3><p>Medium length description.</p></div>
+        </article>
+
+        <article class="card size-s">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Water" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Small</h3><p>Short block.</p></div>
+        </article>
+
+        <article class="card size-m">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Avenue" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Medium</h3><p>Mid-size tile.</p></div>
+        </article>
+
+        <article class="card size-s">
+          <div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Tree" width="1280" height="720" loading="lazy"></div>
+          <div class="content"><h3>Small</h3><p>Short description.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Flex column-wrap -->
+    <section class="demo">
+      <h2>3) Flex column-wrap (niche)</h2>
+      <p class="muted">Column wrap requires a height; use it for short, fixed-height feeds.</p>
+      <div class="masonry-flex" aria-label="Flex column-wrap example">
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Sound" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 1</h3><p>Desc</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Sea" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 2</h3><p>Desc</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Lighthouse" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 3</h3><p>Desc</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Woman" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 4</h3><p>Desc</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Ball" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 5</h3><p>Desc</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Architecture" width="1280" height="720" loading="lazy"></div><div class="content"><h3>Item 6</h3><p>Desc</p></div></article>
+      </div>
+    </section>
+
+    <!-- 4. Progressive enhancement: native grid masonry when supported -->
+    <section class="demo">
+      <h2>4) Progressive enhancement: Native Grid masonry (experimental)</h2>
+      <p class="muted">Fallback: columns. If browser supports grid masonry, it upgrades automatically.</p>
+      <div class="native-masonry" aria-label="Native masonry progressive enhancement">
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Field" width="1280" height="853" loading="lazy"></div><div class="content"><h3>Tile 1</h3><p>Fallback columns or native masonry.</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Landscape" width="1280" height="853" loading="lazy"></div><div class="content"><h3>Tile 2</h3><p>Another tile</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Mountains" width="1280" height="853" loading="lazy"></div><div class="content"><h3>Tile 3</h3><p>Another tile</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Lake" width="1280" height="853" loading="lazy"></div><div class="content"><h3>Tile 4</h3><p>Another tile</p></div></article>
+        <article class="card"><div class="media"><img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_1280.jpg" alt="Ice" width="1280" height="853" loading="lazy"></div><div class="content"><h3>Tile 5</h3><p>Another tile</p></div></article>
+      </div>
+    </section>
+
+    <footer style="max-width:1100px;margin:0 auto 40px;">
+      <p class="muted">Tip: If your cards' heights are unpredictable, prefer columns for visuals, grid for readable order. Use JS to compute grid-row spans when needed.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Minimal JS helpers: auto-span grid rows and image load handling
+    (function () {
+      const autoBtn = document.getElementById('autoSpan');
+      const grid = document.getElementById('masonryGrid');
+
+      // Wait for all images to load
+      function imagesReady() {
+        const imgs = Array.from(document.images);
+        return Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(r => { img.addEventListener('load', r); img.addEventListener('error', r); })));
+      }
+
+      // Auto-span rows for the ".masonry-like" grid: approximate grid-row spans by measuring heights
+      function autoSpan(container) {
+        const row = parseFloat(getComputedStyle(container).getPropertyValue('grid-auto-rows')) || parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--row')) || 8;
+        const gap = parseFloat(getComputedStyle(container).getPropertyValue('gap')) || parseFloat(getComputedStyle(container).getPropertyValue('grid-row-gap')) || 16;
+        Array.from(container.querySelectorAll('.card')).forEach(card => {
+          card.style.gridRow = null;
+          const height = card.getBoundingClientRect().height;
+          const span = Math.max(1, Math.round((height + gap) / (row + 0.001)));
+          card.style.gridRow = 'span ' + span;
+        });
+      }
+
+      // Bind the button
+      if (autoBtn && grid) {
+        autoBtn.addEventListener('click', async () => {
+          autoBtn.disabled = true;
+          autoBtn.textContent = 'Calculating...';
+          await imagesReady();
+          autoSpan(grid);
+          autoBtn.textContent = 'Auto-span grid rows (done)';
+          setTimeout(() => { autoBtn.textContent = 'Auto-span grid rows (JS fallback)'; autoBtn.disabled = false; }, 1400);
+        });
+        // initial attempt after images loaded
+        imagesReady().then(() => { autoSpan(grid); });
+        // re-run on resize
+        let t;
+        window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { autoSpan(grid); }, 160); }, { passive: true });
+      }
+    })();
+  </script>
+</body>
+</html>

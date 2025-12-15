@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Menu</title>
+    
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            overflow: hidden;
+        }
+
+        .main {
+            align-items: center;
+            background: url("https://assets.codepen.io/204808/berkay-gumustekin-ngqyo2AYYnE-unsplash%281%29.jpg") center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+
+        .heading {
+            color: #fff;
+            font-size: clamp(3.125rem, 8.083vw + 1.033rem, 7.5rem);
+            line-height: clamp(3.75rem, 6.928vw + 1.957rem, 7.5rem);
+            position: fixed;
+            top: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .liquid-glass {
+            --glass-size-w: 16.875rem;
+            --glass-size-h: 16.875rem;
+            --glass-padding: 1.875rem;
+            --border-radius: 2rem;
+            --transition: 0.4s cubic-bezier(0.5, 1.5, 0.5, 1);
+            --menu-gap: 1rem;
+            --icon-size: 4rem;
+            --icon-border-radius: 1rem;
+            --icon-padding: 0.75rem;
+            border-radius: var(--border-radius);
+            cursor: grab;
+            height: var(--glass-size-h);
+            padding: var(--glass-padding);
+            position: relative;
+            transition: width var(--transition), height var(--transition), padding var(--transition);
+            width: var(--glass-size-w);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .liquid-glass.is-expanded {
+            --glass-size-w: 34.375rem;
+            --glass-size-h: 43.75rem;
+            --glass-padding: 2.5rem;
+        }
+
+        .liquid-glass--bend {
+            backdrop-filter: blur(3px);
+            border-radius: var(--border-radius);
+            filter: url(#glass-blur);
+            inset: 0;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .liquid-glass--face {
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15), 0 0 12px rgba(0, 0, 0, 0.08);
+            inset: 0;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .liquid-glass--edge {
+            border-radius: var(--border-radius);
+            box-shadow: inset 3px 3px 3px 0 rgba(255, 255, 255, 0.45), inset -3px -3px 3px 0 rgba(255, 255, 255, 0.45);
+            inset: 0;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .liquid-glass__menus {
+            display: flex;
+            gap: var(--menu-gap);
+            transition: gap var(--transition);
+            position: relative;
+            z-index: 3;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+
+        .is-expanded .liquid-glass__menus {
+            --menu-gap: 2rem;
+        }
+
+        .liquid-glass__link {
+            border-radius: var(--icon-border-radius);
+            box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.45), inset -1px -1px 1px 0 rgba(255, 255, 255, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: var(--icon-size);
+            width: var(--icon-size);
+            padding: var(--icon-padding);
+            pointer-events: none;
+            transition: width var(--transition), height var(--transition), border-radius var(--transition);
+            text-decoration: none;
+            cursor: grab;
+        }
+
+        .is-expanded .liquid-glass__link {
+            --icon-size: 8rem;
+            --icon-border-radius: 2rem;
+            --icon-padding: 1.5rem;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: inset 1px 2px 2px 0 rgba(255, 255, 255, 0.45), inset -1px -2px 2px 0 rgba(255, 255, 255, 0.45);
+        }
+
+        .is-expanded .liquid-glass__link:hover {
+            transform: scale(1.05);
+            box-shadow: inset 1px 2px 2px 0 rgba(255, 255, 255, 0.6), inset -1px -2px 2px 0 rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .link-linkedin {
+            background: #1a76ad;
+            background: linear-gradient(90deg, #1a76ad 0%, #288ec9 100%);
+        }
+
+        .link-frontendly {
+            background: #262626;
+            background: linear-gradient(90deg, #262626 0%, #303030 100%);
+        }
+
+        .liquid-glass__icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        .description {
+            bottom: 3.125rem;
+            color: #fff;
+            font-size: 1.5rem;
+            left: 50%;
+            position: fixed;
+            text-align: center;
+            transform: translateX(-50%);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .heading {
+                font-size: clamp(2rem, 5vw, 3rem);
+            }
+
+            .liquid-glass {
+                --glass-size-w: 12rem;
+                --glass-size-h: 12rem;
+            }
+
+            .liquid-glass.is-expanded {
+                --glass-size-w: 28rem;
+                --glass-size-h: 32rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="heading">Liquid Glass Menu</h1>
+        
+        <div class="liquid-glass">
+            <div class="liquid-glass--bend"></div>
+            <div class="liquid-glass--face"></div>
+            <div class="liquid-glass--edge"></div>
+            
+            <div class="liquid-glass__menus">
+                <a class="liquid-glass__link link-linkedin" href="https://www.linkedin.com/in/iamryanyu/" target="_blank" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 93.06 93.06" class="liquid-glass__icon">
+                        <path fill="#fff" d="M11.185.08C5.004.08.001 5.092 0 11.259c0 6.173 5.003 11.184 11.186 11.184 6.166 0 11.176-5.011 11.176-11.184C22.362 5.091 17.351.08 11.185.08zM1.538 30.926h19.287V92.98H1.538zM69.925 29.383c-9.382 0-15.673 5.144-18.248 10.022h-.258v-8.479H32.92v62.053h19.27V62.281c0-8.093 1.541-15.932 11.575-15.932 9.89 0 10.022 9.256 10.022 16.451v30.178H93.06V58.942c0-16.707-3.605-29.559-23.135-29.559z" />
+                    </svg>
+                </a>
+                
+                <a class="liquid-glass__link link-frontendly" href="http://frontendly.io" target="_blank" title="Frontendly">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 212" fill="none" class="liquid-glass__icon">
+                        <path fill="#fff" d="M100.5 180.25.5 123V97l100-57.25 18.25 37.5L36 118.75v-17.5l82.75 41.5-18.25 37.5Zm14.106 31.25L219.106 0h46.5l-104 211.5h-47Zm168.84-31.25-18.25-37.5 82.75-41.5v17.5l-82.75-41.5 18.25-37.5 100 57.25v26l-100 57.25Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="description">Click to expand & drag to move</div>
+    </main>
+
+    <!-- SVG Filter Definition -->
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+        <filter id="glass-blur" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.007" numOctaves="1" result="turbulence" />
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="200" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <script>
+        // Register GSAP Draggable plugin
+        gsap.registerPlugin(Draggable);
+
+        const liquidGlass = document.querySelector('.liquid-glass');
+
+        // Create draggable instance
+        Draggable.create(liquidGlass, {
+            type: "x,y",
+            inertia: true,
+            onRelease: function () {
+                gsap.to(this.target, {
+                    x: 0,
+                    y: 0,
+                    duration: 1.5,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            }
+        });
+
+        // Toggle expand on click
+        liquidGlass.addEventListener("click", (e) => {
+            // Don't toggle if clicking on a link
+            if (e.target.closest(".liquid-glass__link")) {
+                return;
+            }
+            liquidGlass.classList.toggle("is-expanded");
+        });
+
+        // Prevent drag when expanding/collapsing
+        liquidGlass.addEventListener("mousedown", (e) => {
+            if (liquidGlass.classList.contains("is-expanded")) {
+                liquidGlass.style.cursor = "grabbing";
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            liquidGlass.style.cursor = "grab";
+        });
+    </script>
+</body>
+
+</html>

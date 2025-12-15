@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSS clip-path — examples</title>
+  <style>
+    :root{
+      --card-bg: #fff;
+      --card-border: #e6e9ef;
+      --accent: #0b5fff;
+      --gap: 16px;
+      --radius: 12px;
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:#111;background:#f5f7fb}
+    main{max-width:1100px;margin:32px auto;padding:28px}
+    h1{font-size:1.4rem;margin:0 0 10px}
+    p.lead{color:#444;margin:0 0 18px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap)}
+
+    .card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:14px;
+      box-shadow:0 8px 20px rgba(10,20,60,0.04);
+    }
+
+    .media{
+      height:160px;
+      display:block;
+      width:100%;
+      object-fit:cover;
+      border-radius:10px;
+      background:#ddd;
+      margin-bottom:10px;
+    }
+
+    /* --- CLIP-PATH EXAMPLES --- */
+
+    /* 1. Circle avatar (fallback with border-radius) */
+    .circle .media {
+      border-radius:50%;            /* fallback (works everywhere) */
+      clip-path: circle(50% at 50% 50%);
+    }
+
+    /* 2. Oval / ellipse banner */
+    .oval .media {
+      border-radius: 999px;        /* slight fallback */
+      clip-path: ellipse(80% 45% at 50% 50%);
+      height:120px;
+    }
+
+    /* 3. Inset (reverse padding) */
+    .inset .media {
+      clip-path: inset(12% 8% 16% 8% round 14px);
+    }
+
+    /* 4. Polygon (trapezoid / slanted button) */
+    .polygon .media {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 20% 100%);
+    }
+
+    /* 5. path() (custom curve - heart-like) */
+    .path .media {
+      /* Give a simple fallback (rounded) */
+      border-radius: 18px;
+      /* path() uses SVG commands inside CSS; add both forms for best support */
+      clip-path: path('M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z');
+    }
+
+    /* small code block */
+    pre.code{
+      margin:8px 0 0;
+      background:#0f1724;color:#e6eef8;padding:10px;border-radius:8px;font-size:0.85rem;white-space:pre-wrap;
+    }
+
+    .controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+    .btn{background:var(--accent);border:none;color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer;font-size:.9rem}
+    .btn.secondary{background:#6c757d}
+    .muted{color:#666;font-size:.9rem}
+
+    /* simple transition & reduced-motion handling */
+    .media, .card {transition: transform 220ms ease, box-shadow 220ms ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,95,255,0.06)}
+    @media (prefers-reduced-motion: reduce){ .media,.card{transition:none} }
+
+    /* Utility for hidden content revealed by JS toggles */
+    .hidden{display:none}
+
+    /* Small responsive tweaks */
+    @media (max-width:480px){
+      .media{height:120px}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Shape any element with clip-path</h1>
+    <p class="lead">Circles, ovals, polygons, insets, or fully custom path shapes — all with one property. Each demo includes a small code snippet and a "Show code" toggle.</p>
+
+    <div class="grid">
+      <!-- Circle -->
+      <section class="card circle" aria-labelledby="circle-title">
+        <h2 id="circle-title">Circle</h2>
+        <img class="media" alt="Mountains — circle mask" src="https://cdn.pixabay.com/photo/2025/11/06/10/18/hummingbird-9940395_1280.jpg" loading="lazy"/>
+        <p class="muted">Perfect for avatars or profile photos. Fallback: border-radius.</p>
+        <div class="controls">
+          <button type="button" class="btn" data-code-target="c1" aria-expanded="false">Show code</button>
+        </div>
+        <pre id="c1" class="code hidden">&lt;!-- CSS --&gt;
+.circle .media {
+  border-radius: 50%; /* fallback */
+  clip-path: circle(50% at 50% 50%);
+}</pre>
+      </section>
+
+      <!-- Oval -->
+      <section class="card oval" aria-labelledby="oval-title">
+        <h2 id="oval-title">Ellipse / Oval</h2>
+        <img class="media" alt="Leaf — oval mask" src="https://cdn.pixabay.com/photo/2025/11/06/10/18/hummingbird-9940395_1280.jpg" loading="lazy"/>
+        <p class="muted">Great for banners and soft edges.</p>
+        <div class="controls">
+          <button type="button" class="btn" data-code-target="c2" aria-expanded="false">Show code</button>
+        </div>
+        <pre id="c2" class="code hidden">&lt;!-- CSS --&gt;
+.oval .media {
+  border-radius: 999px; /* friendly fallback */
+  clip-path: ellipse(80% 45% at 50% 50%);
+}</pre>
+      </section>
+
+      <!-- Inset -->
+      <section class="card inset" aria-labelledby="inset-title">
+        <h2 id="inset-title">Inset</h2>
+        <img class="media" alt="Abstract inset mask" src="https://cdn.pixabay.com/photo/2025/11/06/10/18/hummingbird-9940395_1280.jpg" loading="lazy"/>
+        <p class="muted">Cuts into the edges — think reverse padding.</p>
+        <div class="controls">
+          <button type="button" class="btn" data-code-target="c3" aria-expanded="false">Show code</button>
+        </div>
+        <pre id="c3" class="code hidden">&lt;!-- CSS --&gt;
+.inset .media {
+  clip-path: inset(12% 8% 16% 8% round 14px);
+}</pre>
+      </section>
+
+      <!-- Polygon -->
+      <section class="card polygon" aria-labelledby="poly-title">
+        <h2 id="poly-title">Polygon (trapezoid)</h2>
+        <img class="media" alt="Water — polygon mask" src="https://cdn.pixabay.com/photo/2025/11/06/10/18/hummingbird-9940395_1280.jpg" loading="lazy"/>
+        <p class="muted">Slanted cards, angled buttons, or decorative sections.</p>
+        <div class="controls">
+          <button type="button" class="btn" id="polyToggle">Toggle shape</button>
+          <button type="button" class="btn secondary" data-code-target="c4" aria-expanded="false">Show code</button>
+        </div>
+        <pre id="c4" class="code hidden">&lt;!-- CSS --&gt;
+/* trapezoid */
+.polygon .media {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 20% 100%);
+}
+
+/* alternate: parallelogram */
+.polygon.alt .media {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}</pre>
+      </section>
+
+      <!-- Path -->
+      <section class="card path" aria-labelledby="path-title">
+        <h2 id="path-title">Path (custom curve)</h2>
+        <img class="media" alt="Texture — path mask (heart-like)" src="https://cdn.pixabay.com/photo/2025/11/06/10/18/hummingbird-9940395_1280.jpg" loading="lazy"/>
+        <p class="muted">Absolute control: curves, arcs, and brand shapes using path()</p>
+        <div class="controls">
+          <button type="button" class="btn" id="pathToggle">Switch path</button>
+          <button type="button" class="btn secondary" data-code-target="c5" aria-expanded="false">Show code</button>
+        </div>
+        <pre id="c5" class="code hidden">&lt;!-- CSS --&gt;
+/* heart-like shape (example, path can be any valid SVG path) */
+.path .media {
+  clip-path: path('M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z');
+}
+
+/* alternate path (rounded blob) */
+.path.blob .media {
+  clip-path: path('M10 50 C 10 20, 40 0, 60 20 C 80 40, 70 80, 40 90 C 10 95, 10 70, 10 50 Z');
+}</pre>
+      </section>
+    </div>
+
+    <section style="margin-top:20px" class="card">
+      <h2>Notes & fallbacks</h2>
+      <p class="muted">clip-path support is broad, but <code>path()</code> & advanced shapes vary by browser. Provide a fallback (border-radius, background, or a plain container). Use feature queries when needed.</p>
+
+      <pre class="code">&lt;!-- Example feature query --&gt;
+@supports (clip-path: circle(50%)) {
+  .avatar { clip-path: circle(50% at 50% 50%); }
+}
+</pre>
+    </section>
+  </main>
+
+  <script>
+    // Minimal interactivity: code toggles, polygon switch, path switch, and accessibility helpers.
+    (function () {
+      // Delegated click handler: toggle show/hide code blocks (safer if other scripts throw errors)
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-code-target]');
+        if (!btn) return;
+        const id = btn.dataset.codeTarget;
+        const el = document.getElementById(id);
+        if (!el) {
+          console.warn('Code block not found:', id);
+          return;
+        }
+        const isHidden = el.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Show code' : 'Hide code';
+        btn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      // polygon toggle
+      const polyToggle = document.getElementById('polyToggle');
+      if (polyToggle) {
+        polyToggle.addEventListener('click', () => {
+          const section = polyToggle.closest('.polygon');
+          section.classList.toggle('alt');
+          polyToggle.textContent = section.classList.contains('alt') ? 'Trapezoid' : 'Parallelogram';
+          polyToggle.setAttribute('aria-pressed', String(section.classList.contains('alt')));
+        });
+      }
+
+      // path toggle
+      const pathToggle = document.getElementById('pathToggle');
+      if (pathToggle) {
+        pathToggle.addEventListener('click', () => {
+          const section = pathToggle.closest('.path');
+          section.classList.toggle('blob');
+          pathToggle.textContent = section.classList.contains('blob') ? 'Blob' : 'Heart';
+          pathToggle.setAttribute('aria-pressed', String(section.classList.contains('blob')));
+        });
+      }
+
+      // Accessibility: add keyboard support to toggles
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('pre.code:not(.hidden)').forEach(p => p.classList.add('hidden'));
+          document.querySelectorAll('button[data-code-target]').forEach(b => b.textContent = 'Show code');
+        }
+      });
+
+      // Respect prefers-reduced-motion: remove transitions/animations if asked.
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.media, .card').forEach(n => n.style.transition = 'none');
+      }
+    })();
+  </script>
+</body>
+</html>

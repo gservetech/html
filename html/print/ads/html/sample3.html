@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flip Card</title>
+  <style>
+    :root{ --card-w:360px; --card-h:220px; }
+
+    .flip-card {
+      width: 100%;
+      max-width: var(--card-w);
+      aspect-ratio: calc(var(--card-w) / var(--card-h));
+      margin: 40px auto;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* flipped state (hover and .flipped class for touch) */
+    .flip-card:hover .flip-card-inner,
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-weight: 700;
+      font-size: 20px;
+      color: #111;
+    }
+
+    .flip-card-front {
+      background: url('qt4.jpeg') center/cover no-repeat;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transform: rotateY(0deg);
+    }
+
+    .flip-card-back {
+      background: url('tt.jpeg') center/cover no-repeat;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: overlay;
+      color: #fff;
+      transform: rotateY(180deg);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      font-size: 18px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* small-screen adjustments */
+    @media (max-width:420px){
+      :root{ --card-w: 320px; --card-h: 180px; }
+      .flip-card { margin: 20px auto; }
+      .flip-card-front, .flip-card-back { font-size: 16px; padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flip-card" id="flipCard" role="button" aria-pressed="false" tabindex="0">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Front</div>
+      <div class="flip-card-back">Back</div>
+    </div>
+  </div>
+
+  <script>
+    // add click/touch + keyboard support so it works on mobile and keyboard users
+    (function(){
+      const card = document.getElementById('flipCard');
+      if(!card) return;
+
+      function toggleFlip(e){
+        // ignore modifier keys
+        if(e instanceof KeyboardEvent && e.key !== 'Enter' && e.key !== ' ') return;
+        card.classList.toggle('flipped');
+        const pressed = card.classList.contains('flipped');
+        card.setAttribute('aria-pressed', String(pressed));
+      }
+
+      card.addEventListener('click', toggleFlip);
+      card.addEventListener('touchstart', function touchHandler(e){
+        // allow immediate flip on touchstart
+        toggleFlip(e);
+      }, {passive:true});
+
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleFlip(e);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
