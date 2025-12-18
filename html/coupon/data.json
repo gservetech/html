@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-12-18",
+  "applications": {
+    "royalking": [
+      {
+        "email": "mohamedzibras2015@gmail.com",
+        "coupon_code": "ROYAL10",
+        "discount_usd": 10,
+        "expires_at": "2026-03-31"
+      },
+      {
+        "email": "mackumar26@gmail.com",
+        "coupon_code": "ROYAL25",
+        "discount_usd": 25,
+        "expires_at": "2026-03-31"
+      }
+    ],
+
+    "printapp": [
+      {
+        "email": "mohamedzibras2015@gmail.com",
+        "coupon_code": "PRINT15",
+        "discount_usd": 15,
+        "expires_at": "2026-02-28"
+      },
+      {
+        "email": "mackumar26@gmail.com",
+        "coupon_code": "PRINT15",
+        "discount_usd": 15,
+        "expires_at": "2026-02-28"
+      }
+    ],
+
+    "gservetech": [
+      {
+        "email": "mackumar26@gmail.com",
+        "coupon_code": "GCEVO20",
+        "discount_usd": 20,
+        "expires_at": "2026-01-31"
+      },
+      {
+        "email": "mohamedzibras2015@gmail.com",
+        "coupon_code": "GCEVO20",
+        "discount_usd": 20,
+        "expires_at": "2026-01-31"
+      }
+    ]
+  }
+}
