@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>
+      Custom Printing Services Toronto | Business Cards, Flyers, Banners & Signs
+      | Print.GServeTech
+    </title>
+
+    <meta
+      name="description"
+      content="Print.GServeTech offers professional custom printing services in Toronto. Order business cards, flyers, postcards, banners, roll-up signs, lawn signs, custom hats, T-shirts, and promotional print products with fast turnaround."
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+
+    <style>
+      :root {
+        --color-black: hsla(0, 0%, 5%, 100%);
+        --color-white: hsla(0, 0%, 100%, 100%);
+        --color-purple: hsla(278, 100%, 75%, 100%);
+        --color-purple-bright: hsla(278, 100%, 60%, 1);
+
+        --item-size: 200px;
+        --item-height: 240px;
+        --radius: 380px;
+        --heading-size: 3vw;
+      }
+
+      /* Custom Scrollbar */
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-purple) var(--color-black);
+      }
+
+      body::-webkit-scrollbar {
+        width: 8px;
+      }
+      body::-webkit-scrollbar-track {
+        background: var(--color-black);
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: var(--color-purple);
+        border-radius: 10px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: radial-gradient(circle at center, #1a1a2e 0%, var(--color-black) 100%);
+        color: var(--color-white);
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        min-height: 150vh; /* Extra height for scrolling effect */
+        overflow-x: hidden;
+      }
+
+      main {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .heading__text {
+        position: fixed;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        font-size: var(--heading-size);
+        font-weight: 800;
+        text-align: center;
+        width: 90%;
+        max-width: 1100px;
+        padding: 12px 24px;
+        border-radius: 999px;
+        background: rgba(10, 10, 18, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
+
+      .circular-carousel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* BIG BRIGHT CENTER INDICATOR */
+      .center-indicator {
+        position: absolute;
+        z-index: 10;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background: rgba(120, 81, 169, 0.15);
+        backdrop-filter: blur(15px);
+        border: 4px solid var(--color-purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 0 60px rgba(120, 81, 169, 0.5), 
+                    inset 0 0 40px rgba(120, 81, 169, 0.3);
+        animation: pulse-glow 3s infinite ease-in-out;
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 40px rgba(120, 81, 169, 0.4); transform: scale(1); }
+        50% { box-shadow: 0 0 80px rgba(120, 81, 169, 0.8); transform: scale(1.03); }
+      }
+
+      .center-title {
+        font-weight: 900;
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-white);
+        text-shadow: 0 0 20px var(--color-purple);
+        margin-bottom: 5px;
+      }
+
+      .center-subtitle {
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--color-purple);
+        margin-bottom: 15px;
+      }
+
+      .center-benefits {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .center-cta {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--color-white);
+        text-transform: uppercase;
+        padding-top: 15px;
+        border-top: 2px solid rgba(120, 81, 169, 0.5);
+      }
+
+      .circular-carousel__list {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: grab;
+      }
+      .circular-carousel__list:active { cursor: grabbing; }
+
+      .circular-carousel__item {
+        width: var(--item-size);
+        height: var(--item-height);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: calc(var(--item-size) / -2);
+        margin-top: calc(var(--item-height) / -2);
+      }
+
+      .circular-carousel__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+        border: 2px solid rgba(255,255,255,0.05);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s;
+      }
+
+      .circular-carousel__item img:hover {
+        transform: scale(1.15);
+        border-color: var(--color-purple);
+        z-index: 50;
+      }
+
+      /* PROMOTIONAL INSTRUCTION BAR */
+      .instruction {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, transparent, rgba(120, 81, 169, 0.4), transparent);
+        padding: 12px 40px;
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #fff;
+        text-transform: uppercase;
+        backdrop-filter: blur(4px);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        z-index: 1000;
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --radius: 280px;
+          --item-size: 140px;
+          --item-height: 170px;
+          --heading-size: 5vw;
+        }
+        .center-indicator {
+          width: 260px;
+          height: 260px;
+        }
+        .center-title { font-size: 22px; }
+        .center-benefits { font-size: 11px; }
+        .instruction { font-size: 12px; padding: 10px 20px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="heading__text">
+        Premium Toronto Printing Services
+      </h1>
+
+      <div class="circular-carousel">
+        <div class="center-indicator">
+          <div class="center-content">
+            <div class="center-title">Print.GServeTech</div>
+            <div class="center-subtitle">Quality You Can Feel</div>
+
+            <div class="center-benefits">
+              Business Cards • Flyers • Postcards<br />
+              Banners • Roll-Ups • Lawn Signs<br />
+              Custom Apparel & Promo Items
+            </div>
+
+            <div class="center-cta">Drag to Explore Products</div>
+          </div>
+        </div>
+
+        <div class="circular-carousel__list">
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/hatandshirt3-lkbjolkVYaIFBiC43hQmvnM2f7Dylq.jpg" alt="Apparel">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749122446026-flyers-ML0ZzJsM2SztZs3QeaHYLDaLgJP4V8.jpeg" alt="Flyers">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749122576444-business%20card%20laminate%20500-maZ2tfusNcWrRMcmFS7IolUzsn9BZq.jpeg" alt="Business Cards">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749121471659-postcard-BDb3wpNbsoYNg6X7KBDkqe59Yq5m1d.jpeg" alt="Postcards">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749122140764-business%20card%20matt-RLhhNkoAym5W5geHEJasJg5i2iAuoj.jpeg" alt="Matte Cards">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749122044890-brochures-yqlUxFlahjxuPaOC0Rgyb2sDZQqkF9.jpeg" alt="Brochures">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749121993017-rollup-WAeScWF8uUnh8vD09N94tesuuforU4.jpeg" alt="Roll-up Banners">
+            </a>
+          </div>
+          <div class="circular-carousel__item">
+            <a href="https://print.gservetech.com" target="_blank">
+              <img src="https://wjsq0uplsvnqjugj.public.blob.vercel-storage.com/product-1749122598988-lawn%20sign-RiUmMT1oTyBWsDLgCOigxVwnt4wfDt.jpeg" alt="Lawn Signs">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="instruction">Spin the Wheel for Inspiration • Scroll Down for Bulk Pricing</div>
+    </main>
+
+    <section id="details" style="padding: 120px 20px; text-align: center; background: #050505; border-top: 1px solid #222;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--color-purple);">Why Choose Print.GServeTech?</h2>
+        <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; color: #aaa; font-size: 1.1rem;">
+          We bring your vision to life with vibrant colors and high-end materials. 
+          From professional business cards to large-format event banners, 
+          we ensure Toronto businesses stand out with every print.
+        </p>
+    </section>
+
+    <script>
+      gsap.registerPlugin(Draggable, MotionPathPlugin);
+
+      const carouselList = document.querySelector(".circular-carousel__list");
+      const carouselItems = gsap.utils.toArray(".circular-carousel__item");
+      const numItems = carouselItems.length;
+      let autoRotateTimeline;
+
+      function positionItems() {
+        const radius = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--radius"));
+        carouselItems.forEach((item, i) => {
+          const angle = (i / numItems) * 360;
+          const x = radius * Math.cos((angle * Math.PI) / 180);
+          const y = radius * Math.sin((angle * Math.PI) / 180);
+
+          gsap.set(item, { x, y, rotation: angle + 90 });
+        });
+      }
+
+      function createAutoRotate() {
+        if (autoRotateTimeline) autoRotateTimeline.kill();
+        autoRotateTimeline = gsap.to(carouselList, {
+          rotation: "+=360",
+          duration: 40,
+          ease: "none",
+          repeat: -1
+        });
+      }
+
+      Draggable.create(carouselList, {
+        type: "rotation",
+        inertia: true,
+        onPress: () => autoRotateTimeline.pause(),
+        onRelease: () => createAutoRotate()
+      });
+
+      window.addEventListener("resize", positionItems);
+      positionItems();
+      createAutoRotate();
+    </script>
+  </body>
+</html>

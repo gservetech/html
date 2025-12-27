@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Icon Button Examples — Accessible & Responsive</title>
+
+  <!-- Optional: Font Awesome CDN (fallback icon font). Uncomment to use: -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6O6j3vVYFJ3h2b5N1qR0p7f1s6b8Qx3K6dXYmHk1ieJw8yB4k7vX1t6Vgk0Jk3b3sF0Cq2fX5p1dK3y6Z7xg==" crossorigin="anonymous" referrerpolicy="no-referrer"/> -->
+
+  <style>
+    :root {
+      --btn-bg: #007bff;
+      --btn-hover: #0056b3;
+      --btn-color: #fff;
+      --btn-outline: #007bff;
+      --btn-disabled: #6c757d;
+      --size: 40px; /* base size (can be changed to rem for theme) */
+    }
+
+    /* Utility: visually hidden (for screen readers) */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    /* Basic reset for demo layout */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      padding: 2rem;
+      line-height: 1.3;
+      color: #111;
+      background: #f7f9fc;
+    }
+
+    h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    p { margin-top: 0; margin-bottom: 1rem; color: #444; }
+
+    .row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    /* Core icon button styles */
+    .icon-btn {
+      width: var(--size);
+      height: var(--size);
+      border: none;
+      border-radius: 50%;
+      background-color: var(--btn-bg);
+      color: var(--btn-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0; /* hide text nodes if any */
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+      -webkit-appearance: none; /* iOS Safari normalize */
+    }
+
+    .icon-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; pointer-events: none; }
+    .icon-btn i { font-size: 18px; color: inherit; pointer-events: none; }
+
+    /* Outline variant */
+    .icon-btn--outline {
+      background-color: transparent;
+      border: 2px solid var(--btn-outline);
+      color: var(--btn-outline);
+    }
+
+    .icon-btn--outline:hover {
+      background-color: var(--btn-bg);
+      color: var(--btn-color);
+    }
+
+    /* Hover, active states */
+    .icon-btn:hover {
+      background-color: var(--btn-hover);
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 123, 255, 0.18);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 6px rgba(0, 123, 255, 0.14);
+    }
+
+    /* Focus styles for accessibility */
+    .icon-btn:focus {
+      outline: none; /* remove browser default */
+    }
+
+    /* Prefer :focus-visible to avoid focus ring on mouse click */
+    .icon-btn:focus-visible {
+      outline: 3px solid rgba(0, 123, 255, 0.35);
+      outline-offset: 3px;
+    }
+
+    /* Disabled state */
+    .icon-btn:disabled,
+    .icon-btn[disabled] {
+      background-color: var(--btn-disabled);
+      color: #fff;
+      cursor: not-allowed;
+      opacity: 0.75;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Floating action button (FAB) */
+    .icon-btn--fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    /* Toggle state */
+    .icon-btn--toggle { transition: background-color 0.2s ease; }
+    .icon-btn--toggle.on { background-color: #28a745; color: #fff; }
+    .icon-btn--toggle svg { transition: transform 0.25s ease; }
+    .icon-btn--toggle.on svg { transform: rotate(180deg) scale(1.02); }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .icon-btn--pulse { animation: pulse 2s infinite; }
+
+    /* Loading spinner example */
+    .spinner { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Theming via variables and dark mode support */
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f1720; color: #e6eef8; }
+      :root { --btn-bg: #3b82f6; --btn-hover: #2563eb; --btn-color: #fff; }
+    }
+
+    /* Responsive sizing (use rems in production) */
+    @media (max-width: 768px) {
+      :root { --size: 44px; }
+      .icon-btn svg { width: 22px; height: 22px; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .icon-btn, .icon-btn svg { transition: none !important; }
+      .icon-btn--pulse { animation: none !important; }
+    }
+
+    /* Small helper for demo layout */
+    .label { font-size: 0.9rem; color: #333; }
+
+  </style>
+</head>
+<body>
+  <h1>Accessible Icon Buttons</h1>
+  <p>Examples of icon buttons using semantic <code>&lt;button&gt;</code>, inline SVGs, outline variants, disabled states, a FAB, toggle and a pulsing button.</p>
+
+  <section aria-labelledby="examples-heading">
+    <h2 id="examples-heading" class="sr-only">Examples</h2>
+
+    <div class="row" style="margin-bottom:1rem">
+      <!-- Default primary button (Search) -->
+      <button class="icon-btn" aria-label="Search" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+
+      <!-- Outline variant (Add) -->
+      <button class="icon-btn icon-btn--outline" aria-label="Add" title="Add">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Disabled (Trash) -->
+      <button class="icon-btn" aria-label="Delete" disabled title="Delete">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M3 6h18M8 6v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M10 11v6M14 11v6" stroke-linecap="round"></path>
+        </svg>
+      </button>
+
+      <!-- Pulse button (Promo) -->
+      <button class="icon-btn icon-btn--pulse" aria-label="Promotion" title="Promotion">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M12 2l2.9 5.88L21 9.24l-4.5 4.09L17.8 21 12 17.77 6.2 21l1.3-7.67L3 9.24l6.1-1.36L12 2z" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Toggle button (On/Off) -->
+      <button class="icon-btn icon-btn--toggle" aria-label="Toggle favorite" aria-pressed="false" title="Toggle favorite" id="toggleFav">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.78 0L12 5.6l-1.02-1a5.5 5.5 0 0 0-7.78 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Loading button: toggles to spinner via JS -->
+      <button class="icon-btn" aria-label="Save" id="saveBtn" title="Save">
+        <svg id="saveIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke-linejoin="round"></path>
+          <path d="M17 21v-8H7v8" stroke-linecap="round"></path>
+        </svg>
+      </button>
+
+      <!-- Example: Font Awesome fallback (commented) -->
+      <!-- Use an <i> element if you include Font Awesome. Keep aria-label on the button: -->
+      <!-- <button class="icon-btn" aria-label="Search via FontAwesome"><i class="fas fa-search" aria-hidden="true"></i></button> -->
+
+    </div>
+
+  </section>
+
+  <!-- Floating action button -->
+  <button class="icon-btn icon-btn--fab" aria-label="Open composer" title="Compose">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+      <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Toggle favorite: updates aria-pressed and visual class
+    const toggle = document.getElementById('toggleFav');
+    toggle.addEventListener('click', () => {
+      const isOn = toggle.classList.toggle('on');
+      toggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    });
+
+    // Simulate save loading state: replace icon with spinner for 1.5s
+    const saveBtn = document.getElementById('saveBtn');
+    const saveIcon = document.getElementById('saveIcon');
+    saveBtn.addEventListener('click', () => {
+      // Prevent multi-clicks
+      saveBtn.disabled = true;
+
+      // Replace inner SVG with a spinner (CSS spinner class)
+      saveIcon.classList.add('spinner');
+
+      // Simulate async action
+      setTimeout(() => {
+        saveIcon.classList.remove('spinner');
+        saveBtn.disabled = false;
+      }, 1500);
+    });
+
+    // Keyboard accessibility check (optional demo): ensure space/enter triggers toggle (buttons already handle it)
+    // Additional JS not required for keyboard activation of native <button> elements.
+
+  </script>
+
+</body>
+</html>
