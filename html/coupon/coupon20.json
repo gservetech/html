@@ -1,7 +1,7 @@
 {
   "coupons": [
     {
-      "code": "ROYAL20",
+      "code": "ONLINE20",
       "discount": 5.0,
       "minOrder": 20.0,
       "description": "Special $5.00 discount for orders over $20",
