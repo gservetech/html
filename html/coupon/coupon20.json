@@ -13,6 +13,13 @@
       "minOrder": 50.0,
       "description": "Special $10.00 discount for orders over $50",
       "active": true
+    },
+    {
+      "code": "KING30",
+      "discount": 30.0,
+      "minOrder": 100.0,
+      "description": "Special $30.00 discount for orders over $100",
+      "active": false
     }
   ]
 }
