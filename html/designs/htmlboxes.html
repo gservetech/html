@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Nesting: Featured Card Demo</title>
+  <style>
+   body {
+  font-family: system-ui, sans-serif;
+  padding: 40px;
+  background: #f6f7fb;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+}
+
+/* ===============================
+     CARD COMPONENT (WITH NESTING)
+     =============================== */
+.card {
+  padding: 20px;
+  border: 2px solid #cfd3ff;
+  border-radius: 12px;
+  background: white;
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: #555;
+  }
+
+  /* 👉 FEATURED MODIFIER */
+  &[data-featured="true"] {
+    border-color: #616ce5;
+    background: #f0f2ff;
+
+    /* 👉 CHILD STYLING VIA NESTING */
+    h2 {
+      color: #363c7f;
+    }
+  }
+}
+
+small {
+  color: #666;
+}
+  </style>
+</head>
+<body>
+
+<h1>CSS Nesting: Featured Card Demo</h1>
+<small>Same markup. Same component. Only data attribute changes.</small>
+
+<section class="cards">
+
+  <article class="card">
+    <h2>Standard Plan</h2>
+    <p>Good for personal projects.</p>
+  </article>
+
+  <article class="card" data-featured="true">
+    <h2>Pro Plan</h2>
+    <p>Best choice for teams and startups.</p>
+  </article>
+<article class="card">
+    <h2>Enterprice Plan</h2>
+    <p>Good for Team projects and enterprice levels.</p>
+  </article>
+</section>
+</body>
+</html>

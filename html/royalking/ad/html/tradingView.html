@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SPX Options Chain (Local Test)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f8fafc;color:#111827}
+    .wrap{max-width:1200px;margin:24px auto;padding:16px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 12px 28px rgba(0,0,0,.08);padding:16px}
+    h1{margin:0 0 6px;font-size:22px}
+    .sub{margin:0 0 14px;color:#6b7280;font-size:13px;line-height:1.5}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+    .btn{
+      padding:10px 12px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;
+      color:#111827;text-decoration:none;font-size:14px;cursor:pointer
+    }
+    .btn.primary{background:#111827;color:#fff;border-color:#111827}
+    .pill{font-size:12px;padding:6px 10px;background:#f1f5f9;border-radius:999px;color:#334155}
+    .frameWrap{border:1px solid #eef2f7;border-radius:12px;overflow:hidden;background:#fff}
+    iframe{width:100%;height:780px;border:0}
+    .warn{display:none;margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+      padding:12px;border-radius:12px;font-size:13px;line-height:1.5}
+    .note{margin-top:12px;font-size:12px;color:#6b7280;line-height:1.5}
+    code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>SPX Options Chain <span class="pill">Local test</span></h1>
+      <p class="sub">
+        You are running a static Live Server (<code>127.0.0.1:5500</code>). This page tries to embed an SPX options chain.
+        If the provider blocks iframes, use “Open in new tab”.
+      </p>
+
+      <div class="row">
+        <button class="btn primary" id="btnYahooEmbed">Embed: Yahoo</button>
+        <button class="btn" id="btnTVEmbed">Embed: TradingView</button>
+        <button class="btn" id="btnCboeEmbed">Embed: Cboe (quotes)</button>
+        <span class="pill" id="status">Selected: Yahoo</span>
+      </div>
+
+      <div class="row">
+        <a class="btn primary" href="https://finance.yahoo.com/quote/%5ESPX/options/" target="_blank" rel="noopener">
+          Open Yahoo SPX Options
+        </a>
+        <a class="btn" href="https://www.tradingview.com/symbols/SPX/options-chain/?exchange=CBOE" target="_blank" rel="noopener">
+          Open TradingView SPX Options Chain
+        </a>
+        <a class="btn" href="https://www.cboe.com/delayed_quotes/spx/quote_table/" target="_blank" rel="noopener">
+          Open Cboe SPX Quote Table
+        </a>
+        <span class="pill">Often delayed ~15 min</span>
+      </div>
+
+      <div class="frameWrap">
+        <iframe
+          id="frame"
+          src="https://finance.yahoo.com/quote/%5ESPX/options/"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+      </div>
+
+      <div class="warn" id="warn">
+        <strong>Embed likely blocked.</strong> Many finance sites prevent being shown in an iframe (security headers like
+        <code>X-Frame-Options</code> / <code>frame-ancestors</code>). If the embedded area is blank, use the “Open …” buttons.
+        <br><br>
+        <strong>To render the chain as a real HTML table inside your site</strong>, you’ll need a small local proxy (Node/Express)
+        because browsers block direct option-chain API calls from a static page (CORS).
+      </div>
+
+      <div class="note">
+        If you want, I can give you the <strong>smallest possible local proxy</strong> that still keeps your front-end as one HTML file.
+        You’d run: <code>node server.js</code> and your chain will render as a real table on the page (still delayed).
+      </div>
+    </div>
+  </div>
+
+<script>
+  const frame = document.getElementById("frame");
+  const warn = document.getElementById("warn");
+  const status = document.getElementById("status");
+
+  const URLS = {
+    yahoo: "https://finance.yahoo.com/quote/%5ESPX/options/",
+    tv: "https://www.tradingview.com/symbols/SPX/options-chain/?exchange=CBOE",
+    cboe: "https://www.cboe.com/delayed_quotes/spx/quote_table/"
+  };
+
+  function setSrc(key){
+    warn.style.display = "none";
+    const label = key === "tv" ? "TradingView" : key === "cboe" ? "Cboe" : "Yahoo";
+    status.textContent = "Selected: " + label;
+
+    frame.src = URLS[key];
+
+    // We can't reliably detect iframe blocking (cross-origin). Show a hint shortly after load.
+    setTimeout(() => { warn.style.display = "block"; }, 2500);
+  }
+
+  document.getElementById("btnYahooEmbed").addEventListener("click", () => setSrc("yahoo"));
+  document.getElementById("btnTVEmbed").addEventListener("click", () => setSrc("tv"));
+  document.getElementById("btnCboeEmbed").addEventListener("click", () => setSrc("cboe"));
+</script>
+</body>
+</html>
