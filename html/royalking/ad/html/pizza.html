@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal King - 2026 Masonry Wishlist</title>
+    <style>
+        /* THEME: 2026 CSS Wishlist "Native Masonry" Style
+           Ref: Clean, card-based, variable heights, rounded aesthetic.
+        */
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-color: #1c1e21;
+            --accent-color: #e60023; /* Pinterest/Royal Red */
+            --gap: 16px;
+            --radius: 16px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* The "Wishlist" Layout: 
+           Using CSS Columns to simulate native `grid-template-rows: masonry` 
+           (which is the wishlist item, but columns are the current working equivalent).
+        */
+        .masonry-wrapper {
+            column-count: 5;
+            column-gap: var(--gap);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1400px) { .masonry-wrapper { column-count: 4; } }
+        @media (max-width: 1100px) { .masonry-wrapper { column-count: 3; } }
+        @media (max-width: 800px)  { .masonry-wrapper { column-count: 2; } }
+        @media (max-width: 500px)  { .masonry-wrapper { column-count: 1; } }
+
+        /* The "Div Blocks" / Cards */
+        .masonry-item {
+            break-inside: avoid; /* Prevents card from being cut in half */
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            margin-bottom: var(--gap);
+            overflow: hidden;
+            /* The "floating card" shadow style common in modern CSS demos */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            z-index: 2;
+        }
+
+        /* Image handling to ensure "masonry" look (varying aspect ratios) */
+        .item-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 16px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--text-color);
+            background: #e9e9e9;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 14px;
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: #65676b;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background-color: #f0f2f5;
+            color: #65676b;
+        }
+
+        /* Header for Context */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Royal King</h1>
+        <p style="color: #666;">Masonry Menu (CSS Wishlist Style)</p>
+    </header>
+
+    <div class="masonry-wrapper">
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/800/sandwich,veal/all" class="item-image" alt="Veal Sandwich">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Veal Sandwich</h3>
+                    <span class="item-price">$12.99</span>
+                </div>
+                <p class="item-desc">Tender breaded veal cutlet with house tomato sauce on a fresh bun.</p>
+                <div class="tag-row">
+                    <span class="tag">Bestseller</span>
+                    <span class="tag">Sandwich</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/600/lasagna/all" class="item-image" alt="Meat Lasagna">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Meat Lasagna</h3>
+                    <span class="item-price">$16.49</span>
+                </div>
+                <p class="item-desc">Layered fresh pasta, meat sauce, béchamel, and mozzarella.</p>
+                <div class="tag-row">
+                    <span class="tag">Pasta</span>
+                    <span class="tag">Hot</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/400/garlicbread/all" class="item-image" alt="Garlic Bread">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Garlic Bread</h3>
+                    <span class="item-price">$6.99</span>
+                </div>
+                <p class="item-desc">Toasted baguette with garlic butter and melted cheese.</p>
+                <div class="tag-row">
+                    <span class="tag">Starter</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/900/chickenparm/all" class="item-image" alt="Chicken Parmigiana">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Chicken Parmigiana</h3>
+                    <span class="item-price">$26.99</span>
+                </div>
+                <p class="item-desc">Breaded chicken breast topped with marinara and cheese. Includes pasta.</p>
+                <div class="tag-row">
+                    <span class="tag">Dinner</span>
+                    <span class="tag">Main</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/500/arancini,riceball/all" class="item-image" alt="Arancini">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Arancini (Rice Balls)</h3>
+                    <span class="item-price">$10.99</span>
+                </div>
+                <p class="item-desc">5 crispy risotto balls with herbs and marinara dip.</p>
+                <div class="tag-row">
+                    <span class="tag">Vegetarian</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/600/greeksalad/all" class="item-image" alt="Greek Salad">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Greek Salad</h3>
+                    <span class="item-price">$11.99</span>
+                </div>
+                <p class="item-desc">Feta, olives, tomatoes, cucumbers, and oregano dressing.</p>
+                <div class="tag-row">
+                    <span class="tag">Healthy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/450/meatball,sandwich/all" class="item-image" alt="Meatball Sandwich">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Meatball Sandwich</h3>
+                    <span class="item-price">$12.49</span>
+                </div>
+                <p class="item-desc">Italian meatballs in sauce on a toasted bun.</p>
+                <div class="tag-row">
+                    <span class="tag">Sandwich</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/700/tiramisu/all" class="item-image" alt="Tiramisu">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Tiramisu</h3>
+                    <span class="item-price">$8.99</span>
+                </div>
+                <p class="item-desc">Espresso-soaked ladyfingers with mascarpone cream.</p>
+                <div class="tag-row">
+                    <span class="tag">Dessert</span>
+                    <span class="tag">Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item">
+            <img src="https://loremflickr.com/600/550/steak,sandwich/all" class="item-image" alt="Steak Sandwich">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Steak Sandwich</h3>
+                    <span class="item-price">$14.99</span>
+                </div>
+                <p class="item-desc">Grilled steak slices with onions and mushrooms.</p>
+                <div class="tag-row">
+                    <span class="tag">Sandwich</span>
+                    <span class="tag">New</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

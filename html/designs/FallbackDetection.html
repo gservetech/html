@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Dropdown - No Overlap</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f7f9;
+        }
+
+        /* 1. THE FIX: The container must be relative so 'top: 100%' 
+           knows to start at the bottom of the button */
+        .dropdown-wrapper {
+            position: relative; 
+            display: inline-block;
+        }
+
+        #toggle {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            /* Modern browsers anchor name */
+            anchor-name: --btn; 
+        }
+
+        #toggle:active {
+            background-color: #0056b3;
+        }
+
+        #list {
+            /* 2. POSITIONING: Force it below the button */
+            display: none;
+            position: absolute;
+            top: 100%;       /* Exactly at the bottom edge of the button */
+            left: 0;         /* Aligned to the left edge */
+            margin-top: 8px; /* Visual gap so it doesn't touch the button */
+            
+            /* Modern browser anchor logic */
+            position-anchor: --btn;
+            position-area: bottom span-right;
+
+            /* 3. STYLING */
+            width: 220px;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 0;
+            list-style: none;
+            z-index: 9999;
+        }
+
+        #list li {
+            padding: 14px 18px;
+            cursor: pointer;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+
+        #list li:last-child {
+            border-bottom: none;
+        }
+
+        #list li:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Mobile specific touch adjustment */
+        @media (max-width: 600px) {
+            #list {
+                width: 85vw; /* Slightly wider on mobile for easier tapping */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dropdown-wrapper">
+        <button id="toggle">Toggle List ▾</button>
+        
+        <ul id="list">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+        </ul>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('toggle');
+        const list = document.getElementById('list');
+
+        // Toggle dropdown on button click
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = list.style.display === 'block';
+            list.style.display = isVisible ? 'none' : 'block';
+        });
+
+        // Close dropdown when clicking anywhere else on the screen
+        document.addEventListener('click', (e) => {
+            if (!list.contains(e.target) && e.target !== toggle) {
+                list.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

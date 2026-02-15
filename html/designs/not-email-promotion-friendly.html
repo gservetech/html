@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Tables & Lists — Practical Demo</title>
+  <style>
+    :root { color-scheme: light; }
+
+    /* ✅ Mobile-first sizing */
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      background: #f6f7f9;
+      color: #111;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    h1 { margin: 0 0 10px; font-size: clamp(22px, 4.5vw, 34px); line-height: 1.15; }
+    h2 { font-size: clamp(18px, 3.6vw, 22px); line-height: 1.2; }
+    p  { margin: 10px 0 14px; max-width: 70ch; font-size: clamp(14px, 3.5vw, 16px); }
+    .muted { color: #555; font-size: 0.98em; }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
+    }
+
+    /* ✅ Cards + layout */
+    .card {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 14px;
+      margin: 14px 0;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+    }
+
+    .row {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr; /* mobile default */
+    }
+
+    /* desktop split */
+    @media (min-width: 920px) {
+      .row { grid-template-columns: 1fr 1fr; }
+      .card { padding: 16px; }
+      .container { padding: 24px; }
+    }
+
+    /* ---------------------------
+       TABLES: fixed vs auto layout
+       --------------------------- */
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      background: #fff;
+    }
+
+    /* Make horizontal scrolling pleasant on mobile */
+    .table-wrap::after {
+      content: "Swipe →";
+      display: block;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px; /* ✅ forces scroll instead of squishing columns on phones */
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #fafafa;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    /* ✅ Sticky headers can be janky on some phones; disable on small screens */
+    @media (max-width: 600px) {
+      th { position: static; }
+      th, td { padding: 10px; }
+      .table-wrap::after { content: "Swipe → (table scrolls)"; }
+    }
+
+    /* "Good" table: stable columns */
+    .pricing-fixed { table-layout: fixed; }
+
+    .pricing-fixed th:first-child,
+    .pricing-fixed td:first-child { width: 40%; }
+
+    .pricing-fixed td, .pricing-fixed th {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    /* "Bad" table: content drives widths (default is auto) */
+    .pricing-auto { table-layout: auto; }
+
+    /* ---------------------------
+       LISTS
+       --------------------------- */
+
+    .list-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr; /* mobile */
+    }
+
+    @media (min-width: 920px) {
+      .list-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .demo-box {
+      border: 1px dashed #cfcfcf;
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .demo-title { font-weight: 700; margin: 0 0 8px; }
+
+    ul, ol { margin: 0; padding-left: 1.15rem; }
+
+    .markers-outside {
+      list-style-position: outside;
+      padding-left: 1.2rem;
+    }
+    .markers-outside li { margin: 8px 0; }
+
+    .markers-inside {
+      list-style-position: inside;
+      padding-left: 0;
+    }
+    .markers-inside li { margin: 8px 0; }
+
+    .pretty-markers { list-style: disc; }
+    .pretty-markers li { margin: 8px 0; }
+    .pretty-markers li::marker { font-weight: 800; font-size: 1.05em; }
+
+    .custom-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .custom-bullets li {
+      display: grid;
+      grid-template-columns: 1.1rem 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 10px 0;
+    }
+    .custom-bullets li::before {
+      content: "➜";
+      line-height: 1.2;
+      transform: translateY(2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Stop Fighting CSS Tables & Lists — Demo Page</h1>
+    <p class="muted">
+      This page shows why <code>table-layout: fixed</code> stabilizes columns, and how list markers behave with
+      <code>list-style-position</code>, <code>::marker</code>, and custom bullets.
+    </p>
+
+    <div class="row">
+      <!-- TABLE: "AUTO" -->
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Table (default <code>table-layout: auto</code>)</h2>
+        <p class="muted">
+          Here the browser sizes columns based on content. A single long word/URL can force a column to expand.
+        </p>
+        <div class="table-wrap" aria-label="Scrollable table">
+          <table class="pricing-auto">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Basic</th>
+                <th>Pro</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Support</td>
+                <td>Email</td>
+                <td>Priority email + chat</td>
+                <td>Dedicated manager</td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>5 GB</td>
+                <td>50 GB</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>
+                  “Problem content” (long unbroken text)
+                  <div class="muted">This often blows up columns in auto layout.</div>
+                </td>
+                <td>ok</td>
+                <td>https://example.com/superlongsuperlongsuperlongsuperlongsuperlongsuperlongsuperlong</td>
+                <td>ok</td>
+              </tr>
+              <tr>
+                <td>Notes</td>
+                <td colspan="3">In auto layout, the browser tries to “be clever” and will reshuffle widths as content changes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TABLE: "FIXED" -->
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Table (<code>table-layout: fixed</code>)</h2>
+        <p class="muted">
+          Columns become predictable. You can assign widths (like the first column at 40%) and let the rest distribute evenly.
+        </p>
+        <div class="table-wrap" aria-label="Scrollable table">
+          <table class="pricing-fixed">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Basic</th>
+                <th>Pro</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Support</td>
+                <td>Email</td>
+                <td>Priority email + chat</td>
+                <td>Dedicated manager</td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>5 GB</td>
+                <td>50 GB</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>
+                  “Problem content” (long unbroken text)
+                  <div class="muted">With fixed layout + wrapping, it stays contained.</div>
+                </td>
+                <td>ok</td>
+                <td>https://example.com/superlongsuperlongsuperlongsuperlongsuperlongsuperlongsuperlong</td>
+                <td>ok</td>
+              </tr>
+              <tr>
+                <td>Notes</td>
+                <td colspan="3">Fixed layout prioritizes the column rules you set, not whatever text happens to be inside.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- LISTS -->
+    <section class="card">
+      <h2 style="margin:0 0 8px;">Lists: why markers “float” and how to control them</h2>
+      <p class="muted">
+        Markers are not normal text. Changing positioning and spacing (or using <code>::marker</code>) makes them behave.
+      </p>
+
+      <div class="list-grid">
+        <div class="demo-box">
+          <p class="demo-title">A) Markers outside (clean for multi-line items)</p>
+          <ul class="markers-outside">
+            <li>This is a normal item.</li>
+            <li>This item wraps to a second line, and you’ll see the text aligns nicely under itself.</li>
+            <li>Nested list:
+              <ul>
+                <li>Nested item one</li>
+                <li>Nested item two</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="demo-box">
+          <p class="demo-title">B) Markers inside (marker becomes part of the text flow)</p>
+          <ul class="markers-inside">
+            <li>This is a normal item.</li>
+            <li>This item wraps to a second line; notice how the marker affects the text alignment.</li>
+            <li>Often useful in tight layouts, but can look “off” without extra tweaking.</li>
+          </ul>
+        </div>
+
+        <div class="demo-box">
+          <p class="demo-title">C) Style the marker with <code>::marker</code></p>
+          <ul class="pretty-markers">
+            <li>Make bullets bolder or larger.</li>
+            <li>Still keeps normal list semantics (good for accessibility).</li>
+            <li>Great when you just want nicer bullets without rebuilding the list.</li>
+          </ul>
+        </div>
+
+        <div class="demo-box">
+          <p class="demo-title">D) Full control: custom bullets (grid-based)</p>
+          <ul class="custom-bullets">
+            <li><span>Bullet and text are separate columns, so wrapped lines stay perfectly aligned.</span></li>
+            <li><span>This one wraps to show alignment. The arrow stays in its own column.</span></li>
+            <li><span>Best when you want icons, badges, or pixel-perfect spacing.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px;">Quick takeaways</h2>
+      <ul class="markers-outside">
+        <li>If you need rigid columns: use <code>table-layout: fixed</code> + set widths (like first column 40%).</li>
+        <li>For long content inside tables: add <code>overflow-wrap: anywhere</code> on cells.</li>
+        <li>For lists: choose <code>list-style-position</code> intentionally; use <code>::marker</code> for simple styling, or custom bullets for perfect alignment.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
