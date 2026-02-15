@@ -1,10 +1,10 @@
 {
   "coupons": [
     {
-      "code": "ONLINE20",
+      "code": "ONLINE10",
       "discount": 5.0,
-      "minOrder": 20.0,
-      "description": "Special $5.00 discount for orders over $20",
+      "minOrder": 50.0,
+      "description": "Special $5.00 discount for orders over $50",
       "active": true
     },
     {
