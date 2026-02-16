@@ -2,9 +2,9 @@
   "coupons": [
     {
       "code": "ONLINE10",
-      "discount": 5.0,
+      "discount": 10.0,
       "minOrder": 50.0,
-      "description": "Special $5.00 discount for orders over $50",
+      "description": "Special $10.00 discount for orders over $50",
       "active": true
     },
     {
