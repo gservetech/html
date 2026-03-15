@@ -1,0 +1,29 @@
+[2026-03-12 11:00:36] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"
+[2026-03-12 11:00:44] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"
+[2026-03-12 11:00:52] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"
+[2026-03-12 11:01:05] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"
+[2026-03-12 11:01:05] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-12 11:01:05] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-12 11:01:05] [INFO] [Facebook] Post content (473 chars)
+[2026-03-12 11:01:05] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-12 11:01:06] [WARN] [ImageHost] Cannot resolve image: https://picsum.photos/800/600
+[2026-03-12 11:01:06] [WARN] [Facebook] Image URL not accessible, posting text only
+[2026-03-12 11:01:06] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-12 11:04:57] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"
+[2026-03-12 11:04:57] [INFO] [Scheduler] ⏰ Daily posting scheduled at 09:00 (Asia/Kolkata)
+[2026-03-12 11:04:57] [INFO] [Scheduler] 📅 Cron expression: 00 09 * * *
+[2026-03-12 11:04:57] [INFO] [Scheduler] Waiting for next scheduled run...
+
+[2026-03-12 11:04:57] [INFO] [Scheduler] Press Ctrl+C to stop the scheduler.
+
+[2026-03-12 11:04:58] [SUCCESS] [Facebook] Connected to Page: "Gserveech Digitalcontentprovider"

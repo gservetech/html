@@ -1,0 +1,33 @@
+[2026-03-11 17:12:30] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-11 17:12:49] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-11 17:32:38] [ERROR] [Facebook] Verification failed: (#100) Tried accessing nonexisting field (fan_count)
+[2026-03-11 17:33:03] [ERROR] [Facebook] Verification failed: (#100) Tried accessing nonexisting field (category)
+[2026-03-11 17:33:22] [SUCCESS] [Facebook] Connected to Page: "Zibis Sisa"
+[2026-03-11 17:33:43] [SUCCESS] [Facebook] Connected to Page: "Zibis Sisa"
+[2026-03-11 17:33:43] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-11 17:33:43] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-11 17:33:43] [INFO] [Facebook] Post content (473 chars)
+[2026-03-11 17:33:43] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-11 17:33:44] [WARN] [ImageHost] Cannot resolve image: https://picsum.photos/800/600
+[2026-03-11 17:33:44] [WARN] [Facebook] Image URL not accessible, posting text only
+[2026-03-11 17:33:44] [ERROR] [Facebook] Failed to post: (#100) The global id 61582433584973 is not allowed for this call
+[2026-03-11 17:40:44] [SUCCESS] [Facebook] Connected to Page: "Zibis Sisa"
+[2026-03-11 17:40:44] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-11 17:40:44] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-11 17:40:44] [INFO] [Facebook] Post content (473 chars)
+[2026-03-11 17:40:44] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-11 17:40:45] [WARN] [ImageHost] Cannot resolve image: https://picsum.photos/800/600
+[2026-03-11 17:40:45] [WARN] [Facebook] Image URL not accessible, posting text only
+[2026-03-11 17:40:45] [ERROR] [Facebook] Failed to post: (#100) The global id 61582433584973 is not allowed for this call
