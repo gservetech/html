@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Div Shape Shifter</title>
+  <style>
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f5f5f5;
+        padding: 40px 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+        font-size: 2em;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 1.5em;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .example {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .example-title {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .demo-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        color: white;
+        font-weight: 500;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Basic Corner Shape Values */
+      .round-example {
+        background: #667eea;
+        border-radius: 30px;
+        corner-shape: round;
+      }
+
+      .square-example {
+        background: #764ba2;
+        border-radius: 30px;
+        corner-shape: square;
+      }
+
+      .bevel-example {
+        background: #f093fb;
+        border-radius: 30px;
+        corner-shape: bevel;
+      }
+
+      .scoop-example {
+        background: #4facfe;
+        border-radius: 30px;
+        corner-shape: scoop;
+      }
+
+      .notch-example {
+        background: #43e97b;
+        border-radius: 30px;
+        corner-shape: notch;
+      }
+
+      .squircle-example {
+        background: #fa709a;
+        border-radius: 30px;
+        corner-shape: squircle;
+      }
+
+      /* Superellipse Examples */
+      .super-3 {
+        background: #667eea;
+        border-radius: 40px;
+        corner-shape: superellipse(3);
+      }
+
+      .super-2 {
+        background: #764ba2;
+        border-radius: 40px;
+        corner-shape: superellipse(2);
+      }
+
+      .super-1 {
+        background: #f093fb;
+        border-radius: 40px;
+        corner-shape: superellipse(1);
+      }
+
+      .super-0 {
+        background: #4facfe;
+        border-radius: 40px;
+        corner-shape: superellipse(0);
+      }
+
+      .super-neg1 {
+        background: #43e97b;
+        border-radius: 40px;
+        corner-shape: superellipse(-1);
+      }
+
+      .super-neg2 {
+        background: #fa709a;
+        border-radius: 40px;
+        corner-shape: superellipse(-2);
+      }
+
+      /* Practical Use Cases */
+      .card-example {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 40px;
+        corner-shape: scoop;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .unique-box {
+        background: #ff6b6b;
+        border-radius: 50px;
+        corner-shape: scoop bevel notch squircle;
+      }
+
+      .corner-triangle {
+        background: #4ecdc4;
+        border-radius: 40px;
+        corner-shape: notch;
+      }
+
+      .ribbon-corner {
+        background: #ffe66d;
+        border-radius: 30px 0 30px 0;
+        corner-shape: bevel notch;
+        color: #333;
+      }
+
+      .squircle-button {
+        background: #95e1d3;
+        border-radius: 20px;
+        corner-shape: squircle;
+        border: none;
+        cursor: pointer;
+        color: #333;
+        min-height: 60px;
+      }
+
+      .tag {
+        display: inline-flex;
+        background: #f38181;
+        border-radius: 15px;
+        corner-shape: scoop;
+        padding: 8px 20px;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        min-height: 80px;
+      }
+
+      .modern-card {
+        background: white;
+        border-radius: 35px;
+        corner-shape: squircle;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        color: #333;
+      }
+
+      .creative-box {
+        background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+        border-radius: 45px 20px 45px 20px;
+        corner-shape: bevel squircle;
+      }
+
+      /* Individual Corner Control */
+      .individual-corners {
+        background: #84fab0;
+        border-radius: 40px;
+        corner-top-left-shape: scoop;
+        corner-top-right-shape: bevel;
+        corner-bottom-right-shape: notch;
+        corner-bottom-left-shape: squircle;
+      }
+
+      /* Properties Following Corner Shape */
+      .complete-example {
+        background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        border: 3px solid #2c3e50;
+        border-radius: 35px;
+        corner-shape: scoop;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        outline: 2px solid #3498db;
+        outline-offset: 5px;
+      }
+
+      /* Animation Example */
+      @keyframes corner-morph {
+        0% {
+          corner-shape: square;
+        }
+        33% {
+          corner-shape: round;
+        }
+        66% {
+          corner-shape: scoop;
+        }
+        100% {
+          corner-shape: notch;
+        }
+      }
+
+      .morphing-box {
+        background: #667eea;
+        border-radius: 40px;
+        animation: corner-morph 4s infinite;
+      }
+
+      .animated-box {
+        background: #764ba2;
+        border-radius: 50px;
+        corner-shape: square;
+        transition: corner-shape 0.5s ease;
+        cursor: pointer;
+      }
+
+      .animated-box:hover {
+        corner-shape: notch;
+      }
+
+      /* Browser Support Warning */
+      .warning {
+        background: #fff3cd;
+        border: 2px solid #ffc107;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 40px;
+        color: #856404;
+      }
+
+      .warning h3 {
+        margin-bottom: 10px;
+        color: #856404;
+      }
+
+      @supports not (corner-shape: scoop) {
+        .warning {
+          display: block;
+        }
+
+        .unsupported-notice {
+          display: block;
+          background: #f8d7da;
+          border: 2px solid #dc3545;
+          color: #721c24;
+          padding: 15px;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-weight: 600;
+        }
+      }
+
+      @supports (corner-shape: scoop) {
+        .unsupported-notice {
+          display: none;
+        }
+      }
+
+      code {
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+      }
+  </style>
+</head>
+  <body>
+    <div class="container">
+      <h1>CSS Corner-Shape Examples</h1>
+
+      <div class="unsupported-notice">
+        ⚠️ Your browser does not support the corner-shape property. Examples may
+        appear as regular border-radius.
+      </div>
+
+      <div class="warning">
+        <h3>⚡ Experimental Feature</h3>
+        <p>
+          The <code>corner-shape</code> property is currently experimental and
+          has limited browser support. For best results, use Safari Technology
+          Preview or enable experimental features in your browser.
+        </p>
+      </div>
+
+      <!-- Basic Values Section -->
+      <div class="section">
+        <h2>Basic Corner Shape Values</h2>
+        <div class="grid">
+          <div class="example">
+            <div class="example-title">round (default)</div>
+            <div class="demo-box round-example">Round</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">square</div>
+            <div class="demo-box square-example">Square</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">bevel</div>
+            <div class="demo-box bevel-example">Bevel</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">scoop</div>
+            <div class="demo-box scoop-example">Scoop</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">notch</div>
+            <div class="demo-box notch-example">Notch</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">squircle</div>
+            <div class="demo-box squircle-example">Squircle</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Superellipse Function Section -->
+      <div class="section">
+        <h2>Superellipse Function Examples</h2>
+        <div class="grid">
+          <div class="example">
+            <div class="example-title">superellipse(3)</div>
+            <div class="demo-box super-3">superellipse(3)</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">superellipse(2) - squircle</div>
+            <div class="demo-box super-2">superellipse(2)</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">superellipse(1) - round</div>
+            <div class="demo-box super-1">superellipse(1)</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">superellipse(0) - bevel</div>
+            <div class="demo-box super-0">superellipse(0)</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">superellipse(-1) - scoop</div>
+            <div class="demo-box super-neg1">superellipse(-1)</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">superellipse(-2)</div>
+            <div class="demo-box super-neg2">superellipse(-2)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practical Use Cases Section -->
+      <div class="section">
+        <h2>Practical Use Cases</h2>
+        <div class="grid">
+          <div class="example">
+            <div class="example-title">Card with Gradient</div>
+            <div class="demo-box card-example">Modern Card</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Different Corners (4 values)</div>
+            <div class="demo-box unique-box">Unique Box</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Corner Triangle Effect</div>
+            <div class="demo-box corner-triangle">Triangle</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Corner Ribbon</div>
+            <div class="demo-box ribbon-corner">Ribbon</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Squircle Button</div>
+            <div class="demo-box squircle-button">Button</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Tag/Badge</div>
+            <div class="demo-box tag">Status Tag</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Modern Card Design</div>
+            <div class="demo-box modern-card">Card Content</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Creative Mixed Corners</div>
+            <div class="demo-box creative-box">Creative</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual Corner Control Section -->
+      <div class="section">
+        <h2>Individual Corner Control</h2>
+        <div class="grid">
+          <div class="example">
+            <div class="example-title">Each corner different shape</div>
+            <div class="demo-box individual-corners">
+              TL: Scoop<br />
+              TR: Bevel<br />
+              BR: Notch<br />
+              BL: Squircle
+            </div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">All properties following shape</div>
+            <div class="demo-box complete-example">
+              Border + Shadow<br />+ Outline
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animation Section -->
+      <div class="section">
+        <h2>Animated Corner Shapes</h2>
+        <div class="grid">
+          <div class="example">
+            <div class="example-title">Morphing Animation (4s loop)</div>
+            <div class="demo-box morphing-box">Morphing</div>
+          </div>
+
+          <div class="example">
+            <div class="example-title">Hover Transition (hover me!)</div>
+            <div class="demo-box animated-box">Hover Me</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

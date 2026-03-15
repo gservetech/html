@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Details Demo</title>
+  <style>
+    /* optional minimal styling */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 24px; }
+    details {
+  position: relative;
+  max-inline-size: 40rem;
+  padding: 1rem;
+  box-shadow: 0px 3px 6px 0px #1b30501a;
+  border: 2px solid #d3d8df;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+summary {
+  padding-inline: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.details::details-content {
+  display: block;
+  margin-inline: 2rem;
+  height: 0;
+  overflow: hidden;
+  transition-property: height, content-visibility;
+  transition-duration: 0.5s;
+  /* allow the animation for discrete animated properties - must come after the "transition" */
+  transition-behavior: allow-discrete; 
+}
+
+/* fallbak for not supported browsers */
+.details[open]::details-content {
+  height: auto;
+}
+
+/* for modern browsers */
+@supports (height: calc-size(auto, size)) {
+  .details[open]::details-content {
+    height: calc-size(auto, size);
+  }
+}
+
+summary::marker {
+  content: "»";
+  content: none;
+}
+
+summary::before {
+  content: "»";
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -0.05rem;
+  transition: rotate 0.2s;
+}
+
+.details[open] summary::before {
+  rotate: 90deg;
+  inset-block-start: 0.05rem;
+}
+
+  </style>
+</head>
+<body>
+  <details class="details">
+    <summary>Click to expand</summary>
+    <div class="details-content">
+      <p>This content can be very short</p>
+    </div>
+  </details>
+
+  <details class="details">
+    <summary>Click to expand</summary>
+    <div class="details-content">
+      <p>This content can be any height.</p>
+      <p>It might be short…</p>
+      <p>
+        Or it might be very long with lots of content that wraps and takes up many lines and creates a
+        tall element that needs to be animated smoothly.
+      </p>
+      <p>
+        instead of using the "max-height" hack, CSS grid or JS, we now start using "height: calc-size(auto, size)", and then we will be able to animate the content from 0 height to any height the content contains.
+      </p>
+    </div>
+  </details>
+  
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HTML Template - Depth UI</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+  --transition-fast: 0.2s ease;
+
+  /* Light mode defaults */
+  --page-bg: #f3f4f6;
+  --text-color: #111827;
+
+  --flat-surface: #ffffff;
+  --flat-border: #d1d5db;
+  --flat-muted: #6b7280;
+
+  --depth-bg-light: #e7efff;
+  --depth-bg: #d2e1ff;
+  --depth-bg-dark: #9fb9ff;
+  --depth-text: #111827;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+
+  --shadow-top: rgba(255, 255, 255, 0.7);
+  --shadow-bottom-soft: rgba(15, 23, 42, 0.18);
+  --overlay-bg: rgba(15, 23, 42, 0.35);
+}
+
+/* Dark mode overrides */
+
+[data-theme="dark"] {
+  --page-bg: #020617;
+  --text-color: #e5e7eb;
+
+  --flat-surface: #020617;
+  --flat-border: #1f2937;
+  --flat-muted: #9ca3af;
+
+  --depth-bg-light: #020617;
+  --depth-bg: #0b1120;
+  --depth-bg-dark: #1d283a;
+  --depth-text: #e5e7eb;
+
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+
+  --shadow-top: rgba(255, 255, 255, 0.06);
+  --shadow-bottom-soft: rgba(0, 0, 0, 0.65);
+  --overlay-bg: rgba(15, 23, 42, 0.75);
+}
+
+/* ---------------- GLOBAL STYLES ---------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(
+      circle at top,
+      rgba(148, 163, 184, 0.28),
+      transparent 55%
+    ),
+    var(--page-bg);
+  color: var(--text-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1.25rem 3rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page {
+  max-width: 1120px;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  padding: 1.8rem 1.7rem 2.2rem;
+}
+
+[data-theme="dark"] .page {
+  background: rgba(15, 23, 42, 0.88);
+  border-color: rgba(55, 65, 81, 0.7);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.toggle-btn {
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: rgba(15, 23, 42, 0.02);
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background var(--transition-fast),
+    border-color var(--transition-fast), transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.toggle-icon {
+  font-size: 1rem;
+}
+
+.intro {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1.6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.section-title {
+  margin: 2.2rem 0 0.9rem;
+  font-size: 1.05rem;
+}
+
+.section-note {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.panel {
+  border-radius: 14px;
+  padding: 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel-flat {
+  background: var(--flat-surface);
+  border: 1px solid var(--flat-border);
+}
+
+.panel-depth {
+  background: var(--depth-bg);
+  color: var(--depth-text);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 6px 14px var(--shadow-bottom-soft);
+}
+
+.panel h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+}
+
+.panel p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.row-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn-flat {
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--flat-border);
+  background: var(--flat-surface);
+  cursor: pointer;
+  color: inherit;
+}
+
+.btn-flat-ghost {
+  background: transparent;
+}
+
+.btn-depth {
+  border-radius: 999px;
+  padding: 0.48rem 1rem;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  color: #f9fafb;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 7px 16px var(--shadow-bottom-soft);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.btn-depth:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 12px 24px var(--shadow-bottom-soft);
+  filter: brightness(1.02);
+}
+
+.btn-depth-outline {
+  color: var(--depth-text);
+  background: var(--depth-bg-dark);
+}
+
+/* ---------------- INPUTS ---------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.field label {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.input-flat {
+  border-radius: 8px;
+  border: 1px solid var(--flat-border);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+  background: var(--flat-surface);
+  color: inherit;
+}
+
+.input-flat:focus {
+  outline: 1px solid var(--flat-border);
+}
+
+.input-depth {
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+  background: var(--depth-bg-light);
+  color: var(--depth-text);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 4px 10px var(--shadow-bottom-soft);
+  outline: none;
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.input-depth:focus {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 10px 20px var(--shadow-bottom-soft);
+}
+
+/* ---------------- DROPDOWNS ---------------- */
+
+.select-flat {
+  border-radius: 8px;
+  border: 1px solid var(--flat-border);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+  background: var(--flat-surface);
+  color: inherit;
+}
+
+.dropdown-depth {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  background: var(--depth-bg-dark);
+  color: var(--depth-text);
+  min-width: 170px;
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 5px 12px var(--shadow-bottom-soft);
+  cursor: pointer;
+}
+
+.dropdown-depth span {
+  white-space: nowrap;
+}
+
+.dropdown-depth-icon {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* ---------------- SIDEBAR NAV ---------------- */
+
+.sidebar-demo {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.sidebar-flat {
+  width: 140px;
+  padding: 0.8rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--flat-border);
+  font-size: 0.8rem;
+}
+
+.sidebar-flat-title {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar-flat-item {
+  padding: 0.3rem 0.35rem;
+  border-radius: 6px;
+  margin-bottom: 0.15rem;
+  cursor: pointer;
+}
+
+.sidebar-flat-item.active {
+  background: #e5e7eb;
+}
+
+[data-theme="dark"] .sidebar-flat-item.active {
+  background: #111827;
+}
+
+.sidebar-depth {
+  width: 150px;
+  padding: 0.85rem 0.7rem;
+  border-radius: 12px;
+  background: var(--depth-bg-dark);
+  color: var(--depth-text);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 7px 16px var(--shadow-bottom-soft);
+  font-size: 0.8rem;
+}
+
+.sidebar-depth-title {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  opacity: 0.8;
+  margin-bottom: 0.45rem;
+}
+
+.sidebar-depth-item {
+  padding: 0.32rem 0.4rem;
+  border-radius: 9px;
+  margin-bottom: 0.18rem;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: background var(--transition-fast),
+    box-shadow var(--transition-fast), transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.sidebar-depth-item:hover {
+  opacity: 1;
+}
+
+.sidebar-depth-item.active {
+  background: var(--depth-bg);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 4px 10px var(--shadow-bottom-soft);
+  transform: translateY(-1px);
+}
+
+.sidebar-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.15rem;
+}
+
+/* ---------------- TOASTS ---------------- */
+
+.toast-area {
+  position: relative;
+  min-height: 70px;
+}
+
+.toast {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.toast-flat {
+  background: var(--flat-surface);
+  border: 1px solid var(--flat-border);
+  color: inherit;
+}
+
+.toast-depth {
+  background: var(--depth-bg-dark);
+  color: var(--depth-text);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 8px 18px var(--shadow-bottom-soft);
+}
+
+.toast-pill {
+  font-size: 0.7rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .toast-pill {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+.toast-close {
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0;
+}
+
+/* ---------------- MODALS ---------------- */
+
+.modal-area {
+  position: relative;
+  min-height: 70px;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-flat,
+.modal-depth {
+  max-width: 260px;
+  font-size: 0.82rem;
+  border-radius: 12px;
+  padding: 0.85rem 0.9rem 0.9rem;
+}
+
+.modal-flat {
+  background: var(--flat-surface);
+  border: 1px solid var(--flat-border);
+}
+
+.modal-depth {
+  background: var(--depth-bg);
+  color: var(--depth-text);
+  box-shadow: inset 0 1px 0 var(--shadow-top),
+    0 12px 26px var(--shadow-bottom-soft);
+}
+
+.modal-title {
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+
+.modal-body {
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.link-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.link-btn:hover {
+  opacity: 1;
+}
+
+.mini-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  background: var(--primary);
+  color: #f9fafb;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .page {
+    padding: 1.5rem 1.3rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="page">
+  <header class="header">
+    <div>
+      <h1>UI Before vs After: Depth, Shadows & Layers</h1>
+      <p class="subtitle">Buttons, inputs, dropdowns, sidebar, toasts & modals.</p>
+    </div>
+    <button class="toggle-btn" id="themeToggle">
+      <span class="toggle-icon">🌞</span>
+      <span>Light mode</span>
+    </button>
+  </header>
+
+  <p class="intro">
+    Same layout, same components – but on the right we add color layers and
+    soft dual shadows. Use the theme toggle to see how everything still feels
+    clear and “expensive” in both light and dark mode.
+  </p>
+
+  <!-- BUTTONS -->
+  <h2 class="section-title">Buttons</h2>
+  <p class="section-note">
+    Flat buttons rely on borders. Depth buttons rely on light, shadow and shape.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>Simple bordered buttons with no depth or hierarchy.</p>
+      <div class="row-inline">
+        <button class="btn-flat">Primary</button>
+        <button class="btn-flat btn-flat-ghost">Secondary</button>
+      </div>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>Same actions, but with soft glow, shadow and gradient.</p>
+      <div class="row-inline">
+        <button class="btn-depth">Primary</button>
+        <button class="btn-depth btn-depth-outline">Secondary</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INPUTS -->
+  <h2 class="section-title">Inputs</h2>
+  <p class="section-note">
+    Flat inputs look like lines. Depth inputs feel like actual fields.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>Standard bordered input fields with no depth cues.</p>
+      <div class="field">
+        <label>Email</label>
+        <input class="input-flat" placeholder="you@example.com" />
+      </div>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>A soft lifted field with a subtle shadow and glow.</p>
+      <div class="field">
+        <label>Email</label>
+        <input class="input-depth" placeholder="you@example.com" />
+      </div>
+    </div>
+  </div>
+
+  <!-- DROPDOWNS -->
+  <h2 class="section-title">Dropdowns</h2>
+  <p class="section-note">
+    Flat dropdowns are just boxes. Depth dropdowns look like actual controls.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>Basic select element with a border and default styling.</p>
+      <select class="select-flat">
+        <option>Monthly billing</option>
+        <option>Annual billing</option>
+        <option>Lifetime</option>
+      </select>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>A pill-shaped control with subtle depth and a clear affordance.</p>
+      <div class="dropdown-depth">
+        <span>Monthly billing</span>
+        <span class="dropdown-depth-icon">▾</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR NAV -->
+  <h2 class="section-title">Sidebar Navigation</h2>
+  <p class="section-note">
+    Both sidebars show the same links. The depth version uses layers for hierarchy.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>A simple column with text links and a highlight.</p>
+      <div class="sidebar-demo">
+        <div class="sidebar-flat">
+          <div class="sidebar-flat-title">Menu</div>
+          <div class="sidebar-flat-item active">Dashboard</div>
+          <div class="sidebar-flat-item">Projects</div>
+          <div class="sidebar-flat-item">Team</div>
+          <div class="sidebar-flat-item">Settings</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>The active item looks lifted above the surface.</p>
+      <div class="sidebar-demo">
+        <div class="sidebar-depth">
+          <div class="sidebar-depth-title">Menu</div>
+          <div class="sidebar-depth-item active">Dashboard</div>
+          <div class="sidebar-depth-item">Projects</div>
+          <div class="sidebar-depth-item">Team</div>
+          <div class="sidebar-depth-item">Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOASTS -->
+  <h2 class="section-title">Toasts</h2>
+  <p class="section-note">
+    Toasts are perfect for showing how small UI pieces can feel cheap or premium.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>Plain toast with border and no depth.</p>
+      <div class="row-inline">
+        <button class="btn-flat" id="showToastFlat">Show toast</button>
+      </div>
+      <div class="toast-area">
+        <div class="toast toast-flat" id="toastFlat">
+          <span>Saved changes.</span>
+          <button class="toast-close" data-close-toast="flat">✕</button>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>Toast with soft elevation and a subtle chip.</p>
+      <div class="row-inline">
+        <button class="btn-depth btn-depth-outline" id="showToastDepth">Show toast</button>
+      </div>
+      <div class="toast-area">
+        <div class="toast toast-depth" id="toastDepth">
+          <span class="toast-pill">Success</span>
+          <span>Settings updated.</span>
+          <button class="toast-close" data-close-toast="depth">✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <h2 class="section-title">Modals</h2>
+  <p class="section-note">
+    Same content, different treatment: one is flat, one feels like a real overlay.
+  </p>
+  <div class="grid">
+    <div class="panel panel-flat">
+      <h3>Before · Flat</h3>
+      <p>Simple centered box on top of a transparent backdrop.</p>
+      <div class="row-inline">
+        <button class="btn-flat" id="openModalFlat">Open modal</button>
+      </div>
+      <div class="modal-area">
+        <div class="modal-backdrop" id="backdropFlat">
+          <div class="modal-flat">
+            <div class="modal-title">Delete project?</div>
+            <div class="modal-body">
+              This action cannot be undone. Are you sure you want to continue?
+            </div>
+            <div class="modal-actions">
+              <button class="link-btn" data-close-modal="flat">Cancel</button>
+              <button class="mini-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-depth">
+      <h3>After · Depth</h3>
+      <p>Modal with layered surface, glow and shadow.</p>
+      <div class="row-inline">
+        <button class="btn-depth btn-depth-outline" id="openModalDepth">Open modal</button>
+      </div>
+      <div class="modal-area">
+        <div class="modal-backdrop" id="backdropDepth">
+          <div class="modal-depth">
+            <div class="modal-title">Delete project?</div>
+            <div class="modal-body">
+              This action cannot be undone. We’ll remove all tasks and members linked to this project.
+            </div>
+            <div class="modal-actions">
+              <button class="link-btn" data-close-modal="depth">Cancel</button>
+              <button class="mini-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    themeToggle.addEventListener("click", () => {
+      const isLight = body.getAttribute("data-theme") === "light";
+      body.setAttribute("data-theme", isLight ? "dark" : "light");
+
+      const icon = themeToggle.querySelector(".toggle-icon");
+      const label = themeToggle.querySelector("span:nth-child(2)");
+
+      if (isLight) {
+        icon.textContent = "🌙";
+        label.textContent = "Dark mode";
+      } else {
+        icon.textContent = "🌞";
+        label.textContent = "Light mode";
+      }
+    });
+
+    // Toasts
+    const toastFlat = document.getElementById("toastFlat");
+    const toastDepth = document.getElementById("toastDepth");
+    const showToastFlatBtn = document.getElementById("showToastFlat");
+    const showToastDepthBtn = document.getElementById("showToastDepth");
+
+    showToastFlatBtn.addEventListener("click", () => {
+      toastFlat.classList.add("show");
+      setTimeout(() => toastFlat.classList.remove("show"), 3000);
+    });
+
+    showToastDepthBtn.addEventListener("click", () => {
+      toastDepth.classList.add("show");
+      setTimeout(() => toastDepth.classList.remove("show"), 3000);
+    });
+
+    document.querySelectorAll("[data-close-toast]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const type = btn.getAttribute("data-close-toast");
+        if (type === "flat") toastFlat.classList.remove("show");
+        if (type === "depth") toastDepth.classList.remove("show");
+      });
+    });
+
+    // Modals
+    const backdropFlat = document.getElementById("backdropFlat");
+    const backdropDepth = document.getElementById("backdropDepth");
+    const openModalFlat = document.getElementById("openModalFlat");
+    const openModalDepth = document.getElementById("openModalDepth");
+
+    openModalFlat.addEventListener("click", () => {
+      backdropFlat.classList.add("show");
+    });
+
+    openModalDepth.addEventListener("click", () => {
+      backdropDepth.classList.add("show");
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const type = btn.getAttribute("data-close-modal");
+        if (type === "flat") backdropFlat.classList.remove("show");
+        if (type === "depth") backdropDepth.classList.remove("show");
+      });
+    });
+
+    // Close modal when clicking backdrop
+    [backdropFlat, backdropDepth].forEach((backdrop) => {
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
