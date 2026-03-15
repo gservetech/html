@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flip Card</title>
+    <style>
+      /* Container for the flip card */
+      .flip-card {
+        width: 300px;
+        height: 400px;
+        perspective: 1000px; /* Creates 3D space */
+        /* Center the flip card for better viewing */
+        margin: 40px auto; 
+      }
+
+      /* Inner container that does the flipping */
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      /* Trigger the flip on hover */
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      /* Front and back faces */
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Hide the back when flipped */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden; /* For images */
+      }
+      /* Front face styling */
+      .flip-card-front {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      /* Back face styling - rotated 180deg initially */
+      .flip-card-back {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        transform: rotateY(180deg);
+      }
+      
+      .flip-card-front img,
+      .flip-card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; /* Keep images behind text */
+      }
+      .flip-card-front h2,
+      .flip-card-back h2 {
+        z-index: 2; /* Keep text on top */
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 8px 16px;
+        border-radius: 5px;
+      }
+
+
+      .anchor-demo {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 24px;
+        color: #111;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
+      .anchor-demo h1 {
+        margin: 0 0 12px;
+        font-size: 20px;
+      }
+      .anchor-demo p.lead {
+        margin: 0 0 18px;
+        color: #444;
+      }
+
+      .examples {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .example {
+        padding: 12px;
+        border-radius: 8px;
+        background: linear-gradient(180deg, #ffffff, #f7f8fb);
+        border: 1px solid #e6e9ef;
+      }
+      .example h2 {
+        margin: 0 0 8px;
+        font-size: 14px;
+      }
+      .example p {
+        margin: 0 0 6px;
+        font-size: 14px;
+        color: #333;
+      }
+      .example a {
+        color: #0b5fff;
+        text-decoration: underline;
+      }
+      .demo-target {
+        margin-top: 18px;
+        padding: 12px;
+        border-radius: 8px;
+        background: #f4f6fb;
+        border: 1px dashed #d7dff3;
+      }
+      .sr-only {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+      }
+
+      /* define styling & focus behavior for the fragment target */
+      #deep-target {
+        scroll-margin-top: 1.6rem; /* keep target visible when jumped-to */
+        padding: 16px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #f7fbff, #eef6ff);
+        border: 1px dashed #d7dff3;
+        box-shadow: 0 6px 18px rgba(11, 95, 255, 0.04);
+        transition: box-shadow 0.35s ease, transform 0.25s ease;
+      }
+
+      #deep-target:focus {
+        outline: 3px solid rgba(11, 95, 255, 0.18);
+        outline-offset: 3px;
+      }
+
+      /* subtle highlight when the fragment is targeted */
+      #deep-target:target {
+        animation: targetPulse 900ms ease;
+      }
+
+      @keyframes targetPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(11, 95, 255, 0.06);
+          transform: translateY(0);
+        }
+        70% {
+          box-shadow: 0 14px 36px rgba(11, 95, 255, 0.12);
+          transform: translateY(-4px);
+        }
+        100% {
+          box-shadow: 0 6px 18px rgba(11, 95, 255, 0.04);
+          transform: translateY(0);
+        }
+      }
+
+      /* ---------- Transitions article & demos ---------- */
+      .transitions {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 28px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        color: #111;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
+      .transitions h2 {
+        margin-top: 0;
+        font-size: 1.25rem;
+      }
+      .transitions p {
+        color: #444;
+        line-height: 1.5;
+      }
+
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin: 18px 0;
+      }
+
+      /* 1. Button that 'invites clicks' */
+      .btn-smooth {
+        display: inline-block;
+        padding: 10px 16px;
+        background: #6c757d;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transform: translateY(0);
+        transition: transform 0.3s ease, background-color 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+      .btn-smooth:hover {
+        background: #007bff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+      }
+
+      /* 2. Input with guided focus */
+      .input-field {
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        width: 100%;
+      }
+      .input-field:focus {
+        border-color: #007bff;
+        box-shadow: 0 6px 18px rgba(0, 123, 255, 0.08);
+        outline: none;
+      }
+
+      /* 3. Card lift */
+      .card {
+        padding: 16px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #fff, #f7f9ff);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 18px rgba(11, 95, 255, 0.04);
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(11, 95, 255, 0.08);
+      }
+
+      /* 4. Nav link color */
+      .nav-link {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .nav-link:hover {
+        color: #007bff;
+      }
+
+      /* 5. Loading state */
+      .loading-btn {
+        padding: 10px 16px;
+        background: #0b5fff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        transition: opacity 0.2s ease;
+      }
+      .loading-btn[disabled] {
+        opacity: 0.6;
+        cursor: progress;
+      }
+
+      /* FAQ: max-height trick */
+      .faq {
+        border-top: 1px dashed #e6e9ef;
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+      .faq-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 10px 6px;
+        background: transparent;
+        border-radius: 6px;
+      }
+      .answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        padding: 0 6px;
+      }
+      .answer.open {
+        max-height: 480px;
+        padding-top: 10px;
+      }
+
+      /* Danger: global transition example (toggle class via JS) */
+      .global-transition * {
+        transition: all 0.5s ease !important;
+      }
+
+      pre code {
+        display: block;
+        white-space: pre-wrap;
+        background: #0f1724;
+        color: #e6eef8;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 640px) {
+        .transitions {
+          padding: 18px;
+        }
+      }
+      /* ---------- Gap decorations demo styles ---------- */
+      .gap-demo {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 24px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        color: #111;
+      }
+      .gap-demo h3 {
+        margin: 0 0 12px;
+      }
+      .gap-demo .controls {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+      .gap-demo label {
+        font-size: 0.9rem;
+        color: #444;
+      }
+      .notebook,
+      .logo-grid,
+      .feature-grid,
+      .gallery-grid {
+        display: grid;
+        gap: 24px 32px;
+        padding: 18px;
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fbfdff, #f7fbff);
+        border: 1px solid #eef3fb;
+      }
+      /* NOTE: These CSS properties are non-standard/experimental and may not work in all browsers. */
+      .notebook {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        row-rule: 1px solid #b3d9ff;
+        column-rule: 2px solid #ff6b6b;
+        rule-paint-order: column-over-row;
+      }
+      .logo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        justify-items: center;
+        rule: 1px solid #bbb;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        column-rule: 1px solid #222;
+        /* non-standard repeat() in CSS value */
+        /* column-rule-width: repeat(1px 2px); */
+        /* column-rule-style: repeat(solid dotted); */
+        row-rule: 1px solid #222;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        position: relative;
+        row-rule-outset: 1rem;
+        column-rule-outset: 1rem;
+        row-rule: 1px dashed #0074d9;
+        column-rule: 1px dashed #0074d9;
+      }
+      .gallery-item {
+        position: relative;
+        padding: 18px;
+        background: #fff;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .gallery-item::after {
+        content: "";
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: radial-gradient(
+            circle at center,
+            #0074d9 0.25rem,
+            transparent 0.25rem
+          ),
+          repeating-linear-gradient(
+            45deg,
+            #0074d9 0,
+            #0074d9 2px,
+            transparent 2px,
+            transparent 8px
+          );
+        border-radius: 50%;
+        bottom: -1.75rem;
+        right: -1.75rem;
+        z-index: 2;
+      }
+      .gallery-item:nth-child(3n)::after,
+      .gallery-item:nth-last-child(-n+3)::after {
+        display: none;
+      }
+      .rule-status {
+        margin-left: auto;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      /* helper for grid images */
+      .grid-img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+
+      .feature-grid .feature {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .feature-grid img {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+      }
+
+      .logo-grid img,
+      .gallery-item img,
+      .feature-grid img,
+      ul.logo-list img {
+        display: block;
+      }
+      .logo-grid img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain; /* Use contain for logos */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/12/17/13/59/candles-8454262_1280.jpg"
+            alt="Front: Abstract blue and purple image"
+          />
+          <h2>Front Side</h2>
+        </div>
+        <div class="flip-card-back">
+          <img
+            src="https://media.istockphoto.com/id/1066479224/photo/winter-festive-still-life-scene-burning-candle-decorated-by-wooden-stars-hazelnuts-and-pine.jpg?s=1024x1024&w=is&k=20&c=-stls0qYuHoAfyUxOBBa4qZuy5FPoydG7Ap3M8TUR-k="
+            alt="Back: Abstract pink and red image"
+          />
+          <h2>Back Side</h2>
+        </div>
+      </div>
+    </div>
+    
+
+    <section class="anchor-demo" aria-labelledby="anchor-demo-title">
+      <h1 id="anchor-demo-title">Let's talk about the &lt;a&gt; tag</h1>
+      <p class="lead">
+        Tiny, unassuming — but a superpower. Try the live examples below.
+      </p>
+
+      <div class="examples">
+        <article class="example" aria-labelledby="ex-nav">
+          <h2 id="ex-nav">Semantic navigation</h2>
+          <p>
+            <a
+              href="https://example.com/docs/getting-started"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Getting started (external)</a
+            >
+          </p>
+        </article>
+
+        <article class="example" aria-labelledby="ex-frag">
+          <h2 id="ex-frag">Deep linking & fragment IDs</h2>
+          <p>
+            <a href="#deep-target" class="fragment"
+              >Jump to the deep target below</a
+            >
+          </p>
+        </article>
+
+        <article class="example" aria-labelledby="ex-access">
+          <h2 id="ex-access">Accessibility & focus</h2>
+          <p><a href="#focus-target" class="fragment">Jump and focus</a></p>
+        </article>
+
+        <article class="example" aria-labelledby="ex-enh">
+          <h2 id="ex-enh">Enhanced behaviors</h2>
+          <p>
+            <a href="/assets/example.txt" download="example.txt"
+              >Download example.txt</a
+            >
+          </p>
+          <p>
+            <a href="mailto:help@example.com">Email support</a> ·
+            <a href="tel:+15551234567">Call sales</a>
+          </p>
+        </article>
+
+        <article class="example" aria-labelledby="ex-perf">
+          <h2 id="ex-perf">Performance (prefetch)</h2>
+          <p>
+            <a href="/next-page" data-prefetch>Next page (prefetch on hover)</a>
+          </p>
+        </article>
+
+        <article class="example" aria-labelledby="ex-spa">
+          <h2 id="ex-spa">Progressive enhancement (SPA)</h2>
+          <p>
+            <a href="/profile/123" class="spa-link"
+              >Open profile (SPA-enhanced)</a
+            >
+          </p>
+        </article>
+      </div>
+
+      <div
+        id="deep-target"
+        class="demo-target"
+        tabindex="-1"
+        aria-labelledby="focus-target"
+      >
+        <h3 id="focus-target">Deep / Focus target</h3>
+        <p>
+          This element is the target for fragment links. When you click any
+          fragment link above it will get keyboard focus so screen readers
+          announce it.
+        </p>
+      </div>
+
+      <div id="spa-content" class="demo-target" aria-live="polite" hidden>
+        <strong>SPA area</strong>
+        <div id="spa-output"></div>
+      </div>
+    </section>
+
+    <section class="transitions" aria-labelledby="transitions-title">
+      <h2 id="transitions-title">The Moment I Finally Got It</h2>
+      <p>
+        Picture this: early morning debugging, one incidental CSS line —
+        <code>transition: all 0.3s ease</code> — and a dropdown started sliding
+        down like a curtain. That small line taught me the relationship-based
+        magic of transitions: they don't animate by themselves, they make state
+        changes feel human.
+      </p>
+
+      <h3 style="margin: 12px 0 6px">Quick demos</h3>
+      <div class="demo-grid" aria-hidden="false">
+        <div>
+          <div class="card">
+            <strong>1. Inviting button</strong>
+            <p style="margin: 8px 0">
+              <button class="btn-smooth">Hover me</button>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>2. Input field</strong>
+            <p style="margin: 8px 0">
+              <input class="input-field" placeholder="Focus me" />
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>3. Card lift</strong>
+            <p style="margin: 8px 0">Hover the card to lift it.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>4. Nav link</strong>
+            <p style="margin: 8px 0">
+              <a class="nav-link" href="#">Nav item</a>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>5. Loading state</strong>
+            <p style="margin: 8px 0">
+              <button id="loadBtn" class="loading-btn">Submit</button>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>Danger example</strong>
+            <p style="margin: 8px 0">
+              <button id="toggleGlobal" class="btn-smooth">
+                Toggle global transition
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin: 12px 0 6px">The height problem (FAQ example)</h3>
+      <p>
+        CSS can't smoothly animate to <code>height: auto</code>. The usual
+        workaround is <code>max-height</code> with a generous value.
+      </p>
+
+      <div class="faq" id="faq">
+        <div
+          class="faq-question"
+          data-index="0"
+          role="button"
+          aria-expanded="false"
+          tabindex="0"
+        >
+          <span>Why can't we animate height: auto?</span>
+          <span aria-hidden="true">▸</span>
+        </div>
+        <div class="answer" id="answer-0">
+          <p>
+            The browser needs exact numeric endpoints to interpolate. Use
+            <code>max-height</code> or JS to compute heights when you need
+            perfect animations.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin: 12px 0 6px">Performance note</h3>
+      <p>
+        Animate <code>transform</code> and <code>opacity</code> where possible;
+        they avoid layout recalculations and feel buttery smooth.
+      </p>
+
+      <h3 style="margin: 12px 0 6px">Examples you can copy</h3>
+      <pre><code>&lt;!-- Button hover --&gt;
+.button { transition: background-color 0.3s ease; }
+.button:hover { background-color: #007bff; transform: translateY(-2px); }</code></pre>
+
+      <pre><code>&lt;!-- FAQ (max-height trick) --&gt;
+.answer { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+.answer.open { max-height:500px; }</code></pre>
+    </section>
+
+    <br />
+    <br />
+    <ul
+      style="display: flex; gap: 12px; list-style: none; padding: 0; margin: 0; max-width: 900px; margin: 0 auto 40px;"
+      class="logo-list"
+    >
+      <li>
+        <img
+          src="https://cdn.pixabay.com/photo/2014/04/10/11/24/rose-320868_1280.jpg"
+          alt="Brand A: Abstract Leaf"
+          width="120"
+          height="60"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+          alt="Brand B: Abstract Tree"
+          width="120"
+          height="60"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn.pixabay.com/photo/2014/04/10/11/24/rose-320868_1280.jpg"
+          alt="Brand C: Abstract Design"
+          width="120"
+          height="60"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn.pixabay.com/photo/2017/10/26/23/58/pink-2892821_1280.jpg"
+          alt="Brand D: Abstract Water"
+          width="120"
+          height="60"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn.pixabay.com/photo/2023/06/18/18/05/rose-8072535_1280.jpg"
+          alt="Brand E: Abstract Texture"
+          width="120"
+          height="60"
+          loading="lazy"
+        />
+      </li>
+    </ul>
+    <section class="gap-demo" aria-labelledby="gap-demo-title">
+      <h3 id="gap-demo-title">Gap decorations — row/column rules demo (Experimental CSS)</h3>
+      <div class="controls" role="region" aria-label="Gap rule controls">
+        <label>
+          rule-paint-order:
+          <select id="paintOrder">
+            <option value="column-over-row">column-over-row</option>
+            <option value="row-over-column">row-over-column</option>
+          </select>
+        </label>
+        <label>
+          rule-break:
+          <select id="ruleBreak">
+            <option value="none">none</option>
+            <option value="intersection">intersection</option>
+            <option value="spanning-item">spanning-item</option>
+          </select>
+        </label>
+        <div class="rule-status" id="ruleStatus">Current: column-over-row / none</div>
+      </div>
+
+      <div style="display: grid; gap: 12px">
+        <div>
+          <strong>Notebook grid (column rules = margin lines)</strong>
+          <div class="notebook" id="notebook">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+          </div>
+        </div>
+
+        <div>
+          <strong>Logo grid (simple rule shorthand)</strong>
+          <ul class="logo-grid" aria-hidden="false">
+            <li>
+              <img
+                src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=1024x1024&w=is&k=20&c=9Qfj9S124ojed7s4OWu3a3vbbMC76QYkqczg4L4M-Sc="
+                alt="brand A logo"
+                width="80"
+                height="80"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="https://media.istockphoto.com/id/453437889/photo/plane-tree.jpg?s=612x612&w=0&k=20&c=lIdu7L8H1XPYU8Y_PtQuiPTkWKJrE65zOUMx4IclsiI="
+                alt="brand B logo"
+                width="80"
+                height="80"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="https://media.istockphoto.com/id/641055738/photo/4-seasons.jpg?s=612x612&w=0&k=20&c=ePEWdxRW6DakW8YpsUxXsuHiX0LKPs-0ty1XN6GcWac="
+                alt="brand C logo"
+                width="80"
+                height="80"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="https://media.istockphoto.com/id/1807407648/photo/autumn-in-owls-head-park-bay-ridge-brooklyn-new-york.jpg?s=612x612&w=0&k=20&c=uet-4JjzVwH7IqKSCvyrZeEcIpdz9Iy6bIc8yM_3Atg="
+                alt="brand D logo"
+                width="80"
+                height="80"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="https://media.istockphoto.com/id/1807407648/photo/autumn-in-owls-head-park-bay-ridge-brooklyn-new-york.jpg?s=612x612&w=0&k=20&c=uet-4JjzVwH7IqKSCvyrZeEcIpdz9Iy6bIc8yM_3Atg="
+                alt="brand E logo"
+                width="80"
+                height="80"
+                loading="lazy"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <strong>Feature grid (repeat patterns)</strong>
+          <div class="feature-grid">
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/1063712226/photo/autumn-landscape.jpg?s=612x612&w=0&k=20&c=CPJdDcxnuPB3EKMp5e9kWxJKbro0POtmbMvfuKhfSXc="
+                alt="Feature A image: geometric texture"
+                loading="lazy"
+              />
+              <div>Feature A</div>
+            </div>
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/120928648/photo/tree-in-orange-foliage.jpg?s=612x612&w=0&k=20&c=ITA2Zihvb229FFTNsTRSYyUwP3OeO94wOJ3U6CW06k4="
+                alt="Feature B image: close-up leaf"
+                loading="lazy"
+              />
+              <div>Feature B</div>
+            </div>
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/187202645/photo/autumn.jpg?s=1024x1024&w=is&k=20&c=4jnI1HzOgyxNZO491o_6BpkU0PQ_bNaJ0zEjLpFAQ-o="
+                alt="Feature C image: abstract design"
+                loading="lazy"
+              />
+              <div>Feature C</div>
+            </div>
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/836388194/photo/fall-colors.jpg?s=612x612&w=0&k=20&c=ba9JzT4DKplri8JzQ1OoGAF2McD1QbBjQEmwa6T2Ras="
+                alt="Feature D image: water drops"
+                loading="lazy"
+              />
+              <div>Feature D</div>
+            </div>
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/1149087621/photo/colorful-red-and-yellow-foliage-trees-in-garden-during-autumn-at-wilhelm-k%C3%BClz-park-in-city-of.jpg?s=612x612&w=0&k=20&c=Wq0NYFQ3V29Rbsp_OZjldxp2MIfmADCJEb5eJUEI6uA="
+                alt="Feature E image: silhouette of tree"
+                loading="lazy"
+              />
+              <div>Feature E</div>
+            </div>
+            <div class="feature">
+              <img
+                src="https://media.istockphoto.com/id/1064207478/photo/public-park-in-fall-time-in-europe.jpg?s=1024x1024&w=is&k=20&c=FS0Aoc55glGnGwj8MXNdmfPkELMJzKwOtgyHngTK-R8="
+                alt="Feature F image: abstract ball"
+                loading="lazy"
+              />
+              <div>Feature F</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <strong>Gallery grid (decorative corner accents)</strong>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/859900690/photo/park-in-autumn.jpg?s=612x612&w=0&k=20&c=KXzYAQxx8YlK4h9CjJGF_B_k4LsAYadt43380GC1uig="
+                alt="Gallery item 1: tree-lined road"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/836346106/photo/beech-tree-at-fall.jpg?s=612x612&w=0&k=20&c=90M-pGSbW1OuNgZtscjsRZuWVFEAwxl2FQ6RJadjqZ4="
+                alt="Gallery item 2: sunny road"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/1181481970/photo/autumn-colors-on-old-trees-with-red-and-golden-foliage-in-a-park-seasonal-landscape-selected.jpg?s=612x612&w=0&k=20&c=MdNkF1u--Fs2dtQIedhjlN9R-0qTaLG9upQW2Rk9e4k="
+                alt="Gallery item 3: purple flowers"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/1186528983/photo/autumn-landscape.jpg?s=1024x1024&w=is&k=20&c=eSZndvnU1zPrVTqr7jE_IdTMS_lvKDDRdbxfcG8JA8o="
+                alt="Gallery item 4: geometric texture"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/1146726911/photo/autumn-landscape.jpg?s=612x612&w=0&k=20&c=wRsfn-cz8V-y8EZYimfYjsbHyMv5KCwQARtHUs4Lx_A="
+                alt="Gallery item 5: close-up leaf"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                class="grid-img"
+                src="https://media.istockphoto.com/id/1428959828/photo/sat-35.jpg?s=612x612&w=0&k=20&c=riEUIOWTXtd2-xVkcRBh08JhoUsLRU-zKYbrsUAyIPc="
+                alt="Gallery item 6: abstract design"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Prefetch on hover/focus (simple, safe)
+        const prefetch = (href) => {
+          if (!href) return;
+          const existing = document.querySelector(
+            `link[rel="prefetch"][href="${href}"]`
+          );
+          if (existing) return;
+          const l = document.createElement("link");
+          l.rel = "prefetch";
+          l.href = href;
+          document.head.appendChild(l);
+        };
+
+        document.addEventListener("mouseover", (e) => {
+          const a = e.target.closest("a[data-prefetch]");
+          if (!a) return;
+          prefetch(a.href);
+        });
+
+        document.addEventListener("focusin", (e) => {
+          const a = e.target.closest("a[data-prefetch]");
+          if (!a) return;
+          prefetch(a.href);
+        });
+
+        // Fragment links: ensure target receives focus for a11y
+        document.addEventListener("click", (e) => {
+          const a = e.target.closest("a.fragment");
+          if (!a) return;
+          const id = a.getAttribute("href")?.replace(/^#/, "");
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (!target) return;
+          // allow the browser to jump, then set focus
+          setTimeout(() => {
+            target.setAttribute("tabindex", "-1"); // make focusable if not
+            target.focus({ preventScroll: true });
+          }, 0);
+        });
+
+        // SPA progressive enhancement: keep real href, intercept when possible
+        document.addEventListener("click", (e) => {
+          const a = e.target.closest("a.spa-link");
+          if (!a) return;
+          // decide when to intercept (simple demo: intercept if history API available)
+          if (!window.history || !window.history.pushState) return;
+          e.preventDefault();
+          const href = a.getAttribute("href");
+          // pretend to render client-side
+          const spa = document.getElementById("spa-content");
+          const out = document.getElementById("spa-output");
+          spa.hidden = false;
+          out.textContent = `Client-side routed to ${href} — graceful fallback still works if JS is disabled.`;
+          history.pushState({}, "", href);
+        });
+
+        // add accessible label for external links that open in a new tab
+        document.querySelectorAll('a[target="_blank"]').forEach((a) => {
+          if (!a.getAttribute("aria-label")) {
+            a.setAttribute(
+              "aria-label",
+              `${a.textContent.trim()} (opens in a new tab)`
+            );
+          }
+        });
+
+        // small interactive behaviors for demos
+        // loading button demo
+        const loadBtn = document.getElementById("loadBtn");
+        loadBtn.addEventListener("click", async () => {
+          loadBtn.disabled = true;
+          const prev = loadBtn.textContent;
+          loadBtn.textContent = "Loading...";
+          await new Promise((r) => setTimeout(r, 1100)); // simulate work
+          loadBtn.textContent = prev;
+          loadBtn.disabled = false;
+        });
+
+        // toggle bad global transition
+        const toggleGlobal = document.getElementById("toggleGlobal");
+        toggleGlobal.addEventListener("click", () => {
+          document.body.classList.toggle("global-transition");
+          toggleGlobal.textContent = document.body.classList.contains(
+            "global-transition"
+          )
+            ? "Global transition ON"
+            : "Toggle global transition";
+        });
+
+        // FAQ open/close
+        const faqQ = document.querySelector(".faq-question");
+        const ans = document.getElementById("answer-0");
+        const setOpen = (open) => {
+          faqQ.setAttribute("aria-expanded", open ? "true" : "false");
+          ans.classList.toggle("open", open);
+        };
+        faqQ.addEventListener("click", () =>
+          setOpen(!ans.classList.contains("open"))
+        );
+        faqQ.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen(!ans.classList.contains("open"));
+          }
+        });
+
+        // respect prefers-reduced-motion
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document
+            .querySelectorAll("*")
+            .forEach((el) => (el.style.transitionDuration = "0s"));
+        }
+      });
+
+      // Gap decorations interactivity
+      (function () {
+        const notebook = document.getElementById("notebook");
+        const paintSel = document.getElementById("paintOrder");
+        const breakSel = document.getElementById("ruleBreak");
+        const status = document.getElementById("ruleStatus");
+
+        function updateStatus() {
+          status.textContent = `Current: ${paintSel.value} / ${breakSel.value}`;
+        }
+
+        paintSel.addEventListener("change", () => {
+          notebook.style.setProperty("rule-paint-order", paintSel.value);
+          updateStatus();
+        });
+
+        breakSel.addEventListener("change", () => {
+          // set both column/row rule-break via shorthand
+          document.documentElement.style.setProperty("rule-break", breakSel.value);
+          updateStatus();
+        });
+
+        // initialize from defaults
+        updateStatus();
+      })();
+    </script>
+  </body>
+</html>

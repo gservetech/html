@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Special Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background to match flyer */
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* Limits width on desktop so it looks like a phone */
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Highlight clickable areas when hovering (optional - helps testing) */
+        area {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="Black Today's Restaurant Food Menu Instagram Story.jpg" usemap="#foodmap" id="menuImage" width="1080" height="1920" alt="Restaurant Menu">
+
+        <map name="foodmap" id="foodmap">
+            <area target="_blank" alt="Cream Buns" title="Cream Buns" href="https://yourwebsite.com/menu/buns" coords="0,580,360,980" shape="rect">
+            <area target="_blank" alt="Iced Coffee" title="Iced Coffee" href="https://yourwebsite.com/menu/coffee" coords="360,580,720,980" shape="rect">
+            <area target="_blank" alt="Chicken Wings" title="Chicken Wings" href="https://yourwebsite.com/menu/wings" coords="720,580,1080,980" shape="rect">
+
+            <area target="_blank" alt="Appetizers" title="Appetizers" href="https://yourwebsite.com/menu/appetizers" coords="0,980,360,1380" shape="rect">
+            <area target="_blank" alt="Steak Dish" title="Steak Dish" href="https://yourwebsite.com/menu/steak" coords="360,980,720,1380" shape="rect">
+            <area target="_blank" alt="Braised Meat" title="Braised Meat" href="https://yourwebsite.com/menu/stew" coords="720,980,1080,1380" shape="rect">
+
+            <area target="_blank" alt="Order Now" title="Order Now" href="https://yourwebsite.com/order" coords="380,1750,700,1880" shape="rect">
+        </map>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const ImageMap = function (map, img) {
+                const n = map.name,
+                      areas = map.getElementsByTagName('area'),
+                      len = areas.length,
+                      coords = [],
+                      previousWidth = 1080; // The original width of the image
+
+                for (let n = 0; n < len; n++) {
+                    coords[n] = areas[n].coords.split(',');
+                }
+
+                this.resize = function () {
+                    const nW = img.clientWidth; // Current image width
+                    const ratio = nW / previousWidth;
+
+                    for (let n = 0; n < len; n++) {
+                        const clen = coords[n].length;
+                        let rCoords = [];
+                        for (let m = 0; m < clen; m++) {
+                            rCoords[m] = Math.round(coords[n][m] * ratio);
+                        }
+                        areas[n].coords = rCoords.join(',');
+                    }
+                    return true;
+                };
+                
+                window.onresize = this.resize;
+                this.resize(); // Run immediately on load
+            };
+
+            const mapElement = document.getElementById('foodmap');
+            const imgElement = document.getElementById('menuImage');
+            
+            // Initialize the resizer
+            new ImageMap(mapElement, imgElement);
+        }
+    </script>
+</body>
+</html>
