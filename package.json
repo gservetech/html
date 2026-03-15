@@ -1,0 +1,40 @@
+{
+  "name": "social-media-automation",
+  "version": "1.0.0",
+  "description": "Automated daily posting to Facebook, Instagram, and Twitter/X",
+  "main": "scheduler.js",
+  "type": "module",
+  "scripts": {
+    "start": "node scheduler.js",
+    "post-now": "node post-now.js",
+    "setup": "node setup.js",
+    "test-post": "node test-post.js",
+    "add-content": "node add-content.js",
+    "fb:add-content": "node fb-automation/add-content.js",
+    "fb:post": "node fb-automation/post-now.js",
+    "fb:schedule": "node fb-automation/scheduler.js",
+    "fb:test": "node fb-automation/test.js",
+    "fb:test-post": "node fb-automation/test.js --post",
+    "fb:token": "node fb-automation/get-page-token.js",
+    "tw:add-content": "node twitter/add-content.js",
+    "tw:post": "node twitter/post-now.js",
+    "tw:schedule": "node twitter/scheduler.js",
+    "tw:test": "node twitter/test.js",
+    "tw:test-post": "node twitter/test.js --post",
+    "ig:add-content": "node instagram/add-content.js",
+    "ig:post": "node instagram/post-now.js",
+    "ig:schedule": "node instagram/scheduler.js",
+    "ig:test": "node instagram/test.js",
+    "ig:test-post": "node instagram/test.js --post"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.17.0",
+    "axios": "^1.7.0",
+    "node-cron": "^3.0.3",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0",
+    "fs-extra": "^11.2.0"
+  }
+}

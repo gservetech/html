@@ -1,0 +1,171 @@
+[2026-03-13 13:16:13] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 13:16:13] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:16:13] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:16:13] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:16:13] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:16:13] [WARN] [ImageHost] Cannot resolve image: https://picsum.photos/800/600
+[2026-03-13 13:16:13] [WARN] [Facebook] Image URL not accessible, posting text only
+[2026-03-13 13:16:14] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 13:16:37] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 13:16:37] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:16:37] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:16:37] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:16:37] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:16:37] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:16:38] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 13:33:18] [SUCCESS] [Facebook] Connected to Page: "Gservetech Digitalmarketleader"
+[2026-03-13 13:33:18] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:33:18] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:33:18] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:33:18] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:33:18] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:33:18] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 13:36:08] [SUCCESS] [Facebook] Connected to Page: "Gservetech Digitalmarketleader"
+[2026-03-13 13:36:08] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:36:08] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:36:08] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:36:08] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:36:08] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:36:08] [ERROR] [Facebook] Failed to post: (#100) The global id 100002591261265 is not allowed for this call
+[2026-03-13 13:36:45] [SUCCESS] [Facebook] Connected to Page: "Gservetech Digitalmarketleader"
+[2026-03-13 13:36:45] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:36:45] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:36:45] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:36:45] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:36:45] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:36:45] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 13:49:44] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 13:49:44] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:49:44] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:49:44] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:49:44] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:49:44] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:49:45] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 13:52:21] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 13:52:21] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 13:52:21] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 13:52:21] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 13:52:21] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 13:52:21] [INFO] [Facebook] Posting with link...
+[2026-03-13 13:52:21] [ERROR] [Facebook] Failed to post: (#200) If posting to a group, requires app being installed in the group, and \
+          either publish_to_groups permission with user token, or both pages_read_engagement \
+          and pages_manage_posts permission with page token; If posting to a page, \
+          requires both pages_read_engagement and pages_manage_posts as an admin with \
+          sufficient administrative permission
+[2026-03-13 14:00:08] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 14:00:08] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 14:00:08] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 14:00:08] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 14:00:08] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 14:00:08] [INFO] [Facebook] Posting with link...
+[2026-03-13 14:00:15] [SUCCESS] [Facebook] Post published! ID: 735506999656369_122127042483062976
+[2026-03-13 14:04:28] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 14:04:28] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 14:04:28] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 14:04:28] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 14:04:28] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 14:04:29] [WARN] [ImageHost] Cannot resolve image: https://picsum.photos/800/600
+[2026-03-13 14:04:29] [WARN] [Facebook] Image URL not accessible, posting text only
+[2026-03-13 14:04:32] [SUCCESS] [Facebook] Post published! ID: 735506999656369_122127042837062976
+[2026-03-13 14:05:05] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 14:05:05] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 14:05:05] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 14:05:05] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 14:05:05] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 14:05:05] [INFO] [Facebook] Posting with image...
+[2026-03-13 14:05:13] [SUCCESS] [Facebook] Post published! ID: 122127042867062976
+[2026-03-13 14:31:22] [SUCCESS] [Facebook] Connected to Page: "GServeTech Print"
+[2026-03-13 14:31:22] [INFO] [Content] 1 file(s) in queue. Next: example-post.html
+[2026-03-13 14:31:22] [INFO] [Content] Parsing file: example-post.html (.html)
+[2026-03-13 14:31:22] [INFO] [Facebook] Preparing Facebook post...
+[2026-03-13 14:31:22] [INFO] [Facebook] Post content (473 chars)
+[2026-03-13 14:31:22] [DEBUG] [Facebook] 📌 Welcome to Our Brand! 🚀
+
+Welcome to Our Brand! 🚀 We are thrilled to announce the launch of our brand new product line! After months of hard work, we're finally ready to share it with the world. Stay tuned for more updates and exclusive offers. Follow us on all platforms for the latest news! Visit our website for more details. Visit Our Website #launch #newproduct #exciting #brand #innovation
+
+🔗 https://example.com
+
+#launch #newproduct #exciting #brand #innovation
+[2026-03-13 14:31:23] [INFO] [Facebook] Posting with image...
+[2026-03-13 14:31:27] [SUCCESS] [Facebook] Post published! ID: 122127044937062976
+[2026-03-13 14:31:27] [INFO] [Content] Moved to posted: 2026-03-13T14-31-27-290Z_example-post.html
