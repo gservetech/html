@@ -16,6 +16,12 @@
     "fb:test": "node fb-automation/test.js",
     "fb:test-post": "node fb-automation/test.js --post",
     "fb:token": "node fb-automation/get-page-token.js",
+    "fbg:add-content": "node fb-group-automation/add-content.js",
+    "fbg:login": "node fb-group-automation/group-login.js",
+    "fbg:post": "node fb-group-automation/post-now.js",
+    "fbg:schedule": "node fb-group-automation/scheduler.js",
+    "fbg:test": "node fb-group-automation/test.js",
+    "fbg:test-post": "node fb-group-automation/test.js --post",
     "tw:add-content": "node twitter/add-content.js",
     "tw:post": "node twitter/post-now.js",
     "tw:schedule": "node twitter/scheduler.js",
@@ -35,6 +41,7 @@
     "dotenv": "^16.4.0",
     "chalk": "^5.3.0",
     "ora": "^8.0.0",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "playwright": "^1.53.0"
   }
 }

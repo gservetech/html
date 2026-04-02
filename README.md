@@ -209,6 +209,43 @@ npm run fb:post
 npm run fb:schedule
 ```
 
+Facebook group browser automation:
+
+```bash
+npm run fbg:add-content
+npm run fbg:login
+npm run fbg:test
+npm run fbg:test-post
+npm run fbg:post
+npm run fbg:schedule
+```
+
+This is a separate workflow from the Facebook Page API poster. It uses its own queue at `fb-group-automation/content-queue/` and does not modify the existing `fb-automation/` page-posting code.
+
+Required setup for the separate group script:
+
+```env
+FACEBOOK_GROUP_URL=https://www.facebook.com/groups/your-group-id/
+FACEBOOK_GROUP_POST_AS_NAME=Your Page Name
+FACEBOOK_GROUP_BROWSER_PROFILE_DIR=.facebook-group-browser-profile
+FACEBOOK_GROUP_HEADLESS=0
+FACEBOOK_GROUP_TIMEOUT_MS=120000
+```
+
+Then install the dependency and save a browser session:
+
+```bash
+npm install
+npx playwright install chromium
+npm run fbg:login
+```
+
+Notes:
+
+- `npm run fbg:login` is where you sign into Facebook and, if needed, switch posting identity to your Page once.
+- `FACEBOOK_GROUP_POST_AS_NAME` is a best-effort selector. If Facebook changes the UI, set the actor manually during login and keep the same browser profile.
+- This standalone group script is intentionally separate so `npm run fb:post` continues to use the existing page Graph API flow unchanged.
+
 Instagram:
 
 ```bash
