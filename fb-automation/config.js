@@ -28,8 +28,8 @@ const config = {
     enabled: !!(process.env.IMGBB_API_KEY && process.env.IMGBB_API_KEY !== 'your_imgbb_api_key_here'),
   },
 
-  postTime: process.env.POST_TIME || '09:00',
-  timezone: process.env.TIMEZONE || 'Asia/Kolkata',
+  postTime: process.env.FACEBOOK_POST_TIME || process.env.POST_TIME || '09:00',
+  timezone: process.env.FACEBOOK_TIMEZONE || process.env.TIMEZONE || 'Asia/Kolkata',
 
   content: {
     defaultHashtags: ['#automation', '#socialmedia'],

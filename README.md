@@ -100,6 +100,7 @@ Platform enablement is automatic:
 
 - Twitter/X is enabled when the Twitter keys are filled in.
 - Facebook is enabled when `FACEBOOK_PAGE_ID` and `FACEBOOK_PAGE_ACCESS_TOKEN` are filled in.
+- Facebook Page scheduler can use `FACEBOOK_POST_TIME` and `FACEBOOK_TIMEZONE`, with fallback to `POST_TIME` and `TIMEZONE`.
 - RoyalKing Facebook Page is enabled when `FACEBOOK_ROYALKING_PAGE_ID` and `FACEBOOK_ROYALKING_PAGE_ACCESS_TOKEN` are filled in.
 - Print Facebook Page is enabled when `FACEBOOK_PRINT_PAGE_ID` and `FACEBOOK_PRINT_PAGE_ACCESS_TOKEN` are filled in.
 - Instagram is enabled when `INSTAGRAM_BUSINESS_ACCOUNT_ID` and `INSTAGRAM_ACCESS_TOKEN` are filled in.
@@ -213,6 +214,15 @@ npm run fb:test
 npm run fb:test-post
 npm run fb:post
 npm run fb:schedule
+```
+
+Optional env:
+
+```env
+FACEBOOK_PAGE_ID=your_page_id_here
+FACEBOOK_PAGE_ACCESS_TOKEN=your_long_lived_page_access_token_here
+FACEBOOK_POST_TIME=09:00
+FACEBOOK_TIMEZONE=Asia/Kolkata
 ```
 
 Facebook RoyalKing:
