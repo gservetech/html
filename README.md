@@ -35,6 +35,8 @@ Important behavior:
 Each platform also has its own automation folder and queue:
 
 - Facebook: `fb-automation/`
+- Facebook RoyalKing: `fb-royalking-automation/`
+- Facebook Print: `fb-print-automation/`
 - Instagram: `instagram/`
 - Twitter/X: `twitter/`
 
@@ -60,6 +62,8 @@ Shared automation:
 Platform automation:
 
 - `fb-automation/`: Facebook-only workflow
+- `fb-royalking-automation/`: RoyalKing Facebook Page workflow
+- `fb-print-automation/`: Print Facebook Page workflow
 - `instagram/`: Instagram-only workflow
 - `twitter/`: Twitter-only workflow
 
@@ -96,6 +100,8 @@ Platform enablement is automatic:
 
 - Twitter/X is enabled when the Twitter keys are filled in.
 - Facebook is enabled when `FACEBOOK_PAGE_ID` and `FACEBOOK_PAGE_ACCESS_TOKEN` are filled in.
+- RoyalKing Facebook Page is enabled when `FACEBOOK_ROYALKING_PAGE_ID` and `FACEBOOK_ROYALKING_PAGE_ACCESS_TOKEN` are filled in.
+- Print Facebook Page is enabled when `FACEBOOK_PRINT_PAGE_ID` and `FACEBOOK_PRINT_PAGE_ACCESS_TOKEN` are filled in.
 - Instagram is enabled when `INSTAGRAM_BUSINESS_ACCOUNT_ID` and `INSTAGRAM_ACCESS_TOKEN` are filled in.
 
 ## Content Format
@@ -209,6 +215,46 @@ npm run fb:post
 npm run fb:schedule
 ```
 
+Facebook RoyalKing:
+
+```bash
+npm run fb:royalking:add-content
+npm run fb:royalking:test
+npm run fb:royalking:test-post
+npm run fb:royalking:post
+npm run fb:royalking:schedule
+npm run fb:royalking:token
+```
+
+Required env:
+
+```env
+FACEBOOK_ROYALKING_PAGE_ID=your_royalking_page_id_here
+FACEBOOK_ROYALKING_PAGE_ACCESS_TOKEN=your_royalking_long_lived_page_access_token_here
+FACEBOOK_ROYALKING_POST_TIME=09:00
+FACEBOOK_ROYALKING_TIMEZONE=Asia/Kolkata
+```
+
+Facebook Print:
+
+```bash
+npm run fb:print:add-content
+npm run fb:print:test
+npm run fb:print:test-post
+npm run fb:print:post
+npm run fb:print:schedule
+npm run fb:print:token
+```
+
+Required env:
+
+```env
+FACEBOOK_PRINT_PAGE_ID=your_print_page_id_here
+FACEBOOK_PRINT_PAGE_ACCESS_TOKEN=your_print_long_lived_page_access_token_here
+FACEBOOK_PRINT_POST_TIME=09:00
+FACEBOOK_PRINT_TIMEZONE=Asia/Kolkata
+```
+
 Facebook group browser automation:
 
 ```bash
@@ -297,6 +343,8 @@ Shared queue:
 Platform queues:
 
 - Facebook: `fb-automation/content-queue/`
+- Facebook RoyalKing: `fb-royalking-automation/content-queue/`
+- Facebook Print: `fb-print-automation/content-queue/`
 - Instagram: `instagram/content-queue/`
 - Twitter/X: `twitter/content-queue/`
 
