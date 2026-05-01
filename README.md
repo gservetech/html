@@ -47,6 +47,10 @@ Each platform-specific scheduler:
 3. Posts only to that platform.
 4. Moves the file to that platform's `posted/` folder only when the post succeeds.
 
+### Repost fallback (fb-automation)
+
+If `fb-automation/content-queue/` is empty, the scheduler automatically reposts the most recently posted file from `fb-automation/posted/`. The reposted file stays in `posted/` so it can be reused again the next day if needed. New content added to `content-queue/` always takes priority over reposts.
+
 ## Project Structure
 
 Shared automation:

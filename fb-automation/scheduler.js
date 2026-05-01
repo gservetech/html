@@ -21,11 +21,16 @@ async function postFacebook() {
     return null;
   }
 
-  logger.info('FB-Scheduler', `Posting: "${content.title}"`);
+  const label = content.isRepost ? '♻️ Reposting' : '📤 Posting';
+  logger.info('FB-Scheduler', `${label}: "${content.title}"`);
   const result = await postToFacebook(content);
 
   if (result.success) {
-    markAsPosted(content.queueFile.path, [result]);
+    if (!content.isRepost) {
+      markAsPosted(content.queueFile.path, [result]);
+    } else {
+      logger.info('FB-Scheduler', '♻️ Repost — file stays in posted/ for future reuse');
+    }
     logger.success('FB-Scheduler', `✅ Posted! ID: ${result.postId}`);
     logger.success('FB-Scheduler', `🔗 ${result.postUrl}`);
   } else {

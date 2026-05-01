@@ -28,11 +28,35 @@ export function getQueuedFiles() {
     .sort((a, b) => a.created - b.created);
 }
 
+export function getLastPostedFile() {
+  if (!fs.existsSync(config.postedDir)) return null;
+
+  const postedFiles = fs.readdirSync(config.postedDir)
+    .filter(f => {
+      const ext = path.extname(f).toLowerCase();
+      return config.content.supportedFormats.includes(ext);
+    })
+    .map(f => ({
+      name: f,
+      path: path.join(config.postedDir, f),
+      modified: fs.statSync(path.join(config.postedDir, f)).mtime,
+    }))
+    .sort((a, b) => b.modified - a.modified);
+
+  return postedFiles.length > 0 ? postedFiles[0] : null;
+}
+
 export function getNextContent() {
   const files = getQueuedFiles();
 
   if (files.length === 0) {
-    logger.warn('Content', `No Facebook content files in queue! Add files to: ${config.contentQueueDir}`);
+    logger.warn('Content', 'No new content in queue. Checking posted folder for repost...');
+    const lastPosted = getLastPostedFile();
+    if (lastPosted) {
+      logger.info('Content', `Reposting previous post: ${lastPosted.name}`);
+      return { ...lastPosted, isRepost: true };
+    }
+    logger.warn('Content', `No content anywhere! Add files to: ${config.contentQueueDir}`);
     return null;
   }
 
@@ -49,6 +73,7 @@ export function parseNextContent() {
   try {
     const parsed = parseFile(file.path);
     parsed.queueFile = file;
+    parsed.isRepost = file.isRepost || false;
     return parsed;
   } catch (error) {
     logger.error('Content', `Failed to parse ${file.name}: ${error.message}`);
@@ -128,6 +153,7 @@ export function showQueueStatus() {
 export default {
   getQueuedFiles,
   getNextContent,
+  getLastPostedFile,
   parseNextContent,
   markAsPosted,
   getHistory,

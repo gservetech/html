@@ -26,17 +26,23 @@ showQueueStatus();
 
 const content = parseNextContent();
 if (!content) {
-  console.log(`  ❌ No content in queue! Add HTML/TXT/MD files to: ${config.contentQueueDir}`);
+  console.log('  ❌ No content in queue or posted folder!');
+  console.log(`  Add HTML/TXT/MD files to: ${config.contentQueueDir}`);
   console.log('  Or run: npm run fb:add-content\n');
   process.exit(1);
 }
 
-console.log(`  📤 Posting: "${content.title}"...\n`);
+const label = content.isRepost ? '♻️ Reposting' : '📤 Posting';
+console.log(`  ${label}: "${content.title}"...\n`);
 
 const result = await postToFacebook(content);
 
 if (result.success) {
-  markAsPosted(content.queueFile.path, [result]);
+  if (!content.isRepost) {
+    markAsPosted(content.queueFile.path, [result]);
+  } else {
+    console.log('  ♻️ Repost — file stays in posted/ for future reuse');
+  }
 
   console.log('\n  ══════════════════════════════════════════');
   console.log('  ✅ FACEBOOK POST SUCCESSFUL!');
