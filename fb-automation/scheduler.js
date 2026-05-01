@@ -41,14 +41,31 @@ async function postFacebook() {
   return result;
 }
 
-async function main() {
-  console.log('  🔑 Verifying Facebook credentials...\n');
-  const verification = await verifyFacebook();
+async function verifyWithRetry(maxRetries = 5, delayMs = 60000) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    console.log(`  🔑 Verifying Facebook credentials (attempt ${attempt}/${maxRetries})...\n`);
+    const verification = await verifyFacebook();
 
-  if (!verification.verified) {
-    console.log('\n  ❌ Facebook credentials are invalid!');
-    console.log(`  Reason: ${verification.reason}`);
-    process.exit(1);
+    if (verification.verified) return verification;
+
+    logger.error('FB-Scheduler', `Verification failed: ${verification.reason}`);
+
+    if (attempt < maxRetries) {
+      const waitMin = (delayMs * attempt) / 60000;
+      logger.info('FB-Scheduler', `Retrying in ${waitMin} minute(s)...`);
+      await new Promise(r => setTimeout(r, delayMs * attempt));
+    }
+  }
+  return null;
+}
+
+async function main() {
+  const verification = await verifyWithRetry();
+
+  if (!verification) {
+    logger.error('FB-Scheduler', 'All verification attempts failed. Waiting 1 hour before restart...');
+    await new Promise(r => setTimeout(r, 3600000));
+    return main();
   }
 
   console.log(`\n  ✅ Connected to Page: "${verification.pageName}"\n`);
@@ -61,7 +78,6 @@ async function main() {
   logger.info('FB-Scheduler', `⏰ Facebook posting scheduled at ${config.postTime} (${config.timezone})`);
   logger.info('FB-Scheduler', `📅 Cron: ${cronExpression}`);
   logger.info('FB-Scheduler', 'Waiting for next scheduled run...\n');
-  logger.info('FB-Scheduler', 'Press Ctrl+C to stop.\n');
 
   cron.schedule(cronExpression, async () => {
     logger.info('FB-Scheduler', '⏰ Scheduled time reached!');
