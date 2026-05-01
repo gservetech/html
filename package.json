@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node scheduler.js",
+    "start:all": "node start-all-schedulers.js",
     "post-now": "node post-now.js",
     "setup": "node setup.js",
     "test-post": "node test-post.js",

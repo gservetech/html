@@ -360,6 +360,67 @@ Platform queues:
 
 Each posted file gets a timestamped name when archived.
 
+## Coolify Deployment (Docker)
+
+Deploy all 3 Facebook page automations as a single Docker service on Coolify.
+
+### What gets deployed
+
+- `fb-automation` (main Facebook page)
+- `fb-print-automation` (Print Facebook page)
+- `fb-royalking-automation` (RoyalKing Facebook page)
+
+All 3 schedulers run inside one container via `start-all-schedulers.js`. Each scheduler uses `node-cron` to post at the configured time (default 8:00 AM IST).
+
+### Deployment steps
+
+1. Push this repo to GitHub/GitLab.
+2. In Coolify, add a new resource from your repository.
+3. Set **Build Pack** to `Dockerfile`.
+4. Add all environment variables from `.env` in the Coolify environment settings.
+5. Disable health checks (this is a worker service, not a web server).
+6. Deploy.
+
+### Required environment variables in Coolify
+
+```env
+FACEBOOK_PAGE_ID=your_page_id
+FACEBOOK_PAGE_ACCESS_TOKEN=your_token
+FACEBOOK_POST_TIME=08:00
+FACEBOOK_TIMEZONE=Asia/Kolkata
+
+FACEBOOK_PRINT_PAGE_ID=your_print_page_id
+FACEBOOK_PRINT_PAGE_ACCESS_TOKEN=your_print_token
+FACEBOOK_PRINT_POST_TIME=08:00
+FACEBOOK_PRINT_TIMEZONE=Asia/Kolkata
+
+FACEBOOK_ROYALKING_PAGE_ID=your_royalking_page_id
+FACEBOOK_ROYALKING_PAGE_ACCESS_TOKEN=your_royalking_token
+FACEBOOK_ROYALKING_POST_TIME=08:00
+FACEBOOK_ROYALKING_TIMEZONE=Asia/Kolkata
+```
+
+### Run all schedulers locally
+
+```bash
+npm run start:all
+```
+
+### Alternative: Coolify Scheduled Tasks
+
+Instead of the built-in `node-cron`, you can use Coolify's cron feature:
+
+1. Change the Dockerfile CMD to `CMD ["tail", "-f", "/dev/null"]` to keep the container alive.
+2. In Coolify, go to your service settings and add 3 scheduled tasks:
+
+| Command | Cron (UTC) | Description |
+|---|---|---|
+| `node fb-automation/post-now.js` | `30 2 * * *` | 8:00 AM IST |
+| `node fb-print-automation/post-now.js` | `30 2 * * *` | 8:00 AM IST |
+| `node fb-royalking-automation/post-now.js` | `30 2 * * *` | 8:00 AM IST |
+
+Coolify cron uses UTC. 8:00 AM IST = 2:30 AM UTC = `30 2 * * *`.
+
 ## Troubleshooting
 
 If `npm run test-post` fails:
