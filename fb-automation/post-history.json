@@ -10,5 +10,17 @@
         "error": null
       }
     ]
+  },
+  {
+    "file": "gservetech-welcome.html",
+    "postedAt": "2026-05-01T12:37:22.147Z",
+    "results": [
+      {
+        "platform": "facebook",
+        "success": true,
+        "postId": "735506999656369_122132777385062976",
+        "error": null
+      }
+    ]
   }
 ]

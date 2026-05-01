@@ -10,4 +10,4 @@ COPY . .
 RUN mkdir -p fb-automation/posted fb-print-automation/posted fb-royalking-automation/posted \
     fb-automation/logs fb-print-automation/logs fb-royalking-automation/logs
 
-CMD ["node", "start-all-schedulers.js"]
+CMD ["node", "fb-automation/scheduler.js"]
