@@ -1,0 +1,73 @@
+[
+  {
+    "site_name": "My Italian Diaries",
+    "url": "https://www.myitaliandiaries.com/tag/sea/",
+    "image": "https://www.myitaliandiaries.com/wp-content/uploads/2020/04/amalfi-coast-g71288538a_1920-1.jpg.webp",
+    "title": "How to plan your dream trip to the Amalfi Coast",
+    "description": "Complete guide to visiting Italy's stunning Amalfi Coast, including best towns to visit, transportation tips, and must-see attractions along the picturesque coastline."
+  },
+  {
+    "site_name": "Italia.it",
+    "url": "https://www.italia.it/en/italy/things-to-do/10-lakes-in-italy-for-an-active-holiday",
+    "image": "https://tourismmedia.italia.it/is/image/mitur/20210302175003-enit-lago-di-garda-1-1?wid=2160&hei=1320&fit=constrain,1&fmt=webp",
+    "title": "10 lakes in Italy for an active holiday",
+    "description": "Discover Italy's most beautiful lakes perfect for outdoor activities including Lake Garda, Como, and Maggiore, offering hiking, water sports, and scenic cycling routes."
+  },
+  {
+    "site_name": "Italy Perfect",
+    "url": "https://www.italyperfect.com/blog/rediscover-rome-why-you-need-to-return-to-the-eternal-city.html",
+    "image": "https://www.italyperfect.com/blog/wp-content/uploads/2022/12/italy-perfect-rome-colosseum.jpg",
+    "title": "Rediscover Rome: Why You Need to Return to the Eternal City",
+    "description": "Exploring Rome beyond the main attractions with hidden gems, local experiences, and reasons to revisit the Eternal City for deeper cultural immersion."
+  },
+  {
+    "site_name": "Untold Italy Tours",
+    "url": "https://untolditalytours.com/sicily-highlights-tour/",
+    "image": "https://untolditalytours.com/wp-content/uploads/2023/02/eastern-sicily.jpg",
+    "title": "SICILY HIGHLIGHTS TOUR",
+    "description": "Comprehensive tour of Sicily's top destinations including ancient Greek temples, Baroque towns, Mount Etna, and authentic Sicilian cuisine experiences."
+  },
+  {
+    "site_name": "Untold Italy Tours",
+    "url": "https://untolditalytours.com/umbria-tours/",
+    "image": "https://untolditalytours.com/wp-content/uploads/2023/02/spello-infiorata-flower-festival.jpg",
+    "title": "Tour Umbria - Italy's Green Heart",
+    "description": "Explore Umbria's rolling hills, medieval hill towns, and culinary traditions in Italy's beautiful green heart region, away from the crowds of Tuscany."
+  },
+  {
+    "site_name": "Full Suitcase",
+    "url": "https://fullsuitcase.com/italy/",
+    "image": "https://cdn.getyourguide.com/img/tour/6466596a80677.jpeg/156.webp",
+    "title": "Positano and Amalfi Boat Trip with Transfer",
+    "description": "Scenic boat tour along the Amalfi Coast visiting the picturesque towns of Positano and Amalfi with included transportation and stunning coastal views."
+  },
+  {
+    "site_name": "See Italy Travel",
+    "url": "https://seeitalytravel.com/all-destinations/aosta-valley/",
+    "image": "https://seeitalytravel.com/wp-content/uploads/2025/06/Valle-D-COAosta_00.jpg",
+    "title": "The Alps, Intimate and Immense",
+    "description": "Explore the majestic Aosta Valley in the Italian Alps, featuring breathtaking mountain scenery, medieval castles, and world-class skiing destinations."
+  },
+  {
+    "site_name": "Touring Club Italiano",
+    "url": "https://www.touringclub.it/notizie/touring-club-italiano/touring-club-italiano-e-il-contributo-responsabile-delle-imprese",
+    "image": "https://admin-istituzionale.touringclub.it/uploads/sicilia-shutterstock_1095700145-aspect-ratio-689-444.jpg",
+    "title": "Touring Club Italiano e il contributo responsabile delle imprese",
+    "description": "Italy's leading travel organization promoting sustainable tourism and responsible business practices while showcasing Sicily's cultural and natural heritage."
+  },
+  {
+    "site_name": "Rick Steves Europe",
+    "url": "https://www.ricksteves.com/europe/italy",
+    "image": "https://d3dqioy2sca31t.cloudfront.net/Projects/cms/production/000/033/273/slideshow/fe4b9c40eeb71b3290d068a92061770a/slide-italy-main-cinque-terre-manarola.jpg",
+    "title": "Manarola, Cinque Terre",
+    "description": "Discover the colorful cliffside village of Manarola in the UNESCO World Heritage site of Cinque Terre, known for its hiking trails and stunning Mediterranean views."
+  },
+  {
+    "site_name": "Musement",
+    "url": "https://www.musement.com/uk/rimini/italy-in-miniature-entrance-ticket-308589/",
+    "image": "https://images.musement.com/cover/0150/05/thumb_14904796_cover_header.jpeg?lossless=false&auto=format&fit=clip&h=973.2750244140625&w=2150.400146484375",
+    "title": "Italy in Miniature entrance ticket",
+    "description": "Visit Italy in Miniature park featuring 270 detailed scale models of Italy's most famous monuments and landmarks in a single entertaining educational experience."
+  }
+]
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal King Pasta & Sandwiches — Google Reviews</title>
+
+  <!-- Minimal styles -->
+  <style>
+    :root { --brand:#e11d48; --ink:#0f172a; --muted:#64748b; --card:#ffffff; --bg:#f8fafc; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      background:var(--bg); color:var(--ink)}
+    .wrap{max-width:900px;margin:48px auto;padding:0 16px}
+    .header{display:flex;align-items:center;gap:16px; margin-bottom:8px}
+    .logo{width:56px;height:56px;border-radius:14px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:800}
+    h1{font-size:1.6rem;margin:0}
+    .sub{color:var(--muted);margin:4px 0 24px}
+    .agg{display:flex;align-items:baseline;gap:12px;margin:8px 0 24px}
+    .stars{display:inline-flex;gap:3px}
+    .stars span{font-size:20px;line-height:1}
+    .card{background:var(--card);border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 1px 2px rgba(2,6,23,.06),0 1px 1px rgba(2,6,23,.03)}
+    .rev-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+    .avatar{width:36px;height:36px;border-radius:50%;background:#e2e8f0;flex:0 0 36px;object-fit:cover}
+    .name{font-weight:600}
+    .meta{color:var(--muted);font-size:.9rem}
+    .attribution{color:var(--muted);font-size:.85rem;margin-top:4px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600}
+    .btn.secondary{background:#0b1324}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .note{font-size:.9rem;color:var(--muted)}
+    .hidden{display:none}
+  </style>
+
+  <!-- AggregateRating structured data (updated at runtime) -->
+  <script type="application/ld+json" id="schema-aggregate">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Royal King Pasta & Sandwiches",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3450 Bathurst Street",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "0"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">RK</div>
+      <div>
+        <h1>Royal King Pasta & Sandwiches — Reviews</h1>
+        <div class="sub">3450 Bathurst Street, Toronto, ON • 416-781-8383 • order@royalkingon.com</div>
+      </div>
+    </div>
+
+    <div class="agg">
+      <div class="stars" id="agg-stars" aria-label="Average rating">
+        <!-- stars injected -->
+      </div>
+      <div id="agg-text" class="meta">Loading latest Google rating…</div>
+    </div>
+
+    <div id="reviews"></div>
+
+    <div class="row" style="margin:24px 0">
+      <a id="view-on-google" class="btn" target="_blank" rel="noopener">View on Google</a>
+      <a id="write-review" class="btn secondary" target="_blank" rel="noopener">Write a review</a>
+    </div>
+
+    <p class="note">
+      Notes: This page shows up to 5 most relevant Google reviews (API limit). You can add more reviews
+      in the manual section below or rotate reviews server-side if needed.
+    </p>
+
+    <h2 style="margin-top:32px">Additional featured reviews (manual)</h2>
+    <div id="manual-reviews" class="hidden">
+      <!-- Example manual card (duplicate & edit as needed)
+      <div class="card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <div class="rev-head">
+          <img class="avatar" src="https://via.placeholder.com/72" alt="">
+          <div>
+            <div class="name" itemprop="author">Happy Customer</div>
+            <div class="meta"><span itemprop="datePublished">2025-08-01</span></div>
+          </div>
+        </div>
+        <div class="stars" aria-label="5 out of 5"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div itemprop="reviewBody">The veal sandwich was loaded and the pasta tasted super fresh. Great value!</div>
+        <div class="attribution">Source: In-store comment card</div>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <!-- Google Maps JS API (Places Library) -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initReviews">
+  </script>
+  <script>
+    // 1) Fill these:
+    const PLACE_ID = "YOUR_PLACE_ID"; // Get it from Google's Place ID Finder sample page
+    const BUSINESS_GMAPS_URL = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
+
+    // 2) Basic helpers
+    function starRow(rating) {
+      const r = Math.round(rating);
+      return Array.from({length:5}, (_,i)=> i<r ? "★":"☆").map(s=>`<span>${s}</span>`).join("");
+    }
+    function fmtDate(ts) {
+      try { return new Date(ts*1000).toISOString().slice(0,10); } catch(e) { return ""; }
+    }
+
+    // 3) Init callback from Maps JS
+    function initReviews() {
+      const svc = new google.maps.places.PlacesService(document.createElement('div'));
+      svc.getDetails(
+        {
+          placeId: PLACE_ID,
+          fields: [
+            "name","rating","user_ratings_total","url",
+            "reviews","reviews.author_name","reviews.profile_photo_url",
+            "reviews.rating","reviews.text","reviews.relative_time_description",
+            "reviews.time"
+          ]
+        },
+        (place, status) => {
+          const root = document.getElementById("reviews");
+          const aggStars = document.getElementById("agg-stars");
+          const aggText = document.getElementById("agg-text");
+          const viewBtn = document.getElementById("view-on-google");
+          const writeBtn = document.getElementById("write-review");
+
+          viewBtn.href = place?.url || BUSINESS_GMAPS_URL;
+          writeBtn.href = place?.url || BUSINESS_GMAPS_URL;
+
+          if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
+            aggText.textContent = "Reviews temporarily unavailable.";
+            return;
+          }
+
+          // Aggregate header
+          aggStars.innerHTML = starRow(place.rating || 5);
+          aggText.textContent = `${(place.rating||0).toFixed(1)} based on ${place.user_ratings_total||0} Google reviews`;
+
+          // Update JSON-LD aggregate
+          try {
+            const ld = JSON.parse(document.getElementById("schema-aggregate").textContent);
+            ld.aggregateRating.ratingValue = String(place.rating || 0);
+            ld.aggregateRating.reviewCount = String(place.user_ratings_total || 0);
+            document.getElementById("schema-aggregate").textContent = JSON.stringify(ld);
+          } catch(e){}
+
+          // Reviews list (max 5 by API)
+          (place.reviews || []).forEach(rv => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.setAttribute("itemprop","review");
+            card.setAttribute("itemscope","");
+            card.setAttribute("itemtype","https://schema.org/Review");
+            card.innerHTML = `
+              <div class="rev-head">
+                <img class="avatar" src="${rv.profile_photo_url || 'https://via.placeholder.com/72'}" alt="">
+                <div>
+                  <div class="name" itemprop="author">${rv.author_name || "Google User"}</div>
+                  <div class="meta">${fmtDate(rv.time)} • <span class="attribution">Source: Google</span></div>
+                </div>
+              </div>
+              <div class="stars" aria-label="${rv.rating} out of 5">${starRow(rv.rating || 5)}</div>
+              <div itemprop="reviewBody">${(rv.text || "").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</div>
+            `;
+            root.appendChild(card);
+          });
+        }
+      );
+    }
+    window.initReviews = initReviews;
+  </script>
+</body>
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Underused HTML Features</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text: #1f2937;
+        --text-light: #6b7280;
+        --border: #e5e7eb;
+        --bg: #ffffff;
+        --bg-secondary: #f9fafb;
+        --success: #10b981;
+        --error: #ef4444;
+        --radius: 8px;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--bg-secondary);
+        padding: 2rem 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
+
+      .subtitle {
+        color: var(--text-light);
+        font-size: 1.125rem;
+      }
+
+      .section {
+        background: var(--bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--border);
+      }
+
+      .section-number {
+        background: var(--primary);
+        color: white;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: var(--text);
+      }
+
+      .description {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        font-size: 0.9375rem;
+      }
+
+      /* Buttons */
+      button,
+      .btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.625rem 1.25rem;
+        border-radius: var(--radius);
+        font-size: 0.9375rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      button:hover,
+      .btn:hover {
+        background: var(--primary-hover);
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .btn-secondary {
+        background: var(--bg-secondary);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--border);
+      }
+
+      /* Forms */
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.625rem 0.875rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 0.9375rem;
+        font-family: inherit;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      input:invalid {
+        border-color: var(--error);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.375rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: var(--text);
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      /* 1. Template */
+      #product-list {
+        list-style: none;
+      }
+
+      .product-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        margin-bottom: 0.5rem;
+        border: 1px solid var(--border);
+      }
+
+      .product-info h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .product-price {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .add-to-cart {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+
+      /* 2. Datalist & Input */
+      .input-demo {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      /* 3. Inert */
+      #main-content {
+        transition: opacity 0.3s;
+      }
+
+      #main-content[inert] {
+        opacity: 0.4;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .demo-content {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+      }
+
+      /* 4. Dialog */
+      dialog {
+        border: none;
+        border-radius: var(--radius);
+        padding: 0;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        max-width: 500px;
+        width: 90%;
+      }
+
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+      }
+
+      .dialog-header {
+        background: var(--bg-secondary);
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .dialog-header h3 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-light);
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+      }
+
+      .close-btn:hover {
+        background: var(--border);
+        color: var(--text);
+      }
+
+      .dialog-content {
+        padding: 1.5rem;
+      }
+
+      .dialog-footer {
+        padding: 1rem 1.5rem;
+        background: var(--bg-secondary);
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.75rem;
+        border-top: 1px solid var(--border);
+      }
+
+      /* 5. Picture */
+      .picture-demo {
+        text-align: center;
+      }
+
+      .picture-demo img {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+      }
+
+      /* 6. Output */
+      .calculator {
+        max-width: 400px;
+      }
+
+      .calc-result {
+        background: var(--bg-secondary);
+        padding: 1.25rem;
+        border-radius: var(--radius);
+        margin-top: 1rem;
+        text-align: center;
+        border: 1px solid var(--border);
+      }
+
+      output {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      /* 7. Contenteditable */
+      [contenteditable="true"] {
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: var(--radius);
+        min-height: 150px;
+        background: var(--bg);
+      }
+
+      [contenteditable="true"]:focus {
+        outline: 2px solid var(--primary);
+        border-color: transparent;
+      }
+
+      [contenteditable="true"]:empty:before {
+        content: attr(data-placeholder);
+        color: var(--text-light);
+      }
+
+      .editor-toolbar {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+      }
+
+      .saved-note {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border-left: 4px solid var(--success);
+      }
+
+      /* 8. Enterkeyhint */
+      .form-flow {
+        max-width: 400px;
+      }
+
+      /* 9. Translate */
+      .translation-demo {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+      }
+
+      code {
+        background: var(--bg-secondary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        font-size: 0.875rem;
+        color: var(--primary);
+      }
+
+      pre {
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: var(--radius);
+        overflow-x: auto;
+        margin: 1rem 0;
+        border: 1px solid var(--border);
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        color: var(--text);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.625rem;
+        background: var(--primary);
+        color: white;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .section {
+          padding: 1.5rem;
+        }
+
+        .input-demo {
+          grid-template-columns: 1fr;
+        }
+      
+    </style>
+    <script>
+        // 1. Template Element
+      let productCount = 0;
+      function addProduct() {
+        productCount++;
+        const template = document.getElementById("product-template");
+        const clone = template.content.cloneNode(true);
+
+        clone.querySelector(
+          ".product-name"
+        ).textContent = `Product ${productCount}`;
+        clone.querySelector(".product-price").textContent = `$${(
+          Math.random() * 100 +
+          10
+        ).toFixed(2)}`;
+
+        document.getElementById("product-list").appendChild(clone);
+      }
+
+      // Add initial products
+      addProduct();
+      addProduct();
+
+      // 3. Inert
+      function toggleInert() {
+        const content = document.getElementById("main-content");
+        content.inert = !content.inert;
+      }
+
+      // 4. Dialog
+      function openDialog() {
+        document.getElementById("demo-dialog").showModal();
+      }
+
+      function closeDialog() {
+        document.getElementById("demo-dialog").close();
+      }
+
+      function saveSettings() {
+        alert("Settings saved!");
+        closeDialog();
+      }
+
+      // 6. Output
+      function calculateTotal() {
+        const quantity = document.getElementById("quantity").value;
+        const price = document.getElementById("price").value;
+        const total = (quantity * price).toFixed(2);
+        document.getElementById("total").textContent = `$${total}`;
+      }
+
+      // 7. Contenteditable
+      function execCmd(command) {
+        document.execCommand(command, false, null);
+        document.getElementById("editor").focus();
+      }
+
+      function clearEditor() {
+        document.getElementById("editor").innerHTML = "";
+      }
+
+      function saveNote() {
+        const editor = document.getElementById("editor");
+        const savedContent = document.getElementById("saved-content");
+        const savedDisplay = document.getElementById("saved-display");
+
+        if (editor.innerHTML.trim()) {
+          savedContent.innerHTML = editor.innerHTML;
+          savedDisplay.style.display = "block";
+        }
+      }
+
+      // 8. Enterkeyhint - Auto-focus next field
+      document
+        .querySelectorAll('input[enterkeyhint="next"]')
+        .forEach((input, index, inputs) => {
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              const nextIndex = index + 1;
+              if (nextIndex < inputs.length) {
+                inputs[nextIndex].focus();
+              } else {
+                const textarea = document.getElementById("user-message");
+                if (textarea) textarea.focus();
+              }
+            }
+          });
+        });
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        alert("Form submitted! Check console for data.");
+        const formData = new FormData(e.target);
+        console.log(Object.fromEntries(formData));
+      } 
+        </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Underused HTML Features</h1>
+      </header>
+
+      <!-- 1. Template Element -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">1</span>
+          <h2>Template Element</h2>
+        </div>
+        <p class="description">
+          Dynamically add content without innerHTML vulnerabilities
+        </p>
+
+        <template id="product-template">
+          <li class="product-item">
+            <div class="product-info">
+              <h3 class="product-name"></h3>
+              <p class="product-price"></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+          </li>
+        </template>
+
+        <ul id="product-list"></ul>
+
+        <button onclick="addProduct()">Add Sample Product</button>
+      </section>
+
+      <!-- 2. Datalist & Advanced Inputs -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">2</span>
+          <h2>Datalist & Advanced Inputs</h2>
+        </div>
+        <p class="description">
+          Native input types with autocomplete suggestions
+        </p>
+
+        <div class="input-demo">
+          <div class="form-group">
+            <label for="theme-color">Theme Color</label>
+            <input
+              type="color"
+              id="theme-color"
+              list="color-presets"
+              value="#2563eb"
+            />
+            <datalist id="color-presets">
+              <option value="#2563eb">Blue</option>
+              <option value="#10b981">Green</option>
+              <option value="#ef4444">Red</option>
+              <option value="#f59e0b">Orange</option>
+              <option value="#8b5cf6">Purple</option>
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              id="city"
+              list="cities"
+              placeholder="Start typing..."
+            />
+            <datalist id="cities">
+              <option value="New York"></option>
+              <option value="Los Angeles"></option>
+              <option value="Chicago"></option>
+              <option value="Houston"></option>
+              <option value="Phoenix"></option>
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="meeting-date">Meeting Date</label>
+            <input type="date" id="meeting-date" />
+          </div>
+
+          <div class="form-group">
+            <label for="meeting-time">Meeting Time</label>
+            <input type="time" id="meeting-time" list="time-slots" />
+            <datalist id="time-slots">
+              <option value="09:00"></option>
+              <option value="10:00"></option>
+              <option value="14:00"></option>
+              <option value="16:00"></option>
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="volume">Volume</label>
+            <input type="range" id="volume" min="0" max="100" value="50" />
+          </div>
+
+          <div class="form-group">
+            <label for="search-input">Search</label>
+            <input type="search" id="search-input" placeholder="Search..." />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Inert Attribute -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">3</span>
+          <h2>Inert Attribute</h2>
+        </div>
+        <p class="description">Disable entire sections of the page</p>
+
+        <div id="main-content" class="demo-content">
+          <h3>Main Content</h3>
+          <p>
+            This content can be made non-interactive with the inert attribute.
+          </p>
+          <button>Click Me</button>
+          <input type="text" placeholder="Try typing..." />
+          <a href="#">Click this link</a>
+        </div>
+
+        <div style="margin-top: 1rem">
+          <button onclick="toggleInert()">Toggle Inert</button>
+        </div>
+      </section>
+
+      <!-- 4. Dialog Element -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">4</span>
+          <h2>Dialog Element</h2>
+        </div>
+        <p class="description">Native modal dialogs with backdrop</p>
+
+        <dialog id="demo-dialog">
+          <div class="dialog-header">
+            <h3>Settings</h3>
+            <button class="close-btn" onclick="closeDialog()">×</button>
+          </div>
+          <div class="dialog-content">
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="notifications" />
+                Enable notifications
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="dark-mode" />
+                Dark mode
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="user-email">Email</label>
+              <input
+                type="email"
+                id="user-email"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+          <div class="dialog-footer">
+            <button class="btn-secondary" onclick="closeDialog()">
+              Cancel
+            </button>
+            <button onclick="saveSettings()">Save Changes</button>
+          </div>
+        </dialog>
+
+        <button onclick="openDialog()">Open Dialog</button>
+      </section>
+
+      <!-- 5. Picture Element -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">5</span>
+          <h2>Picture Element</h2>
+        </div>
+        <p class="description">Responsive images for different screen sizes</p>
+
+        <div class="picture-demo">
+          <picture>
+            <source
+              media="(max-width: 500px)"
+              srcset="https://picsum.photos/500/300?grayscale"
+            />
+            <source
+              media="(max-width: 1000px)"
+              srcset="https://picsum.photos/1000/400?blur=1"
+            />
+            <img
+              src="https://picsum.photos/1200/500"
+              alt="Responsive demo image"
+              loading="lazy"
+            />
+          </picture>
+          <p
+            style="
+              margin-top: 1rem;
+              color: var(--text-light);
+              font-size: 0.875rem;
+            "
+          >
+            Resize your browser to see different images load
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. Output Element -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">6</span>
+          <h2>Output Element</h2>
+        </div>
+        <p class="description">Semantic element for calculation results</p>
+
+        <form class="calculator" oninput="calculateTotal()">
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              value="1"
+              min="1"
+              max="100"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price per item ($)</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value="29.99"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div class="calc-result">
+            <div
+              style="
+                font-size: 0.875rem;
+                color: var(--text-light);
+                margin-bottom: 0.5rem;
+              "
+            >
+              Total
+            </div>
+            <output id="total" for="quantity price">$29.99</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- 7. Contenteditable -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">7</span>
+          <h2>Contenteditable</h2>
+        </div>
+        <p class="description">Turn any element into an editable field</p>
+
+        <div class="editor-toolbar">
+          <button onclick="execCmd('bold')" title="Bold">
+            <strong>B</strong>
+          </button>
+          <button onclick="execCmd('italic')" title="Italic">
+            <em>I</em>
+          </button>
+          <button onclick="execCmd('underline')" title="Underline">
+            <u>U</u>
+          </button>
+          <button class="btn-secondary" onclick="clearEditor()">Clear</button>
+          <button onclick="saveNote()">Save Note</button>
+        </div>
+
+        <div
+          id="editor"
+          contenteditable="true"
+          spellcheck="true"
+          data-placeholder="Start writing your notes here..."
+        ></div>
+
+        <div id="saved-display" class="saved-note" style="display: none">
+          <strong style="color: var(--success)">✓ Saved:</strong>
+          <div id="saved-content" style="margin-top: 0.5rem"></div>
+        </div>
+      </section>
+
+      <!-- 8. Enterkeyhint -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">8</span>
+          <h2>Enterkeyhint</h2>
+        </div>
+        <p class="description">Customize mobile keyboard action button</p>
+
+        <form class="form-flow" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="user-name">Full Name</label>
+            <input
+              type="text"
+              id="user-name"
+              enterkeyhint="next"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="user-email-2">Email</label>
+            <input
+              type="email"
+              id="user-email-2"
+              enterkeyhint="next"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="user-phone">Phone</label>
+            <input
+              type="tel"
+              id="user-phone"
+              enterkeyhint="next"
+              placeholder="123-456-7890"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="user-message">Message</label>
+            <textarea
+              id="user-message"
+              enterkeyhint="send"
+              placeholder="Type your message..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button type="submit">Submit Form</button>
+        </form>
+      </section>
+
+      <!-- 9. Translate Attribute -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-number">9</span>
+          <h2>Translate Attribute</h2>
+        </div>
+        <p class="description">Control what content gets translated</p>
+
+        <div class="translation-demo">
+          <h3>Product Information</h3>
+          <p>
+            Welcome to our store. We're proud to present the
+            <span translate="no">iPhone 15 Pro</span>.
+          </p>
+
+          <p>
+            This device features the powerful
+            <span translate="no">A17 Pro</span> chip and comes in
+            <span translate="no">Natural Titanium</span>,
+            <span translate="no">Blue Titanium</span>, and
+            <span translate="no">Black Titanium</span>.
+          </p>
+
+          <h4 style="margin-top: 1.5rem">Code Example</h4>
+          <p>Use the following function to fetch data:</p>
+          <pre translate="no"><code>async function fetchData() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  return data;
+}</code></pre>
+
+          <p style="margin-top: 1rem">
+            <span class="badge">translate="no"</span>
+            Brand names and code will not be translated
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

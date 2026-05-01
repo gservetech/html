@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Royalking Menu – Clickable</title>
+<style>
+  .menu-wrap{
+    position:relative;
+    max-width:1000px; /* adjust if needed */
+    margin:0 auto;
+  }
+  .menu-wrap img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  /* Hotspots */
+  .hotspot{
+    position:absolute;
+    width:12%;                /* diameter of circle target */
+    aspect-ratio:1/1;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    text-indent:-9999px;      /* hide text but keep for accessibility */
+    overflow:hidden;
+  }
+  .hotspot:focus,
+  .hotspot:hover{
+    outline:3px solid rgba(255,255,255,.9);
+    box-shadow:0 0 0 6px rgba(200,0,0,.75);
+  }
+  /* Optional: a bigger box for the center photo */
+  .hotspot.center{
+    width:40%;
+    aspect-ratio:4/3;         /* center photo shape */
+    border-radius:12px;
+  }
+</style>
+</head>
+<body>
+  <div class="menu-wrap" aria-label="Royalking Blue Jays Special Menu">
+    <img src="https://gservetech.github.io/html/html/royalking/ad/images/bluejays20.png" alt="Royalking menu with Blue Jays celebration and circular items around" />
+
+    <!-- TOP ROW -->
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=23" aria-label="Breaded Chicken LTM Sandwich"
+       style="left:18%; top:12%;"></a>
+
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=24" aria-label="Grilled Chicken Sandwich (top)"
+       style="left:50%; top:9%;"></a>
+
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=25" aria-label="Steak Sandwich"
+       style="left:82%; top:15%;"></a>
+
+    <!-- MIDDLE LEFT/RIGHT -->
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=22" aria-label="Breaded Chicken Sandwich"
+       style="left:14%; top:46%;"></a>
+
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=8" aria-label="Meat Ball Sandwich"
+       style="left:86%; top:50%;"></a>
+
+    <!-- CENTER IMAGE -->
+    <a class="hotspot center" href="https://www.royalkingon.com/" aria-label="Center Blue Jays celebration photo"
+       style="left:50%; top:50%;"></a>
+
+    <!-- BOTTOM ROW -->
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=14" aria-label="Pasta – Cheese Tortellini (left)"
+       style="left:18%; top:78%;"></a>
+
+    <a class="hotspot" href="https://www.royalkingon.com/menu?itemId=17" aria-label="Meat Ravioli"
+       style="left:50%; top:89%;"></a>
+
+    <a class="hotspot" href="#grilled-chicken-bottom" aria-label="Grilled Chicken Sandwich (bottom)"
+       style="left:82%; top:78%;"></a>
+  </div>
+
+  <!-- Dummy anchors (targets for the links above). Replace with real URLs later. -->
+  <div hidden>
+    <a id="breaded-chicken-ltm"></a>
+    <a id="grilled-chicken-top"></a>
+    <a id="steak-sandwich"></a>
+    <a id="breaded-chicken"></a>
+    <a id="meat-ball"></a>
+    <a id="bluejays-photo"></a>
+    <a id="pasta-left"></a>
+    <a id="meat-ravioli"></a>
+    <a id="grilled-chicken-bottom"></a>
+  </div>
+</body>
+</html>

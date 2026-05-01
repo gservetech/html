@@ -1,0 +1,89 @@
+{
+  "products": {
+    "15": {
+      "id": "15",
+      "name": "Business cards",
+      "brand": "GserveTech Print",
+      "sku": "997-664",
+      "price": 160.00,
+      "originalPrice": 200,
+      "description": "BUSINESS CARDS-500-MATT LAMINATE-SPOT UV,BUSINESS CARDS-14PT C2S",
+      "imageUrl": "./PremiumTool.png",
+      "category": "business card",
+      "rating": 4.8
+    },
+    "18": {
+      "id": "18",
+      "name": "1000 Postcards-5X7 14PT -POST CARDS-2 SIDED",
+      "brand": "GserveTech Print",
+      "sku": "437-456",
+      "price": 120.00,
+      "originalPrice": 150.00,
+      "description": "Postcards are a powerful and cost-effective marketing tool, particularly useful as a mailer.Deliver your message in style with our 5x7 premium postcards, the perfect size for impactful marketing and personalized communication. Whether you're promoting a sale, announcing an event, or sending a heartfelt thank you, these postcards strike the ideal balance between visual presence and mailing convenience",
+      "imageUrl": "./Propane.png",
+      "category": "Outdoor",
+      "rating": 4.6
+    },
+    "9": {
+      "id": "9",
+      "name": "Rollup 33.5 x 79 Rollup 33.5 x 79 WITH STAND",
+      "brand": "GserveTech Print",
+      "sku": "EP-6312",
+      "price": 57.99,
+      "originalPrice": 129.99,
+      "description": "Designed for events, storefronts, trade shows, restaurants, and promotions, this banner delivers vibrant, high-resolution printing on durable material.Lightweight, portable, and easy to set up — ideal for fast, impactful advertising. Perfect for: Promotions • Menus • Announcements • Branding • Indoor Displays",
+      "imageUrl": "./wet-dry.png",
+      "category": "Rollup Banners",
+      "rating": 4.5
+    },
+    "8": {
+      "id": "8",
+      "name": "Vinyl Banner-4x2",
+      "brand": "GserveTech Print",
+      "sku": "957-674",
+      "price": 60.00,
+      "originalPrice": 80.00,
+      "description": "4 grommets in 4 corners, durable vinyl material, vibrant full-color printing. Perfect for indoor and outdoor use.",
+      "imageUrl": "/Noblelights.png",
+      "category": "Banners",
+      "rating": 4.7
+    },
+    "6": {
+      "id": "6",
+      "name": "1000 Brochures - Get 1,000 Premium Brochures — Perfect for Any Business Push!",
+      "brand": "GserveTech Print",
+      "sku": "901-334",
+      "price": 200.00,
+      "originalPrice": 250,
+      "description": "Heavy-gauge steel, non-stick coating, dishwasher safe. Perfect for all baking needs.",
+      "imageUrl": "./Non-Stick.png",
+      "category": "Brochures",
+      "rating": 4.2
+    },
+    "5": {
+      "id": "5",
+      "name": "SIGN WITH A FRAME",
+      "brand": "GserveTech Print",
+      "sku": "67-890",
+      "price": 129.9,
+      "originalPrice": 160,
+      "description": "Framed 2x3 Sign – Sleek. Sturdy. Statement-Making. Enhance your messaging with our Framed 2x3 Sign, a compact yet highly visible signage solution designed for both indoor and outdoor use. Ideal for storefronts, lobbies, events, trade shows, or directional signage, this framed sign is built to catch attention and communicate clearly",
+      "imageUrl": "./Mosquito.png",
+      "category": "Signs",
+      "rating": 4.3
+    }
+  },
+   "flyerPage": {
+      "id": "page-1",
+      "imageUrl": "/flyer.png",
+      "hotspots": [
+        { "id": "h1", "productId": "15", "x": 2.5, "y": 33, "width": 30, "height": 32 },  
+        { "id": "h2", "productId": "18", "x": 34, "y": 32.5, "width": 31, "height": 32 },  
+        { "id": "h3", "productId": "9", "x": 66, "y": 30, "width": 30, "height": 35 },  
+  
+        { "id": "h4", "productId": "8", "x": 3, "y": 66, "width": 29, "height": 26 },  
+        { "id": "h5", "productId": "6", "x": 34.5, "y": 65.5, "width": 30, "height": 26 },  
+        { "id": "h6", "productId": "5", "x": 66, "y": 64.5, "width": 30, "height": 27 }  
+      ]
+    }
+}

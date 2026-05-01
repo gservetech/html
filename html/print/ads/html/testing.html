@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Icon Button Examples — Accessible & Responsive</title>
+
+  <!-- Optional: Font Awesome CDN (fallback icon font). Uncomment to use: -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p6O6j3vVYFJ3h2b5N1qR0p7f1s6b8Qx3K6dXYmHk1ieJw8yB4k7vX1t6Vgk0Jk3b3sF0Cq2fX5p1dK3y6Z7xg==" crossorigin="anonymous" referrerpolicy="no-referrer"/> -->
+
+  <style>
+    :root {
+      --btn-bg: #007bff;
+      --btn-hover: #0056b3;
+      --btn-color: #fff;
+      --btn-outline: #007bff;
+      --btn-disabled: #6c757d;
+      --size: 40px; /* base size (can be changed to rem for theme) */
+    }
+
+    /* Utility: visually hidden (for screen readers) */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    /* Basic reset for demo layout */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      padding: 2rem;
+      line-height: 1.3;
+      color: #111;
+      background: #f7f9fc;
+    }
+
+    h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    p { margin-top: 0; margin-bottom: 1rem; color: #444; }
+
+    .row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    /* Core icon button styles */
+    .icon-btn {
+      width: var(--size);
+      height: var(--size);
+      border: none;
+      border-radius: 50%;
+      background-color: var(--btn-bg);
+      color: var(--btn-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0; /* hide text nodes if any */
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+      -webkit-appearance: none; /* iOS Safari normalize */
+    }
+
+    .icon-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; pointer-events: none; }
+    .icon-btn i { font-size: 18px; color: inherit; pointer-events: none; }
+
+    /* Outline variant */
+    .icon-btn--outline {
+      background-color: transparent;
+      border: 2px solid var(--btn-outline);
+      color: var(--btn-outline);
+    }
+
+    .icon-btn--outline:hover {
+      background-color: var(--btn-bg);
+      color: var(--btn-color);
+    }
+
+    /* Hover, active states */
+    .icon-btn:hover {
+      background-color: var(--btn-hover);
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 123, 255, 0.18);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 6px rgba(0, 123, 255, 0.14);
+    }
+
+    /* Focus styles for accessibility */
+    .icon-btn:focus {
+      outline: none; /* remove browser default */
+    }
+
+    /* Prefer :focus-visible to avoid focus ring on mouse click */
+    .icon-btn:focus-visible {
+      outline: 3px solid rgba(0, 123, 255, 0.35);
+      outline-offset: 3px;
+    }
+
+    /* Disabled state */
+    .icon-btn:disabled,
+    .icon-btn[disabled] {
+      background-color: var(--btn-disabled);
+      color: #fff;
+      cursor: not-allowed;
+      opacity: 0.75;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Floating action button (FAB) */
+    .icon-btn--fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    /* Toggle state */
+    .icon-btn--toggle { transition: background-color 0.2s ease; }
+    .icon-btn--toggle.on { background-color: #28a745; color: #fff; }
+    .icon-btn--toggle svg { transition: transform 0.25s ease; }
+    .icon-btn--toggle.on svg { transform: rotate(180deg) scale(1.02); }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .icon-btn--pulse { animation: pulse 2s infinite; }
+
+    /* Loading spinner example */
+    .spinner { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Theming via variables and dark mode support */
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f1720; color: #e6eef8; }
+      :root { --btn-bg: #3b82f6; --btn-hover: #2563eb; --btn-color: #fff; }
+    }
+
+    /* Responsive sizing (use rems in production) */
+    @media (max-width: 768px) {
+      :root { --size: 44px; }
+      .icon-btn svg { width: 22px; height: 22px; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .icon-btn, .icon-btn svg { transition: none !important; }
+      .icon-btn--pulse { animation: none !important; }
+    }
+
+    /* Small helper for demo layout */
+    .label { font-size: 0.9rem; color: #333; }
+
+  </style>
+</head>
+<body>
+  <h1>Accessible Icon Buttons</h1>
+  <p>Examples of icon buttons using semantic <code>&lt;button&gt;</code>, inline SVGs, outline variants, disabled states, a FAB, toggle and a pulsing button.</p>
+
+  <section aria-labelledby="examples-heading">
+    <h2 id="examples-heading" class="sr-only">Examples</h2>
+
+    <div class="row" style="margin-bottom:1rem">
+      <!-- Default primary button (Search) -->
+      <button class="icon-btn" aria-label="Search" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+
+      <!-- Outline variant (Add) -->
+      <button class="icon-btn icon-btn--outline" aria-label="Add" title="Add">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Disabled (Trash) -->
+      <button class="icon-btn" aria-label="Delete" disabled title="Delete">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M3 6h18M8 6v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M10 11v6M14 11v6" stroke-linecap="round"></path>
+        </svg>
+      </button>
+
+      <!-- Pulse button (Promo) -->
+      <button class="icon-btn icon-btn--pulse" aria-label="Promotion" title="Promotion">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M12 2l2.9 5.88L21 9.24l-4.5 4.09L17.8 21 12 17.77 6.2 21l1.3-7.67L3 9.24l6.1-1.36L12 2z" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Toggle button (On/Off) -->
+      <button class="icon-btn icon-btn--toggle" aria-label="Toggle favorite" aria-pressed="false" title="Toggle favorite" id="toggleFav">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.78 0L12 5.6l-1.02-1a5.5 5.5 0 0 0-7.78 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <!-- Loading button: toggles to spinner via JS -->
+      <button class="icon-btn" aria-label="Save" id="saveBtn" title="Save">
+        <svg id="saveIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke-linejoin="round"></path>
+          <path d="M17 21v-8H7v8" stroke-linecap="round"></path>
+        </svg>
+      </button>
+
+n      <!-- Example: Font Awesome fallback (commented) -->
+      <!-- Use an <i> element if you include Font Awesome. Keep aria-label on the button: -->
+      <!-- <button class="icon-btn" aria-label="Search via FontAwesome"><i class="fas fa-search" aria-hidden="true"></i></button> -->
+
+    </div>
+
+  </section>
+
+  <!-- Floating action button -->
+  <button class="icon-btn icon-btn--fab" aria-label="Open composer" title="Compose">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" stroke-width="2">
+      <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+n  <script>
+    // Toggle favorite: updates aria-pressed and visual class
+    const toggle = document.getElementById('toggleFav');
+    toggle.addEventListener('click', () => {
+      const isOn = toggle.classList.toggle('on');
+      toggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    });
+
+    // Simulate save loading state: replace icon with spinner for 1.5s
+    const saveBtn = document.getElementById('saveBtn');
+    const saveIcon = document.getElementById('saveIcon');
+    saveBtn.addEventListener('click', () => {
+      // Prevent multi-clicks
+      saveBtn.disabled = true;
+
+      // Replace inner SVG with a spinner (CSS spinner class)
+      saveIcon.classList.add('spinner');
+
+      // Simulate async action
+      setTimeout(() => {
+        saveIcon.classList.remove('spinner');
+        saveBtn.disabled = false;
+      }, 1500);
+    });
+
+n    // Keyboard accessibility check (optional demo): ensure space/enter triggers toggle (buttons already handle it)
+    // Additional JS not required for keyboard activation of native <button> elements.
+
+  </script>
+
+  <!-- DESIGN GUIDELINES: concise demos for the 10 rules -->
+  <style>
+    /* Spacing system (8-point) */
+    :root {
+      --sp-1: 8px; /* tight */
+      --sp-2: 16px; /* default */
+      --sp-3: 24px; /* section */
+      --sp-4: 32px; /* large */
+      --sp-5: 48px; /* hero */
+    }
+
+    #design-guidelines { margin-top: var(--sp-4); padding: var(--sp-3); background: rgba(0,0,0,0.02); border-radius: 12px; }
+    #design-guidelines h2 { margin-top:0; margin-bottom:var(--sp-1); }
+    #design-guidelines p { margin: 0 0 var(--sp-2) 0; color: #333; }
+
+    /* 1 — CTA sizing demo */
+    .cta-demo { display:flex; gap:var(--sp-2); align-items:center; margin-bottom:var(--sp-2); }
+    .cta { display:inline-flex; align-items:center; justify-content:center; color:#fff; border-radius:8px; font-weight:700; cursor:pointer; }
+    .cta--primary { width:48px; height:48px; background:#ff5a5f; box-shadow: 0 6px 18px rgba(255,90,95,0.18); }
+    .cta--secondary { width:40px; height:40px; background:#ff8a80; }
+    .cta--tertiary { width:36px; height:36px; background:#ffc8c8; opacity:0.6; }
+    .cta-label { font-size:0.9rem; margin-left:var(--sp-1); color:#222; }
+
+    /* 2 — Headline letter-spacing demo */
+    .headline { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0 0 var(--sp-2) 0; }
+    .headline--small { font-size:32px; letter-spacing: 0; }
+    .headline--medium { font-size:64px; letter-spacing: -0.01em; /* -1% */ }
+    .headline--large { font-size:96px; letter-spacing: -0.03em; /* -3% */ }
+
+    /* 3 — Rounded corners demo */
+    .card { background:#fff; padding:var(--sp-2); border-radius:24px; width:280px; box-shadow:none; margin-bottom:var(--sp-2); }
+    .card .inner-img { border-radius:12px; overflow:hidden; height:120px; background:linear-gradient(90deg,#e9e9f0,#f4f6fb); display:flex; align-items:center; justify-content:center; color:#889; }
+
+    /* 4 — Spacing grid demo */
+    .grid-demo { display:flex; gap:var(--sp-2); align-items:center; }
+
+    /* 5 — Color picking demo (HSB approach using HSL in CSS) */
+    .color-sample { display:flex; gap:var(--sp-2); align-items:center; }
+    .swatch { width:64px; height:40px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+    .swatch--base { background: hsl(220 80% 60%); }
+    .swatch--dark { background: hsl(220 95% 40%); }
+    .swatch--light { background: hsl(220 60% 80%); }
+
+    /* 6 — Card visual grouping demo */
+    .card-group { display:flex; gap:var(--sp-2); align-items:flex-start; }
+    .price { font-size:20px; font-weight:800; }
+    .price-sub { font-size:12px; color:#666; }
+
+    /* 7 — Kill lines demo */
+    .form-demo input { display:block; width:240px; padding:10px; border:none; background: #fbfbfd; margin-bottom:var(--sp-2); border-radius:8px; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02); }
+
+    /* 8 — Button copy examples */
+    .copy-demo { display:flex; gap:var(--sp-2); align-items:center; }
+    .copy--primary { background:#007bff; color:white; padding:10px 16px; border-radius:8px; }
+    .copy--muted { background:#f0f2f5; color:#333; padding:10px 12px; border-radius:8px; }
+
+    /* 9 — Photo demo (placeholder) */
+    .photo-demo { width:160px; height:100px; background:linear-gradient(180deg,#ddd,#eee); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#888; }
+
+    /* 10 — Checklist */
+    .checklist { margin-top:var(--sp-2); }
+    .checklist li { margin-bottom:6px; }
+
+  </style>
+
+  <section id="design-guidelines" aria-labelledby="dg-heading">
+    <h2 id="dg-heading">Design Guide — 10 Quick Rules</h2>
+
+    <!-- 1. 5-Second Glance Test -->
+    <h3>1. The 5-Second Glance Test</h3>
+    <p>Make the main action at least 3x more obvious. Example below: primary (48px), secondary (40px), tertiary (36px).</p>
+    <div class="cta-demo">
+      <div class="cta cta--primary" aria-hidden="true">A</div>
+      <div class="cta-label">Primary — Impossible to miss</div>
+    </div>
+    <div class="cta-demo">
+      <div class="cta cta--secondary" aria-hidden="true">B</div>
+      <div class="cta-label">Secondary — Visible, not competing</div>
+    </div>
+    <div class="cta-demo">
+      <div class="cta cta--tertiary" aria-hidden="true">C</div>
+      <div class="cta-label">Tertiary — Should nearly disappear</div>
+    </div>
+
+    <!-- 2. Letter Spacing on Headlines -->
+    <h3>2. Letter Spacing on Headlines</h3>
+    <p>Use tighter tracking for large headlines. Examples (tracking shown visually):</p>
+    <p class="headline headline--small">Headline 32px (tracking: 0)</p>
+    <p class="headline headline--medium">HEADLINE 64px (tracking: -1%)</p>
+    <p class="headline headline--large">HEADLINE 96px (tracking: -3%)</p>
+
+    <!-- 3. Rounded Corners That Look Good -->
+    <h3>3. Rounded Corners That Actually Look Good</h3>
+    <p>Inner radius = outer radius - gap. Demo: card (24px) with image (12px).</p>
+    <div class="card">
+      <div class="inner-img">Image (inner radius 12px)</div>
+      <div style="padding-top:12px; font-size:14px">Card with nested image</div>
+    </div>
+
+    <!-- 4. Spacing System -->
+    <h3>4. Spacing System (Use 8px grid)</h3>
+    <p>Use multiples of 8px for consistent spacing. Small demo below:</p>
+    <div class="grid-demo">
+      <div style="width:80px;height:48px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center">Box</div>
+      <div style="width:120px;height:48px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center">Box</div>
+    </div>
+
+    <!-- 5. Color Picking -->
+    <h3>5. Color Picking (HSB workflow)</h3>
+    <p>Keep hue constant and tweak saturation/brightness for variants.</p>
+    <div class="color-sample">
+      <div class="swatch swatch--base"></div>
+      <div class="swatch swatch--dark"></div>
+      <div class="swatch swatch--light"></div>
+      <div style="font-size:12px;color:#444">Base / Dark / Light</div>
+    </div>
+
+    <!-- 6. Card Design -->
+    <h3>6. Card Design Without the Boring Layouts</h3>
+    <p>Group related info visually — don't rely on labels.</p>
+    <div class="card-group">
+      <div style="background:#fff;padding:12px;border-radius:12px;">
+        <div style="font-weight:700">Title • Location</div>
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+          <div class="price">$99</div>
+          <div class="price-sub">per month</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Kill Your Lines -->
+    <h3>7. Kill Your Lines</h3>
+    <p>Prefer spacing and subtle backgrounds over hard lines.</p>
+    <div class="form-demo">
+      <input placeholder="Name">
+      <input placeholder="Email">
+    </div>
+
+    <!-- 8. Button Copy That Actually Works -->
+    <h3>8. Button Copy That Actually Works</h3>
+    <p>Use Action + Benefit. Examples:</p>
+    <div class="copy-demo">
+      <div class="copy--primary">Get Started Free</div>
+      <div class="copy--muted">No credit card required</div>
+    </div>
+
+    <!-- 9. Real Photos Beat Stock Photos -->
+    <h3>9. Real Photos Beat Stock Photos 100%</h3>
+    <p>Prefer real product/team photos. Demo placeholder:</p>
+    <div class="photo-demo">Real photo</div>
+
+    <!-- 10. Test, Iterate, Ship -->
+    <h3>10. Test, Iterate, Ship</h3>
+    <p>Change one thing at a time and test — most improvement comes from removing things.</p>
+
+    <h4>Quick Checklist</h4>
+    <ul class="checklist">
+      <li>[ ] Can someone understand the page in 5 seconds?</li>
+      <li>[ ] Are headlines over 60px using negative tracking?</li>
+      <li>[ ] Do nested rounded corners follow the formula?</li>
+      <li>[ ] Is all spacing a multiple of 8?</li>
+      <li>[ ] Are backgrounds tinted (not pure black/white)?</li>
+      <li>[ ] Do buttons explain what happens when clicked?</li>
+      <li>[ ] Have I tested at least 2 variations?</li>
+    </ul>
+
+    <p style="margin-top:var(--sp-3);font-size:0.9rem;color:#333">Pick one trick to apply today. Recommendation: start with <strong>#4 Spacing System</strong>.</p>
+
+  </section>
+
+</body>
+</html>

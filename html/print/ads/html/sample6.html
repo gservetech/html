@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn 8 fundamental CSS concepts including inheritance, specificity, box model, flexbox, grid, and responsive design to improve your web development skills."
+    />
+    <title>A detailed overview of CSS fundamentals</title>
+    <style>
+      /* Reset and Box Model */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Custom Properties for minimal color palette */
+      :root {
+        --color-text: #1a1a1a;
+        --color-text-light: #4a4a4a;
+        --color-bg: #ffffff;
+        --color-accent: #0066cc;
+        --color-accent-hover: #0052a3;
+        --color-border: #e0e0e0;
+        --color-code-bg: #f5f5f5;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 2rem;
+        --spacing-lg: 3rem;
+        --spacing-xl: 4rem;
+      }
+
+      /* Inheritance - Typography set on body */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
+
+      /* Form elements inherit fonts */
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-sm);
+      }
+
+      /* Header */
+      header {
+        padding: var(--spacing-lg) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .subtitle {
+        font-size: 1.125rem;
+        color: var(--color-text-light);
+      }
+
+      /* Section styling */
+      section {
+        padding: var(--spacing-lg) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      section:last-of-type {
+        border-bottom: none;
+      }
+
+      h2 {
+        font-size: 1.875rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-md);
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      p {
+        margin-bottom: var(--spacing-sm);
+      }
+
+      /* Code blocks */
+      code {
+        background-color: var(--color-code-bg);
+        padding: 0.125rem 0.25rem;
+        border-radius: 3px;
+        font-size: 0.875rem;
+        font-family: "Courier New", monospace;
+      }
+
+      pre {
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        border-radius: 6px;
+        overflow-x: auto;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+      }
+
+      /* Demo boxes */
+      .demo-box {
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-md);
+        border-radius: 6px;
+        margin-bottom: var(--spacing-sm);
+        border: 1px solid var(--color-border);
+      }
+
+      /* Box Model Demo */
+      .box-model-demo {
+        width: 300px;
+        padding: var(--spacing-md);
+        border: 2px solid var(--color-accent);
+        background-color: var(--color-code-bg);
+      }
+
+      /* Specificity Demo */
+      .element-selector {
+        color: red;
+      }
+
+      .class-selector {
+        color: var(--color-accent);
+      }
+
+      #id-selector {
+        color: green;
+      }
+
+      /* Inheritance Demo */
+      .inheritance-parent {
+        color: var(--color-accent);
+        font-size: 1.125rem;
+      }
+
+      /* Display Property Demo */
+      .display-demo {
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .display-block {
+        display: block;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .display-inline {
+        display: inline;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-xs);
+      }
+
+      .display-inline-block {
+        display: inline-block;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        margin: var(--spacing-xs);
+        width: 150px;
+      }
+
+      /* Layout with Grid */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .grid-item {
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-md);
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+      }
+
+      /* Layout with Flexbox */
+      .flex-layout {
+        display: flex;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
+      }
+
+      .flex-item {
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-md);
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+        flex: 1;
+        min-width: 200px;
+      }
+
+      /* Pseudo-classes Demo */
+      .interactive-button {
+        background-color: var(--color-accent);
+        color: white;
+        border: none;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+      }
+
+      .interactive-button:hover {
+        background-color: var(--color-accent-hover);
+      }
+
+      .interactive-button:focus {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+
+      .interactive-button:active {
+        transform: translateY(1px);
+      }
+
+      /* Pseudo-elements Demo */
+      .pseudo-element-demo::before {
+        content: "→ ";
+        color: var(--color-accent);
+        font-weight: bold;
+      }
+
+      .quote-demo {
+        position: relative;
+        padding-left: var(--spacing-md);
+        font-style: italic;
+        color: var(--color-text-light);
+      }
+
+      .quote-demo::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 3rem;
+        color: var(--color-accent);
+        line-height: 1;
+      }
+
+      /* Units Demo */
+      .units-demo {
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .unit-px {
+        width: 200px;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .unit-percent {
+        width: 50%;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .unit-rem {
+        width: 20rem;
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+      }
+
+      /* Responsive Demo */
+      .responsive-text {
+        font-size: 1rem;
+      }
+
+      /* Media Queries for Responsive Design */
+      @media (min-width: 768px) {
+        .container {
+          padding: var(--spacing-md);
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .grid-layout {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .responsive-text {
+          font-size: 1.125rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          padding: var(--spacing-lg);
+        }
+
+        h1 {
+          font-size: 3.5rem;
+        }
+
+        .grid-layout {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .responsive-text {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-text: #e0e0e0;
+          --color-text-light: #b0b0b0;
+          --color-bg: #1a1a1a;
+          --color-accent: #4da3ff;
+          --color-accent-hover: #66b3ff;
+          --color-border: #333333;
+          --color-code-bg: #2a2a2a;
+        }
+      }
+
+      /* Content vs Layout separation */
+      .card {
+        background-color: var(--color-code-bg);
+        padding: var(--spacing-md);
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+      }
+
+      .card::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: var(--color-accent);
+        margin-top: var(--spacing-sm);
+        border-radius: 3px;
+      }
+
+      /* Lists */
+      ul,
+      ol {
+        margin-left: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      li {
+        margin-bottom: var(--spacing-xs);
+      }
+
+      /* Footer */
+      footer {
+        padding: var(--spacing-lg) 0;
+        text-align: center;
+        color: var(--color-text-light);
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--spacing-xl);
+      }
+
+      /* ---------- Modern CSS demos & fallbacks ---------- */
+      /* 1) Dynamic sibling-count / sibling-index demo */
+      .dynamic-siblings { margin-top: var(--spacing-lg); }
+      .dynamic-siblings ul {
+        display:flex;
+        gap: var(--spacing-xs);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      /* preferred: sibling-count() API (future) */
+      .dynamic-siblings ul li {
+        flex: 0 0 calc(100% / sibling-count());
+        transition: width 0.3s ease, transform 0.25s ease;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        background: #fafafa;
+      }
+      /* fallback using custom property set by JS */
+      .dynamic-siblings ul[data-count] li {
+        flex-basis: calc(100% / var(--fallback-count, 3));
+      }
+
+      /* 2) Hero using image-set */
+      .hero-banner {
+        height: 220px;
+        border-radius: 8px;
+        color: white;
+        padding: 28px;
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+        background-position: center;
+        background-image: image-set(
+          url("https://cdn.pixabay.com/photo/2018/01/14/23/12/mountains-3080044_1280.jpg") type("image/jpeg"),
+          url("https://cdn.pixabay.com/photo/2017/02/01/22/02/milford-sound-2031868_1280.jpg") type("image/jpeg") 2x
+        );
+      }
+
+      .hero-banner h2 { margin: 0; font-size: 1.375rem; text-shadow: 0 6px 16px rgba(0,0,0,0.46); }
+
+      /* 3) Pie chart using conic-gradient */
+      .pie-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(
+          gold 0% 40%,
+          deepskyblue 40% 75%,
+          lightcoral 75% 100%
+        );
+        margin: 8px 0;
+      }
+
+      /* 4) fit-content example */
+      .fit-grid {
+        display: grid;
+        grid-template-columns: 1fr fit-content(260px);
+        gap: 1rem;
+        align-items: start;
+      }
+      .sidebar { background: var(--color-code-bg); padding: 12px; border-radius: 8px; }
+
+      /* 5) Aurora (radial gradients) */
+      .aurora {
+        height: 120px;
+        border-radius: 8px;
+        background: radial-gradient(circle at 20% 20%, #ff00cc, transparent 40%),
+                    radial-gradient(circle at 80% 30%, #00f0ff, transparent 40%),
+                    radial-gradient(circle at 50% 80%, #ffea00, transparent 40%);
+        background-color: #05010f;
+        background-size: 200% 200%;
+        animation: aurora 12s linear infinite;
+        margin-top: 12px;
+      }
+      @keyframes aurora {
+        0% { background-position: 0% 0%; }
+        50% { background-position: 100% 100%; }
+        100% { background-position: 0% 0%; }
+      }
+
+      /* 6) repeating-linear-gradient loader */
+      .loader {
+        width: 220px;
+        height: 18px;
+        border-radius: 10px;
+        background: repeating-linear-gradient(
+          45deg,
+          #23a6d5,
+          #23a6d5 10px,
+          #23d5ab 10px,
+          #23d5ab 20px
+        );
+        background-size: 200% 200%;
+        animation: stripes 2s linear infinite;
+      }
+      @keyframes stripes {
+        to { background-position: 100% 0; }
+      }
+
+      /* 7) border-image-source demo */
+      .fancy-box {
+        border: 10px solid transparent;
+        border-image-source: linear-gradient(90deg, #ff7a7a, #ffd26b, #7be495);
+        border-image-slice: 1;
+        border-radius: 12px;
+        padding: 12px;
+        margin-top: 12px;
+      }
+
+      /* 8) scroll carousel (scroll-snap + graceful fallback) */
+      .scroll-wrapper { display:flex; gap: 12px; align-items:center; }
+      .scroll-container {
+        display:flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 8px;
+        background: linear-gradient(180deg,#fff,#fbfbff);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+      }
+      .scroll-item {
+        min-width: 220px;
+        scroll-snap-align: start;
+        background: var(--color-code-bg);
+        padding: 12px;
+        border-radius: 8px;
+      }
+      .scroll-controls { display:flex; gap:8px; align-items:center; margin-top:8px; }
+      .scroll-dot { width:10px; height:10px; border-radius:50%; background:#ddd; border: 1px solid #bbb; cursor:pointer; }
+      .scroll-dot.active { background: #0b5fff; border-color:#0b5fff; }
+
+      /* Demo layout nice spacing (small screens) */
+      @media (max-width: 640px) {
+        .fit-grid { grid-template-columns: 1fr; }
+        .dynamic-siblings ul li { flex-basis: calc(100% / 2); }
+      }
+
+      /* Print helpers: orphans/widows/print-color-adjust */
+      @media print {
+        p { orphans: 3; widows: 2; }
+        .important-section { print-color-adjust: exact; }
+      }
+      /* ---------- end modern CSS demos ---------- */
+
+      /* Fallback-friendly dynamic sibling layout (use CSS variable set by JS) */
+      .dynamic-siblings ul li {
+        /* don't rely on sibling-count(); use JS fallback variable by default */
+        flex: 0 0 calc(100% / var(--fallback-count, 4));
+      }
+
+      /* hero banner: add safe fallbacks for browsers that don't support image-set */
+      .hero-banner {
+        /* plain URL fallback first */
+        background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/mountains-3080044_1280.jpg");
+        /* -webkit prefixed for older Safari */
+        background-image: -webkit-image-set(
+          url("https://cdn.pixabay.com/photo/2018/01/14/23/12/mountains-3080044_1280.jpg") 1x,
+          url("https://cdn.pixabay.com/photo/2017/02/01/22/02/milford-sound-2031868_1280.jpg") 2x
+        );
+        /* standard image-set */
+        background-image: image-set(
+          url("https://cdn.pixabay.com/photo/2018/01/14/23/12/mountains-3080044_1280.jpg") 1x,
+          url("https://cdn.pixabay.com/photo/2017/02/01/22/02/milford-sound-2031868_1280.jpg") 2x
+        );
+      }
+
+      /* conic gradient fallback for older webkits */
+      .pie-chart {
+        background: -webkit-conic-gradient(gold 0% 40%, deepskyblue 40% 75%, lightcoral 75% 100%);
+        background: conic-gradient(gold 0% 40%, deepskyblue 40% 75%, lightcoral 75% 100%);
+      }
+
+      /* Grid rule fallback - simple approach using borders on cells when advanced gap rules aren't supported */
+      .grid-rule-fallback .grid-item {
+        /* base border for fallback */
+        border-top: 1px solid rgba(0,0,0,0.06);
+        border-left: 1px solid rgba(0,0,0,0.06);
+      }
+      /* remove top border for first row */
+      .grid-rule-fallback .grid-item.first-row { border-top: none; }
+      /* remove left border for first column */
+      .grid-rule-fallback .grid-item.first-col { border-left: none; }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation-duration: 0s !important; transition-duration: 0s !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>A detailed overview of CSS fundamentals</h1>
+        <p class="subtitle">
+          Including box model, cascade, specificity, modern layouts, and
+          responsive techniques for web developers.
+        </p>
+      </header>
+
+      <main>
+        <!-- 1. Box Model -->
+        <section id="box-model">
+          <h2>1. The Box Model</h2>
+          <p>
+            Understanding <code>box-sizing: border-box</code> is crucial. With
+            border-box, padding and borders are included in the width
+            calculation.
+          </p>
+
+          <div class="demo-box">
+            <div class="box-model-demo">
+              <p>
+                This box has a width of 300px with padding and border included.
+              </p>
+            </div>
+          </div>
+
+          <pre><code>*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+        </section>
+
+        <!-- 2. Specificity -->
+        <section id="specificity">
+          <h2>2. Specificity</h2>
+          <p>
+            Specificity determines which CSS rule wins when multiple rules
+            target the same element.
+          </p>
+
+          <div class="demo-box">
+            <p class="element-selector">Element selector (lowest)</p>
+            <p class="element-selector class-selector">
+              Class selector (medium)
+            </p>
+            <p class="element-selector class-selector" id="id-selector">
+              ID selector (highest)
+            </p>
+          </div>
+
+          <pre><code>/* Element selector */
+p { color: red; }
+
+/* Class selector - wins over element */
+.class-selector { color: blue; }
+
+/* ID selector - wins over everything */
+#id-selector { color: green; }</code></pre>
+        </section>
+
+        <!-- 3. Inheritance -->
+        <section id="inheritance">
+          <h2>3. Inheritance</h2>
+          <p>
+            Typography-related properties inherit from parent to child elements
+            automatically.
+          </p>
+
+          <div class="demo-box inheritance-parent">
+            <h3>This heading inherits color and font-size</h3>
+            <p>
+              This paragraph also inherits the same properties from the parent.
+            </p>
+          </div>
+
+          <pre><code>body {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+/* All children inherit these properties */</code></pre>
+        </section>
+
+        <!-- 4. CSS Units -->
+        <section id="units">
+          <h2>4. CSS Units</h2>
+          <p>Different units serve different purposes in responsive design.</p>
+
+          <div class="demo-box units-demo">
+            <div class="unit-px">px: Fixed 200px width</div>
+            <div class="unit-percent">%: 50% of parent width</div>
+            <div class="unit-rem">rem: 20rem width (relative to root)</div>
+          </div>
+
+          <pre><code>/* Pixels - absolute */
+.box { width: 200px; }
+
+/* Percentage - relative to parent */
+.box { width: 50%; }
+
+/* Rem - relative to root font-size */
+.box { width: 20rem; }</code></pre>
+        </section>
+
+        <!-- 5. Display Property -->
+        <section id="display">
+          <h2>5. Display Property</h2>
+          <p>
+            The display property controls how elements behave in the document
+            flow.
+          </p>
+
+          <div class="demo-box display-demo">
+            <h3>Block elements:</h3>
+            <div class="display-block">Block 1 - Takes full width</div>
+            <div class="display-block">Block 2 - Starts on new line</div>
+
+            <h3>Inline elements:</h3>
+            <span class="display-inline">Inline 1</span>
+            <span class="display-inline">Inline 2</span>
+            <span class="display-inline">Inline 3</span>
+
+            <h3>Inline-block elements:</h3>
+            <div class="display-inline-block">Inline-block 1</div>
+            <div class="display-inline-block">Inline-block 2</div>
+          </div>
+        </section>
+
+        <!-- 6. Layouts -->
+        <section id="layouts">
+          <h2>6. Modern Layouts with Grid and Flexbox</h2>
+
+          <h3>Grid Layout</h3>
+          <p>CSS Grid is perfect for two-dimensional layouts.</p>
+          <div class="grid-layout">
+            <div class="grid-item">Grid Item 1</div>
+            <div class="grid-item">Grid Item 2</div>
+            <div class="grid-item">Grid Item 3</div>
+          </div>
+
+          <pre><code>.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}</code></pre>
+
+          <h3>Flexbox Layout</h3>
+          <p>Flexbox excels at one-dimensional layouts.</p>
+          <div class="flex-layout">
+            <div class="flex-item">Flex Item 1</div>
+            <div class="flex-item">Flex Item 2</div>
+            <div class="flex-item">Flex Item 3</div>
+          </div>
+
+          <pre><code>.flex-layout {
+  display: flex;
+  gap: 1rem;
+}</code></pre>
+        </section>
+
+        <!-- 7. Pseudo-classes and Pseudo-elements -->
+        <section id="pseudo">
+          <h2>7. Pseudo-classes and Pseudo-elements</h2>
+
+          <h3>Pseudo-classes (Interactive states)</h3>
+          <div class="demo-box">
+            <button class="interactive-button">
+              Hover, Focus, or Click Me
+            </button>
+          </div>
+
+          <pre><code>.button:hover { background-color: #0052a3; }
+.button:focus { outline: 2px solid blue; }
+.button:active { transform: translateY(1px); }</code></pre>
+
+          <h3>Pseudo-elements (Decorative content)</h3>
+          <div class="demo-box">
+            <p class="pseudo-element-demo">
+              This has an arrow added with ::before
+            </p>
+            <p class="quote-demo">
+              This is a quote with decorative quotation mark added via ::before
+              pseudo-element
+            </p>
+          </div>
+
+          <pre><code>.element::before {
+  content: '→ ';
+  color: #0066cc;
+}</code></pre>
+        </section>
+
+        <!-- 8. Responsive Design -->
+        <section id="responsive">
+          <h2>8. Responsive Design with Media Queries</h2>
+          <p class="responsive-text">
+            Resize your browser window to see this text change size at different
+            breakpoints.
+          </p>
+
+          <div class="demo-box">
+            <p><strong>Current behavior:</strong></p>
+            <ul>
+              <li>Mobile (default): 1rem font-size, 1-column grid</li>
+              <li>Tablet (768px+): 1.125rem font-size, 2-column grid</li>
+              <li>Desktop (1024px+): 1.25rem font-size, 3-column grid</li>
+            </ul>
+          </div>
+
+          <pre><code>/* Mobile-first approach */
+.text { font-size: 1rem; }
+
+@media (min-width: 768px) {
+  .text { font-size: 1.125rem; }
+}
+
+@media (min-width: 1024px) {
+  .text { font-size: 1.25rem; }
+}</code></pre>
+        </section>
+
+        <!-- Bonus: Content vs Layout -->
+        <section id="separation">
+          <h2>Bonus: Separating Layout from Content</h2>
+          <p>
+            Keep layout classes separate from content styling for better
+            maintainability.
+          </p>
+
+          <div class="grid-layout">
+            <div class="card">
+              <h3>Card 1</h3>
+              <p>The grid-layout class handles the layout structure.</p>
+            </div>
+            <div class="card">
+              <h3>Card 2</h3>
+              <p>The card class handles the content styling.</p>
+            </div>
+            <div class="card">
+              <h3>Card 3</h3>
+              <p>They work together but have separate responsibilities.</p>
+            </div>
+          </div>
+
+          <pre><code>/* Layout class */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Content class */
+.card {
+  background: #f5f5f5;
+  padding: 2rem;
+}</code></pre>
+        </section>
+
+        <!-- New section: Modern CSS features & demos -->
+        <section id="modern-css" class="container" aria-labelledby="modern-css-title">
+          <h2 id="modern-css-title">⚡ Dynamic Element Control & Next‑gen CSS features</h2>
+
+          <!-- 1) Dynamic sibling demos -->
+          <article class="dynamic-siblings card">
+            <h3>Dynamic widths using sibling-count()</h3>
+            <p>Each list item shares available width equally. The fallback uses JS to set a CSS custom property.</p>
+            <ul id="dynamicList" class="dynamic-list" role="list">
+              <li>Item A</li>
+              <li>Item B</li>
+              <li>Item C</li>
+              <li>Item D</li>
+            </ul>
+          </article>
+
+          <!-- 2) Hero banner using image-set -->
+          <article class="card">
+            <h3>Next-gen responsive background images (image-set)</h3>
+            <div class="hero-banner">
+              <h2>Hero: responsive images</h2>
+            </div>
+          </article>
+
+          <!-- 3 + 4) Pie chart and fit-content/aurora -->
+          <div class="fit-grid">
+            <article class="card">
+              <h3>conic-gradient() Pie chart</h3>
+              <div class="pie-chart" aria-hidden="true"></div>
+              <p>Simple pie created without SVG.</p>
+            </article>
+            <aside class="sidebar">
+              <h3>fit-content() sidebar</h3>
+              <p>Sidebar uses fit-content() to size to its content, capped at 260px.</p>
+              <div class="aurora" aria-hidden="true"></div>
+            </aside>
+          </div>
+
+          <!-- 5) Loader & fancy border -->
+          <article class="card">
+            <h3>repeating-linear-gradient loader & border-image</h3>
+            <div class="loader" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="fancy-box">
+              <p>fancy border using border-image-source (gradient)</p>
+            </div>
+          </article>
+
+          <!-- 6) Scroll container with markers + fallback controls -->
+          <article class="card">
+            <h3>Native scroll + marker concept (fallback markers)</h3>
+            <div class="scroll-wrapper">
+              <div class="scroll-container" id="scrollContainer" aria-label="carousel">
+                <div class="scroll-item">Slide 1</div>
+                <div class="scroll-item">Slide 2</div>
+                <div class="scroll-item">Slide 3</div>
+                <div class="scroll-item">Slide 4</div>
+              </div>
+            </div>
+            <div class="scroll-controls" id="scrollMarkers" aria-hidden="false" role="tablist"></div>
+          </article>
+        </section>
+        <!-- end modern-css -->
+      </main>
+
+      <footer>
+        <p>Understanding these CSS concepts will make you a more confident and effective developer.</p>
+      </footer>
+    </div>
+    <script>
+      // Feature fallbacks & helper JS for demos
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1) Dynamic sibling fallback - set --fallback-count & per-item transform (sibling-index fallback)
+        const dynamicList = document.getElementById('dynamicList');
+        if (dynamicList) {
+          const items = Array.from(dynamicList.children);
+          const count = items.length || 1;
+          dynamicList.style.setProperty('--fallback-count', count);
+          dynamicList.setAttribute('data-count', count);
+          // If browser does not support sibling-index() transforms, apply simple shift using JS
+          items.forEach((li, i) => {
+            // fan effect: translateX based on index
+            li.style.transform = `translateX(${(i) * 6}px)`;
+            // small animation delay using index
+            li.style.transitionDelay = `${i * 50}ms`;
+          });
+        }
+
+        // 6) Scroll container markers - build fallback markers and update
+        const scrollContainer = document.getElementById('scrollContainer');
+        const scrollMarkersWrap = document.getElementById('scrollMarkers');
+        if (scrollContainer && scrollMarkersWrap) {
+          const slides = Array.from(scrollContainer.querySelectorAll('.scroll-item'));
+          slides.forEach((s, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'scroll-dot';
+            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+            dot.type = 'button';
+            dot.addEventListener('click', () => {
+              s.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            });
+            scrollMarkersWrap.appendChild(dot);
+          });
+
+          // update active marker based on scroll position
+          const dots = Array.from(scrollMarkersWrap.children);
+          function updateActive() {
+            let active = 0;
+            slides.forEach((s, i) => {
+              const rect = s.getBoundingClientRect();
+              if (rect.left >= 0) { active = i; return; }
+            });
+            dots.forEach((d, i) => d.classList.toggle('active', i === active));
+          }
+          scrollContainer.addEventListener('scroll', () => {
+            requestAnimationFrame(updateActive);
+          }, { passive: true });
+          updateActive();
+        }
+
+        // Ensure dynamic-siblings fallback variable in CSS is set
+        const dynamicList = document.getElementById('dynamicList');
+        if (dynamicList) {
+          const items = Array.from(dynamicList.children);
+          const count = items.length || 1;
+          // write fallback variable
+          dynamicList.style.setProperty('--fallback-count', count);
+          dynamicList.setAttribute('data-count', count);
+          // small JS fan effect as fallback for sibling-index
+          items.forEach((li, i) => {
+            li.style.transform = `translateX(${i * 6}px)`;
+            li.style.transitionDelay = `${i * 50}ms`;
+          });
+        }
+
+        // Grid rule fallback - add first-row / first-col classes for simple border rules
+        const grids = document.querySelectorAll('.notebook, .logo-grid, .feature-grid, .gallery-grid, .grid-layout');
+        function applyGridFallback() {
+          grids.forEach((grid) => {
+            if (!grid) return;
+            const items = Array.from(grid.children);
+            // If CSS gap decoration supported, remove fallback class
+            const supportsColumnRule = CSS.supports('column-rule', '1px solid black') || CSS.supports('rule', '1px solid black');
+            if (supportsColumnRule) {
+              grid.classList.remove('grid-rule-fallback');
+              items.forEach(it => { it.classList.remove('first-row', 'first-col'); it.style.borderTop = ''; it.style.borderLeft = ''; });
+              return;
+            }
+
+            // Compute columns count using computed styles
+            const cols = (getComputedStyle(grid).gridTemplateColumns || '').split(' ').filter(Boolean).length || 1;
+            // Mark first-row and first-col appropriately
+            items.forEach((it, idx) => {
+              it.classList.remove('first-row', 'first-col');
+              const colIndex = idx % cols;
+              const rowIndex = Math.floor(idx / cols);
+              if (colIndex === 0) it.classList.add('first-col');
+              if

@@ -1,0 +1,54 @@
+{
+  "promotions": [
+    {
+      "id": 1,
+      "host_url": "https://amzn.to/4ijpncK",
+      "text": "Dermalogica Super Rich Repair Moisturizer"
+    },
+    {
+      "id": 2,
+      "host_url": "https://amzn.to/4oWIOL2",
+      "text": "Sulwhasoo Concentrated Ginseng Rejuvenating Cream"
+    },
+    {
+      "id": 3,
+      "host_url": "https://amzn.to/4p2Th7L",
+      "text": "Estée Lauder Re-Nutriv Ultimate Moisturizer Cream"
+    },
+    {
+      "id": 4,
+      "host_url": "https://amzn.to/4adGkTY",
+      "text": "Moisturizing Renewal Cream Nightly Retexturizer"
+    },
+    {
+      "id": 5,
+      "host_url": "https://amzn.to/43R3kUZ",
+      "text": "Estée Lauder Re-Nutriv Ultimate Lift Regenerating Youth Eye Cream Rich"
+    },
+    {
+      "id": 6,
+      "host_url": "https://amzn.to/44t2wWz",
+      "text": "Estée Lauder Advanced Night Repair Serum" 
+    },
+    {
+      "id": 7,
+      "host_url": "https://amzn.to/482ZElz",
+      "text": "Love Ur Curls - Shampoo & Conditioner Set with All in One Curl C"
+    },
+    {
+      "id": 8,
+      "host_url": "https://amzn.to/49HKraL",
+      "text": "13x4 Lace Front Wigs Human Hair Body Wave Wig" 
+    },
+    {
+      "id": 9,
+      "host_url": "https://amzn.to/4rkzJgI",
+      "text": "Dr. Brandt Dare to Age Firming Day Cream"
+    },
+    {
+      "id": 10,
+      "host_url": "https://amzn.to/4p2bkLd",
+      "text": "Ogee Face Crystal Collection Trio"
+    }
+  ]
+}
