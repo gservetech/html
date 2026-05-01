@@ -7,7 +7,6 @@ RUN npm ci --omit=dev --ignore-scripts
 
 COPY . .
 
-RUN mkdir -p fb-automation/posted fb-print-automation/posted fb-royalking-automation/posted \
-    fb-automation/logs fb-print-automation/logs fb-royalking-automation/logs
+RUN mkdir -p fb-automation/posted fb-automation/logs
 
 CMD ["node", "fb-automation/scheduler.js"]
