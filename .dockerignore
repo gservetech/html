@@ -7,3 +7,16 @@ diag-screenshot.png
 diag.js
 parse-diag.cjs
 parse-diag.js
+html/
+instagram/
+twitter/
+fb-group-automation/
+fb-print-automation/
+fb-royalking-automation/
+posted/
+content-queue/
+*.md
+*.png
+.windsurf/
+.gitignore
+start-all-schedulers.js
