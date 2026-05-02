@@ -10,3 +10,5 @@
 .env
 node_modules
 .facebook-group-browser-profile
+diag-dom.html
+diag-screenshot.png
