@@ -1,0 +1,20 @@
+{
+  "coupons": [
+    {
+      "code": "PICKUP3",
+      "discount": 3,
+      "minOrder": 20,
+      "description": "$3 off pickup orders over $20",
+      "active": true,
+      "pickupOnly": true
+    },
+    {
+      "code": "PICKUP5",
+      "discount": 5,
+      "minOrder": 35,
+      "description": "$5 off pickup orders over $35",
+      "active": true,
+      "pickupOnly": true
+    }
+  ]
+}
