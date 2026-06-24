@@ -5,7 +5,7 @@
       "business_name": "Scotiabank Board",
       "message": "Earn a $250 promotional bonus when you open an eligible business banking package and keep your cash flow moving with flexible account tools.",
       "accent": "#d90416",
-      "logo_url": "/static/img/promos/scotiabank.svg",
+      "logo_url": "/promos/scotiabank.svg",
       "link_url": "https://www.scotiabank.com/ca/en/business.html"
     },
     "sp_500": {
@@ -13,7 +13,7 @@
       "business_name": "Harbor Ledger",
       "message": "Simplify payroll, invoices, and month-end reporting with a finance workspace built for growing teams that need cleaner books and faster decisions.",
       "accent": "#0b6f5c",
-      "logo_url": "/static/img/promos/harbor-ledger.svg",
+      "logo_url": "/promos/harbor-ledger.svg",
       "link_url": "https://example.com/harbor-ledger"
     },
     "nasdaq": {
@@ -21,7 +21,7 @@
       "business_name": "CloudScale Partners",
       "message": "Launch your next software campaign with managed cloud credits, migration planning, and hands-on support for founders scaling across new markets.",
       "accent": "#6f42c1",
-      "logo_url": "/static/img/promos/cloudscale.svg",
+      "logo_url": "/promos/cloudscale.svg",
       "link_url": "https://example.com/cloudscale"
     },
     "nasdaq_100": {
@@ -29,7 +29,7 @@
       "business_name": "Northstar Capital",
       "message": "Get a complimentary portfolio review for your business treasury and compare cash management options designed for technology-led companies.",
       "accent": "#b15c00",
-      "logo_url": "/static/img/promos/northstar.svg",
+      "logo_url": "/promos/northstar.svg",
       "link_url": "https://example.com/northstar-capital"
     }
   }
