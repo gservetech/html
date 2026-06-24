@@ -1,4 +1,18 @@
 {
+  "settings": {
+    "default_rotation_seconds": 30
+  },
+  "placements": {
+    "index_card": { "rotation_seconds": 45 },
+    "quote_sidebar": { "rotation_seconds": 60 },
+    "quote_inline": { "rotation_seconds": 30 },
+    "home_table_banner": { "rotation_seconds": 30 }
+  },
+  "rotation_pools": {
+    "quote_sidebar": ["dow_jones", "sp_500", "nasdaq", "nasdaq_100"],
+    "quote_inline": ["dow_jones", "sp_500", "nasdaq", "nasdaq_100"],
+    "home_table_banner": ["dow_jones", "sp_500", "nasdaq", "nasdaq_100"]
+  },
   "ads": {
     "dow_jones": {
       "enabled": true,
