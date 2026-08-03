@@ -1,66 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Squirrel on Canvas (with Rotation)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Desktop View - Featured Promotions</title>
   <style>
-    body { font-family: system-ui, Arial, sans-serif; padding: 16px; }
-    .controls { margin-top: 12px; display: flex; gap: 12px; align-items: center; }
-    label { font-weight: 600; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 2.5rem 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Fixed Desktop Monitor Canvas */
+    .desktop-container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .desktop-header {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+
+    .desktop-header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.025em;
+    }
+
+    .badge-desktop {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    /* Fixed 4-Column Grid Optimized for Desktop (1200px) */
+    .desktop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Card Styling */
+    .card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px -4px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+      border-color: #94a3b8;
+    }
+
+    .card-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      background-color: #f8fafc;
+      overflow: hidden;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+      height: 2.7rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-summary {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 0.6rem;
+      height: 2.2rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-description {
+      font-size: 0.8125rem;
+      color: #475569;
+      line-height: 1.45;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      padding-top: 0.85rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn-buy {
+      display: block;
+      width: 100%;
+      padding: 0.55rem 1rem;
+      background-color: #2563eb;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-buy:hover {
+      background-color: #1d4ed8;
+    }
   </style>
 </head>
 <body>
-  <h1>Squirrel on Canvas 🐿️</h1>
 
-  <canvas id="cv" width="600" height="400" style="border:1px solid #ccc;"></canvas>
+  <div class="desktop-container">
+    <div class="desktop-header">
+      <h1>Featured Promotions Catalog</h1>
+      <span class="badge-desktop">Desktop Mode (1200px Workspace)</span>
+    </div>
 
-  <div class="controls">
-    <label for="deg">Rotate:</label>
-    <input id="deg" type="range" min="-180" max="180" value="0" />
-    <span id="degVal">0°</span>
+    <div class="desktop-grid">
+      
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=800&q=80" alt="Love Ur Curls">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Love Ur Curls Shampoo & Conditioner Set</h2>
+          <div class="card-summary">Complete curl care set featuring shampoo, conditioner & curl cream.</div>
+          <p class="card-description">Designed specifically for curly hair types to cleanse, hydrate, and define curls with an all-in-one styler.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/482ZElz" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Sunny Hair Extensions">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Sunny Hair 24-Inch Straight Weft Extensions</h2>
+          <div class="card-summary">100% human hair sew-in extensions for natural length and volume.</div>
+          <p class="card-description">24-inch straight human hair weft extensions engineered for seamless blending and long-lasting wear.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/3KhFgEa" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80" alt="Lancôme Advanced Génifique">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Lancôme Advanced Génifique Face Serum</h2>
+          <div class="card-summary">Radiance-boosting hyaluronic acid and Vitamin C serum.</div>
+          <p class="card-description">Formulated with Hyaluronic Acid and Vitamin C to enhance skin radiance, improve texture, and visibly brighten complexions.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/3KrLZvc" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80" alt="Estée Lauder NightWear Plus">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Estée Lauder NightWear Plus Anti-Oxidant Cream</h2>
+          <div class="card-summary">Night detox cream moisturizer designed for anti-aging.</div>
+          <p class="card-description">Purifies and hydrates skin overnight with rich antioxidants to defend against early signs of aging.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/4pyR4AS" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1608248597260-613d508f7f2b?auto=format&fit=crop&w=800&q=80" alt="Origins Mega-Mushroom">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Origins Mega-Mushroom Advanced Face Serum</h2>
+          <div class="card-summary">Soothing face serum that reduces redness and strengthens barrier.</div>
+          <p class="card-description">Potent soothing formula designed to calm skin sensitivity, reduce visible redness, and fortify natural barrier resilience.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/43SYsPe" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Dr. Brandt Firming Cream">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dr. Brandt Dare to Age Firming Day Cream</h2>
+          <div class="card-summary">Firming day cream that hydrates and promotes elasticity.</div>
+          <p class="card-description">Advanced firming day cream formulated to visibly lift and smooth skin while promoting relaxation through aromatherapeutic notes.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/48lMCyk" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80" alt="Ogee Face Crystal Trio">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Ogee Face Crystal Collection Trio</h2>
+          <div class="card-summary">Certified organic bronzer, blush, and highlighter stick set.</div>
+          <p class="card-description">Multi-use makeup trio offering buildable, natural radiance with certified organic bronzer, blush, and highlighter formulations.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/4p7esWq" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img class="card-image" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Burberry Eyeglasses">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Burberry ELIZABETH Women's Eyeglasses</h2>
+          <div class="card-summary">Stylish Asian Fit optical frames for women.</div>
+          <p class="card-description">Designer eyeglasses featuring classic tortoiseshell styling, comfortable Asian Fit ergonomics, and durable construction.</p>
+          <div class="card-footer">
+            <a href="https://amzn.to/483MvIZ" target="_blank" rel="noopener noreferrer" class="btn-buy">View Product</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 
-  <script>
-    const canvas = document.getElementById('cv');
-    const ctx = canvas.getContext('2d');
-    const slider = document.getElementById('deg');
-    const degVal = document.getElementById('degVal');
-
-    // Public domain squirrel image (Pixabay CDN)
-    const img = new Image();
-    img.crossOrigin = 'anonymous'; // helps avoid canvas tainting
-    img.src = 'https://plus.unsplash.com/premium_photo-1666788433960-4784f33e7d19?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-
-    let currentDegrees = 0;
-
-    function draw() {
-      const radians = currentDegrees * Math.PI / 180;
-      const { width: cw, height: ch } = canvas;
-
-      // Clear canvas
-      ctx.clearRect(0, 0, cw, ch);
-
-      // Compute "contain" fit
-      const scale = Math.min(cw / img.width, ch / img.height);
-      const drawW = img.width * scale;
-      const drawH = img.height * scale;
-
-      // Translate to canvas center, rotate, then draw centered
-      ctx.save();
-      ctx.translate(cw / 2, ch / 2);
-      ctx.rotate(radians);
-      ctx.drawImage(img, -drawW / 2, -drawH / 2, drawW, drawH);
-      ctx.restore();
-    }
-
-    img.onload = () => draw();
-
-    slider.addEventListener('input', (e) => {
-      currentDegrees = parseInt(e.target.value, 10);
-      degVal.textContent = currentDegrees + '°';
-      if (img.complete) draw();
-    });
-  </script>
 </body>
 </html>
